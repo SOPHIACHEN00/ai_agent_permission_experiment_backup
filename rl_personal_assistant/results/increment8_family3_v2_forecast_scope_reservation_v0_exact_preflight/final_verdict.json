@@ -1,0 +1,1 @@
+{"baseline_sha256": "d8b8ff2c550421ea0ba05af843b3bb9dbd31f620254e368d9b7a1bb957cca055", "committed_gate_count": 12, "run_config_relative_path": "run_config.json", "run_config_sha256": "b4384b248d9973a730d4ee1f24cc00f1388fd39c0945b6180d7ac4d70c31fabb", "schema_version": "family3_v2_final_verdict_v0", "verdict": "CERTIFIED_PASS"}

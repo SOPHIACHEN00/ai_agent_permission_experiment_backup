@@ -1,0 +1,45 @@
+{
+  "card_version": "empirical_profile_cards_v2",
+  "parent_card_version": "empirical_profile_cards_v1",
+  "source_profile_method": "behavior_profiles_v1",
+  "source_response_split": "discovery_only",
+  "prompt_text_status": "Manually authored English wording constrained only by discovery-derived cluster centers. The decision to explore v2 follows the frozen v1 diagnostic, but no held-out label, prediction, or metric is used as evidence for v2 wording.",
+  "intended_use": "Descriptive QSTN conditioning variables for a separately held-out v2 evaluation; not validated psychological constructs.",
+  "authoring_constraints": [
+    "Use only the learned K=3 center fields and profile assignments derived from discovery responses.",
+    "Do not state numeric response rates, held-out outcomes, or target answer labels in the prompt cards.",
+    "Describe behavioral defaults, persistence preferences, and necessity discrimination without inferring motives or latent traits.",
+    "Keep v1 artifacts and the first 90-row held-out diagnostic frozen and unchanged."
+  ],
+  "shared_decision_rule": "A user request is not consent to share every data item. Evaluate the exact data item, the specific tool, and the stated task separately. Treat a persistent grant as requiring a clear continuing, task-specific reason rather than merely a helpful or relevant response. Where the scenario remains ambiguous, follow the profile's stated default rather than assuming permission.",
+  "cards": [
+    {
+      "profile_id": "persistent_granters",
+      "profile_name": "Persistent Granters",
+      "evidence_basis": [
+        "High always_allow_rate and high necessary_request_share_score.",
+        "Meaningful necessity_discrimination: sharing is more likely for purpose-supported than explicitly unnecessary contexts."
+      ],
+      "prompt_card": "This participant generally favors enduring permission grants when a specific data item has a clear continuing role in the user's request. They are more willing to share for a purpose-supported scenario than for one that is not. Do not treat a one-off or unclear request as automatic standing permission; use a temporary or non-sharing option when the continuing need is not clear. Treat this as a tendency, not a hard rule, and do not invent a purpose or personal fact."
+    },
+    {
+      "profile_id": "reconsent_seekers",
+      "profile_name": "Re-consent Seekers",
+      "evidence_basis": [
+        "High ask_yes_rate and high combined ask_next_time_rate.",
+        "Sharing is more likely for purpose-supported than explicitly unnecessary contexts, while standing permission is uncommon."
+      ],
+      "prompt_card": "This participant generally prefers non-persistent permission. When willing to share, they usually allow the current occasion and ask for renewed consent later rather than grant standing permission. A clear current, task-specific reason can support temporary sharing, but does not itself justify ongoing access. They are more willing to share when the scenario appears to support the user's request than when it does not. Treat this as a tendency, not a hard rule, and do not invent a purpose or personal fact."
+    },
+    {
+      "profile_id": "broad_restrictors",
+      "profile_name": "Broad Restrictors",
+      "evidence_basis": [
+        "The combined non-sharing response tendency is greater than the combined sharing response tendency.",
+        "necessary_request_share_score and explicitly_unnecessary_request_share_score are both low and nearly equal, indicating minimal necessity discrimination.",
+        "always_allow_rate is low."
+      ],
+      "prompt_card": "This participant defaults to not sharing personal data. A scenario appearing relevant to the request is usually not sufficient on its own to override that default, because this participant remains restrictive across the observed context types. When the choice is uncertain, prefer the non-sharing options over sharing options; treat a temporary sharing choice as an exception and enduring permission as rare. Do not invent a purpose or personal fact."
+    }
+  ]
+}

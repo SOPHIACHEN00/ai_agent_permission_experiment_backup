@@ -1,0 +1,102 @@
+{
+  "accounting_domain": "nonterminal_bellman_states",
+  "base_suite_version": "increment8_budgeted_lifecycle_v0",
+  "cache_signature": "6b72f9398142ba5cb0df48dad0af7e44aa9d16c8bcf3f1d70c723a36fb3c7a2f",
+  "clock_semantics": "next_committed_effect_index",
+  "completed_at": "2026-08-27T04:35:36.930830+00:00",
+  "control_expected_value": {
+    "denominator": 25,
+    "numerator": 13
+  },
+  "control_match": true,
+  "diagnostic_version": "increment8_v1_terminal_cache_bypass_diagnostic_v1",
+  "family_formula": {
+    "exposure_budget": "exposure_v1=exposure_v0+8",
+    "utility_target": "target_v1=max(4,target_v0-1)"
+  },
+  "graph": {
+    "carrier_code": "c4_records",
+    "family_index": 3,
+    "graph_id": "i8_s3_v3",
+    "public_initial": {
+      "accumulated_utility": 0,
+      "authorization_objective": "scope_sensitive_offer",
+      "broader_scope": {
+        "data_attributes": [
+          "recipient",
+          "record"
+        ],
+        "domain": "records",
+        "operation": "send",
+        "purpose": "inbox_cleanup",
+        "recipient": "third_party",
+        "resource": "records.private",
+        "retention": "external",
+        "tool": "records_api"
+      },
+      "current_scope": {
+        "data_attributes": [
+          "record"
+        ],
+        "domain": "records",
+        "operation": "send",
+        "purpose": "inbox_cleanup",
+        "recipient": "third_party",
+        "resource": "records.private",
+        "retention": "external",
+        "tool": "records_api"
+      },
+      "current_sensitivity": 3,
+      "current_task_utility": 1,
+      "directive": "none",
+      "exposure_budget": 24,
+      "exposure_used": 0,
+      "horizon": 11,
+      "logical_step": 1,
+      "prompt_budget": 3,
+      "prompts_used": 0,
+      "reuse_likelihood": "medium",
+      "scope_change_likelihood": "high",
+      "utility_target": 5
+    },
+    "role": "strategic",
+    "variant": 3
+  },
+  "graph_hash": "320830cda9151147dc38a3f25bb2e3cf58ce5566e74924dc4d2ac3549fd56bee",
+  "graph_id": "i8_s3_v3",
+  "oracle_floor": {
+    "denominator": 5,
+    "numerator": 3
+  },
+  "oracle_value": {
+    "denominator": 25,
+    "numerator": 13
+  },
+  "schema_version": "nonterminal_exact_value_cache_v1",
+  "solver_evidence": {
+    "cached_nonterminal_states": 1518,
+    "checkpoint_interval": 1000,
+    "disk_cache_hits": 0,
+    "max_recursion_depth": 10,
+    "memory_cache_hits": 3,
+    "memory_cache_size": 4096,
+    "nonterminal_cache_row_limit": 1000000,
+    "nonterminal_states_added_this_process": 1518,
+    "peak_memory_cache_entries": 1518,
+    "terminal_returns": 7594,
+    "value_calls": 9115
+  },
+  "solver_version": "disk_backed_nonterminal_cache_exact_dp_v1",
+  "source_sha256": {
+    "contracts.py": "a01b1b5ced492c450e3e0eb3542d1855a0918bf8f0770816399e3c92320d6ee3",
+    "increment8_model.py": "c77e6e48616e723167213d97ddedb72a33ce4597ce3794702b8f851503d6d1bb",
+    "increment8_outcome.py": "8d228d0880bb6a6ad1f8ace57904db8810d81bf7edbcf76474cb21dd8a739160",
+    "increment8_suite.py": "b58a4af12959b55d2d5c5c1ac4d7a13d1a7e2765fc1709deae9e436e84f16201",
+    "increment8_terminal_cache_diagnostic.py": "1217ec43ce64d9b4da12c9c1cb75dd6b8c24536ef8b3061ddea1f60c6aabaf4f",
+    "increment8_v1_preflight.py": "8a6160bda16f97354530933a25a2d180fe44dfddaadb003fd0eb7e2dcd0187a2",
+    "increment8_value_solver.py": "a580ac1baba3234112c50d9b08ce911a68d1ee2419a87d5e691c78770ff498e7",
+    "scope_matching.py": "cbdff3449287927ad6a9739e14db6dcbeee3eb5444c97f15bb6192f0d354972c"
+  },
+  "status": "CONTROL_MATCH",
+  "threshold_pass": false
+}

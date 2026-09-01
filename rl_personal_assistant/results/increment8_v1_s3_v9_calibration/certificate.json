@@ -1,0 +1,38 @@
+{
+  "base_suite_version": "increment8_budgeted_lifecycle_v0",
+  "cache_signature": "4c302232a51c481506f82c3d9a640d51901a90ae99814f93db175df2f7479e68",
+  "calibration_version": "increment8_v1_s3_v9_exposure_plus8_v1",
+  "clock_semantics": "next_committed_effect_index",
+  "completed_at": "2026-08-27T02:08:21.765061+00:00",
+  "graph_hash": "3ff4cbaefb5df641a4d88ad2abdf96617ef5f9b46cb44364d792e7a069d22c5c",
+  "graph_id": "i8_s3_v9",
+  "oracle_floor": {
+    "denominator": 5,
+    "numerator": 3
+  },
+  "oracle_value": {
+    "denominator": 125000,
+    "numerator": 45569
+  },
+  "parameter_change": {
+    "exposure_budget_candidate": 24,
+    "exposure_budget_v0": 16,
+    "family": 3,
+    "horizon": 12,
+    "prompt_budget": 3,
+    "utility_target": 7
+  },
+  "solver_evidence": {
+    "disk_cache_hits": 4594,
+    "max_recursion_depth": 13,
+    "memory_cache_hits": 7001,
+    "memory_cache_size": 4096,
+    "peak_memory_cache_entries": 4096,
+    "state_limit": 1000000,
+    "states_added_this_process": 380299,
+    "total_cached_states": 380299
+  },
+  "solver_version": "disk_backed_value_first_exact_dp_v1",
+  "status": "CERTIFIED_FAIL",
+  "threshold_pass": false
+}

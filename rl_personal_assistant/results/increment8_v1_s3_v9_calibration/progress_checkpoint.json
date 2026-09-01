@@ -1,0 +1,15 @@
+{
+  "cache_path": "D:\\Study\\Graduate_Study_UofG\\Research\\paper\\Week67\\ai_agent_permission_experiment\\rl_personal_assistant\\results\\increment8_v1_s3_v9_calibration\\value_cache.sqlite3",
+  "cache_signature": "4c302232a51c481506f82c3d9a640d51901a90ae99814f93db175df2f7479e68",
+  "disk_cache_hits": 4594,
+  "max_recursion_depth": 13,
+  "memory_cache_hits": 7001,
+  "memory_cache_size": 4096,
+  "peak_memory_cache_entries": 4096,
+  "solver_version": "disk_backed_value_first_exact_dp_v1",
+  "state_limit": 1000000,
+  "states_added_this_process": 380299,
+  "status": "SOLVED",
+  "total_cached_states": 380299,
+  "updated_at": "2026-08-27T02:08:21.720104+00:00"
+}

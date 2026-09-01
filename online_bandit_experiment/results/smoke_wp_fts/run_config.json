@@ -1,0 +1,77 @@
+{
+  "method": "WP-FTS",
+  "evaluation_type": "randomized sequential online-feedback replay simulation using human stated-policy labels",
+  "primary_causal_comparator": "frozen_tempered_fts_control",
+  "descriptive_static_reference": "offline_frozen_global_greedy_reference",
+  "action_space": "four stated policies factored into access then persistence",
+  "reward": "selected-action binary joint exact-match reward only",
+  "full_information_use": "labels are evaluator-only and are transformed into selected-action feedback after the full query bundle has been acted on",
+  "test_global_update": false,
+  "user_cross_update": false,
+  "bundle_key": [
+    "participant_id",
+    "query_id"
+  ],
+  "feedback_timing": "all rows in a bundle choose actions before any bundle reward is revealed",
+  "selected_kappa": 0.1,
+  "selected_exploration": 1.0,
+  "selection_rule": "minimize false-allow constraint violation, then maximize validation online prequential joint reward",
+  "validation_seeds": [
+    11
+  ],
+  "test_seeds": [
+    101
+  ],
+  "bootstrap_replicates": 20,
+  "bootstrap_seed": 20260727,
+  "feature_spec": {
+    "categorical_columns": [
+      "domain",
+      "tool",
+      "raw_data_type",
+      "generic_data_type",
+      "concern_domain"
+    ],
+    "numeric_columns": [
+      "privacy_importance"
+    ],
+    "text_columns": [],
+    "excluded_primary_features": [
+      "participant_id",
+      "query_id",
+      "label_id",
+      "label_text",
+      "access_target",
+      "persistence_target",
+      "necessity_status",
+      "age",
+      "gender",
+      "education",
+      "ai_familiarity",
+      "ai_frequency",
+      "ai_trust",
+      "historical rates"
+    ],
+    "opt_in_profile_enabled": true,
+    "query_text_ablation_enabled": false,
+    "necessity_oracle_ablation_enabled": false
+  },
+  "split_seed": 42,
+  "split_group_column": "participant_id",
+  "split_sizes": {
+    "train": 9826,
+    "validation": 3212,
+    "test": 3323
+  },
+  "split_participants": {
+    "train": 120,
+    "validation": 40,
+    "test": 41
+  },
+  "limitations": [
+    "Survey labels are stated preferences, not observed disclosure harm, task success, or prompt burden.",
+    "Randomized bundle order is a replay protocol, not a real chronological interaction sequence.",
+    "QSTN is not used as a human-valid feedback oracle in this evaluation.",
+    "The paired causal gain compares WP-FTS with a matched stochastic frozen control; the greedy offline reference is descriptive only."
+  ]
+}

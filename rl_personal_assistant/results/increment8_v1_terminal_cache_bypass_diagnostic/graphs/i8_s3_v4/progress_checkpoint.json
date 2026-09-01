@@ -1,0 +1,19 @@
+{
+  "accounting_domain": "nonterminal_bellman_states",
+  "cache_path": "D:\\Study\\Graduate_Study_UofG\\Research\\paper\\Week67\\ai_agent_permission_experiment\\rl_personal_assistant\\results\\increment8_v1_terminal_cache_bypass_diagnostic\\graphs\\i8_s3_v4\\nonterminal_value_cache.sqlite3",
+  "cache_signature": "88d5dfa15711c1216a1152e2a9733b77a6056b7fe920e4f6a02ce52f8d324902",
+  "cached_nonterminal_states": 193537,
+  "disk_cache_hits": 1562,
+  "max_recursion_depth": 13,
+  "memory_cache_hits": 4700,
+  "memory_cache_size": 4096,
+  "nonterminal_cache_row_limit": 1000000,
+  "nonterminal_states_added_this_process": 193537,
+  "peak_memory_cache_entries": 4096,
+  "schema_version": "nonterminal_exact_value_cache_v1",
+  "solver_version": "disk_backed_nonterminal_cache_exact_dp_v1",
+  "status": "SOLVED",
+  "terminal_returns": 1053226,
+  "updated_at": "2026-08-27T04:51:15.743962+00:00",
+  "value_calls": 1253025
+}

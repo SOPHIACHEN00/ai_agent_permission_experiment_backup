@@ -1,0 +1,8 @@
+# Runtime used by the audited CPU pilot on 2026-08-09.
+# The model itself is loaded from the local Hugging Face cache.
+numpy==2.0.0
+pandas==2.2.2
+torch==2.11.0
+transformers==5.5.0
+tokenizers==0.22.2
+safetensors==0.7.0

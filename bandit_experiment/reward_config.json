@@ -1,0 +1,9 @@
+{
+  "task_utility_weight": 0.25,
+  "sensitivity_cost_weight": 1.0,
+  "unnecessary_access_weight": 0.5,
+  "access_mismatch_weight": 1.0,
+  "interruption_weight": 0.1,
+  "over_persistence_weight": 0.5,
+  "persistence_mismatch_weight": 1.0
+}

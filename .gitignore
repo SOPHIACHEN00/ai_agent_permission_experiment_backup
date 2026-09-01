@@ -1,0 +1,22 @@
+# Python environments (including nested experiments)
+**/.venv/
+**/venv/
+
+# Python caches and test artifacts
+**/__pycache__/
+*.py[cod]
+**/.pytest_cache/
+**/.mypy_cache/
+**/.ruff_cache/
+
+# Local credentials and environment files
+**/.env
+**/.env.*
+!**/.env.example
+
+# SQLite transient files
+**/*.sqlite3-wal
+**/*.sqlite3-shm
+
+# Preserved nested-repository metadata during outer backup
+**/.git.source-history/

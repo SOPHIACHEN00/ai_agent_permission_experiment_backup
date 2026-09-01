@@ -1,0 +1,15 @@
+[project]
+name = "qstn-permission-simulator"
+version = "0.1.0"
+description = "QSTN environment for simulated AI-agent data permission responses."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "qstn>=0.5.0",
+    "pandas>=2.0.0",
+    "python-dotenv>=1.0.0",
+    "scikit-learn>=1.0.0",
+]
+
+[tool.uv]
+package = false

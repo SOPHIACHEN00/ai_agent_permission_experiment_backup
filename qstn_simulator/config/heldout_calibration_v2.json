@@ -1,0 +1,72 @@
+{
+  "run_id": "minimal_heldout_calibration_v2",
+  "purpose": "Evaluate the discovery-only empirical_profile_cards_v2 prompt wording on a fixed held-out sample that excludes every participant and response row used by the frozen v1 diagnostic.",
+  "model_name": "o4-mini",
+  "profile_card_version": "empirical_profile_cards_v2",
+  "reference_response_split": "heldout",
+  "conditions": [
+    {
+      "condition_id": "raw_participant_profile_plus_empirical_card",
+      "persona_file": "empirical_personas_v2/personas_with_empirical_profiles.csv",
+      "description": "An anonymized participant background plus the discovery-only empirical_profile_cards_v2 prompt card."
+    }
+  ],
+  "sampling": {
+    "mode": "fixed_participant_stratified_context_sample",
+    "participants_per_profile": 10,
+    "context_slots": [
+      {
+        "slot_id": "necessary",
+        "necessity_status": "necessary"
+      },
+      {
+        "slot_id": "incorrect_explicit",
+        "necessity_status": "incorrect_explicit"
+      },
+      {
+        "slot_id": "random_remaining",
+        "necessity_status": null
+      }
+    ],
+    "selection_seed": 20260722,
+    "exclude_response_rows_file": "minimal_heldout_calibration_v1/inference_plan.csv",
+    "exclude_participants_file": "minimal_heldout_calibration_v1/inference_plan.csv",
+    "unknown_status_policy": "Unknown is not a dedicated stratum because it is sparse in the released held-out data; it may appear only through the random_remaining slot."
+  },
+  "inference": {
+    "presentation": "single_item",
+    "seed": 42,
+    "api_concurrency": 1,
+    "batch_size": 1
+  },
+  "evaluation": {
+    "labels": [
+      "No, never share",
+      "No, but ask me next time",
+      "Yes, but ask me next time",
+      "Yes, always share"
+    ],
+    "share_label_ids": [2, 3],
+    "nonshare_label_ids": [0, 1],
+    "metrics": [
+      "accuracy",
+      "macro_f1",
+      "distribution_tv_distance",
+      "over_sharing_rate",
+      "under_sharing_rate",
+      "predicted_share_rate"
+    ],
+    "bootstrap": {
+      "unit": "participant",
+      "iterations": 1000,
+      "seed": 20260721
+    }
+  },
+  "guardrails": [
+    "Only rows marked heldout in empirical_response_splits.csv are evaluation targets.",
+    "Human label_id and label_text are kept outside the inference plan and are never included in a QSTN prompt.",
+    "Every participant and response row selected by v1 is excluded before v2 sampling; the v1 diagnostic remains frozen.",
+    "V2 wording is constrained only by discovery-derived cluster centers; no held-out label, prediction, or metric is used as prompt-card evidence.",
+    "The 90-row result is a pre-RL quality gate, not a population estimate, a causal card ablation, or proof of general human-likeness."
+  ]
+}

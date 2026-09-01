@@ -1,0 +1,20 @@
+{
+  "participant_splits_disjoint": true,
+  "query_id_not_a_feature": true,
+  "participant_id_not_a_feature": true,
+  "label_not_a_feature": true,
+  "forbidden_feature_overlap": [],
+  "test_participants": 41,
+  "test_rows": 3323,
+  "selected_rewards_are_binary": true,
+  "online_updates_after_feedback": true,
+  "frozen_control_never_updates": true,
+  "paired_event_counts_match": true,
+  "every_ordered_bundle_has_rows": true,
+  "online_rows_match_bundle_manifest": true,
+  "n_event_rows": 199380,
+  "n_bundle_rows": 16300,
+  "canonical_greedy_never_updates": true,
+  "canonical_events_match_online": true,
+  "canonical_events_have_no_propensities": true
+}

@@ -1,0 +1,33 @@
+{
+  "data_path": "data\\processed\\four_label_dataset.csv",
+  "split": "participant_heldout",
+  "n_rows": 16361,
+  "n_train": 13038,
+  "n_test": 3323,
+  "train_label_counts": {
+    "No, never share": 1851,
+    "No, but ask me next time": 1382,
+    "Yes, but ask me next time": 5642,
+    "Yes, always share": 4163
+  },
+  "test_label_counts": {
+    "No, never share": 510,
+    "No, but ask me next time": 338,
+    "Yes, but ask me next time": 1414,
+    "Yes, always share": 1061
+  },
+  "train_participants": 160,
+  "test_participants": 41,
+  "models": [
+    "flat_four_class_lr",
+    "ordinal_lr",
+    "factored_lr"
+  ],
+  "metrics": [
+    "accuracy",
+    "macro_f1",
+    "quadratic_weighted_kappa",
+    "over_sharing_rate",
+    "persistent_over_allow_rate"
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "schema_id": "s_qstn_v2_reason_codes",
+  "version": "2.0.0",
+  "description": "Deterministic audit reason codes for S-QSTN RulePack v2.0. These codes summarize explicit field and state evidence and are not hidden chain-of-thought.",
+  "numeric_behavior_parameters": false,
+  "codes": [
+    {
+      "code": "NECESSITY_CURRENT_TASK",
+      "category": "necessity",
+      "description": "Explicit necessity supports current scoped sharing.",
+      "source_policy": "source_dataset"
+    },
+    {
+      "code": "NECESSITY_NOT_USEFUL_NOW",
+      "category": "necessity",
+      "description": "The current request is explicitly not useful now.",
+      "source_policy": "source_dataset"
+    },
+    {
+      "code": "NECESSITY_INCORRECT_EXPLICIT",
+      "category": "necessity",
+      "description": "The current request is explicitly inappropriate or incorrect for the task.",
+      "source_policy": "source_dataset"
+    },
+    {
+      "code": "NECESSITY_UNKNOWN",
+      "category": "necessity",
+      "description": "Necessity is not explicitly available.",
+      "source_policy": "source_dataset"
+    },
+    {
+      "code": "EXPECTATION_MISMATCH",
+      "category": "expectation",
+      "description": "An explicit expectation mismatch activates the v1.0 expectation rule.",
+      "source_policy": "explicit_annotation"
+    },
+    {
+      "code": "EXPECTATION_UNKNOWN",
+      "category": "expectation",
+      "description": "Expectation cannot be evaluated without inferring missing context.",
+      "source_policy": "unknown"
+    },
+    {
+      "code": "CONTROL_SCOPE_OR_REVOCATION_EXPLICIT",
+      "category": "control",
+      "description": "Scope, duration, review, or revocation information is explicit.",
+      "source_policy": "explicit_annotation"
+    },
+    {
+      "code": "TRANSPARENCY_EXPLICIT",
+      "category": "transparency",
+      "description": "Explanation or provenance information is explicit.",
+      "source_policy": "explicit_annotation"
+    },
+    {
+      "code": "PROFILE_PRIOR_APPLIED",
+      "category": "profile",
+      "description": "The selected empirical profile remains a soft prior.",
+      "source_policy": "source_dataset"
+    },
+    {
+      "code": "CONTEXT_SPECIFIC_JUDGMENT",
+      "category": "context",
+      "description": "The exact item, tool, requester, and task must be judged together.",
+      "source_policy": "source_dataset"
+    },
+    {
+      "code": "CONTEXT_OPTIONAL_FIELDS_MISSING",
+      "category": "completeness",
+      "description": "Optional context is missing and the information-completeness bucket is medium.",
+      "source_policy": "unknown"
+    },
+    {
+      "code": "CONTEXT_CORE_FIELDS_MISSING",
+      "category": "completeness",
+      "description": "Core decision context is missing and the information-completeness bucket is high.",
+      "source_policy": "unknown"
+    },
+    {
+      "code": "BURDEN_NOT_APPLICABLE_SINGLE_ITEM",
+      "category": "burden",
+      "description": "No longitudinal or repeated-prompt burden signal exists in single-item presentation.",
+      "source_policy": "runner_default"
+    },
+    {
+      "code": "BURDEN_EXPLICIT_CURRENT_TURN",
+      "category": "burden",
+      "description": "Current-turn burden was supplied by an explicit annotation.",
+      "source_policy": "explicit_annotation"
+    },
+    {
+      "code": "BURDEN_UNKNOWN",
+      "category": "burden",
+      "description": "Burden status was not supplied and cannot be inferred.",
+      "source_policy": "unknown"
+    },
+    {
+      "code": "PROFILE_DEFAULT_FALLBACK",
+      "category": "fallback",
+      "description": "Unknown context causes the wrapper to preserve the profile default rather than invent a preference.",
+      "source_policy": "wrapper_derivation"
+    },
+    {
+      "code": "EVENT_VERIFIED_STATE_UPDATE",
+      "category": "state",
+      "description": "An externally verified event activated a categorical state transition.",
+      "source_policy": "external_verified"
+    },
+    {
+      "code": "EVENT_UNVERIFIED_NO_STATE_UPDATE",
+      "category": "state",
+      "description": "An unverified or rejected event was retained for audit but did not update respondent state.",
+      "source_policy": "unknown"
+    },
+    {
+      "code": "ORDINARY_DENIAL_NOT_VIOLATION",
+      "category": "boundary",
+      "description": "An ordinary respondent denial is not an agent violation and cannot update trust state.",
+      "source_policy": "wrapper_derivation"
+    },
+    {
+      "code": "MEMORY_VIEW_EVENT_VISIBLE",
+      "category": "memory",
+      "description": "A structured event remains visible under the explicit retention policy.",
+      "source_policy": "wrapper_derivation"
+    },
+    {
+      "code": "MEMORY_VIEW_EVENT_EXPIRED",
+      "category": "memory",
+      "description": "An event expired from the respondent memory view but remains in the audit ledger.",
+      "source_policy": "wrapper_derivation"
+    },
+    {
+      "code": "RECENCY_METADATA_ONLY",
+      "category": "recency",
+      "description": "Event order or recency was recorded without applying an uncalibrated decay effect.",
+      "source_policy": "wrapper_derivation"
+    },
+    {
+      "code": "RECOVERY_NOT_FULL_RESET",
+      "category": "recovery",
+      "description": "Verified repair moved state toward recovery while preserving a residual-caution boundary.",
+      "source_policy": "external_verified"
+    },
+    {
+      "code": "TRUST_DIMENSION_EXPLICIT",
+      "category": "trust",
+      "description": "A verified event supplied an explicit trust dimension; other dimensions remain unchanged.",
+      "source_policy": "external_verified"
+    }
+  ]
+}

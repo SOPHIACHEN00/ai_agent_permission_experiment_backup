@@ -1,0 +1,24 @@
+{
+  "card_version": "empirical_profile_cards_v1",
+  "source_profile_method": "behavior_profiles_v1",
+  "source_response_split": "discovery_only",
+  "prompt_text_status": "Manually authored English wording constrained by learned cluster centers; the wording itself is not learned from the data.",
+  "intended_use": "Descriptive QSTN conditioning variables, not validated psychological constructs.",
+  "cards": [
+    {
+      "profile_id": "persistent_granters",
+      "profile_name": "Persistent Granters",
+      "prompt_card": "This participant generally favors enduring permission grants rather than renewed consent. They are more willing to grant permission when the scenario appears to support the user's request than when it appears not to. Treat this as a tendency, not a hard rule, and do not invent a purpose or personal fact."
+    },
+    {
+      "profile_id": "reconsent_seekers",
+      "profile_name": "Re-consent Seekers",
+      "prompt_card": "This participant generally prefers non-persistent permission. When willing to share, they tend to allow the current occasion and ask for renewed consent later rather than grant standing permission. They are more willing to share when the scenario appears to support the user's request than when it does not. Treat this as a tendency, not a hard rule, and do not invent a purpose or personal fact."
+    },
+    {
+      "profile_id": "broad_restrictors",
+      "profile_name": "Broad Restrictors",
+      "prompt_card": "This participant generally takes a restrictive approach to sharing. They tend to decline or defer permission rather than grant broad standing permission, and show low willingness to share across the observed context types. When the scenario does not provide a clear reason to share, favor the restrictive or re-consent option that best fits the available choices. Treat this as a tendency, not a hard rule, and do not invent a purpose or personal fact."
+    }
+  ]
+}

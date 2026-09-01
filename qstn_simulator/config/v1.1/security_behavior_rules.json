@@ -1,0 +1,257 @@
+{
+  "rule_pack_id": "security_behavior_rules",
+  "version": "1.1.0",
+  "parent_rule_pack_version": "1.0.0",
+  "scope": "qstn_user_simulator",
+  "calibration_status": "directional_only",
+  "state_schema_version": "none",
+  "description": "Static, context-sensitive privacy respondent rules for S-QSTN v1.1. The v1.0 directional layer is preserved and the v1.1 context and audit layer adds no answer weights or longitudinal state.",
+  "default_behavior_mode": "audit_compatible",
+  "supported_behavior_modes": [
+    "audit_compatible",
+    "qualitative_exploratory"
+  ],
+  "context_schema_version": "1.1.0",
+  "audit_schema_version": "1.1.0",
+  "skill_catalog_id": "privacy_security_rule_skill",
+  "skill_catalog_version": "1.1.0",
+  "skill_file": "config/v1.1/privacy_security_rule_skill.md",
+  "context_schema_file": "config/v1.1/context_schema.json",
+  "reason_codes_file": "config/v1.1/reason_codes.json",
+  "default_skill_mode": "active_excerpt",
+  "source_registry": "S_QSTN_Rules_Evidence_Registry_with_Principle_Coverage.xlsx",
+  "source_principle_count": 12,
+  "source_concrete_rule_count": 56,
+  "supported_skill_modes": [
+    "active_excerpt",
+    "full_catalog_with_active_excerpt"
+  ],
+  "supported_principles": [
+    "P4_expectation_violation_effect",
+    "P5_perceived_control",
+    "P6_transparency_calibration",
+    "P9_privacy_calculus_partial",
+    "P10_stable_privacy_trait",
+    "P11_context_dependency"
+  ],
+  "deferred_principles": [
+    "P1_trust_loss_asymmetry",
+    "P2_trust_recovery_lag",
+    "P3_recency_dominance",
+    "P7_permission_fatigue_longitudinal",
+    "P8_severity_dominance",
+    "P12_trust_calibration"
+  ],
+  "allowed_directions": [
+    "increase",
+    "decrease",
+    "prefer",
+    "avoid",
+    "preserve",
+    "require"
+  ],
+  "forbidden_targets": [
+    "pa_tool_policy",
+    "pa_rl_observation",
+    "pa_rl_reward",
+    "real_tool_execution",
+    "objective_safety_gate"
+  ],
+  "rules": [
+    {
+      "rule_id": "P4.expectation_mismatch",
+      "principle_id": "P4",
+      "name": "Expectation mismatch increases respondent caution",
+      "skill_section": "Cao-R2; Wij2015-R2",
+      "evidence_level": "direct_directional",
+      "calibration_status": "directional_only",
+      "source_rule_ids": ["Cao-R2", "Wij2015-R2", "Wij2017-R2"],
+      "trigger": {
+        "any": [
+          {"field": "expectation_match", "equals": false},
+          {"field": "expectedness", "in": ["unexpected", "mismatch"]}
+        ]
+      },
+      "effects": [
+        {"target": "respondent_caution", "direction": "increase"},
+        {"target": "ask_for_explanation", "direction": "prefer"},
+        {"target": "persistent_grant", "direction": "avoid"}
+      ],
+      "state_updates": [],
+      "unknown_policy": "inactive_and_log",
+      "prompt_instruction": "Treat an unexpected or mismatched request as requiring extra caution. If the scenario does not explain the mismatch, prefer clarification or a lower-commitment permission option. Do not infer that the request is unsafe."
+    },
+    {
+      "rule_id": "P5.perceived_control",
+      "principle_id": "P5",
+      "name": "Scope and reversibility make permission feel more controllable",
+      "skill_section": "Cao-R7; Elbitar-R6; Malkin-R6; Malkin-R7; Harborth-R6",
+      "evidence_level": "direct_directional",
+      "calibration_status": "directional_only",
+      "source_rule_ids": ["Cao-R7", "Elbitar-R6", "Malkin-R6", "Malkin-R7", "Harborth-R6"],
+      "trigger": {
+        "any": [
+          {"field": "scope_explicit", "equals": true},
+          {"field": "duration_explicit", "equals": true},
+          {"field": "revocable", "equals": true},
+          {"field": "review_available", "equals": true}
+        ]
+      },
+      "effects": [
+        {"target": "controlled_temporary_permission", "direction": "prefer"},
+        {"target": "unbounded_scope", "direction": "avoid"},
+        {"target": "perceived_control", "direction": "increase"}
+      ],
+      "state_updates": [],
+      "unknown_policy": "inactive_and_log",
+      "prompt_instruction": "Prefer a permission option whose scope, duration, review, or revocation is explicit when that information is available. Do not treat controllability as a reason to grant access automatically."
+    },
+    {
+      "rule_id": "P6.transparency_calibration",
+      "principle_id": "P6",
+      "name": "Transparency calibrates understanding, not automatic consent",
+      "skill_section": "Cao-R5; Elbitar-R1; Elbitar-R2; Elbitar-R7; Harborth-R1; Harborth-R2; Harborth-R7",
+      "evidence_level": "direct_directional",
+      "calibration_status": "directional_only",
+      "source_rule_ids": ["Cao-R5", "Elbitar-R1", "Elbitar-R2", "Elbitar-R7", "Harborth-R1", "Harborth-R2", "Harborth-R7"],
+      "trigger": {
+        "any": [
+          {"field": "explanation_present", "equals": true},
+          {"field": "provenance_present", "equals": true},
+          {"field": "explanation_timing", "in": ["before_prompt", "just_in_time", "after_prompt"]}
+        ]
+      },
+      "effects": [
+        {"target": "request_understanding", "direction": "increase"},
+        {"target": "informed_choice", "direction": "increase"}
+      ],
+      "state_updates": [],
+      "unknown_policy": "inactive_and_log",
+      "prompt_instruction": "Use an available explanation or provenance cue to understand the request. Transparency improves calibration but does not imply that sharing is required or preferred."
+    },
+    {
+      "rule_id": "P9.necessity_and_privacy_calculus",
+      "principle_id": "P9",
+      "name": "Necessity and purpose support only scoped current sharing",
+      "skill_section": "Cao-R3; Cao-R4; Wij2015-R1; Wij2015-R6; Harborth-R3; Harborth-R4; Malkin-R2",
+      "evidence_level": "partial_directional",
+      "calibration_status": "directional_only",
+      "source_rule_ids": ["Cao-R3", "Cao-R4", "Wij2015-R1", "Wij2015-R6", "Harborth-R3", "Harborth-R4", "Malkin-R2"],
+      "trigger": {
+        "field": "necessity_status",
+        "in": ["necessary", "not_useful_now", "incorrect_explicit", "unknown"]
+      },
+      "effects": [
+        {"target": "current_task_specific_sharing", "direction": "prefer", "when": {"field": "necessity_status", "equals": "necessary"}},
+        {"target": "sharing", "direction": "decrease", "when": {"field": "necessity_status", "equals": "not_useful_now"}},
+        {"target": "sharing", "direction": "decrease", "when": {"field": "necessity_status", "equals": "incorrect_explicit"}},
+        {"target": "persistent_grant", "direction": "avoid", "when": {"field": "necessity_status", "in": ["not_useful_now", "incorrect_explicit"]}},
+        {"target": "ask_for_explanation", "direction": "prefer", "when": {"field": "necessity_status", "equals": "unknown"}}
+      ],
+      "state_updates": [],
+      "unknown_policy": "inactive_and_log",
+      "prompt_instruction": "Distinguish a task-specific necessary request from one that is not useful now or explicitly inappropriate. Necessity can support current, scoped sharing; it does not by itself justify enduring or broad permission."
+    },
+    {
+      "rule_id": "P10.stable_privacy_trait",
+      "principle_id": "P10",
+      "name": "Stable privacy profile remains a soft prior",
+      "skill_section": "Cao-R8; Wij2015-R4; Wij2015-R8; Wij2017-R3; Elbitar-R4; Elbitar-R5",
+      "evidence_level": "profile_prior",
+      "calibration_status": "discovery_descriptive",
+      "source_rule_ids": ["Cao-R8", "Wij2015-R4", "Wij2015-R8", "Wij2017-R3", "Elbitar-R4", "Elbitar-R5"],
+      "trigger": {
+        "field": "profile_id",
+        "in": ["persistent_granters", "reconsent_seekers", "broad_restrictors"]
+      },
+      "effects": [
+        {"target": "profile_default", "direction": "preserve"}
+      ],
+      "state_updates": [],
+      "unknown_policy": "inactive_and_log",
+      "prompt_instruction": "Apply the selected empirical profile as a tendency and prior. It is not a hard rule, psychological diagnosis, or permission policy."
+    },
+    {
+      "rule_id": "P11.context_dependency",
+      "principle_id": "P11",
+      "name": "Evaluate the exact item, requester, tool, and task together",
+      "skill_section": "Cao-R1; Wij2015-R2; Wij2015-R3; Wij2015-R6; Wij2017-R1; Wij2017-R2; Wij2017-R4; Harborth-R1; Harborth-R8",
+      "evidence_level": "direct_directional",
+      "calibration_status": "directional_only",
+      "source_rule_ids": ["Cao-R1", "Wij2015-R2", "Wij2015-R3", "Wij2015-R6", "Wij2017-R1", "Wij2017-R2", "Wij2017-R4", "Harborth-R1", "Harborth-R8"],
+      "trigger": {
+        "any": [
+          {"field": "raw_data_type", "exists": true},
+          {"field": "generic_data_type", "exists": true},
+          {"field": "tool", "exists": true},
+          {"field": "purpose", "exists": true},
+          {"field": "scope", "exists": true}
+        ]
+      },
+      "effects": [
+        {"target": "item_tool_task_specific_judgment", "direction": "require"},
+        {"target": "cross_context_generalization", "direction": "avoid"}
+      ],
+      "state_updates": [],
+      "unknown_policy": "inactive_and_log",
+      "prompt_instruction": "Judge the exact data item and current requester/tool/task separately. Do not generalize permission from one data item, tool, or purpose to another."
+    }
+  ],
+  "audit_rules": [
+    {
+      "rule_id": "AUDIT.context_completeness",
+      "principle_id": "P11",
+      "name": "Record decision-context completeness without inferring missing facts",
+      "skill_section": "Cao-R1; Wij2017-R2; Wij2015-R6",
+      "source_rule_ids": ["Cao-R1", "Wij2017-R2", "Wij2015-R6"],
+      "audit_only": true,
+      "trigger_fields": [
+        "requester_id",
+        "foreground_task",
+        "purpose_status",
+        "expectedness",
+        "scope",
+        "duration",
+        "revocable",
+        "review_available",
+        "explanation_present",
+        "provenance_present"
+      ],
+      "bucket_logic": "Derive uncertainty_bucket from explicit field availability. Treat missing values as unknown; do not infer from question text, labels, output frequency, or model confidence.",
+      "reason_codes": [
+        "CONTEXT_OPTIONAL_FIELDS_MISSING",
+        "CONTEXT_CORE_FIELDS_MISSING",
+        "EXPECTATION_UNKNOWN",
+        "PROFILE_PRIOR_APPLIED",
+        "PROFILE_DEFAULT_FALLBACK"
+      ],
+      "evidence_boundary": "This audit records information completeness. It does not change an answer in audit_compatible mode and does not represent a probability.",
+      "state_updates": []
+    },
+    {
+      "rule_id": "AUDIT.current_turn_prompt_burden",
+      "principle_id": "P7",
+      "name": "Record only explicitly supplied current-turn prompt burden",
+      "skill_section": "Wij2015-R7; Wij2017-R8; Malkin-R4",
+      "source_rule_ids": ["Wij2015-R7", "Wij2017-R8", "Malkin-R4"],
+      "audit_only": true,
+      "trigger_field": "prompt_burden_bucket",
+      "allowed_values": [
+        "not_applicable_single_item",
+        "none_explicit",
+        "low_explicit",
+        "medium_explicit",
+        "high_explicit",
+        "unknown"
+      ],
+      "bucket_logic": "Use an explicit scenario or runner annotation. A single-item presentation is not evidence of longitudinal fatigue. Do not infer burden from text length, denial, or row count.",
+      "reason_codes": [
+        "BURDEN_NOT_APPLICABLE_SINGLE_ITEM",
+        "BURDEN_EXPLICIT_CURRENT_TURN",
+        "BURDEN_UNKNOWN"
+      ],
+      "evidence_boundary": "Burden is an audit annotation only. It never mechanically maps to allow, deny, consent refresh, or a persistent participant state.",
+      "state_updates": []
+    }
+  ]
+}

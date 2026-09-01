@@ -1,0 +1,123 @@
+{
+  "data_path": "data\\processed\\four_label_dataset.csv",
+  "evaluation_type": "offline fully-labelled stated-policy contextual-bandit simulation",
+  "feedback_during_training": "selected-action binary joint exact-match reward only",
+  "full_information_use": "complete four-action reward vectors are written for audit; they are not used to update unselected actions",
+  "reward_definition": {
+    "formula": "r_joint = 1[predicted action_id == stated label_id]",
+    "manual_reward_weights": null,
+    "primary_metric": "joint_exact_match_accuracy == mean_joint_reward",
+    "diagnostics_only": [
+      "access_accuracy_diagnostic",
+      "persistence_accuracy_diagnostic"
+    ]
+  },
+  "test_evaluation": "frozen greedy posterior-mean policy; no validation/test update",
+  "split": "participant_heldout",
+  "group_column": "participant_id",
+  "split_seed": 42,
+  "split_sizes": {
+    "train": 9826,
+    "validation": 3212,
+    "test": 3323
+  },
+  "split_group_counts": {
+    "train": 120,
+    "validation": 40,
+    "test": 41
+  },
+  "feature_spec": {
+    "categorical_columns": [
+      "domain",
+      "tool",
+      "raw_data_type",
+      "generic_data_type",
+      "concern_domain"
+    ],
+    "numeric_columns": [
+      "privacy_importance"
+    ],
+    "text_columns": [],
+    "excluded_primary_features": [
+      "participant_id",
+      "query_id",
+      "label_id",
+      "label_text",
+      "access_target",
+      "persistence_target",
+      "necessity_status",
+      "age",
+      "gender",
+      "education",
+      "ai_familiarity",
+      "ai_frequency",
+      "ai_trust",
+      "historical rates"
+    ],
+    "opt_in_profile_enabled": true,
+    "query_text_ablation_enabled": false,
+    "necessity_oracle_ablation_enabled": false
+  },
+  "max_text_features": 12000,
+  "algorithms": [
+    "epsilon_greedy",
+    "ucb",
+    "thompson"
+  ],
+  "policies": [
+    "factored_joint",
+    "flat_four_arm"
+  ],
+  "tuning_seeds": [
+    11,
+    29,
+    47
+  ],
+  "test_seeds": [
+    101,
+    211,
+    307,
+    401,
+    503
+  ],
+  "exploration_grid_override": null,
+  "selected_exploration": {
+    "factored_joint": {
+      "epsilon_greedy": 0.2,
+      "ucb": 2.0,
+      "thompson": 2.0
+    },
+    "flat_four_arm": {
+      "epsilon_greedy": 0.1,
+      "ucb": 2.0,
+      "thompson": 1.0
+    }
+  },
+  "label_to_action": {
+    "0": {
+      "label": "No, never share",
+      "access": 0,
+      "persist_current_decision": 1
+    },
+    "1": {
+      "label": "No, but ask me next time",
+      "access": 0,
+      "persist_current_decision": 0
+    },
+    "2": {
+      "label": "Yes, but ask me next time",
+      "access": 1,
+      "persist_current_decision": 0
+    },
+    "3": {
+      "label": "Yes, always share",
+      "access": 1,
+      "persist_current_decision": 1
+    }
+  },
+  "limitations": [
+    "Survey labels are stated preferences, not measured privacy harm, task utility, or prompt burden.",
+    "The source has no chronological history; this is not an online adaptation or sequential-RL result.",
+    "Participant-held-out evaluates new participants on mostly seen templates; use leave-query/tool/data-type splits for context generalization stress tests."
+  ]
+}

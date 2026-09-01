@@ -1,0 +1,82 @@
+{
+  "run_id": "s_qstn_rulepack_v1.0_heldout_diagnostic_v1",
+  "purpose": "Dry-run or separately execute the static directional S-QSTN RulePack v1.0 on a held-out diagnostic using discovery-only empirical_profile_cards_v2.",
+  "model_name": "o4-mini",
+  "profile_card_version": "empirical_profile_cards_v2",
+  "rule_pack_version": "security_behavior_rules_v1.0",
+  "rulepack_file": "config/v1.0/security_behavior_rules.json",
+  "respondent_contract_version": "respondent_contract_v1.0.en",
+  "respondent_contract_file": "config/v1.0/respondent_contract.en.md",
+  "skill_catalog_version": "1.0.0",
+  "skill_file": "config/v1.0/privacy_security_rule_skill.md",
+  "skill_mode": "active_excerpt",
+  "output_dir": "outputs/minimal_heldout_calibration_s_qstn_v1_0",
+  "reference_response_split": "heldout",
+  "conditions": [
+    {
+      "condition_id": "raw_participant_profile_plus_empirical_card",
+      "persona_file": "empirical_personas_v2/personas_with_empirical_profiles.csv",
+      "description": "An anonymized participant background plus the discovery-only empirical_profile_cards_v2 prompt card and static directional RulePack v1.0 context.",
+      "rulepack_mode": "static_directional_context"
+    }
+  ],
+  "sampling": {
+    "mode": "fixed_participant_stratified_context_sample",
+    "participants_per_profile": 10,
+    "context_slots": [
+      {
+        "slot_id": "necessary",
+        "necessity_status": "necessary"
+      },
+      {
+        "slot_id": "incorrect_explicit",
+        "necessity_status": "incorrect_explicit"
+      },
+      {
+        "slot_id": "random_remaining",
+        "necessity_status": null
+      }
+    ],
+    "selection_seed": 20260805,
+    "exclude_response_rows_file": "minimal_heldout_calibration_v1/inference_plan.csv",
+    "exclude_participants_file": "minimal_heldout_calibration_v1/inference_plan.csv",
+    "unknown_status_policy": "Unknown is not a dedicated stratum; it may appear only through the random_remaining slot. This diagnostic must not be treated as a final paper split."
+  },
+  "inference": {
+    "presentation": "single_item",
+    "seed": 42,
+    "api_concurrency": 1,
+    "batch_size": 1
+  },
+  "evaluation": {
+    "labels": [
+      "No, never share",
+      "No, but ask me next time",
+      "Yes, but ask me next time",
+      "Yes, always share"
+    ],
+    "share_label_ids": [2, 3],
+    "nonshare_label_ids": [0, 1],
+    "metrics": [
+      "accuracy",
+      "macro_f1",
+      "distribution_tv_distance",
+      "over_sharing_rate",
+      "under_sharing_rate",
+      "predicted_share_rate"
+    ],
+    "bootstrap": {
+      "unit": "participant",
+      "iterations": 1000,
+      "seed": 20260805
+    }
+  },
+  "guardrails": [
+    "The RulePack is static and directional only; no numerical weights or state updates are active.",
+    "Human label_id and label_text remain outside every QSTN prompt and inference plan.",
+    "Unknown context fields are not inferred and are recorded in rule_context_audit.csv.",
+    "Ordinary respondent denial is not treated as an agent violation.",
+    "This diagnostic does not establish general human-likeness, causal RulePack benefit, or longitudinal fidelity.",
+    "A final paper comparison must use a separately frozen evaluation split and pre-registered conditions."
+  ]
+}
