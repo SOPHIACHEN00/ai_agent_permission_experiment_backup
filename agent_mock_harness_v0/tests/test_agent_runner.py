@@ -52,6 +52,18 @@ class FalseFinishPlanner:
         })
 
 
+class WrongSubjectPlanner(ObservingPlanner):
+    def next_decision(self, goal: str, public_history: tuple[dict, ...]) -> AgentDecision:
+        decision = super().next_decision(goal, public_history)
+        if decision.operation == "send":
+            data = dict(decision.arguments["data"])
+            data["subject"] = "Unrelated subject"
+            return proposal("Email", "send", "outbox",
+                            ["recipient", "subject", "attachment_id", "attachment_content"],
+                            {"data": data})
+        return decision
+
+
 class InvalidReusePolicy:
     def choose(self, view) -> ControllerChoice:
         return ControllerChoice("reuse", "not_a_real_grant")
@@ -114,6 +126,14 @@ class AgentRunnerTests(unittest.TestCase):
         self.assertFalse(result.oracle_success)
         self.assertIn("未完成", result.final_answer)
         self.assertEqual(result.registry_version, 0)
+
+    def test_wrong_subject_send_is_reported_as_partial_effect_not_no_send(self) -> None:
+        result = run_report_episode(WrongSubjectPlanner(), ExactAskPolicy(),
+                                    lambda scope, step: PermissionChoice.ALLOW_ONCE)
+        self.assertFalse(result.oracle_success)
+        self.assertEqual(len(result.outbox), 1)
+        self.assertIn("已有本地邮件", result.final_answer)
+        self.assertNotIn("没有证据", result.final_answer)
 
     def test_invalid_policy_reuse_cannot_bypass_monitor(self) -> None:
         result = run_report_episode(ObservingPlanner(), InvalidReusePolicy(),

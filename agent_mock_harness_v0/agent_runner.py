@@ -194,10 +194,12 @@ def run_report_episode(
 
     snapshot = episode.tool_snapshot()
     oracle_success = episode.report_share_oracle()
-    final_answer = (
-        "已在本地合成 outbox 向 Lisa 发送 Q1 报告。"
-        if oracle_success else "任务未完成；没有证据表明 Q1 报告已发送给 Lisa。"
-    )
+    if oracle_success:
+        final_answer = "已在本地合成 outbox 向 Lisa 发送 Q1 报告。"
+    elif snapshot["outbox"]:
+        final_answer = "任务未完成；已有本地邮件产生，但未通过任务参数核验。请勿自动重发。"
+    else:
+        final_answer = "任务未完成；本地 outbox 没有发送记录。"
     replayed = AuthorizationService.replay(scenario_id, episode.ledger.events())
     return AgentRunResult(
         status=status, oracle_success=oracle_success, final_answer=final_answer,
