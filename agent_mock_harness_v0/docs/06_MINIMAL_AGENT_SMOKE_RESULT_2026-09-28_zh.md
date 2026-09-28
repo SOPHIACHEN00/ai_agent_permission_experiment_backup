@@ -32,13 +32,16 @@
 
 ### Output Summary
 
-- **离线契约测试**：最终 28/28 项通过（包含原有 6 项机制测试）；假响应驱动的 CLI 跑通搜索→读取→本地发送→oracle，但这不是“真实 LLM 成功”。以仓库已跟踪的 `rl_personal_assistant/src` 作为 `PYTHONPATH` 再跑同一套测试，仍为 28/28 通过。
+- **离线契约测试**：最终 29/29 项通过（包含原有 6 项机制测试）；假响应驱动的 CLI 跑通搜索→读取→本地发送→oracle，也验证了参数错误造成的部分本地效果会被如实报告，但这不是“真实 LLM 成功”。使用仓库已跟踪的 `rl_personal_assistant/src` 作为 `PYTHONPATH`。
+- **底层定向回归**：已跟踪 `pa_rl` 的 `test_authorization.py` 27/27、`test_execution.py` 25/25 通过。额外尝试的整个 `rl_personal_assistant/tests` 套件在 20 分钟硬上限内未结束，按超时停止、没有最终测试汇总；**不能视为全套通过或失败**。
 - **在线任务 Agent**：只发出 1 次 `o4-mini` 请求。响应带有 336 个 prompt tokens 和 215 个 completion tokens；按已核对的[模型价格](https://developers.openai.com/api/docs/models/o4-mini)估算本次费用为 **$0.0013156**。会计预留上界为 **$0.40**，小于用户批准的 **$4** 总上限；这不是账户最终账单。
 - **任务与安全**：状态 `planner_error`，oracle `false`；授权提示 0 次、mock 状态版本 0、本地 outbox 0 封、读取记录 0 条。ledger replay 与 monitor audit-chain 的验证均为 `true`。由于没有进入工具阶段，不能据此推断真实 LLM 完成任务或 RL 提高隐私／效率。
 
 ### Anomalies Detected
 
 供应商响应的 usage 已记录，随后本地处理触发 `ValueError` 并 fail closed。首个运行版本只记录异常类型，**无法从现有产物确定**错误发生在 choice、JSON 解析还是语义字段校验；不能断言是模型输出错误，也不能断言是 API 或本地代码缺陷。之后补上了不含响应内容的 `failure_stage` 分类及离线测试，但按一次性测试约束没有重新发送收费请求。
+
+附加底层全套回归使用 `-q` 静默模式，运行约 20 分钟时仍在消耗 CPU，但无完成输出；到已宣布的硬上限后，仅停止经 PID、启动时间与命令行核对的该测试进程。随后改跑上述两组定向回归，结果均通过。
 
 ## 证据边界与下一步门槛
 

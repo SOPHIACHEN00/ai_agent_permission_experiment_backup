@@ -17,7 +17,7 @@
 - 当前阶段只完成规格中的“离线契约测试 + 有限在线 Agent smoke”；RL 适配、训练和配对比较属于独立的第二阶段实施计划。首阶段不得声称隐私—效率改善。
 - OpenAI 在线任务 Agent 总费用上限为 **4 美元**；每次调用前预算预留，调用／输出长度上限，`store=false`，API 错误后不自动重试。
 - 保留原有六项机制测试和现有 frozen RL suite；不修改其中的 checkpoint、训练结果或核心代码。
-- 从 `ai_agent_permission_experiment` 运行测试时，先在 PowerShell 设置 `$env:PYTHONPATH='.;rl_personal_assistant/src'`（已跟踪的源码；28 项 harness 测试核对通过）。
+- 从 `ai_agent_permission_experiment` 运行测试时，先在 PowerShell 设置 `$env:PYTHONPATH='.;rl_personal_assistant/src'`（已跟踪的源码；最终 29 项 harness 测试核对通过）。
 - 仓库当前存在用户的未提交改动；所有提交都仅暂存本任务列出的文件，Git `safe.directory` 仅使用单命令覆盖，不修改全局配置。
 
 ## Review Focus
