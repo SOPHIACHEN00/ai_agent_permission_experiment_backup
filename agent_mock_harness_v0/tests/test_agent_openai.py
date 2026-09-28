@@ -154,6 +154,34 @@ class AgentOpenAITests(unittest.TestCase):
             self.assertEqual(len([item for item in trace if item["type"] == "tool_result"]), 3)
             self.assertEqual(responses, [])
 
+    def test_out_of_scope_model_intent_gets_feedback_then_can_correct(self) -> None:
+        responses = [
+            wire_tool("Cloud Drive", "delete", "file_q1", []),
+            wire_tool("Cloud Drive", "search", "drive.files", ["title"], query="Q1_Revenue_Report.pdf"),
+            wire_tool("Cloud Drive", "read", "file_q1", ["content"], record_id="file_q1"),
+            wire_tool("Email", "send", "outbox",
+                      ["recipient", "subject", "attachment_id", "attachment_content"],
+                      recipient="Lisa", subject="Q1 Financial Update", attachment_id="file_q1"),
+            {"kind": "finish", "tool": None, "operation": None, "resource": None,
+             "requested_fields": [], "query": None, "record_id": None, "recipient": None,
+             "subject": None, "attachment_id": None, "answer": "已发送", "answer_status": "completed"},
+        ]
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory) / "corrected"
+
+            def transport_factory(path: Path) -> BudgetedChatTransport:
+                def requester(payload: dict) -> dict:
+                    return api_response(responses.pop(0))
+                return BudgetedChatTransport(path, requester=requester)
+
+            self.assertEqual(main(["--output", str(output)], transport_factory=transport_factory), 0)
+            summary = json.loads((output / "summary.json").read_text(encoding="utf-8"))
+            trace = json.loads((output / "public_trace.json").read_text(encoding="utf-8"))
+            self.assertTrue(summary["oracle_success"])
+            self.assertEqual(summary["registry_version"], 3)
+            self.assertEqual(summary["transport"]["attempts"], 5)
+            self.assertEqual(trace[0]["type"], "intent_rejected")
+
 
 if __name__ == "__main__":
     unittest.main()

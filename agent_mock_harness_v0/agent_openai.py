@@ -69,18 +69,23 @@ def _decode_wire(wire: Mapping[str, object]) -> AgentDecision:
             "send": {"recipient", "subject", "attachment_id"},
         }
         required = required_by_operation.get(operation) if isinstance(operation, str) else None
-        if required is None or any(
-            (not isinstance(value, str) or not value.strip()) if key in required else value is not None
-            for key, value in slots.items()
-        ):
-            raise ValueError("model supplied missing or unrelated tool parameters")
-        if operation == "search":
-            arguments = {"query": wire["query"]}
-        elif operation == "read":
-            arguments = {"record_id": wire["record_id"]}
+        if required is None:
+            # A typed but out-of-scope operation is an agent intent error, not
+            # a malformed API response: the compiler will reject it publicly.
+            arguments = {}
         else:
-            arguments = {"data": {"recipient": wire["recipient"], "subject": wire["subject"],
-                                  "attachment_id": wire["attachment_id"], "attachment_content": None}}
+            if any(
+                (not isinstance(value, str) or not value.strip()) if key in required else value is not None
+                for key, value in slots.items()
+            ):
+                raise ValueError("model supplied missing or unrelated tool parameters")
+            if operation == "search":
+                arguments = {"query": wire["query"]}
+            elif operation == "read":
+                arguments = {"record_id": wire["record_id"]}
+            else:
+                arguments = {"data": {"recipient": wire["recipient"], "subject": wire["subject"],
+                                      "attachment_id": wire["attachment_id"], "attachment_content": None}}
     else:
         raise ValueError("unknown model decision kind")
     return parse_agent_decision({
