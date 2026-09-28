@@ -20,7 +20,7 @@ The existing `pa_rl.authorization.AuthorizationService` and `pa_rl.execution.Ref
 From `ai_agent_permission_experiment` in PowerShell, with Python 3.12:
 
 ```powershell
-$env:PYTHONPATH='.;rl_personal_assistant_cuda_v1/src'
+$env:PYTHONPATH='.;rl_personal_assistant/src'
 python -m unittest discover -s agent_mock_harness_v0/tests -v
 ```
 
@@ -33,13 +33,15 @@ No service credentials or network access are used. `catalog.py` holds synthetic 
 The optional one-shot online smoke uses `agent_openai.py` and only the synthetic query-22 report-sharing scenario. It requires `OPENAI_API_KEY`; from the repository root:
 
 ```powershell
-$env:PYTHONPATH='.;rl_personal_assistant_cuda_v1/src'
+$env:PYTHONPATH='.;rl_personal_assistant/src'
 python -m agent_mock_harness_v0.run_agent_smoke --output agent_mock_harness_v0/results/query22_live_001
 ```
 
 The output directory must be new. The command writes `summary.json`, `public_trace.json`, `budget.json`, and `attempts.jsonl`. It makes at most eight `o4-mini` requests, reserves USD $0.40 before each request (at most $3.20 reserved under the $4 user cap), limits the prompt and completion length, sets `store=false`, and never retries a failed request. Request hashes and token usage are logged; API keys and raw provider error bodies are not. It never sends real email: `Email.send` writes only to the local synthetic outbox. A nonzero exit or failed oracle is a recorded unsuccessful smoke, not evidence of task completion.
 
 This vertical slice establishes an Agent/tool/permission integration path. It does **not** connect the existing RL checkpoint, train a new RL controller, compare policy arms, or demonstrate an efficiency–privacy improvement. Those are separate next-stage experiments.
+
+The [first live smoke record](docs/06_MINIMAL_AGENT_SMOKE_RESULT_2026-09-28_zh.md) is an unsuccessful, preserved one-request trial; the offline fake-transport success must not be confused with real LLM task completion.
 
 ## Interpretation limits / next experiment
 
