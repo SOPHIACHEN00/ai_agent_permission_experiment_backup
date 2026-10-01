@@ -6,7 +6,7 @@
 - Origin Date: 2026-09-29
 - Verification Status: ANALYZED：已核对源码；本规格不是新训练结果或已实现功能。
 - Version Label: agent-ddqn-integration-design-v1
-- Review State: 待用户审阅；尚未进入实现计划或产品代码修改。
+- Review State: 用户于 2026-09-29 在本聊天同意当前规格。规格已批准，接入代码和训练仍待执行。
 
 ## 1. 已批准的目标与范围
 
@@ -202,8 +202,8 @@ schema 为 `agent_permission_harness_v1.constrained_terminal_binary_v1`。非终
 9. frozen eval 前后 online/target/optimizer/replay/计数/内部训练 RNG 哈希相同；checkpoint round-trip 在同一独立评估 RNG 下保持相同贪心动作，旧 Family3 checkpoint/schema 被拒绝。
 10. 新测试及现有 v1/v0/core suite 回归；不可只报告一个新测试文件绿色。无法运行的全量测试须按原因报告，不能说全部通过。
 
-## 11. 当前状态与下一门槛
+## 11. 当前状态与后续工作
 
-这是待审阅的新接入规格，尚未实现 38/35 encoder、真实 DDQN policy、转移/reward 桥或本规格 pilot。已有六动作 Agent 仍保持原行为。
+用户已同意本接入规格，并要求保存本地 recap、设计 fine-tuned LLM security checker。尚未实现 38/35 encoder、真实 DDQN policy、转移/reward 桥或本规格 pilot。已有六动作 Agent 仍保持原行为。
 
-用户核对本规格后，下一步是详细 test-first 实现计划及执行方式审阅；该门槛来自本轮所用 `superpowers:brainstorming` / `writing-plans`，不是重复询问“是否要 DDQN”。关键需核对的是新环境的 38/35 编码、授权 grant-field-step 代理、binary+budget reward 和小型离线 pilot 边界。
+已批准的可逆实现工作不再重复请求授权。当前新增的安全模型设计作为独立扩展记录，不默改本规格的 38/35 编码或 reward；第一种接入方式使用独立 security mask，后续让 DDQN 读取模型风险特征时另立 feature schema。参见 `../../03_APPROVED_DDQN_RECAP_zh.md` 和 `../../04_SECURITY_CHECKER_DESIGN_zh.md`。完成安全扩展设计后继续具体实现计划与已授权 DDQN 工作。

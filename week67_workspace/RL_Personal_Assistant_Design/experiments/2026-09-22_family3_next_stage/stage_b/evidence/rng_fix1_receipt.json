@@ -1,0 +1,86 @@
+{
+  "status": "B1_RNG_FIX_VERIFIED_GPU_INTEGRATION_PENDING",
+  "date": "2026-09-22",
+  "authorization": "User approved the narrow repair: independent actor exploration/tie RNGs plus one real-selection behavior check; no broader work or training.",
+  "root_cause": "Actual select_candidate wiring previously used one random.Random for epsilon/exploratory choices and greedy-score tie choices.",
+  "changes": [
+    "select_candidate requires distinct exploration_rng and tie_rng objects; rejects aliasing.",
+    "Exploration draws use exploration_rng only; greedy tie selection uses tie_rng only.",
+    "One actual actor-selection behavior check added; original eight checks unchanged."
+  ],
+  "verification": {
+    "targeted_expected_red": {
+      "tests": 1,
+      "failures": 1,
+      "seconds": 2.17,
+      "exit_code": 1,
+      "evidence": "rng_fix1_expected_red.json"
+    },
+    "single_focused_green": {
+      "tests": 9,
+      "passed": 9,
+      "seconds": 2.281,
+      "exit_code": 0,
+      "evidence": "rng_fix1_green.json"
+    },
+    "fixture_boundary": "Calls real actor selection/mask/tie logic, replacing only device readiness and Q inference with fixed fixtures. No network/optimizer construction, learner training or CUDA execution.",
+    "review_finding_addressed_by_regression": true,
+    "new_independent_review_performed": false,
+    "previous_review_unexamined_areas_remain_unclaimed": true
+  },
+  "unchanged_and_fingerprints": {
+    "verified_at_utc": "2026-09-22T14:48:56.9010020Z",
+    "original_eight_tests_unchanged": true,
+    "original_eight_tests_sha256": "ce4c412b0729346bfe418a64c3cecf89632f3fbc6aad23c441c252a6a2ca30e0",
+    "classifier_criteria_goal_unchanged": true,
+    "frozen_stage_a_inputs_unchanged": 7,
+    "old_source_files_unchanged": 26,
+    "old_archives_unchanged": 2,
+    "current_bridge_files": [
+      {
+        "path": "learner_bridge.py",
+        "sha256": "1c2809997d4b5d74abea435405adb1a76e8ebd7a2914795a81495d470f88a1f2",
+        "bytes": 11144
+      },
+      {
+        "path": "test_learner_bridge.py",
+        "sha256": "0edcbdff27c9077e0fdad2ad8a1d4cbdd5a9cada095bfa93964533e3d2273936",
+        "bytes": 8006
+      },
+      {
+        "path": "pilot_criteria.py",
+        "sha256": "9715098063b3517d3b0ac481b8b85a50ece5f5095e9681428060d185256e4607",
+        "bytes": 3038
+      },
+      {
+        "path": "criteria_v1.json",
+        "sha256": "7156d2877fd1ae2aeca39cbda187a115264d1be69d1c53382c723f47d0df4789",
+        "bytes": 723
+      },
+      {
+        "path": "GOAL_AMENDMENT_zh_en.md",
+        "sha256": "a0b2395e812172d4ddd0c40b8ce818a3697356fcaa5f28052965fc93de34055b",
+        "bytes": 3380
+      }
+    ]
+  },
+  "not_performed": [
+    "Stage A rerun",
+    "parameter/environment/reward/criteria change",
+    "runner implementation",
+    "local RL training",
+    "server connection",
+    "CUDA smoke",
+    "formal training",
+    "new learner test-once",
+    "API call"
+  ],
+  "recovery": "Read RNG_FIX_zh.md and task_plan.md. Narrow defect fixed; complete runner/checkpoint/evaluation integration and actual server GPU1 validation are still pending. Do not repeat the completed small checks or Stage A; no training was started.",
+  "historical_evidence_retained": [
+    "expected_red.json",
+    "focused_green.json",
+    "review.json",
+    "freeze_check.json",
+    "stop_receipt.json"
+  ]
+}

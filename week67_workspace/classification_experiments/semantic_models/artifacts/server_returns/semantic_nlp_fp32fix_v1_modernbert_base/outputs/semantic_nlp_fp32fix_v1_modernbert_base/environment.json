@@ -1,0 +1,21 @@
+{
+  "python": "3.10.16 (main, Dec 11 2024, 16:24:50) [GCC 11.2.0]",
+  "platform": "Linux-5.15.0-43-generic-x86_64-with-glibc2.35",
+  "numpy": "2.0.0",
+  "pandas": "2.2.2",
+  "torch": "2.6.0+cu124",
+  "transformers": "5.5.0",
+  "tokenizers": "0.22.2",
+  "device": "cuda:0",
+  "cuda_available": true,
+  "cuda_version": "12.4",
+  "gpu_index": 0,
+  "gpu_name": "NVIDIA GeForce RTX 3090",
+  "gpu_compute_capability": "8.6",
+  "gpu_total_memory_bytes": 25296044032,
+  "cuda_bf16_supported": true,
+  "torch_threads": 4,
+  "torch_interop_threads": 1,
+  "mixed_precision": "fp16",
+  "allow_tf32": true
+}

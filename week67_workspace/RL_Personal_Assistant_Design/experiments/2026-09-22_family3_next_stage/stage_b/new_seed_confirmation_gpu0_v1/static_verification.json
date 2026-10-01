@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "parsed_files": [
+    "tune_gpu0.py",
+    "secure_control.py",
+    "postflight.py",
+    "static_check.py"
+  ],
+  "training_loop_ast_unchanged": true,
+  "learner_class_ast_unchanged": true,
+  "resource_device_rng_coordinate_functions_unchanged": true,
+  "seeds": [
+    401,
+    503,
+    607
+  ],
+  "groups": 6,
+  "transitions": 72000,
+  "optimizer_updates": 17622,
+  "exact_rows": 24,
+  "local_model_execution": false,
+  "test_opened": false,
+  "files": {
+    "tune_gpu0.py": "2ab5036d6df16e3295053b3ae91e7a2dc2bcee3473966982da074df3ccbcd3de",
+    "secure_control.py": "7997eeefea0d5e84392561c7f6154f4c0ca9d06973b3036f20a16e697801265b",
+    "postflight.py": "2c88163f9ec39a266c51a14a4c7df84765a719fdcc80c800dc9b42f453fc9385",
+    "config.json": "048c19b497c38d577afd5860805c096324116b6e46395fbd97203e184b90d6e4"
+  }
+}

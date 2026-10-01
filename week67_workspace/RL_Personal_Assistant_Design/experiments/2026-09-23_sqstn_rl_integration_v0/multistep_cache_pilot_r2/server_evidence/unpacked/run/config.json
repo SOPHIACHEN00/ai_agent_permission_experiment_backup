@@ -1,0 +1,148 @@
+{
+  "version": "sqstn_multistep_comparison_r2",
+  "protocol": {
+    "version": "sqstn_multistep_cache_r2",
+    "horizon": 6,
+    "protected_steps": 2,
+    "questions_per_episode": 2,
+    "no_question_when_execute_legal": true,
+    "prefer_refresh": true,
+    "forced_disable": "after_first_effect_if_active",
+    "train_seeds": [
+      31001,
+      31002,
+      31003,
+      31004
+    ],
+    "dev_seeds": [
+      41001,
+      41002,
+      41003,
+      41004
+    ],
+    "api_attempt_cap": 64,
+    "api_budget_usd": 4,
+    "learner_seeds": [
+      1301,
+      1601
+    ],
+    "controller_steps_per_learner_seed": 2400,
+    "api_options": {
+      "model": "o4-mini",
+      "reasoning_effort": "medium",
+      "max_completion_tokens": 4096,
+      "n": 1,
+      "stream": false,
+      "store": false,
+      "service_tier": "default",
+      "response_format": {
+        "type": "json_schema",
+        "json_schema": {
+          "name": "permission_answer",
+          "strict": true,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "answer": {
+                "type": "string",
+                "enum": [
+                  "deny_persist",
+                  "deny_reask",
+                  "allow_once",
+                  "allow_reuse"
+                ]
+              }
+            },
+            "required": [
+              "answer"
+            ],
+            "additionalProperties": false
+          }
+        }
+      }
+    },
+    "per_graph_history_cap": 16,
+    "cache_semantic_version": "sqstn_multistep_cache_v1_27aae495acbcbcd28309e515fcfd30254685c0e538cb02b8ff701259f746d83d",
+    "revision": "operational_bounds_only"
+  },
+  "learner_seeds": [
+    1301,
+    1601
+  ],
+  "steps_per_method_seed": 2400,
+  "total_controller_steps": 9600,
+  "dev_rows": 24,
+  "checkpoints": 4,
+  "epsilon": {
+    "start": 1.0,
+    "end": 0.1,
+    "decay_steps": 1920
+  },
+  "mab_global_steps": 600,
+  "mab_personal_steps": 1800,
+  "schema": {
+    "version": "sqstn_public_31_candidate16_v0",
+    "state_features": [
+      "logical_step/horizon",
+      "remaining_horizon/horizon",
+      "remaining_tasks/horizon",
+      "primary_complete",
+      "unknown_effect",
+      "phase_open",
+      "phase_finished",
+      "phase_unknown",
+      "authorization_count/horizon",
+      "active_count/horizon",
+      "consumed_count/horizon",
+      "rejected_count/horizon",
+      "other_count/horizon",
+      "prompts/horizon",
+      "responses/horizon",
+      "denials/horizon",
+      "revocations/horizon",
+      "grants/horizon",
+      "verified_errors/horizon",
+      "public_allow_rate",
+      "public_deny_rate",
+      "candidate_count/16",
+      "active_covering",
+      "last_deny_persist",
+      "last_deny_reask",
+      "last_allow_once",
+      "last_allow_reuse",
+      "count_deny_persist/horizon",
+      "count_deny_reask/horizon",
+      "count_allow_once/horizon",
+      "count_allow_reuse/horizon"
+    ],
+    "candidate_features": [
+      "REQUEST_AUTHORIZATION",
+      "REQUEST_REFRESH",
+      "DISABLE_LOCAL_AUTHORIZATION",
+      "EXECUTE_WITH_AUTHORIZATION",
+      "DENY_WITH_REASON",
+      "ESCALATE",
+      "task_bound",
+      "current_task",
+      "authorization_bound",
+      "prior_authorization_bound",
+      "current_scope",
+      "deny_not_needed",
+      "deny_user_declined",
+      "deny_safe_impossibility",
+      "bound_active",
+      "bound_covering"
+    ],
+    "state_dim": 31,
+    "candidate_dim": 16,
+    "max_candidates": 16,
+    "mab_features": 303,
+    "candidate_order": "existing canonical public catalog; padded trailing zero rows",
+    "raw_identifiers_encoded": false,
+    "private_simulator_features": false
+  },
+  "api_calls_during_learning": 0,
+  "test_opened": false,
+  "automatic_retry": false,
+  "interpretation": "restricted synthetic cached-environment descriptive pilot"
+}

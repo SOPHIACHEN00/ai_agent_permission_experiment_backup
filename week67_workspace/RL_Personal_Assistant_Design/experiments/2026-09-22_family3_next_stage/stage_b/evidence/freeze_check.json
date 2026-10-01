@@ -1,0 +1,35 @@
+{
+  "verified_at_utc": "2026-09-22T14:24:13.6500382Z",
+  "old_source_files_unchanged": 26,
+  "old_archives_unchanged": 2,
+  "frozen_stage_a_inputs_unchanged": 7,
+  "bridge_files": [
+    {
+      "path": "learner_bridge.py",
+      "sha256": "24bf6a2629db54947a08e6e328414221508a58632d50e5b6ea95da37f5fc68d6",
+      "bytes": 10913
+    },
+    {
+      "path": "pilot_criteria.py",
+      "sha256": "9715098063b3517d3b0ac481b8b85a50ece5f5095e9681428060d185256e4607",
+      "bytes": 3038
+    },
+    {
+      "path": "criteria_v1.json",
+      "sha256": "7156d2877fd1ae2aeca39cbda187a115264d1be69d1c53382c723f47d0df4789",
+      "bytes": 723
+    },
+    {
+      "path": "test_learner_bridge.py",
+      "sha256": "ce4c412b0729346bfe418a64c3cecf89632f3fbc6aad23c441c252a6a2ca30e0",
+      "bytes": 5902
+    },
+    {
+      "path": "GOAL_AMENDMENT_zh_en.md",
+      "sha256": "a0b2395e812172d4ddd0c40b8ce818a3697356fcaa5f28052965fc93de34055b",
+      "bytes": 3380
+    }
+  ],
+  "training_started": false,
+  "server_connected": false
+}

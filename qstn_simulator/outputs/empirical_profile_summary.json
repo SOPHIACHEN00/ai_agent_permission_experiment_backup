@@ -1,0 +1,39 @@
+{
+  "method_version": "behavior_profiles_v1",
+  "source_dataset": "D:\\Study\\Graduate_Study_UofG\\Research\\paper\\Week67\\ai_agent_permission_experiment\\data\\processed\\four_label_dataset.csv",
+  "n_rows": 16361,
+  "n_participants": 201,
+  "reference_split_seed": 42,
+  "heldout_fraction": 0.3,
+  "candidate_k": [
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "selected_k": 3,
+  "selection_reason": "parsimonious one-standard-error-style rule: among candidates meeting the predeclared minimum-size and split-stability constraints, select the smallest K whose mean split silhouette is within one standard error of the best eligible candidate (best K=4, mean=0.322065, SE=0.002865, threshold=0.319200)",
+  "selection_metadata": {
+    "rule": "one_standard_error_style_parsimony",
+    "best_eligible_k": 4,
+    "best_eligible_mean_split_silhouette": 0.3220650882094081,
+    "best_eligible_silhouette_se": 0.002865380056536863,
+    "one_se_threshold": 0.31919970815287124,
+    "n_stability_splits": 20
+  },
+  "cluster_features": [
+    "always_allow_rate",
+    "ask_yes_rate",
+    "ask_no_rate",
+    "never_share_rate",
+    "necessary_request_share_score",
+    "explicitly_unnecessary_request_share_score"
+  ],
+  "unknown_handling": "retain rows; exclude participant unknown score from clustering; report only as exploratory characterization",
+  "profile_counts": {
+    "Broad Restrictors": 30,
+    "Persistent Granters": 71,
+    "Re-consent Seekers": 100
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "selection_source": "inner participant-held-out validation only",
+  "selection_order": [
+    "macro_f1 descending",
+    "quadratic_weighted_kappa descending",
+    "over_sharing_rate ascending",
+    "persistent_over_allow_rate ascending",
+    "accuracy descending"
+  ],
+  "candidate_id": "lr_3em05_balanced",
+  "learning_rate": 3e-05,
+  "loss_weighting": "balanced",
+  "best_epoch": 2,
+  "epochs_completed": 3,
+  "stopped_early": false,
+  "validation_loss": 1.5061014236986148,
+  "accuracy": 0.40289965661961086,
+  "macro_f1": 0.3521076366855372,
+  "quadratic_weighted_kappa": 0.18380382749330848,
+  "over_sharing_rate": 0.46715328467153283,
+  "over_sharing_count": 320,
+  "over_sharing_denominator": 685,
+  "persistent_over_allow_rate": 0.20625662778366913,
+  "persistent_over_allow_count": 389,
+  "persistent_over_allow_denominator": 1886
+}

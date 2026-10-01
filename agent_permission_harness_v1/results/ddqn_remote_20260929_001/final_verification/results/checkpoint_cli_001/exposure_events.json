@@ -1,0 +1,126 @@
+[
+  {
+    "after": [
+      {
+        "authorization_id": "authorization_ed1766be3a5d53a20e6c",
+        "expires_at_step": 32,
+        "remaining_uses": null,
+        "scope": {
+          "data_attributes": [
+            "private_notes",
+            "title"
+          ],
+          "domain": "Work & Productivity",
+          "operation": "read",
+          "purpose": "inspect_note_in_stages",
+          "recipient": "local_user",
+          "resource": "file_note",
+          "retention": "session",
+          "tool": "Cloud Drive"
+        },
+        "status": "active"
+      }
+    ],
+    "before": [],
+    "cumulative": 0,
+    "decision_token": "8cc227099fcef1159f0e09302045cc50f8c807248ecf82abd02470030d59c121",
+    "footprint": 0,
+    "logical_step": 0
+  },
+  {
+    "after": [
+      {
+        "authorization_id": "authorization_ed1766be3a5d53a20e6c",
+        "expires_at_step": 32,
+        "remaining_uses": null,
+        "scope": {
+          "data_attributes": [
+            "private_notes",
+            "title"
+          ],
+          "domain": "Work & Productivity",
+          "operation": "read",
+          "purpose": "inspect_note_in_stages",
+          "recipient": "local_user",
+          "resource": "file_note",
+          "retention": "session",
+          "tool": "Cloud Drive"
+        },
+        "status": "active"
+      }
+    ],
+    "before": [
+      {
+        "authorization_id": "authorization_ed1766be3a5d53a20e6c",
+        "expires_at_step": 32,
+        "remaining_uses": null,
+        "scope": {
+          "data_attributes": [
+            "private_notes",
+            "title"
+          ],
+          "domain": "Work & Productivity",
+          "operation": "read",
+          "purpose": "inspect_note_in_stages",
+          "recipient": "local_user",
+          "resource": "file_note",
+          "retention": "session",
+          "tool": "Cloud Drive"
+        },
+        "status": "active"
+      }
+    ],
+    "cumulative": 2,
+    "decision_token": "bd5595b50daf9a9215b274df676207bbc845f4947f9d2b7ad4367fa30d09696d",
+    "footprint": 2,
+    "logical_step": 1
+  },
+  {
+    "after": [
+      {
+        "authorization_id": "authorization_ed1766be3a5d53a20e6c",
+        "expires_at_step": 32,
+        "remaining_uses": null,
+        "scope": {
+          "data_attributes": [
+            "private_notes",
+            "title"
+          ],
+          "domain": "Work & Productivity",
+          "operation": "read",
+          "purpose": "inspect_note_in_stages",
+          "recipient": "local_user",
+          "resource": "file_note",
+          "retention": "session",
+          "tool": "Cloud Drive"
+        },
+        "status": "active"
+      }
+    ],
+    "before": [
+      {
+        "authorization_id": "authorization_ed1766be3a5d53a20e6c",
+        "expires_at_step": 32,
+        "remaining_uses": null,
+        "scope": {
+          "data_attributes": [
+            "private_notes",
+            "title"
+          ],
+          "domain": "Work & Productivity",
+          "operation": "read",
+          "purpose": "inspect_note_in_stages",
+          "recipient": "local_user",
+          "resource": "file_note",
+          "retention": "session",
+          "tool": "Cloud Drive"
+        },
+        "status": "active"
+      }
+    ],
+    "cumulative": 4,
+    "decision_token": "c82b541391bc47f41c39008a01e911e977fda9b83dfcba99bf445f6ed4c5992d",
+    "footprint": 2,
+    "logical_step": 2
+  }
+]

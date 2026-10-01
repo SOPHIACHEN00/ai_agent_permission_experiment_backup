@@ -20,3 +20,16 @@
 
 # Preserved nested-repository metadata during outer backup
 **/.git.source-history/
+
+# Large local training evidence and disposable server/runtime bundles
+**/*.jsonl
+**/*.pt
+**/*.zip
+**/*.sqlite3
+**/*.log
+**/*.exit
+**/*.exit_code
+rl_personal_assistant/tmp*/
+agent_permission_harness_v1/remote_patch_staging/*
+!agent_permission_harness_v1/remote_patch_staging/*.patch
+agent_permission_harness_v1/results/**/*.gz

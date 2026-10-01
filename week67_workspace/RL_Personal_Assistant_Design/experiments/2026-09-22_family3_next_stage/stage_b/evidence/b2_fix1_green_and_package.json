@@ -1,0 +1,20 @@
+{
+  "recorded_at": "2026-09-22T15:54:50.680Z",
+  "execution": {
+    "chunk_id": "6b60be",
+    "wall_time_seconds": 3.1154923,
+    "exit_code": 0,
+    "original_token_count": 400,
+    "output": "test_memory_growth_is_bounded_above_current_not_historical_rss (test_b2_repairs.RepairTests.test_memory_growth_is_bounded_above_current_not_historical_rss) ... ok\r\ntest_only_authorized_gpu2_reaches_cuda_constructor (test_b2_repairs.RepairTests.test_only_authorized_gpu2_reaches_cuda_constructor) ... ok\r\ntest_packager_resolves_existing_frozen_evidence (test_b2_repairs.RepairTests.test_packager_resolves_existing_frozen_evidence) ... ok\r\ntest_budget_cutoff_preserves_nonterminal_bootstrap (test_pilot_runtime.RuntimeTests.test_budget_cutoff_preserves_nonterminal_bootstrap) ... ok\r\ntest_exact_policy_integrates_ties_and_rejects_illegal_mass (test_pilot_runtime.RuntimeTests.test_exact_policy_integrates_ties_and_rejects_illegal_mass) ... ok\r\ntest_fingerprint_uses_tensor_content_and_checkpoint_context (test_pilot_runtime.RuntimeTests.test_fingerprint_uses_tensor_content_and_checkpoint_context) ... ok\r\ntest_schedule_preserves_graph_quotas_and_rejects_test (test_pilot_runtime.RuntimeTests.test_schedule_preserves_graph_quotas_and_rejects_test) ... ok\r\ntest_store_refuses_second_writer_and_detects_tampering (test_pilot_runtime.RuntimeTests.test_store_refuses_second_writer_and_detects_tampering) ... ok\r\ntest_validation_gate_checks_coordinates_not_success (test_pilot_runtime.RuntimeTests.test_validation_gate_checks_coordinates_not_success) ... ok\r\ntest_no_cpu_or_unselected_gpu_learner_fallback (test_learner_bridge.LearnerBridgeTests.test_no_cpu_or_unselected_gpu_learner_fallback) ... ok\r\n\r\n----------------------------------------------------------------------\r\nRan 10 tests in 2.528s\r\n\r\nOK\r\n"
+  },
+  "tests": 10,
+  "passed": 10,
+  "no_local_learner": true,
+  "package_execution": {
+    "chunk_id": "d4f82c",
+    "wall_time_seconds": 0.5239919,
+    "exit_code": 0,
+    "original_token_count": 61,
+    "output": "{\"archive\": \"budget_recourse_source_v1.zip\", \"sha256\": \"fb53c26efbf0a17ad00f98b3a37508ccab25f3746773e905ba4a798db7462ba5\", \"bytes\": 203690, \"source_files\": 41, \"source_syntax_checked\": true, \"gpu_smoke_started\": false, \"test_opened\": false}\r\n"
+  }
+}

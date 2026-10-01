@@ -1,0 +1,10 @@
+# Install a CUDA-enabled PyTorch build separately using the official selector:
+# https://pytorch.org/get-started/locally/
+# PyTorch is deliberately not pinned here because the correct wheel depends on
+# the server's NVIDIA driver and selected CUDA runtime.
+numpy==2.0.0
+pandas==2.2.2
+transformers==5.5.0
+tokenizers==0.22.2
+safetensors==0.7.0
+

@@ -1,0 +1,47 @@
+{
+  "run_id": "seed307_replay_extension_gpu0_v1",
+  "started_at_utc": "2026-09-22T23:10:24.205852+00:00",
+  "status": "RUNNING",
+  "parent_formal_directory": "/output/agenticAI/budget_recourse_gpu1_formal_v1/run_v1",
+  "parent_checkpoint_sha256": "e638758eb9c0f996e8f0d3ebd8c5d57a434272486f501d6be73a639ba8990a48",
+  "parent_semantic_sha256": "8c46c45467cb3f09b5200f1f9aa798dff62589c19dc2c32df582581a48a9a86d",
+  "parent_source_file_count": 41,
+  "parent_source_manifest_sha256": "9b0aed78a90610a6031e697d4b7d1c76e2e600fb4f9b95a416225edd6254edd3",
+  "device_adapter_sha256": "fae9ecf3ce65f187816e314ad95bf46aa2b2dfc7296a742b66599d78a1e15fea",
+  "device_adapter_scope": "process-local device guard and deterministic CUDA setup only",
+  "frozen_learning_source_unchanged": true,
+  "gpu": {
+    "physical_gpu_index": 0,
+    "physical_gpu_uuid": "GPU-19ad2811-c789-cfaa-02f1-aa42927d9f26",
+    "name": "NVIDIA GeForce RTX 3090",
+    "visible_cuda_uuid": "19ad2811-c789-cfaa-02f1-aa42927d9f26",
+    "memory_used_mib_preload": 1,
+    "memory_total_mib": 24576,
+    "torch_version": "2.11.0+cu130",
+    "cuda_runtime": "13.0",
+    "device": "cuda:0"
+  },
+  "resources_before_load": {
+    "host_mem_available_bytes": 16936660992,
+    "memory_current": "88129716224",
+    "memory_max": "100663296000",
+    "memory_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+    "cpu_max": "3200000 100000",
+    "cpu_stat": "usage_usec 4110806109092\nuser_usec 3847445306358\nsystem_usec 263360802734\ncore_sched.force_idle_usec 0\nnr_periods 1943170\nnr_throttled 845734\nthrottled_usec 595645611324\nnr_bursts 0\nburst_usec 0"
+  },
+  "seed": 307,
+  "gamma": 1,
+  "parent_environment_steps": 12000,
+  "new_environment_steps": 0,
+  "parent_optimizer_steps": 2937,
+  "additional_optimizer_updates": 2937,
+  "checkpoint_updates": [
+    500,
+    1000,
+    2000,
+    2937
+  ],
+  "replay_count": 12000,
+  "test_opened": false,
+  "automatic_retry": false
+}

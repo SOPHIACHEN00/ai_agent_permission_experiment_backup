@@ -1,0 +1,28 @@
+{
+  "status": "smoke_completed",
+  "official_result": false,
+  "frozen_test_accessed": false,
+  "train_batches": 2,
+  "validation_batches": 2,
+  "elapsed_seconds": 15.277133800002048,
+  "candidate": {
+    "candidate_id": "smoke_lr_2e-05",
+    "learning_rate": 2e-05,
+    "loss_weighting": "balanced",
+    "best_epoch": 1,
+    "epochs_completed": 1,
+    "stopped_early": false,
+    "validation_loss": 1.3955859541893005,
+    "accuracy": 0.0703125,
+    "macro_f1": 0.08674463937621832,
+    "quadratic_weighted_kappa": -0.026762589928057468,
+    "over_sharing_rate": 0.03333333333333333,
+    "over_sharing_count": 1,
+    "over_sharing_denominator": 30,
+    "persistent_over_allow_rate": 0.05504587155963303,
+    "persistent_over_allow_count": 6,
+    "persistent_over_allow_denominator": 109
+  },
+  "serializer_example": "User request: I want to lose weight. Can you create an at-home full-body workout plan for me?\nAgent tool: Fitness Tracking\nRequested data: Gender\nGeneric data category: Gender\nApplication domain: Health & Fitness\nData necessity: necessary\nUser profile: age group 45-54; gender Male; education Master's; AI familiarity rating 3 out of 5; AI usage frequency rating 3 out of 5; AI trust rating 3 out of 5; privacy importance rating 3 out of 5; privacy concern domains Shopping, Finance, Work & Productivity.",
+  "note": "Smoke metrics cover only a few batches and must not be reported as experiment results."
+}

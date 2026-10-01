@@ -1,0 +1,18 @@
+{
+  "accuracy": 0.5642737896494157,
+  "macro_f1": 0.46019529989662145,
+  "quadratic_weighted_kappa": 0.4924661480584299,
+  "over_sharing_rate": 0.5106382978723404,
+  "over_sharing_count": 48,
+  "over_sharing_denominator": 94,
+  "persistent_over_allow_rate": 0.1037463976945245,
+  "persistent_over_allow_count": 36,
+  "persistent_over_allow_denominator": 347,
+  "model_name": "deepseek",
+  "model_id": "deepseek/deepseek-v4-flash-0731",
+  "route": "openrouter",
+  "n_rows": 599,
+  "n_participants": 40,
+  "n_jobs": 40,
+  "coverage": 1.0
+}

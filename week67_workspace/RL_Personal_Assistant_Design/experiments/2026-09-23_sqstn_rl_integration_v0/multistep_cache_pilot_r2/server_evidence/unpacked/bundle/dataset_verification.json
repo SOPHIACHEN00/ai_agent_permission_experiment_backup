@@ -1,0 +1,51 @@
+{
+  "status": "PASS",
+  "verified_utc": "2026-09-23T17:51:00.886308+00:00",
+  "dataset_sha256": "cd59daff4ef177457cc46f7bb824975a28be3062b5b8c86217afaef45e849d0c",
+  "coverage_passed": true,
+  "gates": {
+    "eight_graphs": true,
+    "at_most_64_entries": true,
+    "closed_edges": true,
+    "safety_zero": true,
+    "train_four_families": true,
+    "train_allow_once": true,
+    "train_allow_reuse": true,
+    "train_denial": true,
+    "train_multistep_success": true,
+    "train_allow_then_deny_expansion": true,
+    "train_forced_disable_then_refresh": true,
+    "dev_four_families": true,
+    "dev_allow_once": true,
+    "dev_allow_reuse": true,
+    "dev_denial": true,
+    "dev_multistep_success": true,
+    "dev_allow_then_deny_expansion": true,
+    "dev_forced_disable_then_refresh": true
+  },
+  "graphs": 8,
+  "audited_nodes": 256,
+  "cache_entries": 26,
+  "cache_only_graph_replays": 8,
+  "api_calls": 26,
+  "prior_calls_reused": 9,
+  "new_calls": 17,
+  "labels": {
+    "allow_reuse": 16,
+    "allow_once": 6,
+    "deny_persist": 4
+  },
+  "tokens": {
+    "input": 44472,
+    "cached_input": 11904,
+    "output": 10284,
+    "reasoning": 9536
+  },
+  "estimated_cost_usd": 0.084348,
+  "distinct_prompts": 24,
+  "cumulative_effect_proofs_across_prefixes": 146,
+  "unchanged_frozen_sources": 46,
+  "training_steps": 0,
+  "old_test_opened": false,
+  "torch_imported": false
+}

@@ -1,0 +1,46 @@
+{
+  "schema": "budget_recourse_execution_profile_v1",
+  "date": "2026-09-22",
+  "authority": "User approved formal train-validation and restricted all new training to physical GPU0 or GPU1; read-only probe found both idle, GPU1 selected.",
+  "supersedes": "GPU2/3 authorization and execution_profile_gpu2_v1.json for all new runs; historical evidence preserved",
+  "user_authorized_gpu_indices": [
+    0,
+    1
+  ],
+  "selected_physical_gpu": 1,
+  "logical_device": "cuda:0",
+  "unused_physical_gpu_indices": [
+    0,
+    2,
+    3
+  ],
+  "mode_this_turn": "FORMAL_TRAIN_VALIDATE_TEST_LOCKED",
+  "transitions": 72000,
+  "seeds": [
+    101,
+    211,
+    307
+  ],
+  "gamma_arms": [
+    1,
+    0
+  ],
+  "transitions_per_group": 12000,
+  "checkpoints": 6,
+  "validation_rows": 3600,
+  "test_opened": false,
+  "automatic_retry": false,
+  "scientific_parameters_changed": false,
+  "authorized_b1_changes": {
+    "learner_bridge.py": {
+      "previous_sha256": "1c2809997d4b5d74abea435405adb1a76e8ebd7a2914795a81495d470f88a1f2",
+      "authorized_sha256": "543856617a30f3519a4a2c1f022891b3ed7bda385802f7d60429838dd522cc12"
+    },
+    "test_learner_bridge.py": {
+      "previous_sha256": "0edcbdff27c9077e0fdad2ad8a1d4cbdd5a9cada095bfa93964533e3d2273936",
+      "authorized_sha256": "39a00613e36df195ee9b6a7c31613a4d94f81ebb857839e1bf2f62e7f4961c65"
+    }
+  },
+  "credential_policy": "Connection coordinates and credentials only in hidden inputs/memory, never scripts/config/project records.",
+  "prior_smoke_source_archive_sha256": "217a14dcd06b364045dc8a09e3f54b93238a1974c4491503fd5edaca306f5ffe"
+}

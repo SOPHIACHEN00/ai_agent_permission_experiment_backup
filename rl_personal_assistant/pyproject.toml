@@ -7,7 +7,7 @@ name = "rl-personal-assistant"
 version = "0.10.0"
 description = "Deterministic public contracts for an authority-aware personal assistant."
 requires-python = ">=3.12"
-dependencies = ["torch>=2,<3"]
+dependencies = ["torch>=2,<3", "numpy"]
 
 [tool.setuptools.packages.find]
 where = ["src"]

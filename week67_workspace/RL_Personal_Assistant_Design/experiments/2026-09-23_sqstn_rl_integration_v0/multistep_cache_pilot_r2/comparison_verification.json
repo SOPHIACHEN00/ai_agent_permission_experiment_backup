@@ -1,0 +1,135 @@
+{
+  "status": "PASS",
+  "verified_utc": "2026-09-23T17:56:04.217497+00:00",
+  "source_config_members": 55,
+  "controller_steps": 9600,
+  "checkpoints": 4,
+  "dev_rows": 24,
+  "learning_api_calls": 0,
+  "test_opened": false,
+  "local_torch_imported": false,
+  "training_episodes": 3946,
+  "per_seed": [
+    {
+      "method": "ddqn_b",
+      "seed": 1301,
+      "successes": 3,
+      "episodes": 4,
+      "success_rate": 0.75,
+      "requests": 7,
+      "fallbacks": 1,
+      "questions_after_denial": 0,
+      "protocol_disables": 1
+    },
+    {
+      "method": "ddqn_b",
+      "seed": 1601,
+      "successes": 3,
+      "episodes": 4,
+      "success_rate": 0.75,
+      "requests": 7,
+      "fallbacks": 1,
+      "questions_after_denial": 0,
+      "protocol_disables": 1
+    },
+    {
+      "method": "wp_fts_public_transfer_v0",
+      "seed": 1301,
+      "successes": 3,
+      "episodes": 4,
+      "success_rate": 0.75,
+      "requests": 7,
+      "fallbacks": 1,
+      "questions_after_denial": 0,
+      "protocol_disables": 1
+    },
+    {
+      "method": "wp_fts_public_transfer_v0",
+      "seed": 1601,
+      "successes": 3,
+      "episodes": 4,
+      "success_rate": 0.75,
+      "requests": 7,
+      "fallbacks": 1,
+      "questions_after_denial": 0,
+      "protocol_disables": 1
+    },
+    {
+      "method": "fixed_rule",
+      "seed": 1301,
+      "successes": 3,
+      "episodes": 4,
+      "success_rate": 0.75,
+      "requests": 7,
+      "fallbacks": 1,
+      "questions_after_denial": 0,
+      "protocol_disables": 1
+    },
+    {
+      "method": "fixed_rule",
+      "seed": 1601,
+      "successes": 3,
+      "episodes": 4,
+      "success_rate": 0.75,
+      "requests": 7,
+      "fallbacks": 1,
+      "questions_after_denial": 0,
+      "protocol_disables": 1
+    }
+  ],
+  "descriptive": {
+    "ddqn_b": {
+      "mean": 0.75,
+      "sample_sd": 0.0,
+      "seeds": 2
+    },
+    "wp_fts_public_transfer_v0": {
+      "mean": 0.75,
+      "sample_sd": 0.0,
+      "seeds": 2
+    },
+    "fixed_rule": {
+      "mean": 0.75,
+      "sample_sd": 0.0,
+      "seeds": 2
+    }
+  },
+  "learner_details": [
+    {
+      "group": "ddqn_b_seed1301",
+      "episodes": 976,
+      "train_successes": 190,
+      "answers_observed": 850
+    },
+    {
+      "group": "wp_fts_public_transfer_v0_seed1301",
+      "episodes": 642,
+      "train_successes": 477,
+      "answers_observed": 1117
+    },
+    {
+      "group": "ddqn_b_seed1601",
+      "episodes": 1680,
+      "train_successes": 82,
+      "answers_observed": 476
+    },
+    {
+      "group": "wp_fts_public_transfer_v0_seed1601",
+      "episodes": 644,
+      "train_successes": 479,
+      "answers_observed": 1116
+    }
+  ],
+  "dev_success_reachable": {
+    "continuous": 1,
+    "once": 1,
+    "scope_denial": 0,
+    "disable_refresh": 1
+  },
+  "safety": {
+    "invalid_actions": 0,
+    "unauthorized_effects": 0,
+    "adapter_faults": 0
+  },
+  "inference": "descriptive only; four fixed dev graphs reused across two seeds; no significance/CI/population claim"
+}

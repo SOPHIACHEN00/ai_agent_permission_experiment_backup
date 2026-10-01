@@ -1,0 +1,30 @@
+{
+  "verified_members": 48,
+  "imports": {
+    "pa_rl.environment": {
+      "path": "rl_personal_assistant/src/pa_rl/environment.py",
+      "sha256": "3339635cbc9bea01875bf5abbefce5e615d142268d92e383e3b231a5b3c8aa77"
+    },
+    "pa_rl.authorization": {
+      "path": "rl_personal_assistant/src/pa_rl/authorization.py",
+      "sha256": "8d3d060421e2bff320ceb304095f34ac28110a23f0e33bebc66e833189900fd9"
+    },
+    "pa_rl.execution": {
+      "path": "rl_personal_assistant/src/pa_rl/execution.py",
+      "sha256": "e2dc444b75ff85aee0436289d94b5bdc2c8fe8f28e19fd7435b1081b126079e6"
+    },
+    "scripts.v2.rulepack_v2": {
+      "path": "qstn_simulator/scripts/v2/rulepack_v2.py",
+      "sha256": "8f34f4659cb422a61384964092c1d0f18844095b3b32a4119feabaff89953110"
+    },
+    "scripts.v2.state_store_v2": {
+      "path": "qstn_simulator/scripts/v2/state_store_v2.py",
+      "sha256": "8c7a1293fd3bd604f29606a65a624909aad04b2ac617452d2ca8b9af988fc18c"
+    },
+    "online_bandit_experiment.wp_fts": {
+      "path": "online_bandit_experiment/wp_fts.py",
+      "sha256": "766023d949f068f5633cd6422f9891d88dd88c80e629c49883525c8b89028508"
+    }
+  },
+  "manifest_sha256": "12a6ba2a0d8e18f9f95d33a349fb2a2c9f6fcdc009576d22e51c32337fbc3d2f"
+}

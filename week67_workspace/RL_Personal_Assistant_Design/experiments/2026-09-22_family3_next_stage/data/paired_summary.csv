@@ -1,0 +1,3 @@
+phase,paired_episodes,root_seed_mismatches,initial_action_mismatches,success_mismatches,prompt_count_mismatches,termination_kind_mismatches,decision_count_mismatches,forecast_formula_mismatches,branch_formula_mismatches,counterfactual_pairs,counterfactual_action_flips
+validation,600,0,0,0,0,14,14,0,0,300,300
+test,900,0,0,0,0,51,41,0,0,450,450

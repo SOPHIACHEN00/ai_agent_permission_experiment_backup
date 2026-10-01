@@ -1,0 +1,245 @@
+{
+  "verified_utc": "2026-09-23T17:46:30.894457+00:00",
+  "status": "PASS",
+  "api_calls": 0,
+  "scope": "four possible first answers; second answers cannot enable a third question",
+  "max_per_scenario": {
+    "train/continuous": 3,
+    "train/once": 3,
+    "train/scope_denial": 4,
+    "train/disable_refresh": 3,
+    "dev/continuous": 3,
+    "dev/once": 3,
+    "dev/scope_denial": 4,
+    "dev/disable_refresh": 3
+  },
+  "sum_maxima": 26,
+  "rows": [
+    {
+      "split": "train",
+      "family": "continuous",
+      "first_answer": "deny_persist",
+      "request_histories": 1,
+      "nodes": 6
+    },
+    {
+      "split": "train",
+      "family": "continuous",
+      "first_answer": "deny_reask",
+      "request_histories": 2,
+      "nodes": 19
+    },
+    {
+      "split": "train",
+      "family": "continuous",
+      "first_answer": "allow_once",
+      "request_histories": 3,
+      "nodes": 32
+    },
+    {
+      "split": "train",
+      "family": "continuous",
+      "first_answer": "allow_reuse",
+      "request_histories": 3,
+      "nodes": 36
+    },
+    {
+      "split": "train",
+      "family": "once",
+      "first_answer": "deny_persist",
+      "request_histories": 1,
+      "nodes": 6
+    },
+    {
+      "split": "train",
+      "family": "once",
+      "first_answer": "deny_reask",
+      "request_histories": 2,
+      "nodes": 19
+    },
+    {
+      "split": "train",
+      "family": "once",
+      "first_answer": "allow_once",
+      "request_histories": 3,
+      "nodes": 32
+    },
+    {
+      "split": "train",
+      "family": "once",
+      "first_answer": "allow_reuse",
+      "request_histories": 3,
+      "nodes": 36
+    },
+    {
+      "split": "train",
+      "family": "scope_denial",
+      "first_answer": "deny_persist",
+      "request_histories": 1,
+      "nodes": 6
+    },
+    {
+      "split": "train",
+      "family": "scope_denial",
+      "first_answer": "deny_reask",
+      "request_histories": 2,
+      "nodes": 18
+    },
+    {
+      "split": "train",
+      "family": "scope_denial",
+      "first_answer": "allow_once",
+      "request_histories": 3,
+      "nodes": 31
+    },
+    {
+      "split": "train",
+      "family": "scope_denial",
+      "first_answer": "allow_reuse",
+      "request_histories": 4,
+      "nodes": 41
+    },
+    {
+      "split": "train",
+      "family": "disable_refresh",
+      "first_answer": "deny_persist",
+      "request_histories": 1,
+      "nodes": 6
+    },
+    {
+      "split": "train",
+      "family": "disable_refresh",
+      "first_answer": "deny_reask",
+      "request_histories": 2,
+      "nodes": 15
+    },
+    {
+      "split": "train",
+      "family": "disable_refresh",
+      "first_answer": "allow_once",
+      "request_histories": 3,
+      "nodes": 28
+    },
+    {
+      "split": "train",
+      "family": "disable_refresh",
+      "first_answer": "allow_reuse",
+      "request_histories": 3,
+      "nodes": 28
+    },
+    {
+      "split": "dev",
+      "family": "continuous",
+      "first_answer": "deny_persist",
+      "request_histories": 1,
+      "nodes": 6
+    },
+    {
+      "split": "dev",
+      "family": "continuous",
+      "first_answer": "deny_reask",
+      "request_histories": 2,
+      "nodes": 19
+    },
+    {
+      "split": "dev",
+      "family": "continuous",
+      "first_answer": "allow_once",
+      "request_histories": 3,
+      "nodes": 32
+    },
+    {
+      "split": "dev",
+      "family": "continuous",
+      "first_answer": "allow_reuse",
+      "request_histories": 3,
+      "nodes": 36
+    },
+    {
+      "split": "dev",
+      "family": "once",
+      "first_answer": "deny_persist",
+      "request_histories": 1,
+      "nodes": 6
+    },
+    {
+      "split": "dev",
+      "family": "once",
+      "first_answer": "deny_reask",
+      "request_histories": 2,
+      "nodes": 19
+    },
+    {
+      "split": "dev",
+      "family": "once",
+      "first_answer": "allow_once",
+      "request_histories": 3,
+      "nodes": 32
+    },
+    {
+      "split": "dev",
+      "family": "once",
+      "first_answer": "allow_reuse",
+      "request_histories": 3,
+      "nodes": 36
+    },
+    {
+      "split": "dev",
+      "family": "scope_denial",
+      "first_answer": "deny_persist",
+      "request_histories": 1,
+      "nodes": 6
+    },
+    {
+      "split": "dev",
+      "family": "scope_denial",
+      "first_answer": "deny_reask",
+      "request_histories": 2,
+      "nodes": 18
+    },
+    {
+      "split": "dev",
+      "family": "scope_denial",
+      "first_answer": "allow_once",
+      "request_histories": 3,
+      "nodes": 31
+    },
+    {
+      "split": "dev",
+      "family": "scope_denial",
+      "first_answer": "allow_reuse",
+      "request_histories": 4,
+      "nodes": 41
+    },
+    {
+      "split": "dev",
+      "family": "disable_refresh",
+      "first_answer": "deny_persist",
+      "request_histories": 1,
+      "nodes": 6
+    },
+    {
+      "split": "dev",
+      "family": "disable_refresh",
+      "first_answer": "deny_reask",
+      "request_histories": 2,
+      "nodes": 15
+    },
+    {
+      "split": "dev",
+      "family": "disable_refresh",
+      "first_answer": "allow_once",
+      "request_histories": 3,
+      "nodes": 28
+    },
+    {
+      "split": "dev",
+      "family": "disable_refresh",
+      "first_answer": "allow_reuse",
+      "request_histories": 3,
+      "nodes": 28
+    }
+  ],
+  "synthetic_diagnostic_only": true,
+  "formal_cache_entries_written": 0
+}

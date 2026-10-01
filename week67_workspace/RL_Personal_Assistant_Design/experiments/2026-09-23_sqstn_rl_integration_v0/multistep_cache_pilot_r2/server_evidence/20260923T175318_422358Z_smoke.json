@@ -1,0 +1,61 @@
+{
+  "time_utc": "20260923T175318_422358Z",
+  "operation": "smoke",
+  "result": {
+    "returncode": 0,
+    "selected": {
+      "index": 0,
+      "uuid": "GPU-19ad2811-c789-cfaa-02f1-aa42927d9f26",
+      "name": "NVIDIA GeForce RTX 3090",
+      "used_mib": 1,
+      "total_mib": 24576,
+      "utilization": 0,
+      "compute_processes": 0
+    },
+    "resources": {
+      "gpus": [
+        {
+          "index": 0,
+          "uuid": "GPU-19ad2811-c789-cfaa-02f1-aa42927d9f26",
+          "name": "NVIDIA GeForce RTX 3090",
+          "used_mib": 1,
+          "total_mib": 24576,
+          "utilization": 0,
+          "compute_processes": 0
+        },
+        {
+          "index": 1,
+          "uuid": "GPU-fd2b38fa-d72c-dfda-3db7-f0a3acbe6940",
+          "name": "NVIDIA GeForce RTX 3090",
+          "used_mib": 1,
+          "total_mib": 24576,
+          "utilization": 0,
+          "compute_processes": 0
+        },
+        {
+          "index": 2,
+          "uuid": "GPU-a9a5514c-9b2e-7854-0447-2bcedcc678db",
+          "name": "NVIDIA GeForce RTX 3090",
+          "used_mib": 1,
+          "total_mib": 24576,
+          "utilization": 0,
+          "compute_processes": 0
+        },
+        {
+          "index": 3,
+          "uuid": "GPU-8d7bfb25-2ed1-112d-8cd5-e92ce8b9cbbf",
+          "name": "NVIDIA GeForce RTX 3090",
+          "used_mib": 1,
+          "total_mib": 24576,
+          "utilization": 0,
+          "compute_processes": 0
+        }
+      ],
+      "current_headroom_bytes": 99823144960,
+      "time_epoch": 1790185993.5116682
+    },
+    "type": "NON_EVIDENCE_ONE_UPDATE_SMOKE",
+    "ended_epoch": 1790185998.7019963,
+    "log": "test_real_update_save_reload_and_frozen_evaluation (test_cuda.CudaChecks.test_real_update_save_reload_and_frozen_evaluation) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 4.380s\n\nOK\n"
+  }
+}

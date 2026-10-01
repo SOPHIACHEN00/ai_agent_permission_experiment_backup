@@ -1,0 +1,478 @@
+{
+  "status": "FORMAL_ARTIFACTS_VERIFIED_TEST_LOCKED",
+  "server_exit_code": 0,
+  "server_wall_seconds": 1538.1424412727356,
+  "physical_gpu": 1,
+  "transitions": 72000,
+  "checkpoints": 6,
+  "optimizer_steps_per_checkpoint": 2937,
+  "validation_rows": 3600,
+  "exact_rows": 72,
+  "hard_counts": {
+    "checkpoint_mismatch": 0,
+    "data_leakage": 0,
+    "invalid_actions": 0,
+    "source_config_mismatch": 0,
+    "unauthorized_effects": 0
+  },
+  "test_opened": false,
+  "source_files_verified": 41,
+  "record_chains_verified": 10,
+  "record_counts": {
+    "auditor_eval_truth": 3600,
+    "auditor_train_truth": 36000,
+    "checkpoints": 6,
+    "evaluation_fingerprints": 24,
+    "evaluation_rows": 3600,
+    "evaluation_steps": 15879,
+    "exact_values": 72,
+    "train_episodes": 36000,
+    "train_steps": 72000,
+    "training_cells": 30
+  },
+  "archive_sha256": "e3fdbc0b345ce05596e5afb67ff55a2772f0f966cc47e06ee2fdcb7c132eaa61",
+  "validation_gate": {
+    "checkpoints": 6,
+    "performance_filtered": false,
+    "status": "READY_FOR_TEST_REVIEW",
+    "test_execution_authorized": false,
+    "test_opened": false,
+    "validation_rows": 3600
+  },
+  "scientific_classification": {
+    "exact_regret_by_seed": {
+      "101": "39/200",
+      "211": "7/100",
+      "307": "283/400"
+    },
+    "exact_values": true,
+    "learning_by_seed": {
+      "101": false,
+      "211": true,
+      "307": false
+    },
+    "near_optimal_by_seed": {
+      "101": false,
+      "211": false,
+      "307": false
+    },
+    "profile": "budget_recourse_near_optimal_learning_v1",
+    "reservation_comparison": {
+      "101": "below",
+      "211": "below",
+      "307": "below"
+    },
+    "reservation_is_required_to_beat": false,
+    "scope": "Pilot signal on caller-verified identical graph/condition coordinates; not statistical significance.",
+    "significance_claim": false,
+    "status": "NO_CLEAR_SIGNAL"
+  },
+  "per_seed_summary": [
+    {
+      "seed": 101,
+      "method": "masked_ddqn_gamma1",
+      "exact_value": "41/80",
+      "exact_value_float": 0.5125,
+      "exact_regret": "39/200",
+      "successes": 106,
+      "episodes": 200
+    },
+    {
+      "seed": 101,
+      "method": "masked_ddqn_gamma0",
+      "exact_value": "1/200",
+      "exact_value_float": 0.005,
+      "exact_regret": "281/400",
+      "successes": 0,
+      "episodes": 200
+    },
+    {
+      "seed": 101,
+      "method": "forecast_transfer_rule",
+      "exact_value": "3/5",
+      "exact_value_float": 0.6,
+      "exact_regret": "43/400",
+      "successes": 125,
+      "episodes": 200
+    },
+    {
+      "seed": 101,
+      "method": "current_task_rule",
+      "exact_value": "253/400",
+      "exact_value_float": 0.6325,
+      "exact_regret": "3/40",
+      "successes": 126,
+      "episodes": 200
+    },
+    {
+      "seed": 101,
+      "method": "reservation_rule",
+      "exact_value": "67/100",
+      "exact_value_float": 0.67,
+      "exact_regret": "3/80",
+      "successes": 140,
+      "episodes": 200
+    },
+    {
+      "seed": 101,
+      "method": "random_valid",
+      "exact_value": "2307/6553600",
+      "exact_value_float": 0.000352020263671875,
+      "exact_regret": "926873/1310720",
+      "successes": 0,
+      "episodes": 200
+    },
+    {
+      "seed": 211,
+      "method": "masked_ddqn_gamma1",
+      "exact_value": "51/80",
+      "exact_value_float": 0.6375,
+      "exact_regret": "7/100",
+      "successes": 124,
+      "episodes": 200
+    },
+    {
+      "seed": 211,
+      "method": "masked_ddqn_gamma0",
+      "exact_value": "0",
+      "exact_value_float": 0.0,
+      "exact_regret": "283/400",
+      "successes": 0,
+      "episodes": 200
+    },
+    {
+      "seed": 211,
+      "method": "forecast_transfer_rule",
+      "exact_value": "3/5",
+      "exact_value_float": 0.6,
+      "exact_regret": "43/400",
+      "successes": 116,
+      "episodes": 200
+    },
+    {
+      "seed": 211,
+      "method": "current_task_rule",
+      "exact_value": "253/400",
+      "exact_value_float": 0.6325,
+      "exact_regret": "3/40",
+      "successes": 123,
+      "episodes": 200
+    },
+    {
+      "seed": 211,
+      "method": "reservation_rule",
+      "exact_value": "67/100",
+      "exact_value_float": 0.67,
+      "exact_regret": "3/80",
+      "successes": 127,
+      "episodes": 200
+    },
+    {
+      "seed": 211,
+      "method": "random_valid",
+      "exact_value": "2307/6553600",
+      "exact_value_float": 0.000352020263671875,
+      "exact_regret": "926873/1310720",
+      "successes": 0,
+      "episodes": 200
+    },
+    {
+      "seed": 307,
+      "method": "masked_ddqn_gamma1",
+      "exact_value": "0",
+      "exact_value_float": 0.0,
+      "exact_regret": "283/400",
+      "successes": 0,
+      "episodes": 200
+    },
+    {
+      "seed": 307,
+      "method": "masked_ddqn_gamma0",
+      "exact_value": "0",
+      "exact_value_float": 0.0,
+      "exact_regret": "283/400",
+      "successes": 0,
+      "episodes": 200
+    },
+    {
+      "seed": 307,
+      "method": "forecast_transfer_rule",
+      "exact_value": "3/5",
+      "exact_value_float": 0.6,
+      "exact_regret": "43/400",
+      "successes": 130,
+      "episodes": 200
+    },
+    {
+      "seed": 307,
+      "method": "current_task_rule",
+      "exact_value": "253/400",
+      "exact_value_float": 0.6325,
+      "exact_regret": "3/40",
+      "successes": 138,
+      "episodes": 200
+    },
+    {
+      "seed": 307,
+      "method": "reservation_rule",
+      "exact_value": "67/100",
+      "exact_value_float": 0.67,
+      "exact_regret": "3/80",
+      "successes": 142,
+      "episodes": 200
+    },
+    {
+      "seed": 307,
+      "method": "random_valid",
+      "exact_value": "2307/6553600",
+      "exact_value_float": 0.000352020263671875,
+      "exact_regret": "926873/1310720",
+      "successes": 0,
+      "episodes": 200
+    }
+  ],
+  "training_episodes_by_cell": [
+    {
+      "seed": 101,
+      "gamma": 0,
+      "graph_id": "br00",
+      "episodes": 1282,
+      "successes": 2,
+      "budget_cutoffs": 0
+    },
+    {
+      "seed": 101,
+      "gamma": 0,
+      "graph_id": "br01",
+      "episodes": 1398,
+      "successes": 0,
+      "budget_cutoffs": 1
+    },
+    {
+      "seed": 101,
+      "gamma": 0,
+      "graph_id": "br02",
+      "episodes": 1633,
+      "successes": 1,
+      "budget_cutoffs": 0
+    },
+    {
+      "seed": 101,
+      "gamma": 0,
+      "graph_id": "br03",
+      "episodes": 1748,
+      "successes": 0,
+      "budget_cutoffs": 0
+    },
+    {
+      "seed": 101,
+      "gamma": 0,
+      "graph_id": "br04",
+      "episodes": 1432,
+      "successes": 0,
+      "budget_cutoffs": 1
+    },
+    {
+      "seed": 101,
+      "gamma": 1,
+      "graph_id": "br00",
+      "episodes": 1401,
+      "successes": 1,
+      "budget_cutoffs": 1
+    },
+    {
+      "seed": 101,
+      "gamma": 1,
+      "graph_id": "br01",
+      "episodes": 1374,
+      "successes": 2,
+      "budget_cutoffs": 1
+    },
+    {
+      "seed": 101,
+      "gamma": 1,
+      "graph_id": "br02",
+      "episodes": 838,
+      "successes": 17,
+      "budget_cutoffs": 1
+    },
+    {
+      "seed": 101,
+      "gamma": 1,
+      "graph_id": "br03",
+      "episodes": 487,
+      "successes": 149,
+      "budget_cutoffs": 1
+    },
+    {
+      "seed": 101,
+      "gamma": 1,
+      "graph_id": "br04",
+      "episodes": 422,
+      "successes": 143,
+      "budget_cutoffs": 1
+    },
+    {
+      "seed": 211,
+      "gamma": 0,
+      "graph_id": "br00",
+      "episodes": 1298,
+      "successes": 0,
+      "budget_cutoffs": 0
+    },
+    {
+      "seed": 211,
+      "gamma": 0,
+      "graph_id": "br01",
+      "episodes": 1443,
+      "successes": 0,
+      "budget_cutoffs": 1
+    },
+    {
+      "seed": 211,
+      "gamma": 0,
+      "graph_id": "br02",
+      "episodes": 1317,
+      "successes": 0,
+      "budget_cutoffs": 0
+    },
+    {
+      "seed": 211,
+      "gamma": 0,
+      "graph_id": "br03",
+      "episodes": 1391,
+      "successes": 0,
+      "budget_cutoffs": 1
+    },
+    {
+      "seed": 211,
+      "gamma": 0,
+      "graph_id": "br04",
+      "episodes": 1441,
+      "successes": 0,
+      "budget_cutoffs": 0
+    },
+    {
+      "seed": 211,
+      "gamma": 1,
+      "graph_id": "br00",
+      "episodes": 1416,
+      "successes": 0,
+      "budget_cutoffs": 0
+    },
+    {
+      "seed": 211,
+      "gamma": 1,
+      "graph_id": "br01",
+      "episodes": 1181,
+      "successes": 0,
+      "budget_cutoffs": 1
+    },
+    {
+      "seed": 211,
+      "gamma": 1,
+      "graph_id": "br02",
+      "episodes": 772,
+      "successes": 1,
+      "budget_cutoffs": 0
+    },
+    {
+      "seed": 211,
+      "gamma": 1,
+      "graph_id": "br03",
+      "episodes": 1220,
+      "successes": 43,
+      "budget_cutoffs": 1
+    },
+    {
+      "seed": 211,
+      "gamma": 1,
+      "graph_id": "br04",
+      "episodes": 523,
+      "successes": 134,
+      "budget_cutoffs": 1
+    },
+    {
+      "seed": 307,
+      "gamma": 0,
+      "graph_id": "br00",
+      "episodes": 1316,
+      "successes": 0,
+      "budget_cutoffs": 0
+    },
+    {
+      "seed": 307,
+      "gamma": 0,
+      "graph_id": "br01",
+      "episodes": 1442,
+      "successes": 0,
+      "budget_cutoffs": 1
+    },
+    {
+      "seed": 307,
+      "gamma": 0,
+      "graph_id": "br02",
+      "episodes": 1370,
+      "successes": 1,
+      "budget_cutoffs": 0
+    },
+    {
+      "seed": 307,
+      "gamma": 0,
+      "graph_id": "br03",
+      "episodes": 989,
+      "successes": 15,
+      "budget_cutoffs": 1
+    },
+    {
+      "seed": 307,
+      "gamma": 0,
+      "graph_id": "br04",
+      "episodes": 1327,
+      "successes": 58,
+      "budget_cutoffs": 0
+    },
+    {
+      "seed": 307,
+      "gamma": 1,
+      "graph_id": "br00",
+      "episodes": 1401,
+      "successes": 0,
+      "budget_cutoffs": 0
+    },
+    {
+      "seed": 307,
+      "gamma": 1,
+      "graph_id": "br01",
+      "episodes": 1389,
+      "successes": 0,
+      "budget_cutoffs": 1
+    },
+    {
+      "seed": 307,
+      "gamma": 1,
+      "graph_id": "br02",
+      "episodes": 1133,
+      "successes": 0,
+      "budget_cutoffs": 1
+    },
+    {
+      "seed": 307,
+      "gamma": 1,
+      "graph_id": "br03",
+      "episodes": 542,
+      "successes": 4,
+      "budget_cutoffs": 1
+    },
+    {
+      "seed": 307,
+      "gamma": 1,
+      "graph_id": "br04",
+      "episodes": 1074,
+      "successes": 138,
+      "budget_cutoffs": 0
+    }
+  ],
+  "evaluation_state_unchanged": true,
+  "verification_did_not_train_or_infer": true
+}

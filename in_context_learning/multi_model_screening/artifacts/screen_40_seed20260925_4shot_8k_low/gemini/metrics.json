@@ -1,0 +1,18 @@
+{
+  "accuracy": 0.67779632721202,
+  "macro_f1": 0.5474836142322097,
+  "quadratic_weighted_kappa": 0.5686570746791297,
+  "over_sharing_rate": 0.4574468085106383,
+  "over_sharing_count": 43,
+  "over_sharing_denominator": 94,
+  "persistent_over_allow_rate": 0.14121037463976946,
+  "persistent_over_allow_count": 49,
+  "persistent_over_allow_denominator": 347,
+  "model_name": "gemini",
+  "model_id": "google/gemini-3.8-flash",
+  "route": "openrouter",
+  "n_rows": 599,
+  "n_participants": 40,
+  "n_jobs": 40,
+  "coverage": 1.0
+}

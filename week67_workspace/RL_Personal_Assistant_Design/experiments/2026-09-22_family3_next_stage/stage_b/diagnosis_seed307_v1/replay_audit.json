@@ -1,0 +1,243 @@
+{
+  "mode": "audit",
+  "at_utc": "2026-09-22T17:12:18.656938+00:00",
+  "test_opened": false,
+  "training_updates_performed": 0,
+  "sources_verified": 41,
+  "models": [
+    {
+      "seed": 101,
+      "checkpoint_sha256": "ae28d7de7835fbdb1ca479ec0e35659e27cdfc7d432bd68ab57ff8a3607e6344",
+      "environment_steps": 12000,
+      "optimizer_steps": 2937,
+      "errors": {
+        "reward": 0,
+        "done": 0,
+        "action": 0,
+        "mask": 0,
+        "state": 0,
+        "candidates": 0,
+        "terminal_successor": 0,
+        "exploration_action": 0,
+        "live_successor": 0
+      },
+      "success_count": 312,
+      "first_success_step": 71,
+      "windows": {
+        "1": {
+          "transitions": 2000,
+          "successes": 1,
+          "positive_reward": 1,
+          "root_greedy": 117,
+          "root_greedy_abort": 111
+        },
+        "2": {
+          "transitions": 2000,
+          "successes": 1,
+          "positive_reward": 1,
+          "root_greedy": 343,
+          "root_greedy_abort": 192
+        },
+        "3": {
+          "transitions": 2000,
+          "successes": 8,
+          "positive_reward": 8,
+          "root_greedy": 485,
+          "root_greedy_abort": 308
+        },
+        "4": {
+          "transitions": 2000,
+          "successes": 47,
+          "positive_reward": 47,
+          "root_greedy": 343,
+          "root_greedy_abort": 0
+        },
+        "5": {
+          "transitions": 2000,
+          "successes": 139,
+          "positive_reward": 139,
+          "root_greedy": 326,
+          "root_greedy_abort": 0
+        },
+        "6": {
+          "transitions": 2000,
+          "successes": 116,
+          "positive_reward": 116,
+          "root_greedy": 335,
+          "root_greedy_abort": 0
+        }
+      },
+      "positive_replay_draws": 1361,
+      "batches_with_positive": 872,
+      "total_replay_draws": 187968,
+      "last500": {
+        "root_greedy": 82,
+        "root_greedy_abort": 0,
+        "root_actions": {
+          "request_narrow": 82,
+          "request_broader": 4,
+          "escalate": 1
+        },
+        "successes": 30
+      },
+      "weights_finite": true
+    },
+    {
+      "seed": 211,
+      "checkpoint_sha256": "fc7d56c975cf833850208f4de70ffc6ab32b9e3908512501e15815703b052c7d",
+      "environment_steps": 12000,
+      "optimizer_steps": 2937,
+      "errors": {
+        "reward": 0,
+        "done": 0,
+        "action": 0,
+        "mask": 0,
+        "state": 0,
+        "candidates": 0,
+        "live_successor": 0,
+        "exploration_action": 0,
+        "terminal_successor": 0
+      },
+      "success_count": 178,
+      "first_success_step": 6861,
+      "windows": {
+        "1": {
+          "transitions": 2000,
+          "successes": 0,
+          "positive_reward": 0,
+          "root_greedy": 113,
+          "root_greedy_abort": 113
+        },
+        "2": {
+          "transitions": 2000,
+          "successes": 0,
+          "positive_reward": 0,
+          "root_greedy": 334,
+          "root_greedy_abort": 168
+        },
+        "3": {
+          "transitions": 2000,
+          "successes": 0,
+          "positive_reward": 0,
+          "root_greedy": 388,
+          "root_greedy_abort": 64
+        },
+        "4": {
+          "transitions": 2000,
+          "successes": 10,
+          "positive_reward": 10,
+          "root_greedy": 449,
+          "root_greedy_abort": 74
+        },
+        "5": {
+          "transitions": 2000,
+          "successes": 59,
+          "positive_reward": 59,
+          "root_greedy": 880,
+          "root_greedy_abort": 620
+        },
+        "6": {
+          "transitions": 2000,
+          "successes": 109,
+          "positive_reward": 109,
+          "root_greedy": 405,
+          "root_greedy_abort": 80
+        }
+      },
+      "positive_replay_draws": 491,
+      "batches_with_positive": 371,
+      "total_replay_draws": 187968,
+      "last500": {
+        "root_greedy": 102,
+        "root_greedy_abort": 21,
+        "root_actions": {
+          "escalate": 18,
+          "request_narrow": 56,
+          "deny": 5,
+          "request_broader": 30
+        },
+        "successes": 28
+      },
+      "weights_finite": true
+    },
+    {
+      "seed": 307,
+      "checkpoint_sha256": "e638758eb9c0f996e8f0d3ebd8c5d57a434272486f501d6be73a639ba8990a48",
+      "environment_steps": 12000,
+      "optimizer_steps": 2937,
+      "errors": {
+        "reward": 0,
+        "done": 0,
+        "action": 0,
+        "mask": 0,
+        "state": 0,
+        "candidates": 0,
+        "terminal_successor": 0,
+        "exploration_action": 0,
+        "live_successor": 0
+      },
+      "success_count": 142,
+      "first_success_step": 9242,
+      "windows": {
+        "1": {
+          "transitions": 2000,
+          "successes": 0,
+          "positive_reward": 0,
+          "root_greedy": 110,
+          "root_greedy_abort": 106
+        },
+        "2": {
+          "transitions": 2000,
+          "successes": 0,
+          "positive_reward": 0,
+          "root_greedy": 341,
+          "root_greedy_abort": 325
+        },
+        "3": {
+          "transitions": 2000,
+          "successes": 0,
+          "positive_reward": 0,
+          "root_greedy": 568,
+          "root_greedy_abort": 324
+        },
+        "4": {
+          "transitions": 2000,
+          "successes": 0,
+          "positive_reward": 0,
+          "root_greedy": 419,
+          "root_greedy_abort": 0
+        },
+        "5": {
+          "transitions": 2000,
+          "successes": 30,
+          "positive_reward": 30,
+          "root_greedy": 473,
+          "root_greedy_abort": 122
+        },
+        "6": {
+          "transitions": 2000,
+          "successes": 112,
+          "positive_reward": 112,
+          "root_greedy": 843,
+          "root_greedy_abort": 503
+        }
+      },
+      "positive_replay_draws": 266,
+      "batches_with_positive": 207,
+      "total_replay_draws": 187968,
+      "last500": {
+        "root_greedy": 395,
+        "root_greedy_abort": 374,
+        "root_actions": {
+          "request_narrow": 23,
+          "escalate": 135,
+          "request_broader": 9,
+          "deny": 252
+        },
+        "successes": 10
+      },
+      "weights_finite": true
+    }
+  ],
+  "checkpoint_files_unchanged": true
+}

@@ -1,0 +1,32 @@
+{
+  "schema": "budget_recourse_b1_review_v1",
+  "recorded_at_utc": "2026-09-22 14:25:50 UTC",
+  "reviewer": "recourse_b1_review",
+  "mode": "one_read_only_review_no_tests_or_mutations",
+  "verdict": "CHANGES_REQUIRED_STOPPED_AT_FIRST_CONCRETE_DEFECT",
+  "findings": [
+    {
+      "severity": "Important",
+      "file": "learner_bridge.py",
+      "line": 170,
+      "issue": "select_candidate uses one rng for exploration gate, exploratory action and greedy near-tie choice; exploration/tie streams are not independent.",
+      "evidence": "One rng argument at line170; rng.random/rng.choice at177-179; violates named separate exploration/tie streams.",
+      "impact": "Exploration consumption affects tie draws; paired RNG contract not satisfied.",
+      "suggested_change": "Require distinct exploration and tie RNG streams and test actual selection wiring, not just namespace seed hashes."
+    }
+  ],
+  "coverage_limitation": "test_learner_bridge.py70-71 compares namespace seeds only; eight passing interface checks do not establish actor stream separation.",
+  "critical_findings": "none established before stopping",
+  "minor_findings": [],
+  "declined_to_certify": [
+    "actual CUDA learner selection/replay/update",
+    "physical GPU identity",
+    "runner coordinate coverage",
+    "checkpoint reload",
+    "exact frozen-policy evaluation/value provenance",
+    "remaining inherited API/Stage A deep review after stop"
+  ],
+  "mutations": false,
+  "reruns": false,
+  "training": false
+}

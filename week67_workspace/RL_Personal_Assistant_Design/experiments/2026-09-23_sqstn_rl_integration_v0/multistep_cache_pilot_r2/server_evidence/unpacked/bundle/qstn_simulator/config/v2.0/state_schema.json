@@ -1,0 +1,77 @@
+{
+  "schema_id": "s_qstn_v2_state_snapshot",
+  "version": "2.0.0",
+  "state_schema_version": "2.0.0",
+  "description": "Bounded categorical respondent state derived from explicitly verified events. It is not a probability model or a psychological diagnosis.",
+  "state_scope": "subject_id",
+  "state_fields": [
+    {
+      "field": "trust_competence",
+      "type": "enum",
+      "allowed_values": ["unknown", "baseline", "caution", "restricted", "recovery"],
+      "principles": ["P1", "P2", "P12"]
+    },
+    {
+      "field": "trust_integrity",
+      "type": "enum",
+      "allowed_values": ["unknown", "baseline", "caution", "restricted", "recovery"],
+      "principles": ["P1", "P2", "P12"]
+    },
+    {
+      "field": "trust_benevolence",
+      "type": "enum",
+      "allowed_values": ["unknown", "baseline", "caution", "restricted", "recovery"],
+      "principles": ["P1", "P2", "P12"]
+    },
+    {
+      "field": "memory_caution",
+      "type": "enum",
+      "allowed_values": ["unknown", "inactive", "active", "residual"],
+      "principles": ["P1", "P2"]
+    },
+    {
+      "field": "prompt_burden_bucket",
+      "type": "enum",
+      "allowed_values": ["unknown", "none_explicit", "low_explicit", "medium_explicit", "high_explicit", "bounded_recent_history"],
+      "principles": ["P7"]
+    },
+    {
+      "field": "consent_status",
+      "type": "enum",
+      "allowed_values": ["unknown", "active", "revoked", "scope_changed", "refresh_required"],
+      "principles": ["P5", "P7"]
+    },
+    {
+      "field": "recency_bucket",
+      "type": "enum",
+      "allowed_values": ["unknown", "current", "recent", "stale", "expired"],
+      "principles": ["P3"]
+    },
+    {
+      "field": "affected_trust_dimension",
+      "type": "enum",
+      "allowed_values": ["unknown", "competence", "integrity", "benevolence"],
+      "principles": ["P12"]
+    },
+    {
+      "field": "trust_dimension_evidence",
+      "type": "enum",
+      "allowed_values": ["unknown", "verified_event_only"],
+      "principles": ["P12"]
+    }
+  ],
+  "memory_view_fields": [
+    "visible_verified_event_types",
+    "visible_event_count_bucket",
+    "expired_event_types",
+    "unknown_history_fields",
+    "state_snapshot",
+    "recency_bucket",
+    "retention_policy_source"
+  ],
+  "initial_state_policy": "Initialize every state field as unknown. Do not infer baseline trust or history from the current question.",
+  "transition_policy": "Only explicit state rules and externally verified events may update state. Ordinary respondent denial cannot update violation or trust state.",
+  "numeric_behavior_parameters": false,
+  "probability_parameters": false,
+  "confidence_parameters": false
+}

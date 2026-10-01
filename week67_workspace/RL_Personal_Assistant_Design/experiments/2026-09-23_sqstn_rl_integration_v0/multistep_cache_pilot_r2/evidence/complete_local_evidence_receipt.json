@@ -1,0 +1,12 @@
+{
+  "status": "LOCAL_COMPLETE_ARCHIVE_VERIFIED",
+  "sha256": "d5413f4ba11c5d5798d0edf0a587ccbc7e87d3757f5b0fb645366bdcfe24f5e6",
+  "bytes": 3918044,
+  "members": 139,
+  "frozen_source_files": 27,
+  "credential_value_matches": 0,
+  "old_nine_response_evidence_included": true,
+  "server_result_archive_included": true,
+  "api_calls_added": 0,
+  "training_steps_added": 0
+}

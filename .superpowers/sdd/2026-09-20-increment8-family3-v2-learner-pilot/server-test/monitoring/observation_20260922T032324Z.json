@@ -1,0 +1,21 @@
+{
+  "observed_at_utc": "2026-09-22T03:23:24.9718781Z",
+  "job_directory": "/output/agenticAI/family3_v2_cuda_v1/formal_test_once_v0",
+  "status": "RUNNING",
+  "supervisor_pid": 186763,
+  "runner_pid": 186764,
+  "physical_gpu_requested": 1,
+  "test_root_exists": true,
+  "test_start_marker_exists": true,
+  "test_rows_observed": 4800,
+  "expected_test_rows": 6300,
+  "job_files": ["events.jsonl", "launch.json", "preflight.json", "status.json", "supervisor.log", "test_once.log"],
+  "process_command": ["python", "-m", "pa_rl.family3_v2_learner_pilot", "test-once"],
+  "environment_check": {
+    "CUDA_VISIBLE_DEVICES": "1",
+    "PA_RL_DEVICE": "cuda:0",
+    "CUBLAS_WORKSPACE_CONFIG": ":4096:8"
+  },
+  "connection": "read_only_ssh_ok",
+  "note": "Test is active; no restart, retry, tuning, or source/config changes performed. GPU2 remains unused by the test request."
+}

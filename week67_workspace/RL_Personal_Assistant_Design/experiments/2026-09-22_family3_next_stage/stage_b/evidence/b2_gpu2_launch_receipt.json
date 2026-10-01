@@ -1,0 +1,34 @@
+{
+  "recorded_at": "2026-09-22T16:00:55.624Z",
+  "launch": {
+    "supervisor_pid": 201771,
+    "launched_epoch": 1790092812.467792,
+    "physical_gpu": 2,
+    "mode": "NON_EVIDENCE_SMOKE"
+  },
+  "upload": {
+    "uploaded": true,
+    "members_verified": 41,
+    "package_sha256": "217a14dcd06b364045dc8a09e3f54b93238a1974c4491503fd5edaca306f5ffe"
+  },
+  "pre_launch_probe": {
+    "project_exists": true,
+    "target_exists": true,
+    "gpu_index": 2,
+    "gpu_uuid": "GPU-a9a5514c-9b2e-7854-0447-2bcedcc678db",
+    "gpu_name": "NVIDIA GeForce RTX 3090",
+    "memory_used_mib": 1,
+    "memory_total_mib": 24576,
+    "utilization": 0,
+    "compute_processes": 0,
+    "visible_uuid": "a9a5514c-9b2e-7854-0447-2bcedcc678db",
+    "torch_version": "2.11.0+cu130",
+    "cuda_version": "13.0",
+    "python_version": "3.12.13"
+  },
+  "authority": "User-approved minimum GPU2 smoke under /output/agenticAI; GPU3 unused.",
+  "formal_training": false,
+  "test_opened": false,
+  "automatic_retry": false,
+  "connection_details_recorded": false
+}

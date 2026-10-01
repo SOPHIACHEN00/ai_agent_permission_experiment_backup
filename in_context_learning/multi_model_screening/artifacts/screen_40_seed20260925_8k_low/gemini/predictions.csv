@@ -1,0 +1,600 @@
+row_index,participant_id,query_id,tool,raw_data_type,fold,true_label_id,pred_label_id,pred_label_text,confidence
+254,P143,10,mira,Exercise type (e.g. cardio),0,3,2,"Yes, but ask me next time",0.95
+255,P143,10,mira,"Exercise data (e.g. sets, distance, pace)",0,3,2,"Yes, but ask me next time",0.95
+256,P143,10,mira,Heart rate data,0,3,2,"Yes, but ask me next time",0.85
+257,P143,10,mira,Calories burned,0,3,2,"Yes, but ask me next time",0.95
+258,P143,11,Slack,Message content,0,2,2,"Yes, but ask me next time",0.95
+259,P143,11,Slack,Scheduling details (i.e.  meeting details),0,2,2,"Yes, but ask me next time",0.95
+325,P143,48,Travel Booking,Trip dates,0,2,2,"Yes, but ask me next time",0.95
+326,P143,48,Travel Booking,Trip location,0,2,2,"Yes, but ask me next time",0.95
+327,P143,48,Travel Booking,Car preferences,0,2,2,"Yes, but ask me next time",0.95
+328,P143,48,Travel Booking,Driving license,0,2,2,"Yes, but ask me next time",0.85
+329,P143,48,Travel Booking,Passport,0,1,2,"Yes, but ask me next time",0.75
+330,P143,48,Travel Booking,Past visa application details,0,1,0,"No, never share",0.85
+331,P143,48,Travel Booking,Pending task information,0,2,1,"No, but ask me next time",0.8
+332,P143,48,Calendar,Trip dates,0,2,2,"Yes, but ask me next time",0.95
+333,P143,48,Calendar,Trip location,0,2,2,"Yes, but ask me next time",0.95
+334,P143,48,Calendar,Car rental details (e.g. car type,0,2,2,"Yes, but ask me next time",0.95
+335,P143,48,mira,Car rental details (e.g. car type,0,2,2,"Yes, but ask me next time",0.95
+337,P143,51,Apple Music,Music playing history,0,2,2,"Yes, but ask me next time",0.9
+887,P170,10,mira,Exercise type (e.g. cardio),0,2,2,"Yes, but ask me next time",0.95
+888,P170,10,mira,"Exercise data (e.g. sets, distance, pace)",0,2,2,"Yes, but ask me next time",0.95
+889,P170,10,mira,Heart rate data,0,2,2,"Yes, but ask me next time",0.9
+890,P170,10,mira,Calories burned,0,2,2,"Yes, but ask me next time",0.95
+891,P170,11,Slack,Message content,0,2,2,"Yes, but ask me next time",0.95
+892,P170,11,Slack,Scheduling details (i.e.  meeting details),0,2,2,"Yes, but ask me next time",0.95
+951,P170,41,Weather,Trip dates,0,2,2,"Yes, but ask me next time",0.95
+952,P170,41,Weather,Trip location,0,2,2,"Yes, but ask me next time",0.95
+953,P170,41,Local Search,Trip dates,0,2,2,"Yes, but ask me next time",0.95
+954,P170,41,Local Search,Trip location,0,2,2,"Yes, but ask me next time",0.95
+955,P170,41,Local Search,Trip activities,0,2,2,"Yes, but ask me next time",0.95
+956,P170,41,Local Search,Email content,0,1,1,"No, but ask me next time",0.95
+958,P170,51,Apple Music,Music playing history,0,2,2,"Yes, but ask me next time",0.95
+971,P074,2,mira,Sleep duration,0,3,3,"Yes, always share",0.95
+972,P074,2,mira,Sleep quality data (e.g. snoring),0,1,3,"Yes, always share",0.9
+973,P074,3,Nutrition and Diet,Nutritional goals (e.g. muscle gaining),0,3,3,"Yes, always share",0.95
+974,P074,3,Nutrition and Diet,Weight,0,3,3,"Yes, always share",0.95
+975,P074,3,Nutrition and Diet,Allergies,0,3,3,"Yes, always share",0.95
+976,P074,3,Nutrition and Diet,Dietary preferences,0,3,3,"Yes, always share",0.95
+977,P074,3,Nutrition and Diet,Income/budget considerations,0,3,3,"Yes, always share",0.9
+1031,P074,40,Weather,Trip dates,0,3,3,"Yes, always share",0.95
+1032,P074,40,Weather,Trip location,0,3,3,"Yes, always share",0.95
+1033,P074,40,Local Search,Trip dates,0,3,3,"Yes, always share",0.95
+1034,P074,40,Local Search,Trip location,0,3,3,"Yes, always share",0.95
+1036,P074,43,Cloud Drive,Passport scans,0,3,3,"Yes, always share",0.95
+1037,P074,43,Cloud Drive,Visa documents,0,3,3,"Yes, always share",0.95
+1038,P074,43,Cloud Drive,Other travel permits,0,3,3,"Yes, always share",0.95
+1039,P074,43,Cloud Drive,Past visa application details,0,3,3,"Yes, always share",0.95
+1040,P074,43,Cloud Drive,Travel history,0,3,3,"Yes, always share",0.95
+1041,P074,43,Cloud Drive,Passport number,0,2,3,"Yes, always share",0.95
+1863,P174,0,Fitness Tracking,Fitness goal (i.e. weight loss),0,2,2,"Yes, but ask me next time",0.95
+1864,P174,0,Fitness Tracking,Physical limitations or injuries,0,3,2,"Yes, but ask me next time",0.95
+1865,P174,0,Fitness Tracking,Gender,0,2,2,"Yes, but ask me next time",0.85
+1866,P174,1,mira,Weight,0,3,2,"Yes, but ask me next time",0.95
+1867,P174,1,mira,Blood pressure,0,3,2,"Yes, but ask me next time",0.95
+1868,P174,1,mira,Heart rate data,0,3,2,"Yes, but ask me next time",0.95
+1869,P174,1,mira,Sleep duration/quality,0,3,2,"Yes, but ask me next time",0.95
+1870,P174,1,mira,Exercise logs,0,3,2,"Yes, but ask me next time",0.95
+1930,P174,59,mira,Garage access log,0,2,2,"Yes, but ask me next time",0.95
+1931,P174,59,mira,Garage video recording,0,2,2,"Yes, but ask me next time",0.95
+1933,P174,61,mira,Energy consumption logs,0,2,2,"Yes, but ask me next time",0.95
+1936,P013,0,Fitness Tracking,Fitness goal (i.e. weight loss),0,3,3,"Yes, always share",0.8
+1937,P013,0,Fitness Tracking,Physical limitations or injuries,0,2,2,"Yes, but ask me next time",0.75
+1938,P013,0,Fitness Tracking,Gender,0,1,3,"Yes, always share",0.75
+1939,P013,1,mira,Weight,0,3,3,"Yes, always share",0.85
+1940,P013,1,mira,Blood pressure,0,2,2,"Yes, but ask me next time",0.7
+1941,P013,1,mira,Heart rate data,0,1,3,"Yes, always share",0.9
+1942,P013,1,mira,Sleep duration/quality,0,2,3,"Yes, always share",0.8
+1943,P013,1,mira,Exercise logs,0,2,2,"Yes, but ask me next time",0.75
+2003,P013,59,mira,Garage access log,0,3,3,"Yes, always share",0.85
+2004,P013,59,mira,Garage video recording,0,2,3,"Yes, always share",0.8
+2006,P013,61,mira,Energy consumption logs,0,3,3,"Yes, always share",0.95
+2259,P061,10,mira,Exercise type (e.g. cardio),0,2,3,"Yes, always share",0.85
+2260,P061,10,mira,"Exercise data (e.g. sets, distance, pace)",0,2,3,"Yes, always share",0.85
+2261,P061,10,mira,Heart rate data,0,2,3,"Yes, always share",0.8
+2262,P061,10,mira,Calories burned,0,2,3,"Yes, always share",0.85
+2263,P061,11,Slack,Message content,0,2,2,"Yes, but ask me next time",0.85
+2264,P061,11,Slack,Scheduling details (i.e.  meeting details),0,2,3,"Yes, always share",0.85
+2330,P061,48,Travel Booking,Trip dates,0,3,3,"Yes, always share",0.95
+2331,P061,48,Travel Booking,Trip location,0,3,3,"Yes, always share",0.95
+2332,P061,48,Travel Booking,Car preferences,0,3,3,"Yes, always share",0.95
+2333,P061,48,Travel Booking,Driving license,0,2,2,"Yes, but ask me next time",0.9
+2334,P061,48,Travel Booking,Passport,0,2,2,"Yes, but ask me next time",0.85
+2335,P061,48,Travel Booking,Past visa application details,0,2,2,"Yes, but ask me next time",0.75
+2336,P061,48,Travel Booking,Pending task information,0,3,0,"No, never share",0.65
+2337,P061,48,Calendar,Trip dates,0,3,3,"Yes, always share",0.95
+2338,P061,48,Calendar,Trip location,0,3,3,"Yes, always share",0.95
+2339,P061,48,Calendar,Car rental details (e.g. car type,0,3,3,"Yes, always share",0.9
+2340,P061,48,mira,Car rental details (e.g. car type,0,3,3,"Yes, always share",0.9
+2342,P061,51,Apple Music,Music playing history,0,3,3,"Yes, always share",0.95
+2682,P120,14,Calendar,HR email addresses,0,2,2,"Yes, but ask me next time",0.85
+2683,P120,14,Calendar,Meeting date and time,0,3,3,"Yes, always share",0.8
+2684,P120,14,Calendar,Meeting agenda (i.e. cost-cutting),0,1,2,"Yes, but ask me next time",0.85
+2685,P120,17,Cloud Drive,Invoices and receipts data,0,2,2,"Yes, but ask me next time",0.9
+2742,P120,54,Cloud Drive,"Photo details (e.g. file name, location, and timestamp)",0,1,2,"Yes, but ask me next time",0.85
+2743,P120,54,Instagram,Photos,0,2,2,"Yes, but ask me next time",0.85
+2744,P120,54,Instagram,"Photo details (e.g. file name, location, and timestamp)",0,1,1,"No, but ask me next time",0.75
+2745,P120,54,mira,Photos,0,1,1,"No, but ask me next time",0.75
+2746,P120,54,mira,Instagram post content,0,3,2,"Yes, but ask me next time",0.8
+2759,P120,56,Cloud Drive,"Photo details (e.g. file name, location, and timestamp)",0,1,2,"Yes, but ask me next time",0.85
+2760,P120,56,Tinder,Photos,0,2,2,"Yes, but ask me next time",0.9
+2761,P120,56,mira,Photos,0,1,1,"No, but ask me next time",0.8
+2766,P103,10,mira,"Exercise data (e.g. sets, distance, pace)",0,2,2,"Yes, but ask me next time",0.85
+2767,P103,10,mira,Calories burned,0,2,2,"Yes, but ask me next time",0.85
+2768,P103,10,mira,Exercise type (e.g. cardio),0,2,2,"Yes, but ask me next time",0.85
+2769,P103,10,mira,Heart rate data,0,2,2,"Yes, but ask me next time",0.75
+2770,P103,11,Slack,Message content,0,2,2,"Yes, but ask me next time",0.95
+2771,P103,11,Slack,Scheduling details (i.e.  meeting details),0,2,2,"Yes, but ask me next time",0.95
+2837,P103,48,Travel Booking,Past visa application details,0,0,0,"No, never share",0.9
+2838,P103,48,Travel Booking,Passport,0,0,2,"Yes, but ask me next time",0.75
+2839,P103,48,Travel Booking,Driving license,0,2,2,"Yes, but ask me next time",0.85
+2840,P103,48,Travel Booking,Car preferences,0,2,2,"Yes, but ask me next time",0.9
+2841,P103,48,Travel Booking,Trip location,0,2,2,"Yes, but ask me next time",0.95
+2842,P103,48,Travel Booking,Trip dates,0,2,2,"Yes, but ask me next time",0.95
+2843,P103,48,Travel Booking,Pending task information,0,1,0,"No, never share",0.85
+2844,P103,48,Calendar,Trip dates,0,2,2,"Yes, but ask me next time",0.95
+2845,P103,48,Calendar,Trip location,0,2,2,"Yes, but ask me next time",0.95
+2846,P103,48,Calendar,Car rental details (e.g. car type,0,0,2,"Yes, but ask me next time",0.95
+2847,P103,48,mira,Car rental details (e.g. car type,0,2,2,"Yes, but ask me next time",0.85
+2849,P103,51,Apple Music,Music playing history,0,3,2,"Yes, but ask me next time",0.9
+3173,P032,2,mira,Sleep duration,0,3,2,"Yes, but ask me next time",0.95
+3174,P032,2,mira,Sleep quality data (e.g. snoring),0,2,2,"Yes, but ask me next time",0.9
+3175,P032,3,Nutrition and Diet,Nutritional goals (e.g. muscle gaining),0,3,3,"Yes, always share",0.95
+3176,P032,3,Nutrition and Diet,Weight,0,3,3,"Yes, always share",0.95
+3177,P032,3,Nutrition and Diet,Allergies,0,3,3,"Yes, always share",0.98
+3178,P032,3,Nutrition and Diet,Dietary preferences,0,3,3,"Yes, always share",0.98
+3179,P032,3,Nutrition and Diet,Income/budget considerations,0,2,3,"Yes, always share",0.85
+3246,P032,32,Amazon,Credit card details,0,2,2,"Yes, but ask me next time",0.95
+3247,P032,32,Amazon,Name,0,3,3,"Yes, always share",0.98
+3248,P032,32,Amazon,Address,0,3,3,"Yes, always share",0.98
+3249,P032,32,Amazon,Email,0,3,3,"Yes, always share",0.98
+3250,P032,32,Amazon,"Order information (e.g., product details)",0,3,3,"Yes, always share",0.98
+3256,P032,34,Amazon,Delivery address,0,3,3,"Yes, always share",0.95
+3257,P032,34,Amazon,Phone number,0,3,3,"Yes, always share",0.75
+3258,P032,34,Amazon,"Order information (e.g., product details)",0,3,3,"Yes, always share",0.98
+4508,P128,10,mira,Exercise type (e.g. cardio),0,3,3,"Yes, always share",0.95
+4509,P128,10,mira,"Exercise data (e.g. sets, distance, pace)",0,3,3,"Yes, always share",0.95
+4510,P128,10,mira,Heart rate data,0,3,3,"Yes, always share",0.9
+4511,P128,10,mira,Calories burned,0,3,3,"Yes, always share",0.95
+4512,P128,10,mira,Physical limitations or injuries,0,3,0,"No, never share",0.75
+4513,P128,10,mira,Allergies,0,3,0,"No, never share",0.95
+4514,P128,10,mira,Recipient account information,0,1,0,"No, never share",0.98
+4515,P128,10,mira,Backyard video recording,0,0,0,"No, never share",0.99
+4516,P128,11,Slack,Message content,0,3,3,"Yes, always share",0.98
+4517,P128,11,Slack,Scheduling details (i.e.  meeting details),0,3,3,"Yes, always share",0.98
+4518,P128,11,Slack,Email content,0,0,0,"No, never share",0.95
+4519,P128,11,Slack,Music playing history,0,3,0,"No, never share",0.99
+4575,P128,34,Amazon,Delivery address,0,3,3,"Yes, always share",0.8
+4576,P128,34,Amazon,Phone number,0,3,0,"No, never share",0.7
+4577,P128,34,Amazon,"Order information (e.g., product details)",0,3,3,"Yes, always share",0.95
+4581,P128,36,Amazon (Groceries),Shopping list,0,3,3,"Yes, always share",0.95
+4582,P128,36,Amazon (Groceries),Transaction history,0,0,3,"Yes, always share",0.95
+5220,P180,10,mira,Exercise type (e.g. cardio),0,3,3,"Yes, always share",0.85
+5221,P180,10,mira,Heart rate data,0,3,3,"Yes, always share",0.8
+5222,P180,10,mira,"Exercise data (e.g. sets, distance, pace)",0,3,3,"Yes, always share",0.85
+5223,P180,10,mira,Calories burned,0,3,3,"Yes, always share",0.85
+5224,P180,11,Slack,Message content,0,3,3,"Yes, always share",0.95
+5225,P180,11,Slack,Scheduling details (i.e.  meeting details),0,3,3,"Yes, always share",0.95
+5291,P180,48,Travel Booking,Trip dates,0,3,3,"Yes, always share",0.95
+5292,P180,48,Travel Booking,Trip location,0,3,3,"Yes, always share",0.95
+5293,P180,48,Travel Booking,Car preferences,0,3,3,"Yes, always share",0.95
+5294,P180,48,Travel Booking,Driving license,0,2,2,"Yes, but ask me next time",0.85
+5295,P180,48,Travel Booking,Passport,0,1,2,"Yes, but ask me next time",0.85
+5296,P180,48,Travel Booking,Past visa application details,0,1,0,"No, never share",0.8
+5297,P180,48,Travel Booking,Pending task information,0,1,1,"No, but ask me next time",0.75
+5298,P180,48,Calendar,Trip dates,0,3,3,"Yes, always share",0.95
+5299,P180,48,Calendar,Trip location,0,3,3,"Yes, always share",0.95
+5300,P180,48,Calendar,Car rental details (e.g. car type,0,3,3,"Yes, always share",0.9
+5301,P180,48,mira,Car rental details (e.g. car type,0,3,3,"Yes, always share",0.85
+5303,P180,51,Apple Music,Music playing history,0,3,3,"Yes, always share",0.9
+5311,P167,10,mira,Exercise type (e.g. cardio),0,3,2,"Yes, but ask me next time",0.85
+5312,P167,10,mira,"Exercise data (e.g. sets, distance, pace)",0,3,2,"Yes, but ask me next time",0.85
+5313,P167,10,mira,Heart rate data,0,3,2,"Yes, but ask me next time",0.8
+5314,P167,10,mira,Calories burned,0,3,2,"Yes, but ask me next time",0.85
+5315,P167,11,Slack,Message content,0,2,2,"Yes, but ask me next time",0.95
+5316,P167,11,Slack,Scheduling details (i.e.  meeting details),0,2,2,"Yes, but ask me next time",0.95
+5375,P167,41,Weather,Trip dates,0,3,2,"Yes, but ask me next time",0.9
+5376,P167,41,Weather,Trip location,0,3,2,"Yes, but ask me next time",0.9
+5377,P167,41,Local Search,Trip dates,0,2,2,"Yes, but ask me next time",0.9
+5378,P167,41,Local Search,Trip location,0,2,2,"Yes, but ask me next time",0.9
+5379,P167,41,Local Search,Trip activities,0,2,2,"Yes, but ask me next time",0.9
+5380,P167,41,Local Search,Email content,0,2,1,"No, but ask me next time",0.85
+5382,P167,51,Apple Music,Music playing history,0,2,2,"Yes, but ask me next time",0.95
+5999,P002,10,mira,Exercise type (e.g. cardio),0,3,2,"Yes, but ask me next time",0.85
+6000,P002,10,mira,"Exercise data (e.g. sets, distance, pace)",0,3,2,"Yes, but ask me next time",0.85
+6001,P002,10,mira,Heart rate data,0,3,2,"Yes, but ask me next time",0.8
+6002,P002,10,mira,Calories burned,0,3,2,"Yes, but ask me next time",0.85
+6003,P002,11,Slack,Message content,0,2,2,"Yes, but ask me next time",0.95
+6004,P002,11,Slack,Scheduling details (i.e.  meeting details),0,2,2,"Yes, but ask me next time",0.95
+6063,P002,41,Weather,Trip dates,0,2,2,"Yes, but ask me next time",0.95
+6064,P002,41,Weather,Trip location,0,2,2,"Yes, but ask me next time",0.95
+6065,P002,41,Local Search,Trip dates,0,2,2,"Yes, but ask me next time",0.95
+6066,P002,41,Local Search,Trip location,0,2,2,"Yes, but ask me next time",0.95
+6067,P002,41,Local Search,Trip activities,0,2,2,"Yes, but ask me next time",0.95
+6068,P002,41,Local Search,Email content,0,0,0,"No, never share",0.95
+6070,P002,51,Apple Music,Music playing history,0,2,2,"Yes, but ask me next time",0.95
+6245,P015,10,mira,"Exercise data (e.g. sets, distance, pace)",0,3,3,"Yes, always share",0.85
+6246,P015,10,mira,Exercise type (e.g. cardio),0,3,3,"Yes, always share",0.9
+6247,P015,10,mira,Heart rate data,0,2,3,"Yes, always share",0.8
+6248,P015,10,mira,Calories burned,0,1,3,"Yes, always share",0.85
+6249,P015,11,Slack,Scheduling details (i.e.  meeting details),0,3,3,"Yes, always share",0.95
+6250,P015,11,Slack,Message content,0,2,3,"Yes, always share",0.9
+6309,P015,41,Weather,Trip dates,0,3,3,"Yes, always share",0.95
+6310,P015,41,Weather,Trip location,0,3,3,"Yes, always share",0.95
+6311,P015,41,Local Search,Trip dates,0,3,3,"Yes, always share",0.95
+6312,P015,41,Local Search,Trip location,0,3,3,"Yes, always share",0.95
+6313,P015,41,Local Search,Trip activities,0,2,3,"Yes, always share",0.95
+6314,P015,41,Local Search,Email content,0,2,0,"No, never share",0.9
+6316,P015,51,Apple Music,Music playing history,0,3,3,"Yes, always share",0.95
+6418,P049,2,mira,Sleep duration,0,3,3,"Yes, always share",0.85
+6419,P049,2,mira,Sleep quality data (e.g. snoring),0,3,3,"Yes, always share",0.75
+6420,P049,2,mira,Account password,0,0,0,"No, never share",0.98
+6421,P049,2,mira,Blood pressure,0,0,0,"No, never share",0.85
+6422,P049,3,Nutrition and Diet,Nutritional goals (e.g. muscle gaining),0,3,3,"Yes, always share",0.92
+6423,P049,3,Nutrition and Diet,Weight,0,3,3,"Yes, always share",0.85
+6424,P049,3,Nutrition and Diet,Allergies,0,3,3,"Yes, always share",0.95
+6425,P049,3,Nutrition and Diet,Dietary preferences,0,3,3,"Yes, always share",0.95
+6426,P049,3,Nutrition and Diet,Income/budget considerations,0,3,2,"Yes, but ask me next time",0.7
+6427,P049,3,Nutrition and Diet,Daily activity events,0,2,3,"Yes, always share",0.8
+6428,P049,3,Nutrition and Diet,Education level,0,0,0,"No, never share",0.9
+6429,P049,3,Nutrition and Diet,Photos,0,0,0,"No, never share",0.9
+6483,P049,54,Cloud Drive,"Photo details (e.g. file name, location, and timestamp)",0,2,2,"Yes, but ask me next time",0.85
+6484,P049,54,Instagram,Photos,0,2,2,"Yes, but ask me next time",0.85
+6485,P049,54,Instagram,"Photo details (e.g. file name, location, and timestamp)",0,2,2,"Yes, but ask me next time",0.85
+6486,P049,54,mira,Instagram post content,0,2,2,"Yes, but ask me next time",0.8
+6487,P049,54,mira,Photos,0,3,2,"Yes, but ask me next time",0.85
+6500,P049,56,Cloud Drive,"Photo details (e.g. file name, location, and timestamp)",0,0,2,"Yes, but ask me next time",0.85
+6501,P049,56,Tinder,Photos,0,2,2,"Yes, but ask me next time",0.9
+6502,P049,56,mira,Photos,0,3,2,"Yes, but ask me next time",0.85
+6680,P121,0,Fitness Tracking,Fitness goal (i.e. weight loss),0,3,3,"Yes, always share",0.95
+6681,P121,0,Fitness Tracking,Physical limitations or injuries,0,2,3,"Yes, always share",0.85
+6682,P121,0,Fitness Tracking,Gender,0,0,0,"No, never share",0.75
+6683,P121,0,Fitness Tracking,Energy consumption logs,0,3,0,"No, never share",0.85
+6684,P121,1,mira,Weight,0,3,3,"Yes, always share",0.85
+6685,P121,1,mira,Blood pressure,0,3,3,"Yes, always share",0.9
+6686,P121,1,mira,Heart rate data,0,3,3,"Yes, always share",0.95
+6687,P121,1,mira,Sleep duration/quality,0,3,3,"Yes, always share",0.9
+6688,P121,1,mira,Exercise logs,0,3,3,"Yes, always share",0.9
+6689,P121,1,mira,Dietary preferences,0,3,2,"Yes, but ask me next time",0.8
+6690,P121,1,mira,Gender,0,0,0,"No, never share",0.8
+6691,P121,1,mira,Photos,0,0,0,"No, never share",0.95
+6740,P121,48,Travel Booking,Trip dates,0,2,3,"Yes, always share",0.98
+6741,P121,48,Travel Booking,Trip location,0,2,3,"Yes, always share",0.98
+6742,P121,48,Travel Booking,Car preferences,0,3,3,"Yes, always share",0.95
+6743,P121,48,Travel Booking,Driving license,0,3,2,"Yes, but ask me next time",0.7
+6744,P121,48,Travel Booking,Passport,0,2,0,"No, never share",0.8
+6745,P121,48,Calendar,Trip dates,0,2,3,"Yes, always share",0.95
+6746,P121,48,Calendar,Trip location,0,2,3,"Yes, always share",0.95
+6747,P121,48,Calendar,Car rental details (e.g. car type,0,3,3,"Yes, always share",0.95
+6748,P121,48,mira,Car rental details (e.g. car type,0,3,3,"Yes, always share",0.9
+6750,P121,51,Apple Music,Music playing history,0,3,3,"Yes, always share",0.98
+7187,P031,2,mira,Sleep duration,0,3,3,"Yes, always share",0.95
+7188,P031,2,mira,Sleep quality data (e.g. snoring),0,3,3,"Yes, always share",0.75
+7189,P031,2,mira,Blood pressure,0,3,0,"No, never share",0.9
+7190,P031,2,mira,Account password,0,0,0,"No, never share",0.98
+7191,P031,3,Nutrition and Diet,Nutritional goals (e.g. muscle gaining),0,3,3,"Yes, always share",0.95
+7192,P031,3,Nutrition and Diet,Weight,0,3,3,"Yes, always share",0.9
+7193,P031,3,Nutrition and Diet,Allergies,0,3,3,"Yes, always share",0.95
+7194,P031,3,Nutrition and Diet,Dietary preferences,0,3,3,"Yes, always share",0.95
+7195,P031,3,Nutrition and Diet,Income/budget considerations,0,0,0,"No, never share",0.8
+7196,P031,3,Nutrition and Diet,Daily activity events,0,0,0,"No, never share",0.8
+7197,P031,3,Nutrition and Diet,Education level,0,0,0,"No, never share",0.95
+7198,P031,3,Nutrition and Diet,Photos,0,0,0,"No, never share",0.95
+7252,P031,54,Cloud Drive,"Photo details (e.g. file name, location, and timestamp)",0,3,3,"Yes, always share",0.9
+7253,P031,54,Instagram,Photos,0,3,3,"Yes, always share",0.95
+7254,P031,54,Instagram,"Photo details (e.g. file name, location, and timestamp)",0,3,3,"Yes, always share",0.9
+7255,P031,54,mira,Photos,0,3,3,"Yes, always share",0.95
+7256,P031,54,mira,Instagram post content,0,3,3,"Yes, always share",0.95
+7269,P031,56,Cloud Drive,"Photo details (e.g. file name, location, and timestamp)",0,3,3,"Yes, always share",0.95
+7270,P031,56,Tinder,Photos,0,3,3,"Yes, always share",0.95
+7271,P031,56,mira,Photos,0,3,3,"Yes, always share",0.95
+7440,P183,14,Calendar,HR email addresses,0,2,2,"Yes, but ask me next time",0.85
+7441,P183,14,Calendar,Meeting date and time,0,2,2,"Yes, but ask me next time",0.85
+7442,P183,14,Calendar,Meeting agenda (i.e. cost-cutting),0,2,2,"Yes, but ask me next time",0.85
+7443,P183,14,Calendar,Payment note,0,2,0,"No, never share",0.95
+7444,P183,17,Cloud Drive,Invoices and receipts data,0,0,0,"No, never share",0.95
+7445,P183,17,Cloud Drive,Content of recent emails,0,0,0,"No, never share",0.95
+7446,P183,17,Cloud Drive,Movie watching history,0,2,0,"No, never share",0.95
+7447,P183,17,Cloud Drive,Film genre,0,2,0,"No, never share",0.95
+7502,P183,59,mira,Garage access log,0,0,0,"No, never share",0.95
+7503,P183,59,mira,Garage video recording,0,0,0,"No, never share",0.95
+7505,P183,61,mira,Energy consumption logs,0,0,0,"No, never share",0.95
+7508,P040,14,Calendar,HR email addresses,0,2,2,"Yes, but ask me next time",0.85
+7509,P040,14,Calendar,Meeting date and time,0,3,3,"Yes, always share",0.8
+7510,P040,14,Calendar,Meeting agenda (i.e. cost-cutting),0,2,3,"Yes, always share",0.75
+7511,P040,14,Calendar,Payment note,0,2,1,"No, but ask me next time",0.8
+7512,P040,17,Cloud Drive,Invoices and receipts data,0,2,2,"Yes, but ask me next time",0.9
+7513,P040,17,Cloud Drive,Content of recent emails,0,2,2,"Yes, but ask me next time",0.85
+7514,P040,17,Cloud Drive,Movie watching history,0,1,1,"No, but ask me next time",0.85
+7515,P040,17,Cloud Drive,Film genre,0,1,1,"No, but ask me next time",0.85
+7570,P040,59,mira,Garage video recording,0,2,2,"Yes, but ask me next time",0.95
+7571,P040,59,mira,Garage access log,0,2,2,"Yes, but ask me next time",0.9
+7573,P040,61,mira,Energy consumption logs,0,3,3,"Yes, always share",0.85
+7946,P144,14,Calendar,Payment note,0,0,0,"No, never share",0.85
+7947,P144,14,Calendar,Meeting agenda (i.e. cost-cutting),0,2,2,"Yes, but ask me next time",0.75
+7948,P144,14,Calendar,Meeting date and time,0,2,3,"Yes, always share",0.88
+7949,P144,14,Calendar,HR email addresses,0,3,3,"Yes, always share",0.8
+7950,P144,17,Cloud Drive,Invoices and receipts data,0,2,2,"Yes, but ask me next time",0.9
+7951,P144,17,Cloud Drive,Content of recent emails,0,2,1,"No, but ask me next time",0.75
+7952,P144,17,Cloud Drive,Movie watching history,0,0,0,"No, never share",0.95
+7953,P144,17,Cloud Drive,Film genre,0,0,0,"No, never share",0.95
+8008,P144,59,mira,Garage access log,0,2,2,"Yes, but ask me next time",0.85
+8009,P144,59,mira,Garage video recording,0,2,2,"Yes, but ask me next time",0.85
+8011,P144,61,mira,Energy consumption logs,0,2,3,"Yes, always share",0.75
+8014,P082,2,mira,Sleep duration,0,3,3,"Yes, always share",0.95
+8015,P082,2,mira,Sleep quality data (e.g. snoring),0,1,3,"Yes, always share",0.8
+8016,P082,3,Nutrition and Diet,Nutritional goals (e.g. muscle gaining),0,3,3,"Yes, always share",0.95
+8017,P082,3,Nutrition and Diet,Weight,0,3,3,"Yes, always share",0.85
+8018,P082,3,Nutrition and Diet,Allergies,0,3,1,"No, but ask me next time",0.85
+8019,P082,3,Nutrition and Diet,Dietary preferences,0,2,1,"No, but ask me next time",0.85
+8020,P082,3,Nutrition and Diet,Income/budget considerations,0,2,0,"No, never share",0.75
+8075,P082,40,Weather,Trip location,0,3,3,"Yes, always share",0.95
+8076,P082,40,Local Search,Trip dates,0,3,3,"Yes, always share",0.9
+8077,P082,40,Local Search,Trip location,0,3,3,"Yes, always share",0.95
+8078,P082,40,Weather,Trip dates,0,3,3,"Yes, always share",0.95
+8080,P082,43,Cloud Drive,Passport scans,0,2,3,"Yes, always share",0.9
+8081,P082,43,Cloud Drive,Visa documents,0,3,3,"Yes, always share",0.9
+8082,P082,43,Cloud Drive,Other travel permits,0,2,3,"Yes, always share",0.85
+8083,P082,43,Cloud Drive,Past visa application details,0,3,3,"Yes, always share",0.85
+8084,P082,43,Cloud Drive,Travel history,0,2,3,"Yes, always share",0.85
+8085,P082,43,Cloud Drive,Passport number,0,2,3,"Yes, always share",0.85
+8097,P055,0,Fitness Tracking,Fitness goal (i.e. weight loss),0,2,2,"Yes, but ask me next time",0.95
+8098,P055,0,Fitness Tracking,Physical limitations or injuries,0,2,2,"Yes, but ask me next time",0.9
+8099,P055,0,Fitness Tracking,Gender,0,2,2,"Yes, but ask me next time",0.75
+8100,P055,1,mira,Weight,0,2,2,"Yes, but ask me next time",0.95
+8101,P055,1,mira,Blood pressure,0,2,2,"Yes, but ask me next time",0.95
+8102,P055,1,mira,Heart rate data,0,2,2,"Yes, but ask me next time",0.95
+8103,P055,1,mira,Sleep duration/quality,0,2,2,"Yes, but ask me next time",0.95
+8104,P055,1,mira,Exercise logs,0,2,2,"Yes, but ask me next time",0.95
+8164,P055,59,mira,Garage access log,0,2,2,"Yes, but ask me next time",0.95
+8165,P055,59,mira,Garage video recording,0,2,2,"Yes, but ask me next time",0.95
+8167,P055,61,mira,Energy consumption logs,0,2,2,"Yes, but ask me next time",0.95
+8950,P089,0,Fitness Tracking,Gender,0,3,3,"Yes, always share",0.95
+8951,P089,0,Fitness Tracking,Fitness goal (i.e. weight loss),0,3,3,"Yes, always share",0.95
+8952,P089,0,Fitness Tracking,Physical limitations or injuries,0,3,3,"Yes, always share",0.95
+8953,P089,1,mira,Weight,0,3,3,"Yes, always share",0.95
+8954,P089,1,mira,Blood pressure,0,3,3,"Yes, always share",0.95
+8955,P089,1,mira,Heart rate data,0,3,3,"Yes, always share",0.95
+8956,P089,1,mira,Sleep duration/quality,0,3,3,"Yes, always share",0.95
+8957,P089,1,mira,Exercise logs,0,3,3,"Yes, always share",0.95
+9013,P089,60,Lighting Control,Bedtime,0,3,3,"Yes, always share",0.95
+9014,P089,60,Lighting Control,Motion detection logs,0,3,3,"Yes, always share",0.9
+9015,P089,60,Lighting Control,Other travel permits,0,3,3,"Yes, always share",0.85
+9016,P089,60,Lighting Control,Past visa application details,0,3,3,"Yes, always share",0.85
+9021,P089,62,mira,Front door video recording,0,3,3,"Yes, always share",0.95
+9022,P089,62,mira,Garage access log,0,3,3,"Yes, always share",0.9
+9023,P089,62,mira,Doctor's Name,0,3,3,"Yes, always share",0.85
+9024,P089,62,mira,Health conditions,0,3,3,"Yes, always share",0.85
+9674,P088,0,Fitness Tracking,Fitness goal (i.e. weight loss),0,2,2,"Yes, but ask me next time",0.85
+9675,P088,0,Fitness Tracking,Physical limitations or injuries,0,2,2,"Yes, but ask me next time",0.8
+9676,P088,0,Fitness Tracking,Gender,0,1,1,"No, but ask me next time",0.65
+9677,P088,1,mira,Weight,0,2,2,"Yes, but ask me next time",0.75
+9678,P088,1,mira,Blood pressure,0,2,2,"Yes, but ask me next time",0.8
+9679,P088,1,mira,Heart rate data,0,2,2,"Yes, but ask me next time",0.9
+9680,P088,1,mira,Sleep duration/quality,0,2,2,"Yes, but ask me next time",0.85
+9681,P088,1,mira,Exercise logs,0,2,2,"Yes, but ask me next time",0.9
+9741,P088,59,mira,Garage access log,0,2,2,"Yes, but ask me next time",0.9
+9742,P088,59,mira,Garage video recording,0,2,2,"Yes, but ask me next time",0.9
+9744,P088,61,mira,Energy consumption logs,0,2,2,"Yes, but ask me next time",0.9
+9747,P179,14,Calendar,HR email addresses,0,2,2,"Yes, but ask me next time",0.85
+9748,P179,14,Calendar,Meeting date and time,0,2,2,"Yes, but ask me next time",0.95
+9749,P179,14,Calendar,Meeting agenda (i.e. cost-cutting),0,2,2,"Yes, but ask me next time",0.8
+9750,P179,17,Cloud Drive,Invoices and receipts data,0,2,2,"Yes, but ask me next time",0.95
+9807,P179,54,Cloud Drive,"Photo details (e.g. file name, location, and timestamp)",0,2,2,"Yes, but ask me next time",0.9
+9808,P179,54,Instagram,Photos,0,2,2,"Yes, but ask me next time",0.95
+9809,P179,54,Instagram,"Photo details (e.g. file name, location, and timestamp)",0,2,2,"Yes, but ask me next time",0.9
+9810,P179,54,mira,Photos,0,2,2,"Yes, but ask me next time",0.95
+9811,P179,54,mira,Instagram post content,0,2,2,"Yes, but ask me next time",0.95
+9824,P179,56,Cloud Drive,"Photo details (e.g. file name, location, and timestamp)",0,2,2,"Yes, but ask me next time",0.9
+9825,P179,56,Tinder,Photos,0,2,2,"Yes, but ask me next time",0.95
+9826,P179,56,mira,Photos,0,2,2,"Yes, but ask me next time",0.95
+10628,P033,0,Fitness Tracking,Fitness goal (i.e. weight loss),0,3,3,"Yes, always share",0.85
+10629,P033,0,Fitness Tracking,Physical limitations or injuries,0,3,2,"Yes, but ask me next time",0.75
+10630,P033,0,Fitness Tracking,Gender,0,1,2,"Yes, but ask me next time",0.65
+10631,P033,1,mira,Weight,0,3,3,"Yes, always share",0.8
+10632,P033,1,mira,Heart rate data,0,2,3,"Yes, always share",0.9
+10633,P033,1,mira,Sleep duration/quality,0,2,2,"Yes, but ask me next time",0.75
+10634,P033,1,mira,Blood pressure,0,3,3,"Yes, always share",0.75
+10635,P033,1,mira,Exercise logs,0,3,1,"No, but ask me next time",0.7
+10691,P033,60,Lighting Control,Bedtime,0,3,3,"Yes, always share",0.85
+10692,P033,60,Lighting Control,Motion detection logs,0,2,2,"Yes, but ask me next time",0.8
+10693,P033,60,Lighting Control,Other travel permits,0,2,1,"No, but ask me next time",0.75
+10694,P033,60,Lighting Control,Past visa application details,0,1,1,"No, but ask me next time",0.75
+10699,P033,62,mira,Front door video recording,0,3,3,"Yes, always share",0.85
+10700,P033,62,mira,Garage access log,0,2,2,"Yes, but ask me next time",0.75
+10701,P033,62,mira,Doctor's Name,0,2,1,"No, but ask me next time",0.8
+10702,P033,62,mira,Health conditions,0,1,1,"No, but ask me next time",0.8
+10791,P053,10,mira,Exercise type (e.g. cardio),0,3,3,"Yes, always share",0.65
+10792,P053,10,mira,"Exercise data (e.g. sets, distance, pace)",0,3,2,"Yes, but ask me next time",0.7
+10793,P053,10,mira,Heart rate data,0,3,2,"Yes, but ask me next time",0.75
+10794,P053,10,mira,Calories burned,0,3,2,"Yes, but ask me next time",0.65
+10795,P053,11,Slack,Message content,0,2,2,"Yes, but ask me next time",0.75
+10796,P053,11,Slack,Scheduling details (i.e.  meeting details),0,2,3,"Yes, always share",0.6
+10855,P053,41,Weather,Trip dates,0,3,3,"Yes, always share",0.85
+10856,P053,41,Weather,Trip location,0,3,3,"Yes, always share",0.9
+10857,P053,41,Local Search,Trip dates,0,3,3,"Yes, always share",0.85
+10858,P053,41,Local Search,Trip location,0,3,3,"Yes, always share",0.9
+10859,P053,41,Local Search,Trip activities,0,3,3,"Yes, always share",0.8
+10860,P053,41,Local Search,Email content,0,1,0,"No, never share",0.8
+10862,P053,51,Apple Music,Music playing history,0,3,3,"Yes, always share",0.9
+12232,P125,2,mira,Sleep duration,0,3,3,"Yes, always share",0.85
+12233,P125,2,mira,Sleep quality data (e.g. snoring),0,3,2,"Yes, but ask me next time",0.75
+12234,P125,3,Nutrition and Diet,Nutritional goals (e.g. muscle gaining),0,3,3,"Yes, always share",0.9
+12235,P125,3,Nutrition and Diet,Weight,0,3,3,"Yes, always share",0.8
+12236,P125,3,Nutrition and Diet,Allergies,0,3,3,"Yes, always share",0.95
+12237,P125,3,Nutrition and Diet,Dietary preferences,0,3,3,"Yes, always share",0.95
+12238,P125,3,Nutrition and Diet,Income/budget considerations,0,1,2,"Yes, but ask me next time",0.85
+12305,P125,32,Amazon,Credit card details,0,2,2,"Yes, but ask me next time",0.95
+12306,P125,32,Amazon,Name,0,3,3,"Yes, always share",0.95
+12307,P125,32,Amazon,Address,0,3,3,"Yes, always share",0.95
+12308,P125,32,Amazon,Email,0,3,3,"Yes, always share",0.95
+12309,P125,32,Amazon,"Order information (e.g., product details)",0,3,3,"Yes, always share",0.95
+12315,P125,34,Amazon,Delivery address,0,3,3,"Yes, always share",0.95
+12316,P125,34,Amazon,Phone number,0,3,3,"Yes, always share",0.95
+12317,P125,34,Amazon,"Order information (e.g., product details)",0,3,3,"Yes, always share",0.95
+12631,P037,0,Fitness Tracking,Fitness goal (i.e. weight loss),0,2,2,"Yes, but ask me next time",0.85
+12632,P037,0,Fitness Tracking,Physical limitations or injuries,0,2,1,"No, but ask me next time",0.75
+12633,P037,0,Fitness Tracking,Gender,0,2,2,"Yes, but ask me next time",0.85
+12634,P037,1,mira,Weight,0,2,2,"Yes, but ask me next time",0.75
+12635,P037,1,mira,Blood pressure,0,2,1,"No, but ask me next time",0.7
+12636,P037,1,mira,Heart rate data,0,2,2,"Yes, but ask me next time",0.85
+12637,P037,1,mira,Sleep duration/quality,0,2,2,"Yes, but ask me next time",0.7
+12638,P037,1,mira,Exercise logs,0,2,2,"Yes, but ask me next time",0.85
+12698,P037,59,mira,Garage access log,0,0,1,"No, but ask me next time",0.85
+12699,P037,59,mira,Garage video recording,0,0,1,"No, but ask me next time",0.9
+12701,P037,61,mira,Energy consumption logs,0,1,1,"No, but ask me next time",0.75
+13040,P080,0,Fitness Tracking,Fitness goal (i.e. weight loss),0,2,3,"Yes, always share",0.75
+13041,P080,0,Fitness Tracking,Physical limitations or injuries,0,0,1,"No, but ask me next time",0.7
+13042,P080,0,Fitness Tracking,Gender,0,3,2,"Yes, but ask me next time",0.65
+13043,P080,1,mira,Weight,0,1,2,"Yes, but ask me next time",0.75
+13044,P080,1,mira,Blood pressure,0,1,1,"No, but ask me next time",0.8
+13045,P080,1,mira,Heart rate data,0,1,1,"No, but ask me next time",0.9
+13046,P080,1,mira,Sleep duration/quality,0,1,2,"Yes, but ask me next time",0.7
+13047,P080,1,mira,Exercise logs,0,2,2,"Yes, but ask me next time",0.85
+13103,P080,60,Lighting Control,Bedtime,0,3,3,"Yes, always share",0.85
+13104,P080,60,Lighting Control,Motion detection logs,0,1,2,"Yes, but ask me next time",0.8
+13105,P080,60,Lighting Control,Other travel permits,0,2,0,"No, never share",0.95
+13106,P080,60,Lighting Control,Past visa application details,0,0,0,"No, never share",0.95
+13111,P080,62,mira,Health conditions,0,1,0,"No, never share",0.9
+13112,P080,62,mira,Doctor's Name,0,2,0,"No, never share",0.9
+13113,P080,62,mira,Garage access log,0,2,2,"Yes, but ask me next time",0.75
+13114,P080,62,mira,Front door video recording,0,3,2,"Yes, but ask me next time",0.85
+13121,P009,10,mira,Exercise type (e.g. cardio),0,0,2,"Yes, but ask me next time",0.85
+13122,P009,10,mira,"Exercise data (e.g. sets, distance, pace)",0,0,2,"Yes, but ask me next time",0.85
+13123,P009,10,mira,Heart rate data,0,0,2,"Yes, but ask me next time",0.8
+13124,P009,10,mira,Calories burned,0,0,2,"Yes, but ask me next time",0.8
+13125,P009,10,mira,Physical limitations or injuries,0,0,1,"No, but ask me next time",0.65
+13126,P009,10,mira,Recipient account information,0,0,0,"No, never share",0.95
+13127,P009,10,mira,Allergies,0,0,0,"No, never share",0.9
+13128,P009,10,mira,Backyard video recording,0,0,0,"No, never share",0.9
+13129,P009,11,Slack,Message content,0,2,2,"Yes, but ask me next time",0.9
+13130,P009,11,Slack,Scheduling details (i.e.  meeting details),0,2,2,"Yes, but ask me next time",0.9
+13131,P009,11,Slack,Email content,0,2,0,"No, never share",0.85
+13132,P009,11,Slack,Music playing history,0,2,0,"No, never share",0.95
+13188,P009,34,Amazon,Delivery address,0,2,2,"Yes, but ask me next time",0.85
+13189,P009,34,Amazon,Phone number,0,2,2,"Yes, but ask me next time",0.75
+13190,P009,34,Amazon,"Order information (e.g., product details)",0,2,2,"Yes, but ask me next time",0.85
+13194,P009,36,Amazon (Groceries),Shopping list,0,2,2,"Yes, but ask me next time",0.85
+13195,P009,36,Amazon (Groceries),Transaction history,0,2,2,"Yes, but ask me next time",0.8
+13432,P085,10,mira,Exercise type (e.g. cardio),0,3,2,"Yes, but ask me next time",0.85
+13433,P085,10,mira,"Exercise data (e.g. sets, distance, pace)",0,3,2,"Yes, but ask me next time",0.85
+13434,P085,10,mira,Heart rate data,0,3,2,"Yes, but ask me next time",0.8
+13435,P085,10,mira,Calories burned,0,3,2,"Yes, but ask me next time",0.85
+13436,P085,11,Slack,Message content,0,2,2,"Yes, but ask me next time",0.85
+13437,P085,11,Slack,Scheduling details (i.e.  meeting details),0,2,2,"Yes, but ask me next time",0.85
+13496,P085,41,Weather,Trip dates,0,3,2,"Yes, but ask me next time",0.8
+13497,P085,41,Weather,Trip location,0,3,2,"Yes, but ask me next time",0.8
+13498,P085,41,Local Search,Trip dates,0,3,2,"Yes, but ask me next time",0.8
+13499,P085,41,Local Search,Trip location,0,3,2,"Yes, but ask me next time",0.8
+13500,P085,41,Local Search,Trip activities,0,3,2,"Yes, but ask me next time",0.8
+13501,P085,41,Local Search,Email content,0,2,0,"No, never share",0.9
+13503,P085,51,Apple Music,Music playing history,0,3,3,"Yes, always share",0.8
+13516,P016,10,mira,Exercise type (e.g. cardio),0,3,3,"Yes, always share",0.8
+13517,P016,10,mira,"Exercise data (e.g. sets, distance, pace)",0,3,3,"Yes, always share",0.8
+13518,P016,10,mira,Heart rate data,0,3,2,"Yes, but ask me next time",0.65
+13519,P016,10,mira,Calories burned,0,3,3,"Yes, always share",0.75
+13520,P016,11,Slack,Message content,0,3,3,"Yes, always share",0.95
+13521,P016,11,Slack,Scheduling details (i.e.  meeting details),0,3,3,"Yes, always share",0.9
+13580,P016,41,Weather,Trip dates,0,3,3,"Yes, always share",0.9
+13581,P016,41,Weather,Trip location,0,3,3,"Yes, always share",0.9
+13582,P016,41,Local Search,Trip dates,0,3,3,"Yes, always share",0.9
+13583,P016,41,Local Search,Trip location,0,3,3,"Yes, always share",0.9
+13584,P016,41,Local Search,Trip activities,0,3,3,"Yes, always share",0.9
+13585,P016,41,Local Search,Email content,0,3,0,"No, never share",0.75
+13587,P016,51,Apple Music,Music playing history,0,3,3,"Yes, always share",0.95
+14333,P083,10,mira,Exercise type (e.g. cardio),0,3,3,"Yes, always share",0.85
+14334,P083,10,mira,"Exercise data (e.g. sets, distance, pace)",0,3,3,"Yes, always share",0.85
+14335,P083,10,mira,Heart rate data,0,3,3,"Yes, always share",0.8
+14336,P083,10,mira,Calories burned,0,3,3,"Yes, always share",0.85
+14337,P083,11,Slack,Message content,0,3,2,"Yes, but ask me next time",0.85
+14338,P083,11,Slack,Scheduling details (i.e.  meeting details),0,3,2,"Yes, but ask me next time",0.85
+14404,P083,48,Travel Booking,Passport,0,2,2,"Yes, but ask me next time",0.85
+14405,P083,48,Travel Booking,Driving license,0,2,2,"Yes, but ask me next time",0.85
+14406,P083,48,Travel Booking,Trip dates,0,3,3,"Yes, always share",0.95
+14407,P083,48,Travel Booking,Trip location,0,3,3,"Yes, always share",0.95
+14408,P083,48,Travel Booking,Car preferences,0,3,3,"Yes, always share",0.9
+14409,P083,48,Travel Booking,Pending task information,0,3,2,"Yes, but ask me next time",0.75
+14410,P083,48,Travel Booking,Past visa application details,0,3,2,"Yes, but ask me next time",0.75
+14411,P083,48,Calendar,Trip dates,0,3,3,"Yes, always share",0.9
+14412,P083,48,Calendar,Trip location,0,3,3,"Yes, always share",0.9
+14413,P083,48,Calendar,Car rental details (e.g. car type,0,3,3,"Yes, always share",0.9
+14414,P083,48,mira,Car rental details (e.g. car type,0,3,3,"Yes, always share",0.9
+14416,P083,51,Apple Music,Music playing history,0,3,3,"Yes, always share",0.95
+15140,P048,2,mira,Sleep duration,0,3,3,"Yes, always share",0.85
+15141,P048,2,mira,Sleep quality data (e.g. snoring),0,2,2,"Yes, but ask me next time",0.75
+15142,P048,2,mira,Blood pressure,0,0,0,"No, never share",0.85
+15143,P048,2,mira,Account password,0,0,0,"No, never share",0.98
+15144,P048,3,Nutrition and Diet,Nutritional goals (e.g. muscle gaining),0,3,3,"Yes, always share",0.85
+15145,P048,3,Nutrition and Diet,Weight,0,2,3,"Yes, always share",0.75
+15146,P048,3,Nutrition and Diet,Allergies,0,3,3,"Yes, always share",0.9
+15147,P048,3,Nutrition and Diet,Dietary preferences,0,3,2,"Yes, but ask me next time",0.8
+15148,P048,3,Nutrition and Diet,Income/budget considerations,0,2,2,"Yes, but ask me next time",0.7
+15149,P048,3,Nutrition and Diet,Daily activity events,0,1,3,"Yes, always share",0.7
+15150,P048,3,Nutrition and Diet,Education level,0,0,0,"No, never share",0.85
+15151,P048,3,Nutrition and Diet,Photos,0,0,0,"No, never share",0.85
+15205,P048,54,Cloud Drive,"Photo details (e.g. file name, location, and timestamp)",0,2,2,"Yes, but ask me next time",0.8
+15206,P048,54,Instagram,Photos,0,3,2,"Yes, but ask me next time",0.75
+15207,P048,54,Instagram,"Photo details (e.g. file name, location, and timestamp)",0,2,2,"Yes, but ask me next time",0.8
+15208,P048,54,mira,Photos,0,2,2,"Yes, but ask me next time",0.85
+15209,P048,54,mira,Instagram post content,0,2,2,"Yes, but ask me next time",0.8
+15222,P048,56,Cloud Drive,"Photo details (e.g. file name, location, and timestamp)",0,1,2,"Yes, but ask me next time",0.85
+15223,P048,56,Tinder,Photos,0,2,2,"Yes, but ask me next time",0.85
+15224,P048,56,mira,Photos,0,2,2,"Yes, but ask me next time",0.85
+15312,P073,0,Fitness Tracking,Fitness goal (i.e. weight loss),0,1,3,"Yes, always share",0.7
+15313,P073,0,Fitness Tracking,Physical limitations or injuries,0,2,3,"Yes, always share",0.65
+15314,P073,0,Fitness Tracking,Gender,0,2,2,"Yes, but ask me next time",0.6
+15315,P073,1,mira,Weight,0,0,2,"Yes, but ask me next time",0.75
+15316,P073,1,mira,Blood pressure,0,1,2,"Yes, but ask me next time",0.7
+15317,P073,1,mira,Heart rate data,0,2,2,"Yes, but ask me next time",0.85
+15318,P073,1,mira,Sleep duration/quality,0,2,2,"Yes, but ask me next time",0.7
+15319,P073,1,mira,Exercise logs,0,3,3,"Yes, always share",0.65
+15379,P073,59,mira,Garage access log,0,0,1,"No, but ask me next time",0.6
+15380,P073,59,mira,Garage video recording,0,0,0,"No, never share",0.95
+15382,P073,61,mira,Energy consumption logs,0,0,0,"No, never share",0.6
+15385,P057,10,mira,"Exercise data (e.g. sets, distance, pace)",0,3,2,"Yes, but ask me next time",0.95
+15386,P057,10,mira,Exercise type (e.g. cardio),0,3,2,"Yes, but ask me next time",0.95
+15387,P057,10,mira,Heart rate data,0,2,2,"Yes, but ask me next time",0.95
+15388,P057,10,mira,Calories burned,0,3,2,"Yes, but ask me next time",0.95
+15389,P057,11,Slack,Message content,0,2,2,"Yes, but ask me next time",0.95
+15390,P057,11,Slack,Scheduling details (i.e.  meeting details),0,2,2,"Yes, but ask me next time",0.95
+15449,P057,41,Weather,Trip dates,0,2,2,"Yes, but ask me next time",0.95
+15450,P057,41,Weather,Trip location,0,2,2,"Yes, but ask me next time",0.95
+15451,P057,41,Local Search,Trip dates,0,2,2,"Yes, but ask me next time",0.95
+15452,P057,41,Local Search,Trip location,0,2,2,"Yes, but ask me next time",0.95
+15453,P057,41,Local Search,Trip activities,0,2,2,"Yes, but ask me next time",0.95
+15454,P057,41,Local Search,Email content,0,2,2,"Yes, but ask me next time",0.9
+15456,P057,51,Apple Music,Music playing history,0,2,2,"Yes, but ask me next time",0.95
+15550,P194,2,mira,Sleep duration,0,2,2,"Yes, but ask me next time",0.85
+15551,P194,2,mira,Sleep quality data (e.g. snoring),0,1,1,"No, but ask me next time",0.75
+15552,P194,3,Nutrition and Diet,Nutritional goals (e.g. muscle gaining),0,2,2,"Yes, but ask me next time",0.9
+15553,P194,3,Nutrition and Diet,Weight,0,2,2,"Yes, but ask me next time",0.8
+15554,P194,3,Nutrition and Diet,Allergies,0,2,1,"No, but ask me next time",0.85
+15555,P194,3,Nutrition and Diet,Dietary preferences,0,2,2,"Yes, but ask me next time",0.9
+15556,P194,3,Nutrition and Diet,Income/budget considerations,0,2,1,"No, but ask me next time",0.85
+15610,P194,40,Weather,Trip dates,0,2,2,"Yes, but ask me next time",0.95
+15611,P194,40,Weather,Trip location,0,2,2,"Yes, but ask me next time",0.95
+15612,P194,40,Local Search,Trip dates,0,1,2,"Yes, but ask me next time",0.9
+15613,P194,40,Local Search,Trip location,0,1,2,"Yes, but ask me next time",0.95
+15615,P194,43,Cloud Drive,Passport number,0,1,2,"Yes, but ask me next time",0.9
+15616,P194,43,Cloud Drive,Passport scans,0,2,2,"Yes, but ask me next time",0.9
+15617,P194,43,Cloud Drive,Visa documents,0,2,2,"Yes, but ask me next time",0.9
+15618,P194,43,Cloud Drive,Other travel permits,0,2,2,"Yes, but ask me next time",0.85
+15619,P194,43,Cloud Drive,Past visa application details,0,2,2,"Yes, but ask me next time",0.85
+15620,P194,43,Cloud Drive,Travel history,0,2,2,"Yes, but ask me next time",0.85
+16059,P012,10,mira,Exercise type (e.g. cardio),0,2,3,"Yes, always share",0.85
+16060,P012,10,mira,"Exercise data (e.g. sets, distance, pace)",0,2,3,"Yes, always share",0.85
+16061,P012,10,mira,Heart rate data,0,2,3,"Yes, always share",0.8
+16062,P012,10,mira,Calories burned,0,2,3,"Yes, always share",0.8
+16063,P012,11,Slack,Message content,0,2,2,"Yes, but ask me next time",0.85
+16064,P012,11,Slack,Scheduling details (i.e.  meeting details),0,2,2,"Yes, but ask me next time",0.8
+16123,P012,41,Weather,Trip dates,0,3,3,"Yes, always share",0.9
+16124,P012,41,Weather,Trip location,0,3,3,"Yes, always share",0.9
+16125,P012,41,Local Search,Trip dates,0,3,3,"Yes, always share",0.9
+16126,P012,41,Local Search,Trip location,0,3,3,"Yes, always share",0.9
+16127,P012,41,Local Search,Trip activities,0,3,3,"Yes, always share",0.9
+16128,P012,41,Local Search,Email content,0,3,0,"No, never share",0.95
+16130,P012,51,Apple Music,Music playing history,0,3,3,"Yes, always share",0.95
+16216,P026,14,Calendar,HR email addresses,0,2,2,"Yes, but ask me next time",0.88
+16217,P026,14,Calendar,Meeting date and time,0,2,2,"Yes, but ask me next time",0.95
+16218,P026,14,Calendar,Meeting agenda (i.e. cost-cutting),0,2,2,"Yes, but ask me next time",0.87
+16219,P026,14,Calendar,Payment note,0,1,1,"No, but ask me next time",0.92
+16220,P026,17,Cloud Drive,Invoices and receipts data,0,2,2,"Yes, but ask me next time",0.93
+16221,P026,17,Cloud Drive,Movie watching history,0,1,1,"No, but ask me next time",0.94
+16222,P026,17,Cloud Drive,Film genre,0,1,1,"No, but ask me next time",0.94
+16223,P026,17,Cloud Drive,Content of recent emails,0,2,1,"No, but ask me next time",0.82
+16238,P026,25,Tax Management,Previous tax filing details,0,2,2,"Yes, but ask me next time",0.92
+16239,P026,25,Tax Management,Address,0,2,2,"Yes, but ask me next time",0.78
+16240,P026,25,Tax Management,Full name,0,2,2,"Yes, but ask me next time",0.81
+16241,P026,25,Tax Management,SSN,0,1,1,"No, but ask me next time",0.85
+16259,P026,55,Tinder,User bio,0,2,2,"Yes, but ask me next time",0.92
+16260,P026,55,Tinder,Email address,0,2,2,"Yes, but ask me next time",0.85
+16261,P026,55,Tinder,Phone number,0,2,1,"No, but ask me next time",0.79
+16262,P026,55,Tinder,Profile Pictures,0,2,2,"Yes, but ask me next time",0.93
+16263,P026,55,Tinder,Age,0,2,2,"Yes, but ask me next time",0.91
+16264,P026,55,Tinder,Birthday,0,2,2,"Yes, but ask me next time",0.84
+16265,P026,55,Tinder,Gender,0,2,2,"Yes, but ask me next time",0.92
+16266,P026,55,Tinder,Relationship preferences,0,2,2,"Yes, but ask me next time",0.95
+16267,P026,55,Tinder,Education level,0,2,2,"Yes, but ask me next time",0.88
+16268,P026,55,Tinder,Workplace,0,2,2,"Yes, but ask me next time",0.82
+16269,P026,55,Tinder,Interests/hobbies,0,2,2,"Yes, but ask me next time",0.92
+16270,P026,55,Tinder,User location,0,2,1,"No, but ask me next time",0.86

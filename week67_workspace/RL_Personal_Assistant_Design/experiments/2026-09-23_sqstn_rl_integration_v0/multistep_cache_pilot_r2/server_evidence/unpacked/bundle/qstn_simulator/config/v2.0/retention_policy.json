@@ -1,0 +1,36 @@
+{
+  "schema_id": "s_qstn_v2_retention_policy",
+  "version": "2.0.0",
+  "description": "Event-specific retention classes for a bounded S-QSTN memory view. Exact human forgetting durations are not calibrated in v2.0.",
+  "default_policy": "fixture_supplied_only",
+  "memory_horizon_source": "explicit_fixture_or_annotation",
+  "retention_classes": [
+    {
+      "retention_class": "recent_only",
+      "memory_view_policy": "Expose only inside the explicitly supplied memory horizon; otherwise mark the event expired.",
+      "ledger_policy": "Keep the structured event for audit.",
+      "state_policy": "Do not infer a persistent state update unless another explicit state rule applies."
+    },
+    {
+      "retention_class": "until_repaired",
+      "memory_view_policy": "Expose until an explicitly verified repair or replacement boundary is recorded.",
+      "ledger_policy": "Keep the event and repair evidence for audit.",
+      "state_policy": "Move to recovery or preserve residual caution; do not perform an instant full reset."
+    },
+    {
+      "retention_class": "persistent_verified_boundary_event",
+      "memory_view_policy": "Expose a bounded caution summary after the event is verified.",
+      "ledger_policy": "Keep the structured event for audit.",
+      "state_policy": "Retain categorical caution until an explicit transition changes it."
+    },
+    {
+      "retention_class": "expired_after_policy_window",
+      "memory_view_policy": "Remove event details from the respondent memory view after the explicit policy window.",
+      "ledger_policy": "Keep the structured event for audit.",
+      "state_policy": "Do not infer that expiry means repair, forgiveness, or a full reset."
+    }
+  ],
+  "forgetting_boundary": "A missing or expired memory-view item remains unknown. The respondent must not reconstruct it from question wording or model output.",
+  "numeric_behavior_parameters": false,
+  "human_calibration_status": "deferred_to_v3"
+}

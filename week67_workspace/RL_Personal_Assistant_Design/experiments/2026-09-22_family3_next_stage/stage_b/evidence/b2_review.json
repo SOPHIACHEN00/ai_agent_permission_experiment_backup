@@ -1,0 +1,33 @@
+{
+  "reviewer": "recourse_b2_review",
+  "mode": "read_only_first_substantive_finding_stop",
+  "verdict": "CHANGES_REQUIRED",
+  "gpu_smoke_ready": false,
+  "important": [
+    {
+      "file": "pilot_runtime.py",
+      "line": 99,
+      "problem": "EvaluationBudget subtracts two process-lifetime peak RSS measurements rather than current RSS at cell entry; the per-cell additional-memory cap can undercount growth.",
+      "cause": "Frozen peak_rss_bytes uses ru_maxrss (Windows PeakWorkingSetSize likewise records lifetime peak).",
+      "example": "Historical peak 2GiB, current 1GiB: cell can grow by 1GiB while reporting zero growth.",
+      "proposed_minimal_fix": "Add a Stage B current-RSS reader, freeze baseline at evaluator entry and track maximum sampled current RSS; leave frozen Stage A unchanged."
+    }
+  ],
+  "inspected_strengths": [
+    "Public-state-only learner inputs",
+    "Quota cutoff retains nonterminal successors",
+    "Generic replay/checkpoint helpers with explicit new model dimensions",
+    "Distinct exploration and tie RNGs",
+    "Legal exact tie integration",
+    "Test-coordinate rejection"
+  ],
+  "not_certified": [
+    "Complete source/config and failure-receipt audit",
+    "Actual CUDA init/update/checkpoint reload",
+    "Full evaluation state immutability",
+    "Measured performance/resource behavior",
+    "Packaging/deployment"
+  ],
+  "no_execution_or_edits": true,
+  "stopped_on_first_finding": true
+}

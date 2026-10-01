@@ -1,0 +1,11 @@
+{
+  "status": "LOCAL_ARCHIVE_VERIFIED",
+  "sha256": "621df9c3c4b65079c844140172c095ea27f1ec3e5c1f661a205f12d40b7bd1f5",
+  "bytes": 525370,
+  "members": 79,
+  "credential_value_matches": 0,
+  "experiment_status": "STOPPED_NO_RETRY",
+  "source_files_frozen": 21,
+  "api_calls_added": 0,
+  "training_steps": 0
+}

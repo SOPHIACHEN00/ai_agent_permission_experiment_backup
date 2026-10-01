@@ -1,0 +1,173 @@
+{
+  "status": "prepared",
+  "api_called": false,
+  "prepared_at_utc": "2026-08-06T02:28:07.955556+00:00",
+  "run_id": "minimal_heldout_calibration_v1",
+  "run_fingerprint": "6201c331920bb784c0871de7da6eef50f0cc3c92c96fc0b2fd8f7fca6f592e3e",
+  "purpose": "Run a fixed, label-blind, held-out QSTN quality gate before RL using 30 participant personas and 90 released human permission responses.",
+  "model": "o4-mini",
+  "profile_card_version": "empirical_profile_cards_v1",
+  "rule_pack_version": "none",
+  "respondent_contract_version": "none",
+  "skill_catalog_version": "none",
+  "source_principle_count": 0,
+  "source_concrete_rule_count": 0,
+  "skill_mode": "none",
+  "behavior_mode": "none",
+  "context_sidecar_loaded": false,
+  "response_split": "heldout",
+  "guardrails": [
+    "Only rows marked heldout in empirical_response_splits.csv are evaluation targets.",
+    "Human label_id and label_text are kept outside the inference plan and are never included in a QSTN prompt.",
+    "The 30 participants and their three scenario rows are selected with a frozen seed from participant ID and scenario metadata only; labels do not affect sampling.",
+    "The 90-row result is a pre-RL quality gate, not a population estimate, a causal card ablation, or proof of general human-likeness.",
+    "A full paired raw-profile versus empirical-card calibration is deferred to a later, separately budgeted experiment."
+  ],
+  "inference": {
+    "presentation": "single_item",
+    "seed": 42,
+    "api_concurrency": 1,
+    "batch_size": 1
+  },
+  "heldout_rows": 90,
+  "heldout_participants": 30,
+  "sampling": {
+    "mode": "fixed_participant_stratified_context_sample",
+    "participants_per_profile": 10,
+    "context_slots": [
+      {
+        "slot_id": "necessary",
+        "necessity_status": "necessary"
+      },
+      {
+        "slot_id": "incorrect_explicit",
+        "necessity_status": "incorrect_explicit"
+      },
+      {
+        "slot_id": "random_remaining",
+        "necessity_status": null
+      }
+    ],
+    "selection_seed": 20260721,
+    "unknown_status_policy": "Unknown is not a dedicated stratum because only 32 of 5,049 held-out rows have this status (including only two from Broad Restrictors); it may appear only through the random_remaining slot.",
+    "exclusion_sources": {},
+    "exclusion_source_target_label_columns_absent": true,
+    "heldout_rows_before_exclusion": 5049,
+    "heldout_participants_before_exclusion": 201,
+    "excluded_response_row_ids": 0,
+    "excluded_participant_ids": 0,
+    "candidate_heldout_rows_after_exclusion": 5049,
+    "candidate_heldout_participants_after_exclusion": 201,
+    "source_heldout_rows": 5049,
+    "source_heldout_participants": 201,
+    "selected_rows": 90,
+    "selected_participants": 30,
+    "selected_participants_by_profile": {
+      "Broad Restrictors": [
+        "P037",
+        "P078",
+        "P086",
+        "P119",
+        "P137",
+        "P138",
+        "P154",
+        "P191",
+        "P195",
+        "P200"
+      ],
+      "Persistent Granters": [
+        "P011",
+        "P019",
+        "P025",
+        "P032",
+        "P039",
+        "P056",
+        "P063",
+        "P076",
+        "P083",
+        "P121"
+      ],
+      "Re-consent Seekers": [
+        "P033",
+        "P052",
+        "P059",
+        "P072",
+        "P080",
+        "P091",
+        "P107",
+        "P116",
+        "P170",
+        "P201"
+      ]
+    },
+    "rows_by_selection_slot": {
+      "necessary": 30,
+      "incorrect_explicit": 30,
+      "random_remaining": 30
+    },
+    "rows_by_necessity_status": {
+      "incorrect_explicit": 32,
+      "necessary": 58
+    },
+    "labels_used_for_sampling": false
+  },
+  "conditions": [
+    "raw_participant_profile_plus_empirical_card"
+  ],
+  "planned_request_count": 90,
+  "validated_prompt_count": 90,
+  "target_label_columns_absent_from_inference_plan": true,
+  "input_file_sha256": {
+    "questionnaire": "3d1e604020dd9ccb037c29cc9b46807928311c6b66c68b54f8a89203610ca20f",
+    "response_splits": "97defd91a9b7db432ba01b72d243287dd1eb70d53c6b31cd162d683f0a605b05",
+    "assignments": "e365864aae707e849cba5d511ee0380f4a482281748f63673495c044bdfc401a",
+    "persona_raw_participant_profile_plus_empirical_card": "a862892572f92d7f12597000ad141b8c174522d912c46909cb6285e7dc27437b"
+  },
+  "sample_request_messages": [
+    {
+      "condition_id": "raw_participant_profile_plus_empirical_card",
+      "profile_name": "Persistent Granters",
+      "questionnaire_item_id": "permission_41_weather_trip_location",
+      "request_messages": [
+        {
+          "role": "system",
+          "content": "You are simulating a survey participant. Answer only from the supplied empirical permission-response profile, participant background, and permission scenario. Do not invent personal facts or purposes."
+        },
+        {
+          "role": "user",
+          "content": "Answer each AI-agent data-sharing permission question as this participant would. Apply the stable empirical permission-response profile as a behavioral tendency and use the participant background only as supplied context. Choose exactly one option.\n\nStable empirical permission-response profile:\nThis participant generally favors enduring permission grants rather than renewed consent. They are more willing to grant permission when the scenario appears to support the user's request than when it appears not to. Treat this as a tendency, not a hard rule, and do not invent a purpose or personal fact.\n\nParticipant background:\nAge response category: 4\nGender: Male\nEducation: Master's\nAI familiarity response: 3\nAI use frequency response: 3\nAI trust response: 3\nPrivacy importance response: 3\nPrivacy-concern domains: Shopping, Finance, Work & Productivity\n\nPermission scenario:\nImagine that you are the user who made this request.\nUser request: Plan my weekend in San Francisco. Please include surfing in the plan.\nTool: Weather\nData item requested: Trip location\n\nWhat permission would you give this AI assistant to share this data item with this tool?\n\nOptions are: No, never share, No, but ask me next time, Yes, but ask me next time, Yes, always share"
+        }
+      ]
+    },
+    {
+      "condition_id": "raw_participant_profile_plus_empirical_card",
+      "profile_name": "Broad Restrictors",
+      "questionnaire_item_id": "permission_24_tax_management_income_details",
+      "request_messages": [
+        {
+          "role": "system",
+          "content": "You are simulating a survey participant. Answer only from the supplied empirical permission-response profile, participant background, and permission scenario. Do not invent personal facts or purposes."
+        },
+        {
+          "role": "user",
+          "content": "Answer each AI-agent data-sharing permission question as this participant would. Apply the stable empirical permission-response profile as a behavioral tendency and use the participant background only as supplied context. Choose exactly one option.\n\nStable empirical permission-response profile:\nThis participant generally takes a restrictive approach to sharing. They tend to decline or defer permission rather than grant broad standing permission, and show low willingness to share across the observed context types. When the scenario does not provide a clear reason to share, favor the restrictive or re-consent option that best fits the available choices. Treat this as a tendency, not a hard rule, and do not invent a purpose or personal fact.\n\nParticipant background:\nAge response category: 4\nGender: Female\nEducation: PhD\nAI familiarity response: 4\nAI use frequency response: 3\nAI trust response: 3\nPrivacy importance response: 5\nPrivacy-concern domains: Social, Finance, Work & Productivity\n\nPermission scenario:\nImagine that you are the user who made this request.\nUser request: Can you check what tax deductions I qualify for this year based on my income?\nTool: Tax Management\nData item requested: Income details\n\nWhat permission would you give this AI assistant to share this data item with this tool?\n\nOptions are: No, never share, No, but ask me next time, Yes, but ask me next time, Yes, always share"
+        }
+      ]
+    },
+    {
+      "condition_id": "raw_participant_profile_plus_empirical_card",
+      "profile_name": "Re-consent Seekers",
+      "questionnaire_item_id": "permission_26_banking_account_password",
+      "request_messages": [
+        {
+          "role": "system",
+          "content": "You are simulating a survey participant. Answer only from the supplied empirical permission-response profile, participant background, and permission scenario. Do not invent personal facts or purposes."
+        },
+        {
+          "role": "user",
+          "content": "Answer each AI-agent data-sharing permission question as this participant would. Apply the stable empirical permission-response profile as a behavioral tendency and use the participant background only as supplied context. Choose exactly one option.\n\nStable empirical permission-response profile:\nThis participant generally prefers non-persistent permission. When willing to share, they tend to allow the current occasion and ask for renewed consent later rather than grant standing permission. They are more willing to share when the scenario appears to support the user's request than when it does not. Treat this as a tendency, not a hard rule, and do not invent a purpose or personal fact.\n\nParticipant background:\nAge response category: 2\nGender: Male\nEducation: Master's\nAI familiarity response: 3\nAI use frequency response: 2\nAI trust response: 1\nPrivacy importance response: 4\nPrivacy-concern domains: Social, Finance, Work & Productivity\n\nPermission scenario:\nImagine that you are the user who made this request.\nUser request: Schedule a one-time payment of $1,200 to my landlord next Monday. Please label it \"Rent Payment\" and include my address for reference.\nTool: Banking\nData item requested: Account password\n\nWhat permission would you give this AI assistant to share this data item with this tool?\n\nOptions are: No, never share, No, but ask me next time, Yes, but ask me next time, Yes, always share"
+        }
+      ]
+    }
+  ]
+}

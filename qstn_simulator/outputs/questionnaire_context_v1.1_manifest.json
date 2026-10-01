@@ -1,0 +1,28 @@
+{
+  "status": "compiled",
+  "api_called": false,
+  "schema_version": "1.1.0",
+  "state_schema_version": "none",
+  "row_count": 373,
+  "key": "questionnaire_item_id",
+  "one_to_one_with_questionnaire": true,
+  "presentation_mode": "single_item",
+  "default_prompt_burden_bucket": "not_applicable_single_item",
+  "unknown_values_are_inferred": false,
+  "target_answer_columns_absent": true,
+  "numeric_behavior_parameters": false,
+  "input_hashes": {
+    "questionnaire": "3d1e604020dd9ccb037c29cc9b46807928311c6b66c68b54f8a89203610ca20f",
+    "schema": "d56606c64554183b45ccbab3aad1993edef4e75e75d3e002c82654730bbcaedd"
+  },
+  "bucket_counts": {
+    "uncertainty_bucket": {
+      "medium": 337,
+      "high": 36
+    },
+    "prompt_burden_bucket": {
+      "not_applicable_single_item": 373
+    }
+  },
+  "source_policy": "Direct source fields plus explicit annotation and runner defaults; missing context remains unknown."
+}

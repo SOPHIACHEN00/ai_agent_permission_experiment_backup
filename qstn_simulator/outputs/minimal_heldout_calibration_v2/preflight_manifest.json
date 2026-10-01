@@ -1,0 +1,172 @@
+{
+  "status": "prepared",
+  "api_called": false,
+  "prepared_at_utc": "2026-07-22T01:59:11.814861+00:00",
+  "run_id": "minimal_heldout_calibration_v2",
+  "run_fingerprint": "04b4e1d4b67de52dba34fd1b99f39fae4d05e9c2c491774ccd0d8570e27aaf24",
+  "purpose": "Evaluate the discovery-only empirical_profile_cards_v2 prompt wording on a fixed held-out sample that excludes every participant and response row used by the frozen v1 diagnostic.",
+  "model": "o4-mini",
+  "profile_card_version": "empirical_profile_cards_v2",
+  "response_split": "heldout",
+  "guardrails": [
+    "Only rows marked heldout in empirical_response_splits.csv are evaluation targets.",
+    "Human label_id and label_text are kept outside the inference plan and are never included in a QSTN prompt.",
+    "Every participant and response row selected by v1 is excluded before v2 sampling; the v1 diagnostic remains frozen.",
+    "V2 wording is constrained only by discovery-derived cluster centers; no held-out label, prediction, or metric is used as prompt-card evidence.",
+    "The 90-row result is a pre-RL quality gate, not a population estimate, a causal card ablation, or proof of general human-likeness."
+  ],
+  "inference": {
+    "presentation": "single_item",
+    "seed": 42,
+    "api_concurrency": 1,
+    "batch_size": 1
+  },
+  "heldout_rows": 90,
+  "heldout_participants": 30,
+  "sampling": {
+    "mode": "fixed_participant_stratified_context_sample",
+    "participants_per_profile": 10,
+    "context_slots": [
+      {
+        "slot_id": "necessary",
+        "necessity_status": "necessary"
+      },
+      {
+        "slot_id": "incorrect_explicit",
+        "necessity_status": "incorrect_explicit"
+      },
+      {
+        "slot_id": "random_remaining",
+        "necessity_status": null
+      }
+    ],
+    "selection_seed": 20260722,
+    "exclude_response_rows_file": "minimal_heldout_calibration_v1/inference_plan.csv",
+    "exclude_participants_file": "minimal_heldout_calibration_v1/inference_plan.csv",
+    "unknown_status_policy": "Unknown is not a dedicated stratum because it is sparse in the released held-out data; it may appear only through the random_remaining slot.",
+    "exclusion_sources": {
+      "exclude_response_rows_file": "minimal_heldout_calibration_v1/inference_plan.csv",
+      "exclude_participants_file": "minimal_heldout_calibration_v1/inference_plan.csv"
+    },
+    "exclusion_source_target_label_columns_absent": true,
+    "heldout_rows_before_exclusion": 5049,
+    "heldout_participants_before_exclusion": 201,
+    "excluded_response_row_ids": 90,
+    "excluded_participant_ids": 30,
+    "candidate_heldout_rows_after_exclusion": 4294,
+    "candidate_heldout_participants_after_exclusion": 171,
+    "source_heldout_rows": 4294,
+    "source_heldout_participants": 171,
+    "selected_rows": 90,
+    "selected_participants": 30,
+    "selected_participants_by_profile": {
+      "Broad Restrictors": [
+        "P009",
+        "P113",
+        "P115",
+        "P123",
+        "P146",
+        "P159",
+        "P162",
+        "P163",
+        "P181",
+        "P183"
+      ],
+      "Persistent Granters": [
+        "P010",
+        "P016",
+        "P068",
+        "P071",
+        "P082",
+        "P099",
+        "P110",
+        "P140",
+        "P141",
+        "P193"
+      ],
+      "Re-consent Seekers": [
+        "P018",
+        "P042",
+        "P047",
+        "P094",
+        "P104",
+        "P109",
+        "P133",
+        "P160",
+        "P175",
+        "P176"
+      ]
+    },
+    "rows_by_selection_slot": {
+      "necessary": 30,
+      "incorrect_explicit": 30,
+      "random_remaining": 30
+    },
+    "rows_by_necessity_status": {
+      "incorrect_explicit": 32,
+      "necessary": 58
+    },
+    "labels_used_for_sampling": false
+  },
+  "conditions": [
+    "raw_participant_profile_plus_empirical_card"
+  ],
+  "planned_request_count": 90,
+  "validated_prompt_count": 90,
+  "target_label_columns_absent_from_inference_plan": true,
+  "input_file_sha256": {
+    "questionnaire": "3d1e604020dd9ccb037c29cc9b46807928311c6b66c68b54f8a89203610ca20f",
+    "response_splits": "97defd91a9b7db432ba01b72d243287dd1eb70d53c6b31cd162d683f0a605b05",
+    "assignments": "e365864aae707e849cba5d511ee0380f4a482281748f63673495c044bdfc401a",
+    "persona_raw_participant_profile_plus_empirical_card": "4292338078ea62379a3776fc1f7a322d4a0a367bafc8387de6f44430156feded",
+    "sampling_exclude_response_rows_file": "b764c438cd5beb586111257f43af1c4632ba9abcf4f0e38e35c4c4d9bbaa6302",
+    "sampling_exclude_participants_file": "b764c438cd5beb586111257f43af1c4632ba9abcf4f0e38e35c4c4d9bbaa6302"
+  },
+  "sample_request_messages": [
+    {
+      "condition_id": "raw_participant_profile_plus_empirical_card",
+      "profile_name": "Broad Restrictors",
+      "questionnaire_item_id": "permission_40_weather_scheduling_details",
+      "request_messages": [
+        {
+          "role": "system",
+          "content": "You are simulating a survey participant. Answer only from the supplied empirical permission-response profile, participant background, and permission scenario. Do not invent personal facts or purposes."
+        },
+        {
+          "role": "user",
+          "content": "Answer each AI-agent data-sharing permission question as this participant would. Apply the stable empirical permission-response profile as a behavioral tendency and use the participant background only as supplied context. Choose exactly one option.\n\nStable empirical permission-response profile:\nThis participant defaults to not sharing personal data. A scenario appearing relevant to the request is usually not sufficient on its own to override that default, because this participant remains restrictive across the observed context types. When the choice is uncertain, prefer the non-sharing options over sharing options; treat a temporary sharing choice as an exception and enduring permission as rare. Do not invent a purpose or personal fact.\n\nShared privacy decision rule:\nA user request is not consent to share every data item. Evaluate the exact data item, the specific tool, and the stated task separately. Treat a persistent grant as requiring a clear continuing, task-specific reason rather than merely a helpful or relevant response. Where the scenario remains ambiguous, follow the profile's stated default rather than assuming permission.\n\nParticipant background:\nAge response category: 3\nGender: Male\nEducation: Master's\nAI familiarity response: 2\nAI use frequency response: 1\nAI trust response: 2\nPrivacy importance response: 3\nPrivacy-concern domains: Social, Work & Productivity, Smart Home\n\nPermission scenario:\nImagine that you are the user who made this request.\nUser request: Check the weather forecast for my trip to Tokyo next week and recommend sightseeing spots nearby.\nTool: Weather\nData item requested: Scheduling details\n\nWhat permission would you give this AI assistant to share this data item with this tool?\n\nOptions are: No, never share, No, but ask me next time, Yes, but ask me next time, Yes, always share"
+        }
+      ]
+    },
+    {
+      "condition_id": "raw_participant_profile_plus_empirical_card",
+      "profile_name": "Re-consent Seekers",
+      "questionnaire_item_id": "permission_4_nutrition_and_diet_car_details",
+      "request_messages": [
+        {
+          "role": "system",
+          "content": "You are simulating a survey participant. Answer only from the supplied empirical permission-response profile, participant background, and permission scenario. Do not invent personal facts or purposes."
+        },
+        {
+          "role": "user",
+          "content": "Answer each AI-agent data-sharing permission question as this participant would. Apply the stable empirical permission-response profile as a behavioral tendency and use the participant background only as supplied context. Choose exactly one option.\n\nStable empirical permission-response profile:\nThis participant generally prefers non-persistent permission. When willing to share, they usually allow the current occasion and ask for renewed consent later rather than grant standing permission. A clear current, task-specific reason can support temporary sharing, but does not itself justify ongoing access. They are more willing to share when the scenario appears to support the user's request than when it does not. Treat this as a tendency, not a hard rule, and do not invent a purpose or personal fact.\n\nShared privacy decision rule:\nA user request is not consent to share every data item. Evaluate the exact data item, the specific tool, and the stated task separately. Treat a persistent grant as requiring a clear continuing, task-specific reason rather than merely a helpful or relevant response. Where the scenario remains ambiguous, follow the profile's stated default rather than assuming permission.\n\nParticipant background:\nAge response category: 2\nGender: Female\nEducation: Bachelor's\nAI familiarity response: 4\nAI use frequency response: 4\nAI trust response: 3\nPrivacy importance response: 4\nPrivacy-concern domains: Shopping, Health & Fitness, Work & Productivity\n\nPermission scenario:\nImagine that you are the user who made this request.\nUser request: Please review my cholesterol test results and suggest dietary changes to reduce my cholesterol.\nTool: Nutrition and Diet\nData item requested: Car details\n\nWhat permission would you give this AI assistant to share this data item with this tool?\n\nOptions are: No, never share, No, but ask me next time, Yes, but ask me next time, Yes, always share"
+        }
+      ]
+    },
+    {
+      "condition_id": "raw_participant_profile_plus_empirical_card",
+      "profile_name": "Persistent Granters",
+      "questionnaire_item_id": "permission_9_hospital_booking_user_s_name",
+      "request_messages": [
+        {
+          "role": "system",
+          "content": "You are simulating a survey participant. Answer only from the supplied empirical permission-response profile, participant background, and permission scenario. Do not invent personal facts or purposes."
+        },
+        {
+          "role": "user",
+          "content": "Answer each AI-agent data-sharing permission question as this participant would. Apply the stable empirical permission-response profile as a behavioral tendency and use the participant background only as supplied context. Choose exactly one option.\n\nStable empirical permission-response profile:\nThis participant generally favors enduring permission grants when a specific data item has a clear continuing role in the user's request. They are more willing to share for a purpose-supported scenario than for one that is not. Do not treat a one-off or unclear request as automatic standing permission; use a temporary or non-sharing option when the continuing need is not clear. Treat this as a tendency, not a hard rule, and do not invent a purpose or personal fact.\n\nShared privacy decision rule:\nA user request is not consent to share every data item. Evaluate the exact data item, the specific tool, and the stated task separately. Treat a persistent grant as requiring a clear continuing, task-specific reason rather than merely a helpful or relevant response. Where the scenario remains ambiguous, follow the profile's stated default rather than assuming permission.\n\nParticipant background:\nAge response category: 2\nGender: Male\nEducation: Master's\nAI familiarity response: 4\nAI use frequency response: 4\nAI trust response: 2\nPrivacy importance response: 2\nPrivacy-concern domains: Social, Finance, Work & Productivity\n\nPermission scenario:\nImagine that you are the user who made this request.\nUser request: Can you reschedule my follow-up appointment with Dr. Lee to next Friday at 10 AM?\nTool: Hospital Booking\nData item requested: User's name\n\nWhat permission would you give this AI assistant to share this data item with this tool?\n\nOptions are: No, never share, No, but ask me next time, Yes, but ask me next time, Yes, always share"
+        }
+      ]
+    }
+  ]
+}

@@ -2,6 +2,8 @@
 
 Chinese design/recap notes: [start here](docs/00_RECAP_zh.md), then [mock internals](docs/01_MOCK_TOOLS_DESIGN_zh.md), [mechanism tests](docs/02_MECHANISM_TESTS_AND_NEXT_EXPERIMENT_zh.md), [minimal-Agent design](docs/03_MINIMAL_AGENT_EXPERIMENT_DESIGN_zh.md), and [implementation plan](docs/04_MINIMAL_AGENT_IMPLEMENTATION_PLAN_zh.md).
 
+The [six-action / query-provenance audit](docs/07_RL_ACTIONS_AND_QUERY_PROVENANCE_AUDIT_zh.md) distinguishes the existing RL action space from the temporary three-choice Agent adapter, verifies which S-QSTN data reuse the original queries, and records the full 65-query / 28-external-tool plus internal `mira` coverage target.
+
 This is a small, deterministic test fixture for the permission project. It does **not** connect to real email, banking, shopping, home devices, or cloud storage. The source task is the released `external/ai-agent-permissions/queries.json`; all records, recipients, messages, and effects here are synthetic.
 
 ## Research question and coverage

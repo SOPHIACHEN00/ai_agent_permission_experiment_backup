@@ -1,0 +1,250 @@
+--- a/agent_permission_harness_v1/tests/test_sqstn_pilot.py
++++ b/agent_permission_harness_v1/tests/test_sqstn_pilot.py
+@@ -1,113 +1,134 @@
+-"""Protocol tests use fake HTTP, never claim simulated transport is a live LLM."""
+-import json
+-from pathlib import Path
+-from tempfile import TemporaryDirectory
+-import unittest
+-from pa_rl.contracts import contract_json_round_trip
+-from agent_permission_harness_v1.learning_scenarios import ReactiveReadPlanner
+-from test_online_transport import response
+-
+-FINISH={'kind':'finish','tool':None,'operation':None,'resource':None,
+-        'requested_fields':[],'arguments_json':'{}','answer':'Done','answer_status':'completed'}
+-
+-
+-def task_http(payload):
+-    prompt=payload['messages'][0]['content']
+-    if prompt.startswith('COMPATIBILITY_PROBE'):
+-        return response('gpt-6-luna',json.dumps(FINISH))
+-    data=json.loads(prompt.split('\n',1)[1])
+-    decision=ReactiveReadPlanner().next_decision(data['goal'],data['public_history'],data['available_calls'])
+-    wire=contract_json_round_trip(decision)
+-    wire['arguments_json']=json.dumps(wire.pop('arguments'))
+-    return response('gpt-6-luna',json.dumps(wire))
+-
+-
+-def human_http(payload):
+-    schema=payload['response_format']['json_schema']['schema']
+-    answer={'answer':'allow_reuse'} if 'answer' in schema['properties'] else {
+-        'kind':'clarification','text':'Use only fields needed at the current task stage.'}
+-    return response(content=json.dumps(answer))
+-
+-
+-class PilotTests(unittest.TestCase):
+-    def test_schedule_and_three_user_isolation(self):
+-        from agent_permission_harness_v1.sqstn_pilot import pilot_manifest,run_pilot
+-        m=pilot_manifest()
+-        self.assertEqual((m['train_episodes'],m['eval_episodes']),(36,6))
+-        self.assertEqual(len(m['users']),3)
+-        self.assertEqual(m['train_tails'],[1,2]*6)
+-        self.assertEqual(m['epsilons'],[1.]*3+[.5]*3+[.2]*3+[.05]*3)
+-        self.assertEqual(m['hyperparameters']['warmup_transitions'],8)
+-        self.assertEqual(m['caps_nusd'],{'human':4_000_000_000,'task':5_000_000_000})
+-        with TemporaryDirectory() as d:
+-            root=Path(d)/'run'
+-            result=run_pilot(root,device='cpu',live=False,task_requester=task_http,human_requester=human_http)
+-            self.assertEqual(result['status'],'completed')
+-            self.assertEqual((result['completed_train'],result['completed_eval']),(36,6))
+-            self.assertEqual(result['source'],'fixture')
+-            self.assertEqual(len({u['initial_network_hash'] for u in result['users']}),1)
+-            for u in result['users']:
+-                self.assertGreater(u['optimizer_steps'],0)
+-                self.assertEqual(u['train_episodes'],12)
+-                self.assertTrue((root/u['subject_id']/'train_12.pt').is_file())
+-            rows=[json.loads(p.read_text()) for p in root.glob('user_*/episodes/train_*.json')]
+-            self.assertEqual(len(rows),36)
+-            for row in rows:
+-                self.assertEqual(row['initial_ledger_records'],0)
+-                self.assertEqual(row['human_start_subject'],row['subject_id'])
+-                self.assertNotIn('persona',row['agent_input_keys'])
+-            with self.assertRaises(FileExistsError):
+-                run_pilot(root,device='cpu',live=False,task_requester=task_http,human_requester=human_http)
+-
+-    def test_eval_arms_clone_same_human_state(self):
+-        from agent_permission_harness_v1.sqstn_pilot import run_pilot
+-        with TemporaryDirectory() as d:
+-            root=Path(d)/'run'
+-            result=run_pilot(root,device='cpu',live=False,task_requester=task_http,human_requester=human_http)
+-            for u in result['users']:
+-                rows=[json.loads((root/u['subject_id']/'episodes'/f'eval_{arm}.json').read_text())
+-                      for arm in ('initial','final')]
+-                self.assertEqual(rows[0]['human_start_hash'],rows[1]['human_start_hash'])
+-                self.assertEqual(rows[0]['mock_initial_hash'],rows[1]['mock_initial_hash'])
+-                for row in rows:
+-                    self.assertEqual(row['tail_length'],3)
+-                    self.assertTrue(row['frozen_unchanged'])
+-                    self.assertEqual(row['learner_before'],row['learner_after'])
+-            self.assertEqual(result['diagnostic_episodes'],1)
+-
+-    def test_abort_preserves_budget_and_does_not_make_a_reward(self):
+-        from agent_permission_harness_v1.sqstn_pilot import run_pilot
+-        calls=[]
+-        def broken(payload):
+-            calls.append(1)
+-            raise TimeoutError('SECRET_SENTINEL')
+-        with TemporaryDirectory() as d:
+-            root=Path(d)/'run'
+-            result=run_pilot(root,device='cpu',live=False,task_requester=broken,human_requester=human_http)
+-            self.assertEqual(result['status'],'aborted')
+-            self.assertEqual(result['completed_train'],0)
+-            self.assertEqual(len(calls),1)
+-            self.assertNotIn('reward',result['abort'])
+-            self.assertNotIn('SECRET_SENTINEL',(root/'summary.json').read_text())
+-            self.assertEqual(result['cost']['task']['reserved_unknown_nusd'],600_000_000)
+-        with TemporaryDirectory() as d:
+-            with self.assertRaises(ValueError): run_pilot(Path(d)/'bad',device='cpu',live=False)
+-            with self.assertRaises(ValueError):
+-                run_pilot(Path(d)/'bad2',device='cpu',live=True,task_requester=task_http)
+-
+-    def test_scope_attack_matrix_and_content_boundary(self):
+-        from agent_permission_harness_v1.security_diagnostics import run_security_diagnostics
+-        result=run_security_diagnostics()
+-        self.assertEqual(set(result['scope_attacks']),{
+-            'missing','expired','consumed','disabled','wrong_tool','wrong_field','wrong_recipient'})
+-        self.assertTrue(all(r['blocked'] and r['mock_unchanged'] for r in result['scope_attacks'].values()))
+-        self.assertTrue(result['content_flow_gap_observed'])
+-        self.assertEqual(result['content_canary']['read_disposition'],'committed')
+-        self.assertEqual(result['content_canary']['send_disposition'],'committed')
+-        self.assertIn('SYNTHETIC_PRIVATE_CANARY',result['content_canary']['outbox'][0]['body'])
+-        # Existing six-action lifecycle fixture exercises the actual authority kernel.
+-        import test_runner as runner_support
+-        import test_lifecycle_integrity as integrity_support
+-        runner_support.RunnerTests().test_refresh_shrinks_ledger_and_narrow_read_then_reexpand()
+-        env,end=integrity_support.LifecycleIntegrityTests().complete(extended=True)
+-        self.assertEqual(len({r['selected']['action'] for r in end.controller_trace}),6)
++"""Protocol tests use fake HTTP, never claim simulated transport is a live LLM."""
++import json
++from pathlib import Path
++from tempfile import TemporaryDirectory
++import unittest
++from pa_rl.contracts import contract_json_round_trip
++from agent_permission_harness_v1.learning_scenarios import ReactiveReadPlanner
++from test_online_transport import response
++
++FINISH={'kind':'finish','tool':None,'operation':None,'resource':None,
++        'requested_fields':[],'arguments_json':'{}','answer':'Done','answer_status':'completed'}
++
++
++def task_http(payload):
++    prompt=payload['messages'][0]['content']
++    if prompt.startswith('COMPATIBILITY_PROBE'):
++        return response('gpt-6-luna',json.dumps(FINISH))
++    data=json.loads(prompt.split('\n',1)[1])
++    decision=ReactiveReadPlanner().next_decision(data['goal'],data['public_history'],data['available_calls'])
++    wire=contract_json_round_trip(decision)
++    wire['arguments_json']=json.dumps(wire.pop('arguments'))
++    return response('gpt-6-luna',json.dumps(wire))
++
++
++def human_reuse_http(payload):
++    schema=payload['response_format']['json_schema']['schema']
++    answer={'answer':'allow_reuse'} if 'answer' in schema['properties'] else {
++        'kind':'clarification','text':'Use only fields needed at the current task stage.'}
++    return response(content=json.dumps(answer))
++
++
++def human_http(payload):
++    # A second explicit fake-human fixture ends clarification promptly so the
++    # full protocol fits the approved call cap; no live answers are replaced.
++    schema=payload['response_format']['json_schema']['schema']
++    if 'answer' not in schema['properties']:
++        return response(content=json.dumps({'kind':'stop','text':'Stop this synthetic task.'}))
++    return human_reuse_http(payload)
++
++
++class PilotTests(unittest.TestCase):
++    def test_schedule_and_three_user_isolation(self):
++        from agent_permission_harness_v1.sqstn_pilot import pilot_manifest,run_pilot
++        m=pilot_manifest()
++        self.assertEqual((m['train_episodes'],m['eval_episodes']),(36,6))
++        self.assertEqual(len(m['users']),3)
++        self.assertEqual(m['train_tails'],[1,2]*6)
++        self.assertEqual(m['epsilons'],[1.]*3+[.5]*3+[.2]*3+[.05]*3)
++        self.assertEqual(m['hyperparameters']['warmup_transitions'],8)
++        self.assertEqual(m['caps_nusd'],{'human':4_000_000_000,'task':5_000_000_000})
++        with TemporaryDirectory() as d:
++            root=Path(d)/'run'
++            result=run_pilot(root,device='cpu',live=False,task_requester=task_http,human_requester=human_http)
++            self.assertEqual(result['status'],'completed')
++            self.assertEqual((result['completed_train'],result['completed_eval']),(36,6))
++            self.assertEqual(result['source'],'fixture')
++            self.assertEqual(len({u['initial_network_hash'] for u in result['users']}),1)
++            for u in result['users']:
++                self.assertGreater(u['optimizer_steps'],0)
++                self.assertEqual(u['train_episodes'],12)
++                self.assertTrue((root/u['subject_id']/'train_12.pt').is_file())
++            rows=[json.loads(p.read_text()) for p in root.glob('user_*/episodes/train_*.json')]
++            self.assertEqual(len(rows),36)
++            for row in rows:
++                self.assertEqual(row['initial_ledger_records'],0)
++                self.assertEqual(row['human_start_subject'],row['subject_id'])
++                self.assertNotIn('persona',row['agent_input_keys'])
++            with self.assertRaises(FileExistsError):
++                run_pilot(root,device='cpu',live=False,task_requester=task_http,human_requester=human_http)
++
++    def test_eval_arms_clone_same_human_state(self):
++        from agent_permission_harness_v1.sqstn_pilot import run_pilot
++        with TemporaryDirectory() as d:
++            root=Path(d)/'run'
++            result=run_pilot(root,device='cpu',live=False,task_requester=task_http,human_requester=human_http)
++            for u in result['users']:
++                rows=[json.loads((root/u['subject_id']/'episodes'/f'eval_{arm}.json').read_text())
++                      for arm in ('initial','final')]
++                self.assertEqual(rows[0]['human_start_hash'],rows[1]['human_start_hash'])
++                self.assertEqual(rows[0]['mock_initial_hash'],rows[1]['mock_initial_hash'])
++                for row in rows:
++                    self.assertEqual(row['tail_length'],3)
++                    self.assertTrue(row['frozen_unchanged'])
++                    self.assertEqual(row['learner_before'],row['learner_after'])
++            self.assertEqual(result['diagnostic_episodes'],1)
++
++    def test_abort_preserves_budget_and_does_not_make_a_reward(self):
++        from agent_permission_harness_v1.sqstn_pilot import run_pilot
++        calls=[]
++        def broken(payload):
++            calls.append(1)
++            raise TimeoutError('SECRET_SENTINEL')
++        with TemporaryDirectory() as d:
++            root=Path(d)/'run'
++            result=run_pilot(root,device='cpu',live=False,task_requester=broken,human_requester=human_http)
++            self.assertEqual(result['status'],'aborted')
++            self.assertEqual(result['completed_train'],0)
++            self.assertEqual(len(calls),1)
++            self.assertNotIn('reward',result['abort'])
++            self.assertNotIn('SECRET_SENTINEL',(root/'summary.json').read_text())
++            self.assertEqual(result['cost']['task']['reserved_unknown_nusd'],600_000_000)
++        with TemporaryDirectory() as d:
++            with self.assertRaises(ValueError): run_pilot(Path(d)/'bad',device='cpu',live=False)
++            with self.assertRaises(ValueError):
++                run_pilot(Path(d)/'bad2',device='cpu',live=True,task_requester=task_http)
++
++    def test_scope_attack_matrix_and_content_boundary(self):
++        from agent_permission_harness_v1.security_diagnostics import run_security_diagnostics
++        result=run_security_diagnostics()
++        self.assertEqual(set(result['scope_attacks']),{
++            'missing','expired','consumed','disabled','wrong_tool','wrong_field','wrong_recipient'})
++        self.assertTrue(all(r['blocked'] and r['mock_unchanged'] for r in result['scope_attacks'].values()))
++        self.assertTrue(result['content_flow_gap_observed'])
++        self.assertEqual(result['content_canary']['read_disposition'],'committed')
++        self.assertEqual(result['content_canary']['send_disposition'],'committed')
++        self.assertIn('SYNTHETIC_PRIVATE_CANARY',result['content_canary']['outbox'][0]['body'])
++        # Existing six-action lifecycle fixture exercises the actual authority kernel.
++        import test_runner as runner_support
++        import test_lifecycle_integrity as integrity_support
++        runner_support.RunnerTests().test_refresh_shrinks_ledger_and_narrow_read_then_reexpand()
++        env,end=integrity_support.LifecycleIntegrityTests().complete(extended=True)
++        self.assertEqual(len({r['selected']['action'] for r in end.controller_trace}),6)
++
++    def test_extra_diagnostic_respects_call_cap_without_relabeling_train(self):
++        from agent_permission_harness_v1.sqstn_pilot import run_pilot
++        with TemporaryDirectory() as d:
++            result=run_pilot(Path(d)/'run',device='cpu',live=False,
++                             task_requester=task_http,human_requester=human_reuse_http)
++            self.assertEqual((result['completed_train'],result['completed_eval']),(36,6))
++            self.assertEqual(result['status'],'aborted')
++            self.assertEqual(result['abort']['phase'],'independent_diagnostic_episode')
++            self.assertEqual(result['cost']['human']['attempts'],129)
++            self.assertEqual(result['cost']['human']['reserved_unknown_nusd'],0)
++            self.assertNotIn('reward',result['abort'])

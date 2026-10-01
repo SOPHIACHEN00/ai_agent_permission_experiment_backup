@@ -1,0 +1,36 @@
+{
+  "n_rows": 16361,
+  "n_participants": 201,
+  "n_queries": 65,
+  "label_counts": {
+    "No, never share": 2361,
+    "No, but ask me next time": 1720,
+    "Yes, but ask me next time": 7056,
+    "Yes, always share": 5224
+  },
+  "necessity_counts": {
+    "necessary": 14133,
+    "incorrect_explicit": 2148,
+    "unknown": 80
+  },
+  "domain_counts": {
+    "Travel": 3409,
+    "Finance": 3233,
+    "Health & Fitness": 2745,
+    "Work & Productivity": 2078,
+    "Social": 1966,
+    "Shopping": 1698,
+    "Smart Home": 750,
+    "Entertainment": 482
+  },
+  "label_mapping": {
+    "No, never share": 0,
+    "No, but ask me next time": 1,
+    "Yes, but ask me next time": 2,
+    "Yes, always share": 3
+  },
+  "build_info": {
+    "skipped_labels": {},
+    "skipped_missing_query": 0
+  }
+}

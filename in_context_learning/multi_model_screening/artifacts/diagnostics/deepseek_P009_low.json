@@ -1,0 +1,14 @@
+{
+  "job_id": "P009_fold0",
+  "model_id": "deepseek/deepseek-v4-flash-0731",
+  "reasoning_effort": "low",
+  "charged_or_reserved_cost_usd": 0.001722885,
+  "parse_ok": true,
+  "prompt_tokens": 2466,
+  "completion_tokens": 3970,
+  "reasoning_tokens": 3212,
+  "provider_reported_cost_usd": 0.001722885,
+  "returned_model_id": "deepseek/deepseek-v4-flash-0731",
+  "raw_length": 2521,
+  "prediction_count": 17
+}

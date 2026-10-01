@@ -1,0 +1,17 @@
+{
+  "complete": true,
+  "n_personas": 20,
+  "synthetic_rows": 624,
+  "history_rows": 350,
+  "test_rows_per_condition": 274,
+  "rows_unique_and_complete": true,
+  "synthetic_answers_match_successful_generator_checkpoints": true,
+  "both_predictor_truths_match_frozen_synthetic_answers": true,
+  "all_generation_finished_before_prediction_started": true,
+  "frozen_answer_sha256_verified": true,
+  "reported_condition_metrics": [
+    "0shot",
+    "4shot"
+  ],
+  "note": "Independent input/protocol audit is recorded in the task conversation; this file records final artifact correspondence checks."
+}

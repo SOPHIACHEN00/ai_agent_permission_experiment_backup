@@ -1,0 +1,121 @@
+{
+  "unit": "participant",
+  "n_participants": 40,
+  "n_rows": 599,
+  "samples": 2000,
+  "seed": 20260925,
+  "difference_direction": "first model minus second model; lower is better for the two risk rates",
+  "comparisons": {
+    "gemini_minus_luna": {
+      "accuracy": {
+        "difference": 0.06176961602671116,
+        "percentile_95_ci": [
+          0.013580622218143459,
+          0.11016949152542366
+        ]
+      },
+      "macro_f1": {
+        "difference": 0.06461207036393679,
+        "percentile_95_ci": [
+          0.0136236870055672,
+          0.1210611608901527
+        ]
+      },
+      "quadratic_weighted_kappa": {
+        "difference": 0.06389680371700379,
+        "percentile_95_ci": [
+          -0.0007646188788391405,
+          0.12944337161568642
+        ]
+      },
+      "over_sharing_rate": {
+        "difference": 0.04255319148936165,
+        "percentile_95_ci": [
+          -0.03297619047619047,
+          0.12037315930388222
+        ]
+      },
+      "persistent_over_allow_rate": {
+        "difference": 0.07780979827089338,
+        "percentile_95_ci": [
+          0.033512589176557986,
+          0.13665243271221528
+        ]
+      }
+    },
+    "luna_minus_deepseek": {
+      "accuracy": {
+        "difference": 0.02003338898163609,
+        "percentile_95_ci": [
+          -0.017050021594644544,
+          0.0623075286441506
+        ]
+      },
+      "macro_f1": {
+        "difference": 0.060905471248653864,
+        "percentile_95_ci": [
+          0.002408615501709455,
+          0.12052490018385996
+        ]
+      },
+      "quadratic_weighted_kappa": {
+        "difference": 0.04670549302676441,
+        "percentile_95_ci": [
+          -0.03555464046161189,
+          0.1423860048227428
+        ]
+      },
+      "over_sharing_rate": {
+        "difference": -0.1382978723404255,
+        "percentile_95_ci": [
+          -0.23913043478260865,
+          -0.04384074410163352
+        ]
+      },
+      "persistent_over_allow_rate": {
+        "difference": -0.04899135446685878,
+        "percentile_95_ci": [
+          -0.09324973204715971,
+          -0.01652824373346426
+        ]
+      }
+    },
+    "gemini_minus_deepseek": {
+      "accuracy": {
+        "difference": 0.08180300500834725,
+        "percentile_95_ci": [
+          0.041872623989512775,
+          0.12077514636721372
+        ]
+      },
+      "macro_f1": {
+        "difference": 0.12551754161259066,
+        "percentile_95_ci": [
+          0.06070409176533706,
+          0.18740122670115142
+        ]
+      },
+      "quadratic_weighted_kappa": {
+        "difference": 0.1106022967437682,
+        "percentile_95_ci": [
+          0.04349372268061186,
+          0.1951814674084439
+        ]
+      },
+      "over_sharing_rate": {
+        "difference": -0.09574468085106386,
+        "percentile_95_ci": [
+          -0.19780219780219782,
+          -0.009613095238095271
+        ]
+      },
+      "persistent_over_allow_rate": {
+        "difference": 0.028818443804034588,
+        "percentile_95_ci": [
+          -0.003291411926280344,
+          0.07277760160668041
+        ]
+      }
+    }
+  }
+}

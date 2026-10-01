@@ -1,0 +1,153 @@
+{
+  "fixture_set_id": "s_qstn_rulepack_v2_memory_diagnostic_v1",
+  "version": "2.0.0",
+  "purpose": "Label-free deterministic diagnostics for bounded memory and categorical state transitions.",
+  "human_calibration": "not_claimed",
+  "fixtures": [
+    {
+      "fixture_id": "verified_scope_violation_visible",
+      "subject_id": "fixture_scope_violation",
+      "current_turn": 2,
+      "memory_horizon_turns": 3,
+      "memory_horizon_source": "synthetic_fixture_only",
+      "events": [
+        {
+          "event_id": "event_scope_violation_1",
+          "subject_id": "fixture_scope_violation",
+          "event_type": "verified_scope_violation",
+          "turn_index": 1,
+          "event_time": "fixture-turn-1",
+          "source": "synthetic_oracle",
+          "verification_status": "verified",
+          "scope": "calendar_scope",
+          "metadata": {
+            "trust_dimension": "integrity"
+          }
+        }
+      ]
+    },
+    {
+      "fixture_id": "verified_repair_recovery",
+      "subject_id": "fixture_repair_recovery",
+      "current_turn": 3,
+      "memory_horizon_turns": 3,
+      "memory_horizon_source": "synthetic_fixture_only",
+      "events": [
+        {
+          "event_id": "event_verified_error_1",
+          "subject_id": "fixture_repair_recovery",
+          "event_type": "verified_agent_error",
+          "turn_index": 1,
+          "event_time": "fixture-turn-1",
+          "source": "synthetic_oracle",
+          "verification_status": "verified",
+          "scope": "assistant_scope",
+          "metadata": {
+            "trust_dimension": "integrity"
+          }
+        },
+        {
+          "event_id": "event_repair_completed_1",
+          "subject_id": "fixture_repair_recovery",
+          "event_type": "repair_completed",
+          "turn_index": 2,
+          "event_time": "fixture-turn-2",
+          "source": "synthetic_oracle",
+          "verification_status": "verified",
+          "scope": "assistant_scope",
+          "metadata": {
+            "trust_dimension": "integrity"
+          }
+        }
+      ]
+    },
+    {
+      "fixture_id": "explicit_prompt_burden",
+      "subject_id": "fixture_prompt_burden",
+      "current_turn": 2,
+      "memory_horizon_turns": 3,
+      "memory_horizon_source": "synthetic_fixture_only",
+      "events": [
+        {
+          "event_id": "event_prompt_interruption_1",
+          "subject_id": "fixture_prompt_burden",
+          "event_type": "prompt_interruption",
+          "turn_index": 1,
+          "event_time": "fixture-turn-1",
+          "source": "synthetic_oracle",
+          "verification_status": "verified",
+          "scope": "fixture_scope",
+          "metadata": {
+            "burden_bucket": "high_explicit"
+          }
+        }
+      ]
+    },
+    {
+      "fixture_id": "recent_event_expired_from_view",
+      "subject_id": "fixture_expired_event",
+      "current_turn": 5,
+      "memory_horizon_turns": 3,
+      "memory_horizon_source": "synthetic_fixture_only",
+      "events": [
+        {
+          "event_id": "event_recent_request_1",
+          "subject_id": "fixture_expired_event",
+          "event_type": "permission_request_presented",
+          "turn_index": 1,
+          "event_time": "fixture-turn-1",
+          "source": "synthetic_oracle",
+          "verification_status": "verified",
+          "scope": "fixture_scope",
+          "metadata": {
+            "burden_bucket": "low_explicit"
+          }
+        }
+      ]
+    },
+    {
+      "fixture_id": "ordinary_denial_is_not_violation",
+      "subject_id": "fixture_ordinary_denial",
+      "current_turn": 1,
+      "memory_horizon_turns": 3,
+      "memory_horizon_source": "synthetic_fixture_only",
+      "events": [
+        {
+          "event_id": "event_permission_denial_1",
+          "subject_id": "fixture_ordinary_denial",
+          "event_type": "permission_response_recorded",
+          "turn_index": 1,
+          "event_time": "fixture-turn-1",
+          "source": "synthetic_oracle",
+          "verification_status": "verified",
+          "scope": "fixture_scope",
+          "metadata": {
+            "answer": "No, never share"
+          }
+        }
+      ]
+    },
+    {
+      "fixture_id": "unverified_event_remains_unknown",
+      "subject_id": "fixture_unverified_event",
+      "current_turn": 1,
+      "memory_horizon_turns": 3,
+      "memory_horizon_source": "synthetic_fixture_only",
+      "events": [
+        {
+          "event_id": "event_unverified_error_1",
+          "subject_id": "fixture_unverified_event",
+          "event_type": "verified_agent_error",
+          "turn_index": 1,
+          "event_time": "fixture-turn-1",
+          "source": "unknown",
+          "verification_status": "unverified",
+          "scope": "assistant_scope",
+          "metadata": {
+            "trust_dimension": "integrity"
+          }
+        }
+      ]
+    }
+  ]
+}

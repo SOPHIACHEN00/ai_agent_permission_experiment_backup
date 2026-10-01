@@ -1,0 +1,1 @@
+curl: (28) Failed to connect to api.openai.com port 443 after 8002 ms: Timeout was reached

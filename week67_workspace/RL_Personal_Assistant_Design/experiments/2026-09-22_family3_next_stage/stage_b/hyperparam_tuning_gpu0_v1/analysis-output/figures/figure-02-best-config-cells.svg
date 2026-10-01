@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+<rect width="1000" height="520" fill="white"/>
+<g font-family="Segoe UI,Arial,sans-serif" fill="#17212b">
+<line x1="80" y1="415.0" x2="765" y2="415.0" stroke="#e1e5e9" stroke-width="1.5" stroke-dasharray=""/>
+<text x="65" y="420.0" font-size="15" text-anchor="end">0.00</text>
+<line x1="80" y1="327.5" x2="765" y2="327.5" stroke="#e1e5e9" stroke-width="1.5" stroke-dasharray=""/>
+<text x="65" y="332.5" font-size="15" text-anchor="end">0.25</text>
+<line x1="80" y1="240.0" x2="765" y2="240.0" stroke="#e1e5e9" stroke-width="1.5" stroke-dasharray=""/>
+<text x="65" y="245.0" font-size="15" text-anchor="end">0.50</text>
+<line x1="80" y1="152.5" x2="765" y2="152.5" stroke="#e1e5e9" stroke-width="1.5" stroke-dasharray=""/>
+<text x="65" y="157.5" font-size="15" text-anchor="end">0.75</text>
+<line x1="80" y1="65.0" x2="765" y2="65.0" stroke="#e1e5e9" stroke-width="1.5" stroke-dasharray=""/>
+<text x="65" y="70.0" font-size="15" text-anchor="end">1.00</text>
+<line x1="80" y1="65" x2="80" y2="415" stroke="#64748b" stroke-width="1.5" stroke-dasharray=""/>
+<text x="80" y="30" font-size="20" text-anchor="start">Exact validation success probability</text>
+<text x="795" y="75" font-size="15" text-anchor="start">Training seed</text>
+<circle cx="113" cy="275.0" r="5" fill="#0072B2"><title>Seed 101: 0.400000</title></circle>
+<circle cx="313" cy="275.0" r="5" fill="#0072B2"><title>Seed 101: 0.400000</title></circle>
+<circle cx="513" cy="89.5" r="5" fill="#0072B2"><title>Seed 101: 0.930000</title></circle>
+<circle cx="713" cy="187.5" r="5" fill="#0072B2"><title>Seed 101: 0.650000</title></circle>
+<text x="795" y="104" font-size="14" text-anchor="start">101  (color + shape)</text>
+<rect x="965" y="94" width="10" height="10" fill="#0072B2"/>
+<rect x="120" y="235.0" width="10" height="10" fill="#D55E00"><title>Seed 211: 0.500000</title></rect>
+<rect x="320" y="235.0" width="10" height="10" fill="#D55E00"><title>Seed 211: 0.500000</title></rect>
+<rect x="520" y="182.5" width="10" height="10" fill="#D55E00"><title>Seed 211: 0.650000</title></rect>
+<rect x="720" y="200.0" width="10" height="10" fill="#D55E00"><title>Seed 211: 0.600000</title></rect>
+<text x="795" y="129" font-size="14" text-anchor="start">211  (color + shape)</text>
+<rect x="965" y="119" width="10" height="10" fill="#D55E00"/>
+<polygon points="137,234.0 131,245.0 143,245.0" fill="#009E73"><title>Seed 307: 0.500000</title></polygon>
+<polygon points="337,234.0 331,245.0 343,245.0" fill="#009E73"><title>Seed 307: 0.500000</title></polygon>
+<polygon points="537,83.5 531,94.5 543,94.5" fill="#009E73"><title>Seed 307: 0.930000</title></polygon>
+<polygon points="737,227.0 731,238.0 743,238.0" fill="#009E73"><title>Seed 307: 0.520000</title></polygon>
+<text x="795" y="154" font-size="14" text-anchor="start">307  (color + shape)</text>
+<rect x="965" y="144" width="10" height="10" fill="#009E73"/>
+<line x1="85" y1="240.0" x2="165" y2="240.0" stroke="#17212b" stroke-width="1.5" stroke-dasharray="6 4"/>
+<line x1="285" y1="205.0" x2="365" y2="205.0" stroke="#17212b" stroke-width="1.5" stroke-dasharray="6 4"/>
+<line x1="485" y1="89.5" x2="565" y2="89.5" stroke="#17212b" stroke-width="1.5" stroke-dasharray="6 4"/>
+<line x1="685" y1="135.0" x2="765" y2="135.0" stroke="#17212b" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="795" y="208" font-size="14" text-anchor="start">Dashed: cell DP optimum</text>
+<text x="125" y="440" font-size="14" text-anchor="middle">br05</text>
+<text x="125" y="459" font-size="14" text-anchor="middle">original</text>
+<text x="325" y="440" font-size="14" text-anchor="middle">br05</text>
+<text x="325" y="459" font-size="14" text-anchor="middle">prompt_toggle</text>
+<text x="525" y="440" font-size="14" text-anchor="middle">br06</text>
+<text x="525" y="459" font-size="14" text-anchor="middle">original</text>
+<text x="725" y="440" font-size="14" text-anchor="middle">br06</text>
+<text x="725" y="459" font-size="14" text-anchor="middle">prompt_toggle</text>
+<text x="80" y="498" font-size="13" text-anchor="start">All three seeds shown; no smoothing or confidence/error bars. Validation tuning, not a held-out test.</text>
+</g></svg>

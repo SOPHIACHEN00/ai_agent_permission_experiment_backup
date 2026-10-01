@@ -1,0 +1,10 @@
+{
+  "attempts": 1,
+  "completed_answers": 1,
+  "estimated_cost_usd": 0.0027544,
+  "accounted_cost_upper_usd": 0.0027544,
+  "budget_usd": 3.9259106,
+  "max_calls": 4,
+  "failed": false,
+  "automatic_retries": 0
+}

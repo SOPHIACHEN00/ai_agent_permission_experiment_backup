@@ -1,0 +1,29 @@
+{
+  "call_id": "generator_P167_row5354",
+  "stage": "generator",
+  "status": "success",
+  "participant_id": "P167",
+  "row_index": 5354,
+  "shots": null,
+  "prompt_sha256": "1f1ed1483a05835feff98ad28d59db41f044ec7027ef2d67796b2354289cc97c",
+  "requested_model": "o4-mini",
+  "reserved_cost_usd": 0.028845300000000004,
+  "charged_or_reserved_cost_usd": 0.0021856999999999996,
+  "started_at_utc": "2026-09-26T19:35:23.523746+00:00",
+  "prompt_tokens": 1823,
+  "completion_tokens": 353,
+  "cached_prompt_tokens": 1664,
+  "reasoning_tokens": 320,
+  "provider_reported_cost_usd": null,
+  "estimated_cost_usd": 0.0021856999999999996,
+  "cost_basis": "OpenAI public token pricing, including cached-input discount",
+  "response_id": "chatcmpl-ESST56j9B8ZuloTntKmg7Nd4A5SXF",
+  "returned_model": "o4-mini-2025-04-16",
+  "finish_reason": "stop",
+  "raw_response": "{\"answer\":\"Yes, but ask me next time\"}",
+  "answer": {
+    "label_text": "Yes, but ask me next time",
+    "label_id": 2
+  },
+  "finished_at_utc": "2026-09-26T19:35:25.928576+00:00"
+}

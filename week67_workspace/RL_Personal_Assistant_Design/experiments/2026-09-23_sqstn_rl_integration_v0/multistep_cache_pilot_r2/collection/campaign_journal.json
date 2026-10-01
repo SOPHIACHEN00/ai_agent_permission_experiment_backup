@@ -1,0 +1,138 @@
+[
+  {
+    "attempt": 10,
+    "at_utc": "2026-09-23T17:48:26.670876+00:00",
+    "state": "complete",
+    "reservation_nusd": 238022400,
+    "completed_utc": "2026-09-23T17:48:32.413634+00:00",
+    "usage_cost_nusd": 4312000
+  },
+  {
+    "attempt": 11,
+    "at_utc": "2026-09-23T17:48:33.257297+00:00",
+    "state": "complete",
+    "reservation_nusd": 238022400,
+    "completed_utc": "2026-09-23T17:48:36.161313+00:00",
+    "usage_cost_nusd": 2472800
+  },
+  {
+    "attempt": 12,
+    "at_utc": "2026-09-23T17:48:36.314824+00:00",
+    "state": "complete",
+    "reservation_nusd": 238022400,
+    "completed_utc": "2026-09-23T17:48:40.760509+00:00",
+    "usage_cost_nusd": 4033700
+  },
+  {
+    "attempt": 13,
+    "at_utc": "2026-09-23T17:48:40.831517+00:00",
+    "state": "complete",
+    "reservation_nusd": 238022400,
+    "completed_utc": "2026-09-23T17:48:49.021499+00:00",
+    "usage_cost_nusd": 3470500
+  },
+  {
+    "attempt": 14,
+    "at_utc": "2026-09-23T17:48:49.628097+00:00",
+    "state": "complete",
+    "reservation_nusd": 238022400,
+    "completed_utc": "2026-09-23T17:48:52.797846+00:00",
+    "usage_cost_nusd": 3300000
+  },
+  {
+    "attempt": 15,
+    "at_utc": "2026-09-23T17:48:52.931376+00:00",
+    "state": "complete",
+    "reservation_nusd": 238022400,
+    "completed_utc": "2026-09-23T17:48:56.203715+00:00",
+    "usage_cost_nusd": 3452900
+  },
+  {
+    "attempt": 16,
+    "at_utc": "2026-09-23T17:48:56.414299+00:00",
+    "state": "complete",
+    "reservation_nusd": 238022400,
+    "completed_utc": "2026-09-23T17:49:05.781673+00:00",
+    "usage_cost_nusd": 3171300
+  },
+  {
+    "attempt": 17,
+    "at_utc": "2026-09-23T17:49:06.414635+00:00",
+    "state": "complete",
+    "reservation_nusd": 238022400,
+    "completed_utc": "2026-09-23T17:49:08.167526+00:00",
+    "usage_cost_nusd": 1303500
+  },
+  {
+    "attempt": 18,
+    "at_utc": "2026-09-23T17:49:08.255096+00:00",
+    "state": "complete",
+    "reservation_nusd": 238022400,
+    "completed_utc": "2026-09-23T17:49:12.108960+00:00",
+    "usage_cost_nusd": 3462800
+  },
+  {
+    "attempt": 19,
+    "at_utc": "2026-09-23T17:49:12.193472+00:00",
+    "state": "complete",
+    "reservation_nusd": 238022400,
+    "completed_utc": "2026-09-23T17:49:14.728957+00:00",
+    "usage_cost_nusd": 1245200
+  },
+  {
+    "attempt": 20,
+    "at_utc": "2026-09-23T17:49:15.288688+00:00",
+    "state": "complete",
+    "reservation_nusd": 238022400,
+    "completed_utc": "2026-09-23T17:49:18.495045+00:00",
+    "usage_cost_nusd": 3029400
+  },
+  {
+    "attempt": 21,
+    "at_utc": "2026-09-23T17:49:18.616680+00:00",
+    "state": "complete",
+    "reservation_nusd": 238022400,
+    "completed_utc": "2026-09-23T17:49:21.698074+00:00",
+    "usage_cost_nusd": 3745500
+  },
+  {
+    "attempt": 22,
+    "at_utc": "2026-09-23T17:49:21.792577+00:00",
+    "state": "complete",
+    "reservation_nusd": 238022400,
+    "completed_utc": "2026-09-23T17:49:29.121357+00:00",
+    "usage_cost_nusd": 6846400
+  },
+  {
+    "attempt": 23,
+    "at_utc": "2026-09-23T17:49:29.316425+00:00",
+    "state": "complete",
+    "reservation_nusd": 238022400,
+    "completed_utc": "2026-09-23T17:49:33.945174+00:00",
+    "usage_cost_nusd": 4312000
+  },
+  {
+    "attempt": 24,
+    "at_utc": "2026-09-23T17:49:34.541620+00:00",
+    "state": "complete",
+    "reservation_nusd": 238022400,
+    "completed_utc": "2026-09-23T17:49:37.330732+00:00",
+    "usage_cost_nusd": 2754400
+  },
+  {
+    "attempt": 25,
+    "at_utc": "2026-09-23T17:49:37.416276+00:00",
+    "state": "complete",
+    "reservation_nusd": 238022400,
+    "completed_utc": "2026-09-23T17:49:44.136451+00:00",
+    "usage_cost_nusd": 4033700
+  },
+  {
+    "attempt": 26,
+    "at_utc": "2026-09-23T17:49:44.216071+00:00",
+    "state": "complete",
+    "reservation_nusd": 238022400,
+    "completed_utc": "2026-09-23T17:49:47.651808+00:00",
+    "usage_cost_nusd": 3470500
+  }
+]

@@ -1,0 +1,55 @@
+{
+  "status": "compiled",
+  "api_called": false,
+  "rule_pack_id": "security_behavior_rules",
+  "rule_pack_version": "1.1.0",
+  "parent_rule_pack_version": "1.0.0",
+  "respondent_contract_version": "respondent_contract_v1.1.en",
+  "skill_catalog_version": "1.1.0",
+  "skill_mode": "active_excerpt",
+  "behavior_mode": "audit_compatible",
+  "context_schema_version": "1.1.0",
+  "audit_schema_version": "1.1.0",
+  "state_schema_version": "none",
+  "reason_code_schema_version": "1.1.0",
+  "source_principle_count": 12,
+  "source_concrete_rule_count": 56,
+  "personas": 201,
+  "profiles": [
+    "broad_restrictors",
+    "persistent_granters",
+    "reconsent_seekers"
+  ],
+  "questionnaire_items": 373,
+  "rule_context_rows": 1119,
+  "uncertainty_bucket_counts": {
+    "medium": 1011,
+    "high": 108
+  },
+  "prompt_burden_bucket_counts": {
+    "not_applicable_single_item": 1119
+  },
+  "target_answer_columns_absent": true,
+  "numeric_behavior_parameters": false,
+  "input_hashes": {
+    "personas": "4292338078ea62379a3776fc1f7a322d4a0a367bafc8387de6f44430156feded",
+    "questionnaire": "3d1e604020dd9ccb037c29cc9b46807928311c6b66c68b54f8a89203610ca20f",
+    "context_sidecar": "fb630341f24a6209430652762bfced2125140b573c22c70252f8947ab19aad16",
+    "rulepack": "9b0dbd1eb398cc280f3c10b1f5ce152b7ca5934b93c16e7e7cc0f35568a6d15f",
+    "parent_rulepack": "304e28620ad68567a50e54ca4aa416c9afb61a11f9d89745bbbc7e9dcf156baa",
+    "respondent_contract": "c0686faf4b3f10f7247a124009a19d3b63a4b88f21c2d779f390cb2fb547bbbf",
+    "skill_catalog": "55b4ec26d4875e6cf430431f116a72e50f2ab3d7e4fef76676f501cbff1c63dc",
+    "context_schema": "d56606c64554183b45ccbab3aad1993edef4e75e75d3e002c82654730bbcaedd",
+    "reason_codes": "18cfb3bb31818338507df3e356e09b24546105f822065be5b771e6e767caf849"
+  },
+  "files": {
+    "personas": "outputs\\s_qstn_v1_1\\s_qstn_personas.csv",
+    "rule_context_audit": "outputs\\s_qstn_v1_1\\rule_context_audit.csv"
+  },
+  "guardrails": [
+    "Audit-compatible mode preserves the v1.0 grouped permission-direction rules.",
+    "Unknown context is retained and never inferred from question prose or labels.",
+    "Human target columns are absent from the context sidecar and compiler inputs.",
+    "No numeric weights, probabilities, confidence values, or state updates are active."
+  ]
+}

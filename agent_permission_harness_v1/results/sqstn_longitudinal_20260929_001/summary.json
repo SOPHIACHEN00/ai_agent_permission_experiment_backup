@@ -1,0 +1,40 @@
+{
+  "abort": {
+    "error_type": "LiveCallError",
+    "no_automatic_retry": true,
+    "phase": "compatibility_probe",
+    "transport_failures": {
+      "human": null,
+      "task": {
+        "error_type": "URLError",
+        "stage": "request"
+      }
+    }
+  },
+  "completed_eval": 0,
+  "completed_train": 0,
+  "cost": {
+    "human": {
+      "attempts": 0,
+      "call_cap": 129,
+      "cap_nusd": 4000000000,
+      "reserved_unknown_nusd": 0,
+      "settled_upper_nusd": 0,
+      "stopped": true
+    },
+    "task": {
+      "attempts": 1,
+      "call_cap": 676,
+      "cap_nusd": 5000000000,
+      "reserved_unknown_nusd": 600000000,
+      "settled_upper_nusd": 0,
+      "stopped": true
+    }
+  },
+  "diagnostic_episodes": 0,
+  "last_activity_utc": "2026-09-30T03:28:23.398596+00:00",
+  "phase": "compatibility_probe",
+  "source": "live",
+  "status": "aborted",
+  "users": []
+}

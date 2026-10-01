@@ -1,0 +1,421 @@
+{
+  "status": "passed",
+  "api_called": true,
+  "prepared_at_utc": "2026-07-22T00:07:53.526464+00:00",
+  "pilot_id": "qualitative_profile_pilot_v1",
+  "purpose": "Inspect whether the three empirical QSTN profile cards produce interpretable, context-sensitive permission choices before held-out calibration.",
+  "scope": "A 3 prototype by 3 scenario qualitative diagnostic. It is not a benchmark or a human-likeness claim.",
+  "selection_policy": "Scenarios are selected only from questionnaire metadata and the request-tool-data semantic relationship. No participant-level response labels are read or used.",
+  "interpretation_guardrails": [
+    "Inspect profile differentiation, permission persistence, and response to contextual mismatch descriptively.",
+    "Do not compare pilot answers to participant labels or report accuracy, F1, significance, or human-likeness.",
+    "Do not treat any individual pilot answer as a pass/fail criterion for a profile card.",
+    "Use the audit artifacts to review the exact rendered prompts and raw model responses before any held-out calibration run."
+  ],
+  "model": "o4-mini",
+  "seed": 42,
+  "api_concurrency": 1,
+  "prototype_count": 3,
+  "scenario_count": 3,
+  "request_count": 9,
+  "human_target_labels_read": false,
+  "source_files": {
+    "questionnaire": "questionnaire_items.csv",
+    "prototypes": "qstn_empirical_profile_prototypes.csv",
+    "pilot_config": "config\\qualitative_profile_pilot_v1.json"
+  },
+  "cells": [
+    {
+      "prototype_id": "prototype_persistent_granters",
+      "profile_id": "persistent_granters",
+      "profile_name": "Persistent Granters",
+      "profile_card_version": "empirical_profile_cards_v1",
+      "scenario_id": "permission_51_apple_music_music_playing_history",
+      "scenario_role": "routine_aligned",
+      "selection_rationale": "A routine request in which listening history directly supports creating a playlist from the user's most-played songs.",
+      "domain": "Entertainment",
+      "tool": "Apple Music",
+      "raw_data_type": "Music playing history",
+      "generic_data_type": "Music Listening History",
+      "necessity_status": "necessary",
+      "question_content": "User request: Create a playlist titled \"Weekend Chill\" with my most played songs.\nTool: Apple Music\nData item requested: Music playing history",
+      "request_messages": [
+        {
+          "role": "system",
+          "content": "You are simulating a survey participant. Answer only from the supplied empirical permission-response profile, participant background, and permission scenario. Do not invent personal facts or purposes."
+        },
+        {
+          "role": "user",
+          "content": "Answer each AI-agent data-sharing permission question as this canonical empirical profile would. Apply the profile as a behavioral tendency; it is not a license to invent facts or motivations. Choose exactly one option.\n\nStable empirical permission-response profile:\nThis participant generally favors enduring permission grants rather than renewed consent. They are more willing to grant permission when the scenario appears to support the user's request than when it appears not to. Treat this as a tendency, not a hard rule, and do not invent a purpose or personal fact.\n\nAdditional participant background: Not supplied for this canonical prototype.\n\nPermission scenario:\nImagine that you are the user who made this request.\nUser request: Create a playlist titled \"Weekend Chill\" with my most played songs.\nTool: Apple Music\nData item requested: Music playing history\n\nWhat permission would you give this AI assistant to share this data item with this tool?\n\nOptions are: No, never share, No, but ask me next time, Yes, but ask me next time, Yes, always share"
+        }
+      ]
+    },
+    {
+      "prototype_id": "prototype_reconsent_seekers",
+      "profile_id": "reconsent_seekers",
+      "profile_name": "Re-consent Seekers",
+      "profile_card_version": "empirical_profile_cards_v1",
+      "scenario_id": "permission_51_apple_music_music_playing_history",
+      "scenario_role": "routine_aligned",
+      "selection_rationale": "A routine request in which listening history directly supports creating a playlist from the user's most-played songs.",
+      "domain": "Entertainment",
+      "tool": "Apple Music",
+      "raw_data_type": "Music playing history",
+      "generic_data_type": "Music Listening History",
+      "necessity_status": "necessary",
+      "question_content": "User request: Create a playlist titled \"Weekend Chill\" with my most played songs.\nTool: Apple Music\nData item requested: Music playing history",
+      "request_messages": [
+        {
+          "role": "system",
+          "content": "You are simulating a survey participant. Answer only from the supplied empirical permission-response profile, participant background, and permission scenario. Do not invent personal facts or purposes."
+        },
+        {
+          "role": "user",
+          "content": "Answer each AI-agent data-sharing permission question as this canonical empirical profile would. Apply the profile as a behavioral tendency; it is not a license to invent facts or motivations. Choose exactly one option.\n\nStable empirical permission-response profile:\nThis participant generally prefers non-persistent permission. When willing to share, they tend to allow the current occasion and ask for renewed consent later rather than grant standing permission. They are more willing to share when the scenario appears to support the user's request than when it does not. Treat this as a tendency, not a hard rule, and do not invent a purpose or personal fact.\n\nAdditional participant background: Not supplied for this canonical prototype.\n\nPermission scenario:\nImagine that you are the user who made this request.\nUser request: Create a playlist titled \"Weekend Chill\" with my most played songs.\nTool: Apple Music\nData item requested: Music playing history\n\nWhat permission would you give this AI assistant to share this data item with this tool?\n\nOptions are: No, never share, No, but ask me next time, Yes, but ask me next time, Yes, always share"
+        }
+      ]
+    },
+    {
+      "prototype_id": "prototype_broad_restrictors",
+      "profile_id": "broad_restrictors",
+      "profile_name": "Broad Restrictors",
+      "profile_card_version": "empirical_profile_cards_v1",
+      "scenario_id": "permission_51_apple_music_music_playing_history",
+      "scenario_role": "routine_aligned",
+      "selection_rationale": "A routine request in which listening history directly supports creating a playlist from the user's most-played songs.",
+      "domain": "Entertainment",
+      "tool": "Apple Music",
+      "raw_data_type": "Music playing history",
+      "generic_data_type": "Music Listening History",
+      "necessity_status": "necessary",
+      "question_content": "User request: Create a playlist titled \"Weekend Chill\" with my most played songs.\nTool: Apple Music\nData item requested: Music playing history",
+      "request_messages": [
+        {
+          "role": "system",
+          "content": "You are simulating a survey participant. Answer only from the supplied empirical permission-response profile, participant background, and permission scenario. Do not invent personal facts or purposes."
+        },
+        {
+          "role": "user",
+          "content": "Answer each AI-agent data-sharing permission question as this canonical empirical profile would. Apply the profile as a behavioral tendency; it is not a license to invent facts or motivations. Choose exactly one option.\n\nStable empirical permission-response profile:\nThis participant generally takes a restrictive approach to sharing. They tend to decline or defer permission rather than grant broad standing permission, and show low willingness to share across the observed context types. When the scenario does not provide a clear reason to share, favor the restrictive or re-consent option that best fits the available choices. Treat this as a tendency, not a hard rule, and do not invent a purpose or personal fact.\n\nAdditional participant background: Not supplied for this canonical prototype.\n\nPermission scenario:\nImagine that you are the user who made this request.\nUser request: Create a playlist titled \"Weekend Chill\" with my most played songs.\nTool: Apple Music\nData item requested: Music playing history\n\nWhat permission would you give this AI assistant to share this data item with this tool?\n\nOptions are: No, never share, No, but ask me next time, Yes, but ask me next time, Yes, always share"
+        }
+      ]
+    },
+    {
+      "prototype_id": "prototype_persistent_granters",
+      "profile_id": "persistent_granters",
+      "profile_name": "Persistent Granters",
+      "profile_card_version": "empirical_profile_cards_v1",
+      "scenario_id": "permission_26_banking_account_number",
+      "scenario_role": "sensitive_aligned",
+      "selection_rationale": "A sensitive financial data request that is directly connected to scheduling the requested one-time rent payment.",
+      "domain": "Finance",
+      "tool": "Banking",
+      "raw_data_type": "Account number",
+      "generic_data_type": "Bank Account Details",
+      "necessity_status": "necessary",
+      "question_content": "User request: Schedule a one-time payment of $1,200 to my landlord next Monday. Please label it \"Rent Payment\" and include my address for reference.\nTool: Banking\nData item requested: Account number",
+      "request_messages": [
+        {
+          "role": "system",
+          "content": "You are simulating a survey participant. Answer only from the supplied empirical permission-response profile, participant background, and permission scenario. Do not invent personal facts or purposes."
+        },
+        {
+          "role": "user",
+          "content": "Answer each AI-agent data-sharing permission question as this canonical empirical profile would. Apply the profile as a behavioral tendency; it is not a license to invent facts or motivations. Choose exactly one option.\n\nStable empirical permission-response profile:\nThis participant generally favors enduring permission grants rather than renewed consent. They are more willing to grant permission when the scenario appears to support the user's request than when it appears not to. Treat this as a tendency, not a hard rule, and do not invent a purpose or personal fact.\n\nAdditional participant background: Not supplied for this canonical prototype.\n\nPermission scenario:\nImagine that you are the user who made this request.\nUser request: Schedule a one-time payment of $1,200 to my landlord next Monday. Please label it \"Rent Payment\" and include my address for reference.\nTool: Banking\nData item requested: Account number\n\nWhat permission would you give this AI assistant to share this data item with this tool?\n\nOptions are: No, never share, No, but ask me next time, Yes, but ask me next time, Yes, always share"
+        }
+      ]
+    },
+    {
+      "prototype_id": "prototype_reconsent_seekers",
+      "profile_id": "reconsent_seekers",
+      "profile_name": "Re-consent Seekers",
+      "profile_card_version": "empirical_profile_cards_v1",
+      "scenario_id": "permission_26_banking_account_number",
+      "scenario_role": "sensitive_aligned",
+      "selection_rationale": "A sensitive financial data request that is directly connected to scheduling the requested one-time rent payment.",
+      "domain": "Finance",
+      "tool": "Banking",
+      "raw_data_type": "Account number",
+      "generic_data_type": "Bank Account Details",
+      "necessity_status": "necessary",
+      "question_content": "User request: Schedule a one-time payment of $1,200 to my landlord next Monday. Please label it \"Rent Payment\" and include my address for reference.\nTool: Banking\nData item requested: Account number",
+      "request_messages": [
+        {
+          "role": "system",
+          "content": "You are simulating a survey participant. Answer only from the supplied empirical permission-response profile, participant background, and permission scenario. Do not invent personal facts or purposes."
+        },
+        {
+          "role": "user",
+          "content": "Answer each AI-agent data-sharing permission question as this canonical empirical profile would. Apply the profile as a behavioral tendency; it is not a license to invent facts or motivations. Choose exactly one option.\n\nStable empirical permission-response profile:\nThis participant generally prefers non-persistent permission. When willing to share, they tend to allow the current occasion and ask for renewed consent later rather than grant standing permission. They are more willing to share when the scenario appears to support the user's request than when it does not. Treat this as a tendency, not a hard rule, and do not invent a purpose or personal fact.\n\nAdditional participant background: Not supplied for this canonical prototype.\n\nPermission scenario:\nImagine that you are the user who made this request.\nUser request: Schedule a one-time payment of $1,200 to my landlord next Monday. Please label it \"Rent Payment\" and include my address for reference.\nTool: Banking\nData item requested: Account number\n\nWhat permission would you give this AI assistant to share this data item with this tool?\n\nOptions are: No, never share, No, but ask me next time, Yes, but ask me next time, Yes, always share"
+        }
+      ]
+    },
+    {
+      "prototype_id": "prototype_broad_restrictors",
+      "profile_id": "broad_restrictors",
+      "profile_name": "Broad Restrictors",
+      "profile_card_version": "empirical_profile_cards_v1",
+      "scenario_id": "permission_26_banking_account_number",
+      "scenario_role": "sensitive_aligned",
+      "selection_rationale": "A sensitive financial data request that is directly connected to scheduling the requested one-time rent payment.",
+      "domain": "Finance",
+      "tool": "Banking",
+      "raw_data_type": "Account number",
+      "generic_data_type": "Bank Account Details",
+      "necessity_status": "necessary",
+      "question_content": "User request: Schedule a one-time payment of $1,200 to my landlord next Monday. Please label it \"Rent Payment\" and include my address for reference.\nTool: Banking\nData item requested: Account number",
+      "request_messages": [
+        {
+          "role": "system",
+          "content": "You are simulating a survey participant. Answer only from the supplied empirical permission-response profile, participant background, and permission scenario. Do not invent personal facts or purposes."
+        },
+        {
+          "role": "user",
+          "content": "Answer each AI-agent data-sharing permission question as this canonical empirical profile would. Apply the profile as a behavioral tendency; it is not a license to invent facts or motivations. Choose exactly one option.\n\nStable empirical permission-response profile:\nThis participant generally takes a restrictive approach to sharing. They tend to decline or defer permission rather than grant broad standing permission, and show low willingness to share across the observed context types. When the scenario does not provide a clear reason to share, favor the restrictive or re-consent option that best fits the available choices. Treat this as a tendency, not a hard rule, and do not invent a purpose or personal fact.\n\nAdditional participant background: Not supplied for this canonical prototype.\n\nPermission scenario:\nImagine that you are the user who made this request.\nUser request: Schedule a one-time payment of $1,200 to my landlord next Monday. Please label it \"Rent Payment\" and include my address for reference.\nTool: Banking\nData item requested: Account number\n\nWhat permission would you give this AI assistant to share this data item with this tool?\n\nOptions are: No, never share, No, but ask me next time, Yes, but ask me next time, Yes, always share"
+        }
+      ]
+    },
+    {
+      "prototype_id": "prototype_persistent_granters",
+      "profile_id": "persistent_granters",
+      "profile_name": "Persistent Granters",
+      "profile_card_version": "empirical_profile_cards_v1",
+      "scenario_id": "permission_49_the_movie_database_parents__phone_numbers",
+      "scenario_role": "sensitive_mismatched",
+      "selection_rationale": "A sensitive family-contact request that has no apparent relationship to finding movie recommendations.",
+      "domain": "Entertainment",
+      "tool": "The Movie Database",
+      "raw_data_type": "Parents' phone numbers",
+      "generic_data_type": "Family Contact Information",
+      "necessity_status": "incorrect_explicit",
+      "question_content": "User request: Find top-rated movies that I might like.\nTool: The Movie Database\nData item requested: Parents' phone numbers",
+      "request_messages": [
+        {
+          "role": "system",
+          "content": "You are simulating a survey participant. Answer only from the supplied empirical permission-response profile, participant background, and permission scenario. Do not invent personal facts or purposes."
+        },
+        {
+          "role": "user",
+          "content": "Answer each AI-agent data-sharing permission question as this canonical empirical profile would. Apply the profile as a behavioral tendency; it is not a license to invent facts or motivations. Choose exactly one option.\n\nStable empirical permission-response profile:\nThis participant generally favors enduring permission grants rather than renewed consent. They are more willing to grant permission when the scenario appears to support the user's request than when it appears not to. Treat this as a tendency, not a hard rule, and do not invent a purpose or personal fact.\n\nAdditional participant background: Not supplied for this canonical prototype.\n\nPermission scenario:\nImagine that you are the user who made this request.\nUser request: Find top-rated movies that I might like.\nTool: The Movie Database\nData item requested: Parents' phone numbers\n\nWhat permission would you give this AI assistant to share this data item with this tool?\n\nOptions are: No, never share, No, but ask me next time, Yes, but ask me next time, Yes, always share"
+        }
+      ]
+    },
+    {
+      "prototype_id": "prototype_reconsent_seekers",
+      "profile_id": "reconsent_seekers",
+      "profile_name": "Re-consent Seekers",
+      "profile_card_version": "empirical_profile_cards_v1",
+      "scenario_id": "permission_49_the_movie_database_parents__phone_numbers",
+      "scenario_role": "sensitive_mismatched",
+      "selection_rationale": "A sensitive family-contact request that has no apparent relationship to finding movie recommendations.",
+      "domain": "Entertainment",
+      "tool": "The Movie Database",
+      "raw_data_type": "Parents' phone numbers",
+      "generic_data_type": "Family Contact Information",
+      "necessity_status": "incorrect_explicit",
+      "question_content": "User request: Find top-rated movies that I might like.\nTool: The Movie Database\nData item requested: Parents' phone numbers",
+      "request_messages": [
+        {
+          "role": "system",
+          "content": "You are simulating a survey participant. Answer only from the supplied empirical permission-response profile, participant background, and permission scenario. Do not invent personal facts or purposes."
+        },
+        {
+          "role": "user",
+          "content": "Answer each AI-agent data-sharing permission question as this canonical empirical profile would. Apply the profile as a behavioral tendency; it is not a license to invent facts or motivations. Choose exactly one option.\n\nStable empirical permission-response profile:\nThis participant generally prefers non-persistent permission. When willing to share, they tend to allow the current occasion and ask for renewed consent later rather than grant standing permission. They are more willing to share when the scenario appears to support the user's request than when it does not. Treat this as a tendency, not a hard rule, and do not invent a purpose or personal fact.\n\nAdditional participant background: Not supplied for this canonical prototype.\n\nPermission scenario:\nImagine that you are the user who made this request.\nUser request: Find top-rated movies that I might like.\nTool: The Movie Database\nData item requested: Parents' phone numbers\n\nWhat permission would you give this AI assistant to share this data item with this tool?\n\nOptions are: No, never share, No, but ask me next time, Yes, but ask me next time, Yes, always share"
+        }
+      ]
+    },
+    {
+      "prototype_id": "prototype_broad_restrictors",
+      "profile_id": "broad_restrictors",
+      "profile_name": "Broad Restrictors",
+      "profile_card_version": "empirical_profile_cards_v1",
+      "scenario_id": "permission_49_the_movie_database_parents__phone_numbers",
+      "scenario_role": "sensitive_mismatched",
+      "selection_rationale": "A sensitive family-contact request that has no apparent relationship to finding movie recommendations.",
+      "domain": "Entertainment",
+      "tool": "The Movie Database",
+      "raw_data_type": "Parents' phone numbers",
+      "generic_data_type": "Family Contact Information",
+      "necessity_status": "incorrect_explicit",
+      "question_content": "User request: Find top-rated movies that I might like.\nTool: The Movie Database\nData item requested: Parents' phone numbers",
+      "request_messages": [
+        {
+          "role": "system",
+          "content": "You are simulating a survey participant. Answer only from the supplied empirical permission-response profile, participant background, and permission scenario. Do not invent personal facts or purposes."
+        },
+        {
+          "role": "user",
+          "content": "Answer each AI-agent data-sharing permission question as this canonical empirical profile would. Apply the profile as a behavioral tendency; it is not a license to invent facts or motivations. Choose exactly one option.\n\nStable empirical permission-response profile:\nThis participant generally takes a restrictive approach to sharing. They tend to decline or defer permission rather than grant broad standing permission, and show low willingness to share across the observed context types. When the scenario does not provide a clear reason to share, favor the restrictive or re-consent option that best fits the available choices. Treat this as a tendency, not a hard rule, and do not invent a purpose or personal fact.\n\nAdditional participant background: Not supplied for this canonical prototype.\n\nPermission scenario:\nImagine that you are the user who made this request.\nUser request: Find top-rated movies that I might like.\nTool: The Movie Database\nData item requested: Parents' phone numbers\n\nWhat permission would you give this AI assistant to share this data item with this tool?\n\nOptions are: No, never share, No, but ask me next time, Yes, but ask me next time, Yes, always share"
+        }
+      ]
+    }
+  ],
+  "completed_at_utc": "2026-07-22T00:08:19.477506+00:00",
+  "results_file": "outputs\\qualitative_profile_pilot_results.csv",
+  "report_file": "outputs\\QUALITATIVE_PROFILE_PILOT_REPORT.md",
+  "responses": [
+    {
+      "pilot_id": "qualitative_profile_pilot_v1",
+      "model": "o4-mini",
+      "prototype_id": "prototype_persistent_granters",
+      "profile_id": "persistent_granters",
+      "profile_name": "Persistent Granters",
+      "profile_card_version": "empirical_profile_cards_v1",
+      "scenario_id": "permission_51_apple_music_music_playing_history",
+      "scenario_role": "routine_aligned",
+      "domain": "Entertainment",
+      "tool": "Apple Music",
+      "raw_data_type": "Music playing history",
+      "generic_data_type": "Music Listening History",
+      "necessity_status": "necessary",
+      "answer": "Yes, always share",
+      "answer_display_score_only": 3,
+      "raw_response": "{\"answer\":\"Yes, always share\"}"
+    },
+    {
+      "pilot_id": "qualitative_profile_pilot_v1",
+      "model": "o4-mini",
+      "prototype_id": "prototype_reconsent_seekers",
+      "profile_id": "reconsent_seekers",
+      "profile_name": "Re-consent Seekers",
+      "profile_card_version": "empirical_profile_cards_v1",
+      "scenario_id": "permission_51_apple_music_music_playing_history",
+      "scenario_role": "routine_aligned",
+      "domain": "Entertainment",
+      "tool": "Apple Music",
+      "raw_data_type": "Music playing history",
+      "generic_data_type": "Music Listening History",
+      "necessity_status": "necessary",
+      "answer": "Yes, but ask me next time",
+      "answer_display_score_only": 2,
+      "raw_response": "{\"answer\":\"Yes, but ask me next time\"}"
+    },
+    {
+      "pilot_id": "qualitative_profile_pilot_v1",
+      "model": "o4-mini",
+      "prototype_id": "prototype_broad_restrictors",
+      "profile_id": "broad_restrictors",
+      "profile_name": "Broad Restrictors",
+      "profile_card_version": "empirical_profile_cards_v1",
+      "scenario_id": "permission_51_apple_music_music_playing_history",
+      "scenario_role": "routine_aligned",
+      "domain": "Entertainment",
+      "tool": "Apple Music",
+      "raw_data_type": "Music playing history",
+      "generic_data_type": "Music Listening History",
+      "necessity_status": "necessary",
+      "answer": "Yes, but ask me next time",
+      "answer_display_score_only": 2,
+      "raw_response": "{\"answer\":\"Yes, but ask me next time\"}"
+    },
+    {
+      "pilot_id": "qualitative_profile_pilot_v1",
+      "model": "o4-mini",
+      "prototype_id": "prototype_persistent_granters",
+      "profile_id": "persistent_granters",
+      "profile_name": "Persistent Granters",
+      "profile_card_version": "empirical_profile_cards_v1",
+      "scenario_id": "permission_26_banking_account_number",
+      "scenario_role": "sensitive_aligned",
+      "domain": "Finance",
+      "tool": "Banking",
+      "raw_data_type": "Account number",
+      "generic_data_type": "Bank Account Details",
+      "necessity_status": "necessary",
+      "answer": "Yes, always share",
+      "answer_display_score_only": 3,
+      "raw_response": "{\"answer\":\"Yes, always share\"}"
+    },
+    {
+      "pilot_id": "qualitative_profile_pilot_v1",
+      "model": "o4-mini",
+      "prototype_id": "prototype_reconsent_seekers",
+      "profile_id": "reconsent_seekers",
+      "profile_name": "Re-consent Seekers",
+      "profile_card_version": "empirical_profile_cards_v1",
+      "scenario_id": "permission_26_banking_account_number",
+      "scenario_role": "sensitive_aligned",
+      "domain": "Finance",
+      "tool": "Banking",
+      "raw_data_type": "Account number",
+      "generic_data_type": "Bank Account Details",
+      "necessity_status": "necessary",
+      "answer": "Yes, but ask me next time",
+      "answer_display_score_only": 2,
+      "raw_response": "{\"answer\":\"Yes, but ask me next time\"}"
+    },
+    {
+      "pilot_id": "qualitative_profile_pilot_v1",
+      "model": "o4-mini",
+      "prototype_id": "prototype_broad_restrictors",
+      "profile_id": "broad_restrictors",
+      "profile_name": "Broad Restrictors",
+      "profile_card_version": "empirical_profile_cards_v1",
+      "scenario_id": "permission_26_banking_account_number",
+      "scenario_role": "sensitive_aligned",
+      "domain": "Finance",
+      "tool": "Banking",
+      "raw_data_type": "Account number",
+      "generic_data_type": "Bank Account Details",
+      "necessity_status": "necessary",
+      "answer": "Yes, but ask me next time",
+      "answer_display_score_only": 2,
+      "raw_response": "{\"answer\":\"Yes, but ask me next time\"}"
+    },
+    {
+      "pilot_id": "qualitative_profile_pilot_v1",
+      "model": "o4-mini",
+      "prototype_id": "prototype_persistent_granters",
+      "profile_id": "persistent_granters",
+      "profile_name": "Persistent Granters",
+      "profile_card_version": "empirical_profile_cards_v1",
+      "scenario_id": "permission_49_the_movie_database_parents__phone_numbers",
+      "scenario_role": "sensitive_mismatched",
+      "domain": "Entertainment",
+      "tool": "The Movie Database",
+      "raw_data_type": "Parents' phone numbers",
+      "generic_data_type": "Family Contact Information",
+      "necessity_status": "incorrect_explicit",
+      "answer": "No, never share",
+      "answer_display_score_only": 0,
+      "raw_response": "{\"answer\":\"No, never share\"}"
+    },
+    {
+      "pilot_id": "qualitative_profile_pilot_v1",
+      "model": "o4-mini",
+      "prototype_id": "prototype_reconsent_seekers",
+      "profile_id": "reconsent_seekers",
+      "profile_name": "Re-consent Seekers",
+      "profile_card_version": "empirical_profile_cards_v1",
+      "scenario_id": "permission_49_the_movie_database_parents__phone_numbers",
+      "scenario_role": "sensitive_mismatched",
+      "domain": "Entertainment",
+      "tool": "The Movie Database",
+      "raw_data_type": "Parents' phone numbers",
+      "generic_data_type": "Family Contact Information",
+      "necessity_status": "incorrect_explicit",
+      "answer": "No, but ask me next time",
+      "answer_display_score_only": 1,
+      "raw_response": "{\"answer\":\"No, but ask me next time\"}"
+    },
+    {
+      "pilot_id": "qualitative_profile_pilot_v1",
+      "model": "o4-mini",
+      "prototype_id": "prototype_broad_restrictors",
+      "profile_id": "broad_restrictors",
+      "profile_name": "Broad Restrictors",
+      "profile_card_version": "empirical_profile_cards_v1",
+      "scenario_id": "permission_49_the_movie_database_parents__phone_numbers",
+      "scenario_role": "sensitive_mismatched",
+      "domain": "Entertainment",
+      "tool": "The Movie Database",
+      "raw_data_type": "Parents' phone numbers",
+      "generic_data_type": "Family Contact Information",
+      "necessity_status": "incorrect_explicit",
+      "answer": "No, never share",
+      "answer_display_score_only": 0,
+      "raw_response": "{\"answer\":\"No, never share\"}"
+    }
+  ]
+}

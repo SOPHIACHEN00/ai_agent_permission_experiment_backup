@@ -1,0 +1,11 @@
+{
+  "n_participants": 20,
+  "generator_calls": 624,
+  "history_permission_rows": 350,
+  "test_permission_rows": 274,
+  "predictor_calls": 40,
+  "generator_worst_case_usd": 18.0051366,
+  "predictor_worst_case_usd": 1.3391977499999996,
+  "run_cap_usd": 8.0,
+  "reservation_note": "Worst-case totals assume every response reaches its token cap; each dispatch is gated by the run budget including in-flight reservations."
+}

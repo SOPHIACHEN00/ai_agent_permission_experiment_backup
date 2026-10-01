@@ -1,0 +1,24 @@
+{
+  "at": "2026-09-22T02:01:22.698315+00:00",
+  "physical_gpu": 1,
+  "gpu2_used": false,
+  "formal_absent_before_start": true,
+  "package": {
+    "status": "CUDA_VARIANT_HASHES_PASS",
+    "checked_files": 103,
+    "mismatches": []
+  },
+  "freeze": {
+    "status": "FREEZE_VERIFIED",
+    "experiment_id": "increment8_family3_v2_learner_pilot_v0",
+    "source_manifest_sha256": "320cbf4175ddfb815d0517a08e8ab8d5952c8f99cc46b6a999a4cb9fb0e86d84"
+  },
+  "device": {
+    "count": 1,
+    "gpu1_uuid_match": true,
+    "device_name": "NVIDIA GeForce RTX 3090"
+  },
+  "gpu_free_mib": 24126,
+  "gpu_utilization_percent": 0,
+  "disk_free_bytes": 67908810047488
+}

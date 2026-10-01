@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+<rect width="1000" height="520" fill="white"/>
+<g font-family="Segoe UI,Arial,sans-serif" fill="#17212b">
+<line x1="80" y1="415.0" x2="765" y2="415.0" stroke="#e1e5e9" stroke-width="1.5" stroke-dasharray=""/>
+<text x="65" y="420.0" font-size="15" text-anchor="end">0.00</text>
+<line x1="80" y1="327.5" x2="765" y2="327.5" stroke="#e1e5e9" stroke-width="1.5" stroke-dasharray=""/>
+<text x="65" y="332.5" font-size="15" text-anchor="end">0.25</text>
+<line x1="80" y1="240.0" x2="765" y2="240.0" stroke="#e1e5e9" stroke-width="1.5" stroke-dasharray=""/>
+<text x="65" y="245.0" font-size="15" text-anchor="end">0.50</text>
+<line x1="80" y1="152.5" x2="765" y2="152.5" stroke="#e1e5e9" stroke-width="1.5" stroke-dasharray=""/>
+<text x="65" y="157.5" font-size="15" text-anchor="end">0.75</text>
+<line x1="80" y1="65.0" x2="765" y2="65.0" stroke="#e1e5e9" stroke-width="1.5" stroke-dasharray=""/>
+<text x="65" y="70.0" font-size="15" text-anchor="end">1.00</text>
+<line x1="80" y1="65" x2="80" y2="415" stroke="#64748b" stroke-width="1.5" stroke-dasharray=""/>
+<text x="80" y="30" font-size="20" text-anchor="start">Exact validation success probability</text>
+<text x="795" y="75" font-size="15" text-anchor="start">Training seed</text>
+<circle cx="101.0" cy="415.0" r="5" fill="#0072B2"><title>Seed 701: 0.000000</title></circle>
+<circle cx="301.0" cy="240.0" r="5" fill="#0072B2"><title>Seed 701: 0.500000</title></circle>
+<circle cx="501.0" cy="205.0" r="5" fill="#0072B2"><title>Seed 701: 0.600000</title></circle>
+<circle cx="701.0" cy="205.0" r="5" fill="#0072B2"><title>Seed 701: 0.600000</title></circle>
+<text x="795" y="104" font-size="12" text-anchor="start">701: circle</text>
+<rect x="965" y="94" width="10" height="10" fill="#0072B2"/>
+<rect x="108.0" y="235.0" width="10" height="10" fill="#D55E00"><title>Seed 809: 0.500000</title></rect>
+<rect x="308.0" y="235.0" width="10" height="10" fill="#D55E00"><title>Seed 809: 0.500000</title></rect>
+<rect x="508.0" y="84.5" width="10" height="10" fill="#D55E00"><title>Seed 809: 0.930000</title></rect>
+<rect x="708.0" y="228.0" width="10" height="10" fill="#D55E00"><title>Seed 809: 0.520000</title></rect>
+<text x="795" y="129" font-size="12" text-anchor="start">809: square</text>
+<rect x="965" y="119" width="10" height="10" fill="#D55E00"/>
+<polygon points="125.0,234.0 119.0,245.0 131.0,245.0" fill="#009E73"><title>Seed 907: 0.500000</title></polygon>
+<polygon points="325.0,234.0 319.0,245.0 331.0,245.0" fill="#009E73"><title>Seed 907: 0.500000</title></polygon>
+<polygon points="525.0,181.5 519.0,192.5 531.0,192.5" fill="#009E73"><title>Seed 907: 0.650000</title></polygon>
+<polygon points="725.0,181.5 719.0,192.5 731.0,192.5" fill="#009E73"><title>Seed 907: 0.650000</title></polygon>
+<text x="795" y="154" font-size="12" text-anchor="start">907: up-triangle</text>
+<rect x="965" y="144" width="10" height="10" fill="#009E73"/>
+<polygon points="137.0,246.0 131.0,235.0 143.0,235.0" fill="#CC79A7"><title>Seed 1009: 0.500000</title></polygon>
+<polygon points="337.0,246.0 331.0,235.0 343.0,235.0" fill="#CC79A7"><title>Seed 1009: 0.500000</title></polygon>
+<polygon points="537.0,193.5 531.0,182.5 543.0,182.5" fill="#CC79A7"><title>Seed 1009: 0.650000</title></polygon>
+<polygon points="737.0,193.5 731.0,182.5 743.0,182.5" fill="#CC79A7"><title>Seed 1009: 0.650000</title></polygon>
+<text x="795" y="179" font-size="12" text-anchor="start">1009: down-triangle</text>
+<rect x="965" y="169" width="10" height="10" fill="#CC79A7"/>
+<polygon points="149.0,374.0 155.0,380.0 149.0,386.0 143.0,380.0" fill="#6E6E00"><title>Seed 1103: 0.100000</title></polygon>
+<polygon points="349.0,199.0 355.0,205.0 349.0,211.0 343.0,205.0" fill="#6E6E00"><title>Seed 1103: 0.600000</title></polygon>
+<polygon points="549.0,83.5 555.0,89.5 549.0,95.5 543.0,89.5" fill="#6E6E00"><title>Seed 1103: 0.930000</title></polygon>
+<polygon points="749.0,227.0 755.0,233.0 749.0,239.0 743.0,233.0" fill="#6E6E00"><title>Seed 1103: 0.520000</title></polygon>
+<text x="795" y="204" font-size="12" text-anchor="start">1103: diamond</text>
+<rect x="965" y="194" width="10" height="10" fill="#6E6E00"/>
+<line x1="85.0" y1="240.0" x2="165.0" y2="240.0" stroke="#17212b" stroke-width="1.5" stroke-dasharray="6 4"/>
+<line x1="285.0" y1="205.0" x2="365.0" y2="205.0" stroke="#17212b" stroke-width="1.5" stroke-dasharray="6 4"/>
+<line x1="485.0" y1="89.5" x2="565.0" y2="89.5" stroke="#17212b" stroke-width="1.5" stroke-dasharray="6 4"/>
+<line x1="685.0" y1="135.0" x2="765.0" y2="135.0" stroke="#17212b" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="795" y="250" font-size="14" text-anchor="start">Dashed: cell DP optimum</text>
+<text x="125.0" y="440" font-size="14" text-anchor="middle">br05</text>
+<text x="125.0" y="459" font-size="14" text-anchor="middle">original</text>
+<text x="325.0" y="440" font-size="14" text-anchor="middle">br05</text>
+<text x="325.0" y="459" font-size="14" text-anchor="middle">prompt_toggle</text>
+<text x="525.0" y="440" font-size="14" text-anchor="middle">br06</text>
+<text x="525.0" y="459" font-size="14" text-anchor="middle">original</text>
+<text x="725.0" y="440" font-size="14" text-anchor="middle">br06</text>
+<text x="725.0" y="459" font-size="14" text-anchor="middle">prompt_toggle</text>
+<text x="80" y="498" font-size="13" text-anchor="start">All five new seeds shown; no smoothing/error bars. Fixed candidate, reused validation graphs; not test.</text>
+</g></svg>

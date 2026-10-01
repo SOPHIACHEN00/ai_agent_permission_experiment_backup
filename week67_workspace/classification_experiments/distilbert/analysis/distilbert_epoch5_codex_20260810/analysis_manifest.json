@@ -1,0 +1,168 @@
+{
+  "analysis": "distilbert_vs_tuned_flat_lr_participant_paired_cluster_bootstrap",
+  "analysis_script": {
+    "path": "D:\\Study\\Graduate_Study_UofG\\Research\\paper\\Week67\\classification_experiments\\scripts\\analyze_distilbert_results.py",
+    "sha256": "e3906ff96074e8157fb3ded2edfdeecf4712f480704d69553a59de6db5908237"
+  },
+  "validated_protocol": {
+    "dataset_sha256": "4a6f61191318eaa79ba2fac1ab80e6fb850e099f1f0178eef2f53b3b527fe463",
+    "outer_split": "participant_heldout",
+    "outer_seed": 42,
+    "train_rows": 13038,
+    "test_rows": 3323,
+    "train_participants": 160,
+    "test_participants": 41,
+    "participant_overlap": 0,
+    "test_participant_ids": [
+      "P010",
+      "P016",
+      "P017",
+      "P019",
+      "P031",
+      "P046",
+      "P056",
+      "P057",
+      "P061",
+      "P066",
+      "P068",
+      "P069",
+      "P070",
+      "P071",
+      "P077",
+      "P078",
+      "P080",
+      "P081",
+      "P084",
+      "P086",
+      "P095",
+      "P097",
+      "P106",
+      "P118",
+      "P127",
+      "P128",
+      "P131",
+      "P135",
+      "P138",
+      "P140",
+      "P151",
+      "P153",
+      "P155",
+      "P161",
+      "P167",
+      "P168",
+      "P174",
+      "P178",
+      "P181",
+      "P186",
+      "P190"
+    ],
+    "distilbert_run_config_sha256": "3fa4a00311110f18915a00ace28c62c082644e8aaa0abf1383e2cc19b9bbeeb4",
+    "distilbert_split_manifest_sha256": "905e419a6ade35e233a29dc6ed841f4944a948c1d145be4a184b0350aef4faa5",
+    "lr_run_config_sha256": "c5df84f1717bb795f53a3edeb18a95b1dcee806a4f50d40ce76bd54c87ba3910"
+  },
+  "input_files": {
+    "distilbert_test_predictions": {
+      "path": "D:\\Study\\Graduate_Study_UofG\\Research\\paper\\Week67\\classification_experiments\\artifacts\\distilbert_rtx3090_epoch5_codex_20260810\\test_predictions.csv",
+      "sha256": "0ca92b81ae987190173bbad9c8699510cf6b627c2c8277aec24964fc7eac2c96"
+    },
+    "distilbert_test_metrics": {
+      "path": "D:\\Study\\Graduate_Study_UofG\\Research\\paper\\Week67\\classification_experiments\\artifacts\\distilbert_rtx3090_epoch5_codex_20260810\\test_metrics.csv",
+      "sha256": "d5ca6dfcd8044b463fce64d77991f4067de6f68a4f9f813d6783271d41f32cf2"
+    },
+    "lr_test_predictions": {
+      "path": "D:\\Study\\Graduate_Study_UofG\\Research\\paper\\Week67\\classification_experiments\\artifacts\\nested_tuning_20260809\\participant_heldout\\test_predictions.csv",
+      "sha256": "ec1da765db031a76c0fc6d5b0f81d8b328842d13a400c7b064e45248e68c729b"
+    },
+    "lr_test_metrics": {
+      "path": "D:\\Study\\Graduate_Study_UofG\\Research\\paper\\Week67\\classification_experiments\\artifacts\\nested_tuning_20260809\\participant_heldout\\test_metrics.csv",
+      "sha256": "e266718daa0aff9ddcd88fe6b449bee1d77be5e8ad3c52b3759b47f5c9ea1e0e"
+    }
+  },
+  "alignment": {
+    "method": "complete shared metadata (LR artifact has no _row_id)",
+    "key_columns": [
+      "participant_id",
+      "query_id",
+      "query",
+      "domain",
+      "tool",
+      "raw_data_type",
+      "generic_data_type",
+      "necessity_status",
+      "label_id",
+      "label_text"
+    ],
+    "rows": 3323,
+    "participants": 41,
+    "one_to_one_verified": true
+  },
+  "stored_metrics_match_recomputed_predictions": true,
+  "distilbert_test_touched": true,
+  "bootstrap": {
+    "unit": "participant cluster",
+    "estimand": "row-pooled metrics after concatenating sampled clusters",
+    "paired": true,
+    "samples": 5000,
+    "seed": 20260810,
+    "ci": "percentile 2.5% and 97.5%",
+    "training_seed_uncertainty_included": false
+  },
+  "observed_metrics": {
+    "accuracy": {
+      "distilbert": 0.3882034306349684,
+      "flat_lr_tuned": 0.4092687330725248,
+      "delta": -0.021065302437556388,
+      "ci_95_low": -0.07062069140414333,
+      "ci_95_high": 0.024888846635076588
+    },
+    "macro_f1": {
+      "distilbert": 0.3350929158937148,
+      "flat_lr_tuned": 0.3706549458606443,
+      "delta": -0.035562029966929476,
+      "ci_95_low": -0.07304323731134035,
+      "ci_95_high": 0.0023645856849757118
+    },
+    "quadratic_weighted_kappa": {
+      "distilbert": 0.2529385792139792,
+      "flat_lr_tuned": 0.3154949229526882,
+      "delta": -0.062556343738709,
+      "ci_95_low": -0.14843467595327353,
+      "ci_95_high": 0.021954639063925727
+    },
+    "over_sharing_rate": {
+      "distilbert": 0.5459905660377359,
+      "flat_lr_tuned": 0.4257075471698113,
+      "delta": 0.12028301886792458,
+      "ci_95_low": 0.018516810168101708,
+      "ci_95_high": 0.23418011465305855
+    },
+    "persistent_over_allow_rate": {
+      "distilbert": 0.4385499557913351,
+      "flat_lr_tuned": 0.21043324491600354,
+      "delta": 0.22811671087533156,
+      "ci_95_low": 0.1383694867677431,
+      "ci_95_high": 0.3161165970071901
+    }
+  },
+  "figures_generated": true,
+  "figure_skip_reason": null,
+  "runtime": {
+    "python": "3.12.3 (tags/v3.12.3:f6650f9, Apr  9 2024, 14:05:25) [MSC v.1938 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "numpy": "2.5.2",
+    "pandas": "2.2.2"
+  },
+  "artifacts": [
+    "analysis-report.md",
+    "analysis_manifest.json",
+    "figure-catalog.md",
+    "figures\\figure-01-paired-metric-deltas.pdf",
+    "figures\\figure-01-paired-metric-deltas.png",
+    "figures\\figure-02-per-class-performance.pdf",
+    "figures\\figure-02-per-class-performance.png",
+    "paired_cluster_bootstrap_replicates.csv",
+    "paired_cluster_bootstrap_summary.csv",
+    "per_class_metrics.csv",
+    "stats-appendix.md"
+  ]
+}

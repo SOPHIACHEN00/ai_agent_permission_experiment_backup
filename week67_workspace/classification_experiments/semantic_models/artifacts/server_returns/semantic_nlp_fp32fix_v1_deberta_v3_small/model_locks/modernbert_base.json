@@ -1,0 +1,44 @@
+{
+  "status": "prefetch_completed",
+  "model_key": "modernbert_base",
+  "model_id": "modernbert_base_flat_four_class",
+  "model_name": "answerdotai/ModernBERT-base",
+  "requested_revision": "8949b909ec900327062f0ebf497f51aef5e6f0c8",
+  "resolved_commit": "8949b909ec900327062f0ebf497f51aef5e6f0c8",
+  "model_class": "ModernBertForSequenceClassification",
+  "tokenizer_class": "TokenizersBackend",
+  "parameter_count": 149607940,
+  "torch": "2.6.0+cu124",
+  "transformers": "5.5.0",
+  "snapshot_path": "/output/AutoPermission_exp/semantic_nlp_rtx3090_20260810/hf_cache/hub/models--answerdotai--ModernBERT-base/snapshots/8949b909ec900327062f0ebf497f51aef5e6f0c8",
+  "snapshot_file_count": 5,
+  "snapshot_total_bytes": 600790696,
+  "snapshot_files": [
+    {
+      "relative_path": "config.json",
+      "bytes": 1193,
+      "sha256": "1609d59e627c33eaed524b4f01e546d42e84190a079a5a5ded84b212c41c324f"
+    },
+    {
+      "relative_path": "model.safetensors",
+      "bytes": 598635032,
+      "sha256": "340ac08b74eef0d7bdec2d7981a6a3d4249bf0e6aab60634b72ad02c2b8023a9"
+    },
+    {
+      "relative_path": "special_tokens_map.json",
+      "bytes": 694,
+      "sha256": "ea97ecdbcc73713039d8d64dbb05e3689495c96657fbd9a18f5bed381be81049"
+    },
+    {
+      "relative_path": "tokenizer.json",
+      "bytes": 2132967,
+      "sha256": "9fd55248d51d33976b324fc11592e28071da7d41e0e9401dfb7082e30574b7b1"
+    },
+    {
+      "relative_path": "tokenizer_config.json",
+      "bytes": 20810,
+      "sha256": "3cd2017ff46d0a527e5d39cae39272eccfa1f19bb9f89b05d166aab2e38354e2"
+    }
+  ],
+  "created_at_utc": "2026-08-10T05:45:22.821887+00:00"
+}

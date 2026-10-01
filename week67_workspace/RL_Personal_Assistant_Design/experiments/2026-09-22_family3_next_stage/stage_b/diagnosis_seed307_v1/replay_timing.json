@@ -1,0 +1,111 @@
+{
+  "mode": "index_reconstruction_only",
+  "training_updates_performed": 0,
+  "models": [
+    {
+      "seed": 101,
+      "first_positive_sample": {
+        "environment_step": 256,
+        "optimizer_update": 1,
+        "positive_draws": 1
+      },
+      "remaining_optimizer_updates_including_first": 2937,
+      "target_syncs_after_first_positive_sample": [
+        {
+          "optimizer_update": 250,
+          "environment_step": 1252
+        },
+        {
+          "optimizer_update": 500,
+          "environment_step": 2252
+        },
+        {
+          "optimizer_update": 750,
+          "environment_step": 3252
+        },
+        {
+          "optimizer_update": 1000,
+          "environment_step": 4252
+        },
+        {
+          "optimizer_update": 1250,
+          "environment_step": 5252
+        },
+        {
+          "optimizer_update": 1500,
+          "environment_step": 6252
+        },
+        {
+          "optimizer_update": 1750,
+          "environment_step": 7252
+        },
+        {
+          "optimizer_update": 2000,
+          "environment_step": 8252
+        },
+        {
+          "optimizer_update": 2250,
+          "environment_step": 9252
+        },
+        {
+          "optimizer_update": 2500,
+          "environment_step": 10252
+        },
+        {
+          "optimizer_update": 2750,
+          "environment_step": 11252
+        }
+      ]
+    },
+    {
+      "seed": 211,
+      "first_positive_sample": {
+        "environment_step": 7044,
+        "optimizer_update": 1698,
+        "positive_draws": 1
+      },
+      "remaining_optimizer_updates_including_first": 1240,
+      "target_syncs_after_first_positive_sample": [
+        {
+          "optimizer_update": 1750,
+          "environment_step": 7252
+        },
+        {
+          "optimizer_update": 2000,
+          "environment_step": 8252
+        },
+        {
+          "optimizer_update": 2250,
+          "environment_step": 9252
+        },
+        {
+          "optimizer_update": 2500,
+          "environment_step": 10252
+        },
+        {
+          "optimizer_update": 2750,
+          "environment_step": 11252
+        }
+      ]
+    },
+    {
+      "seed": 307,
+      "first_positive_sample": {
+        "environment_step": 9408,
+        "optimizer_update": 2289,
+        "positive_draws": 1
+      },
+      "remaining_optimizer_updates_including_first": 649,
+      "target_syncs_after_first_positive_sample": [
+        {
+          "optimizer_update": 2500,
+          "environment_step": 10252
+        },
+        {
+          "optimizer_update": 2750,
+          "environment_step": 11252
+        }
+      ]
+    }
+  ]
+}

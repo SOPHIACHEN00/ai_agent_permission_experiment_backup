@@ -1,0 +1,1 @@
+{"schema_version":"family3_v2_pilot_durability_v0","file_fsync":"required","snapshot_publish":"same_directory_os_replace","immutable_publish":"same_directory_hard_link_exclusive","directory_fsync":"unavailable_recorded","platform_system":"Windows","python_version":"3.12.3"}

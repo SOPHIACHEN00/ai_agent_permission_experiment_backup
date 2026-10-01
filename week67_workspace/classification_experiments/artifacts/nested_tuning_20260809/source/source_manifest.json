@@ -1,0 +1,16 @@
+{
+  "execution_snapshot": {
+    "path": "tune_four_label_classifiers_run_snapshot.py",
+    "sha256": "a476b363255808d6ea82f1f4c5fa18fe51e65d9bfd196323b8b603a34ee1ab2c",
+    "matches_run_config": true
+  },
+  "current_main_script_after_review": {
+    "path": "../../../../ai_agent_permission_experiment/src/tune_four_label_classifiers.py",
+    "sha256_at_review": "afa95890ce44e485b38a998bf53c994fdd76d0b3a579892de2bae32732d7e51b"
+  },
+  "post_run_changes": [
+    "Reject non-empty per-split output directories instead of mixing or overwriting artifacts.",
+    "Preflight-check fold counts and binary/four-class target availability before fitting."
+  ],
+  "algorithm_or_search_space_changed": false
+}

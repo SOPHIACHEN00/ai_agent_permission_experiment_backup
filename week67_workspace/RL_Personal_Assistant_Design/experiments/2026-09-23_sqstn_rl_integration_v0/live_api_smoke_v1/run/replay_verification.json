@@ -1,0 +1,26 @@
+[
+  {
+    "episode": 1,
+    "public_frames_identical": true,
+    "summary_identical": true,
+    "api_calls": 0
+  },
+  {
+    "episode": 2,
+    "public_frames_identical": true,
+    "summary_identical": true,
+    "api_calls": 0
+  },
+  {
+    "episode": 3,
+    "public_frames_identical": true,
+    "summary_identical": true,
+    "api_calls": 0
+  },
+  {
+    "episode": 4,
+    "public_frames_identical": true,
+    "summary_identical": true,
+    "api_calls": 0
+  }
+]

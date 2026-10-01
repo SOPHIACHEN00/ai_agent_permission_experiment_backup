@@ -1,0 +1,7 @@
+{
+  "seed": 701,
+  "baseline_group": "a_lr1e3_every4_seed701",
+  "initial_online_sha256": "7c020e3b0ea512b1b6149197b6fa0582d827d2754310f134a6b9309ed242c9d0",
+  "recorded_before_training": true,
+  "config_sha256": "3666257a64ec9d3d09b9bd3443671f7546242af1f3dd0644a3b6279fa25ff8ad"
+}

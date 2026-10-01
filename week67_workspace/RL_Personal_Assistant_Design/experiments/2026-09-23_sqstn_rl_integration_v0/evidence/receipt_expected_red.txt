@@ -1,0 +1,15 @@
+test_machine_fields_preserved_and_credentials_rejected (__main__.ReceiptCheck.test_machine_fields_preserved_and_credentials_rejected) ... FAIL
+
+======================================================================
+FAIL: test_machine_fields_preserved_and_credentials_rejected (__main__.ReceiptCheck.test_machine_fields_preserved_and_credentials_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Study\Graduate_Study_UofG\Research\paper\Week67\RL_Personal_Assistant_Design\experiments\2026-09-23_sqstn_rl_integration_v0\check_control_redaction.py", line 19, in test_machine_fields_preserved_and_credentials_rejected
+    self.assertTrue(hasattr(secure_control, 'decode_receipt'), 'Expected missing safe receipt decoder')
+AssertionError: False is not true : Expected missing safe receipt decoder
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (failures=1)
+

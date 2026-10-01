@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "verified_utc": "2026-09-23T17:01:03.359027+00:00",
+  "api_calls": 4,
+  "call_options_and_usage_verified": true,
+  "responses": {
+    "allow_reuse": 2,
+    "allow_once": 2
+  },
+  "tokens": {
+    "input": 6372,
+    "cached_input": 4224,
+    "output_including_reasoning": 1842,
+    "reasoning": 1728
+  },
+  "estimated_cost_usd": 0.0116292,
+  "task_successes": 4,
+  "monitored_effects": 4,
+  "public_execution_chain_pairs": 4,
+  "cache_entries": 4,
+  "cache_only_replays": 4,
+  "distinct_prompts": 1,
+  "unchanged_frozen_local_sources": 46,
+  "new_integration_source_hashes": 15,
+  "training_steps": 0,
+  "old_test_opened": false,
+  "torch_imported": false
+}

@@ -1,0 +1,50 @@
+{
+  "new_files": [
+    {
+      "path": "RL_Personal_Assistant_Design/experiments/2026-09-22_family3_next_stage/stage_a/budget_recourse.py",
+      "sha256": "29da670bc5535acc5cf23ce82d957e4f0695a2f1f8e129d4453311d20edbdf79",
+      "bytes": 10996
+    },
+    {
+      "path": "RL_Personal_Assistant_Design/experiments/2026-09-22_family3_next_stage/stage_a/budget_recourse_env.py",
+      "sha256": "d3ce99f5a2fa870b0b72e708d0369ee191260d2970754ce74a35ec23aa3ef90e",
+      "bytes": 9376
+    },
+    {
+      "path": "RL_Personal_Assistant_Design/experiments/2026-09-22_family3_next_stage/stage_a/test_budget_recourse.py",
+      "sha256": "0a95b2e7744c499824bac8f3b4e4d462f1a809088088fd70eb003a7d188f161d",
+      "bytes": 4464
+    },
+    {
+      "path": "RL_Personal_Assistant_Design/experiments/2026-09-22_family3_next_stage/stage_a/run_preflight.py",
+      "sha256": "9508c9fec8768310b47b453eaab986fd3df8279473c5e5942a143e667147bcab",
+      "bytes": 18765
+    },
+    {
+      "path": "RL_Personal_Assistant_Design/experiments/2026-09-22_family3_next_stage/EXPERIMENT_DESIGN_zh.md",
+      "sha256": "1b602cc8b5ffa3a7a23d4aa3abd9c9c1ea12a3b6889cd3e82c72634addfc5fbc",
+      "bytes": 17753
+    },
+    {
+      "path": "RL_Personal_Assistant_Design/experiments/2026-09-22_family3_next_stage/EXPERIMENT_DESIGN_en.md",
+      "sha256": "4dfa09ccd615353a32f3cb02ee99c5b295761cbf5a4adb64f9e2bddcfad4006a",
+      "bytes": 8385
+    },
+    {
+      "path": "RL_Personal_Assistant_Design/experiments/2026-09-22_family3_next_stage/next_experiment_plan.json",
+      "sha256": "78679dfb88e4dc4bc0055524b4138742a33add3e00a832c13b14a5d60bdb2746",
+      "bytes": 7796
+    }
+  ],
+  "old_archives": [
+    {
+      "path": "ai_agent_permission_experiment/.superpowers/sdd/2026-09-20-increment8-family3-v2-learner-pilot/server-formal/formal_evidence/formal_train_validate_v0_evidence.zip",
+      "sha256": "773fd06e1d3c03073713e080e54f1ff35480fd7daa39250b17b9aa84d884fc52"
+    },
+    {
+      "path": "ai_agent_permission_experiment/.superpowers/sdd/2026-09-20-increment8-family3-v2-learner-pilot/server-test/formal_test_evidence/formal_test_once_evidence.zip",
+      "sha256": "78ab4a43601799f90aeea06243d07420ef4a991216a70e8acb0890c066dac5e0"
+    }
+  ],
+  "old_source_files_unchanged": 26
+}

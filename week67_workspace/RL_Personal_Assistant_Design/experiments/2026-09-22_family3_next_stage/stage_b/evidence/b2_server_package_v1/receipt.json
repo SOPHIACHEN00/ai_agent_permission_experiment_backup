@@ -1,0 +1,9 @@
+{
+  "archive": "budget_recourse_source_v1.zip",
+  "sha256": "fb53c26efbf0a17ad00f98b3a37508ccab25f3746773e905ba4a798db7462ba5",
+  "bytes": 203690,
+  "source_files": 41,
+  "source_syntax_checked": true,
+  "gpu_smoke_started": false,
+  "test_opened": false
+}

@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "verified_at_utc": "2026-09-23T15:40:19.6200346Z",
+  "evidence_hashes_checked": 30,
+  "B_checkpoints_and_hyperparameters_checked": 5,
+  "historical_test_opened": false,
+  "models_executed": false,
+  "server_connected": false,
+  "api_called": false,
+  "production_code_changed": false,
+  "spec_self_review": "complete; written-spec approval pending",
+  "scope": "local evidence integrity and document check only, not an integration test"
+}

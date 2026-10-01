@@ -1,0 +1,48 @@
+{
+  "status": "FORMAL_COMPLETE_NO_CLEAR_SIGNAL_TEST_LOCKED",
+  "date": "2026-09-22",
+  "user_authorized_gpu_indices": [
+    0,
+    1
+  ],
+  "physical_gpu_used": 1,
+  "unused_by_this_experiment": [
+    0,
+    2,
+    3
+  ],
+  "single_formal_run": true,
+  "server_exit_code": 0,
+  "wall_seconds": 1538.1424412727356,
+  "transitions": 72000,
+  "checkpoints": 6,
+  "optimizer_steps_per_checkpoint": 2937,
+  "validation_rows": 3600,
+  "exact_rows": 72,
+  "hard_counts_all_zero": true,
+  "integrity_gate": "READY_FOR_TEST_REVIEW",
+  "scientific_classification": "NO_CLEAR_SIGNAL",
+  "gamma1_exact_means": {
+    "101": "41/80",
+    "211": "51/80",
+    "307": "0"
+  },
+  "exact_dp_mean": "283/400",
+  "near_optimal_seeds_passed": 0,
+  "learning_seeds_passed": 1,
+  "complete_evidence_downloaded": true,
+  "evidence_archive_sha256": "e3fdbc0b345ce05596e5afb67ff55a2772f0f966cc47e06ee2fdcb7c132eaa61",
+  "source_archive_sha256": "249ba463c11b9cc3cd429f40447d64cc4ab9719902420df2f1c8f4f0a20921be",
+  "record_chains_verified": 10,
+  "source_files_verified": 41,
+  "model_hashes_verified": true,
+  "evaluation_state_unchanged": true,
+  "test_opened": false,
+  "automatic_retry_or_extra_training": false,
+  "local_learner_training_or_inference": false,
+  "connection_details_saved": false,
+  "authentication_session_closed": true,
+  "server_process_exited": true,
+  "fresh_comprehensive_independent_review": false,
+  "next_step": "Discuss read-only diagnosis of existing logs; not executed. Do not relaunch/retrain or open test."
+}

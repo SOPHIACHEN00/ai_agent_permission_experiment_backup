@@ -1,0 +1,9 @@
+{
+  "attempts": 9,
+  "cost_nusd": 25931400,
+  "cache_sha256": "9bc7e4e64241c6d33916afcf9c4a5c8f1b0d527385fc2f39fc77826ae6e1c7d6",
+  "status_sha256": "968746a0f24ffc315d46b9462fe4197b5d86abef0b1d12f48175c7f9d5e03468",
+  "journal_sha256": "d3184fc8e1b5415102130228598922c1a6b6e6f1e4ea4a0805a4598666a15999",
+  "semantic_version": "sqstn_multistep_cache_v1_27aae495acbcbcd28309e515fcfd30254685c0e538cb02b8ff701259f746d83d",
+  "rekeyed_entries": 0
+}

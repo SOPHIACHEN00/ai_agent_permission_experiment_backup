@@ -1,0 +1,7 @@
+{
+  "n_answers": 624,
+  "sha256": "d6182c55b2ea698cd54375a7da0313da624bacf4c18c134717eeeccc3af3ebab",
+  "generator_prompt_hashes_sha256": "9e1744167dacbc7071c724e7e08b77666c2e1593fecfef6331f41ee3df6b1485",
+  "generator_answers_sha256": "c689cbd8c9d0d847dbbaf1113c89198e04018d09fd4d8ed1664ac18c512e9499",
+  "state": "frozen_before_predictor_inference"
+}

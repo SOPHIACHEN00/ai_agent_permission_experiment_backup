@@ -1,0 +1,9 @@
+{
+  "at_utc": "20260922T161952_157401Z",
+  "operation": "upload",
+  "result": {
+    "uploaded": true,
+    "members_verified": 41,
+    "package_sha256": "249ba463c11b9cc3cd429f40447d64cc4ab9719902420df2f1c8f4f0a20921be"
+  }
+}

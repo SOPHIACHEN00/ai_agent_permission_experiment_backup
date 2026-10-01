@@ -1,0 +1,18 @@
+{
+  "run_completed": true,
+  "smoke": false,
+  "losses_all_finite": true,
+  "candidate_epochs_completed": {
+    "lr_2e-05_balanced": 2,
+    "lr_5e-05_balanced": 2
+  },
+  "early_stopping_triggered": {
+    "lr_2e-05_balanced": false,
+    "lr_5e-05_balanced": false
+  },
+  "selected_candidate": "lr_2e-05_balanced",
+  "selected_epoch": 2,
+  "final_refit_completed": true,
+  "frozen_test_evaluations": 1,
+  "elapsed_seconds": 110.53837656974792
+}

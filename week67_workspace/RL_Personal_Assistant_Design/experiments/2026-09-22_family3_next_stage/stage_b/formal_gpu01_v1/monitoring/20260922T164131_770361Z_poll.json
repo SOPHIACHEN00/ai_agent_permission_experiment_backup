@@ -1,0 +1,51 @@
+{
+  "at_utc": "20260922T164131_770361Z",
+  "operation": "poll",
+  "result": {
+    "launch_receipt": {
+      "supervisor_pid": 202141,
+      "launched_epoch": 1790094015.2634134,
+      "physical_gpu": 1,
+      "mode": "FORMAL_TRAIN_VALIDATE"
+    },
+    "child_receipt": {
+      "pid": 202142,
+      "started_epoch": 1790094015.2930472,
+      "mode": "FORMAL_TRAIN_VALIDATE",
+      "physical_gpu": 1
+    },
+    "status": {
+      "attempted_coordinate": {
+        "condition": "prompt_toggle",
+        "episode": 49,
+        "graph_id": "br06",
+        "method": "random_valid",
+        "phase": "validation",
+        "seed": 211
+      },
+      "checkpoints": 6,
+      "evaluation_rows": 2400,
+      "hard_counts": {
+        "checkpoint_mismatch": 0,
+        "data_leakage": 0,
+        "invalid_actions": 0,
+        "source_config_mismatch": 0,
+        "unauthorized_effects": 0
+      },
+      "last_durable_coordinate": {
+        "condition": "prompt_toggle",
+        "episode": 49,
+        "graph_id": "br06",
+        "method": "random_valid",
+        "phase": "validation",
+        "seed": 211
+      },
+      "status": "EVALUATING",
+      "test_opened": false,
+      "transitions": 72000,
+      "updated_at_utc": "2026-09-22T16:41:27.612864+00:00"
+    },
+    "child_exists": true,
+    "child_is_expected_runner": true
+  }
+}

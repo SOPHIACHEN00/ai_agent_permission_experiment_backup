@@ -1,0 +1,39 @@
+{
+  "No, never share": {
+    "precision": 0.5666666666666667,
+    "recall": 0.7083333333333334,
+    "f1-score": 0.6296296296296297,
+    "support": 48.0
+  },
+  "No, but ask me next time": {
+    "precision": 0.46153846153846156,
+    "recall": 0.391304347826087,
+    "f1-score": 0.4235294117647059,
+    "support": 46.0
+  },
+  "Yes, but ask me next time": {
+    "precision": 0.7158671586715867,
+    "recall": 0.766798418972332,
+    "f1-score": 0.7404580152671756,
+    "support": 253.0
+  },
+  "Yes, always share": {
+    "precision": 0.8165938864628821,
+    "recall": 0.7420634920634921,
+    "f1-score": 0.7775467775467776,
+    "support": 252.0
+  },
+  "accuracy": 0.7228714524207012,
+  "macro avg": {
+    "precision": 0.6401665433348993,
+    "recall": 0.6521248980488111,
+    "f1-score": 0.6427909585520721,
+    "support": 599.0
+  },
+  "weighted avg": {
+    "precision": 0.7267559595381085,
+    "recall": 0.7228714524207012,
+    "f1-score": 0.7228418046206713,
+    "support": 599.0
+  }
+}

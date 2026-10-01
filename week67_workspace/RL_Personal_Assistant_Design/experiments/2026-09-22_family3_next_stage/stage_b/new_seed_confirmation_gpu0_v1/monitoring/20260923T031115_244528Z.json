@@ -1,0 +1,164 @@
+{
+  "connected": true,
+  "checked_at_utc": "2026-09-23T03:11:15.121348+00:00",
+  "launch_receipt": {
+    "pid": 249782,
+    "start_ticks": "67957654",
+    "launched_epoch": 1790132779.4213064,
+    "physical_gpu": 0
+  },
+  "master_status": {
+    "status": "RUNNING",
+    "worker_pid": 249938,
+    "worker_start_ticks": "67975436",
+    "current_group": "a_lr1e3_every4_seed503",
+    "group_index": 1,
+    "groups_completed": 1,
+    "completed": [
+      {
+        "attempted_coordinate": {
+          "condition": "original",
+          "episode": 420,
+          "gamma": 1,
+          "graph_id": "br04",
+          "phase": "train",
+          "seed": 401,
+          "step": 2
+        },
+        "checkpoint_semantic_sha256": "c74ee81e84a1ce6dc6457066329831aaaa4224c0fd8d2700566bf3e716e36ffb",
+        "checkpoint_sha256": "aaac753bafb3a654efe6ff262c3a0f25aff75d63a7679396c08563b20162c936",
+        "config_id": "a_lr1e3_every4",
+        "elapsed_seconds": 171.52853408805095,
+        "ended_at_utc": "2026-09-23T03:09:13.828328+00:00",
+        "exact_rows": 4,
+        "final_resources": {
+          "cpu.max": "3200000 100000",
+          "effective_headroom_bytes": 42002702336,
+          "host_available_bytes": 46712799232,
+          "memory.current": "58660593664",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "memory.max": "100663296000",
+          "process_rss_bytes": 1664106496
+        },
+        "first_success_step": 1529,
+        "group": "a_lr1e3_every4_seed401",
+        "hard_counts": {
+          "checkpoint_mismatch": 0,
+          "data_leakage": 0,
+          "invalid_actions": 0,
+          "source_config_mismatch": 0,
+          "unauthorized_effects": 0
+        },
+        "heads": {
+          "auditor_train_truth": [
+            3702,
+            "852ea512387fedabbbe92a92e0fca9523d7bd9a37dce27395bcde0f44ef2d5d1"
+          ],
+          "exact_values": [
+            4,
+            "8c2781f12c658a0f2adb6f20af49361c59c29bd6c357c05ebc8fd0e2fbce4154"
+          ],
+          "train_episodes": [
+            3702,
+            "80a5b44f1847e4585785bffb32f164fab7b937d6bb50760875407091a07f1880"
+          ],
+          "train_steps": [
+            12000,
+            "4ae2a05ab2e6363c3a8bff7f3de2d49a25f9ec482f12ec59e489560fc7b93040"
+          ],
+          "training_cells": [
+            5,
+            "a653d40b7ae6218e3a7ed92d1c15bb7083d3690a042835782568b179bce5a12e"
+          ]
+        },
+        "initial_online_sha256": "5f6068430d600f84b842143b47c46465f43e9af7e48162c325a79d54943557c6",
+        "last_durable_coordinate": {
+          "condition": "original",
+          "episode": 420,
+          "gamma": 1,
+          "graph_id": "br04",
+          "phase": "train",
+          "seed": 401,
+          "step": 2
+        },
+        "mean_exact_regret": "19/200",
+        "mean_exact_value": "49/80",
+        "near_optimal": false,
+        "optimizer_steps": 2937,
+        "physical_gpu_index": 0,
+        "sampled_train_peak_rss_bytes": 1478725632,
+        "seed": 401,
+        "status": "COMPLETE",
+        "successful_episodes": 324,
+        "test_opened": false,
+        "transitions": 12000
+      }
+    ],
+    "test_opened": false,
+    "updated_at_utc": "2026-09-23T03:09:17.248707+00:00"
+  },
+  "group_status": {
+    "attempted_coordinate": {
+      "condition": "original",
+      "episode": 409,
+      "gamma": 1,
+      "graph_id": "br04",
+      "phase": "train",
+      "seed": 503,
+      "step": 5
+    },
+    "config_id": "a_lr1e3_every4",
+    "first_success_step": 2752,
+    "group": "a_lr1e3_every4_seed503",
+    "hard_counts": {
+      "checkpoint_mismatch": 0,
+      "data_leakage": 0,
+      "invalid_actions": 0,
+      "source_config_mismatch": 0,
+      "unauthorized_effects": 0
+    },
+    "last_durable_coordinate": {
+      "condition": "original",
+      "episode": 409,
+      "gamma": 1,
+      "graph_id": "br04",
+      "phase": "train",
+      "seed": 503,
+      "step": 5
+    },
+    "last_loss": 0.0036392323672771454,
+    "optimizer_steps": 2913,
+    "resources": {
+      "cpu.max": "3200000 100000",
+      "effective_headroom_bytes": 41710592000,
+      "host_available_bytes": 46435049472,
+      "memory.current": "58952704000",
+      "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+      "memory.max": "100663296000",
+      "process_rss_bytes": 1478950912
+    },
+    "seed": 503,
+    "status": "TRAINING",
+    "successful_episodes": 491,
+    "test_opened": false,
+    "transitions": 11904,
+    "updated_at_utc": "2026-09-23T03:11:07.916772+00:00"
+  },
+  "master_state": "S",
+  "master_memory": [
+    "VmHWM:\t   21192 kB",
+    "VmRSS:\t   21192 kB"
+  ],
+  "master_alive": true,
+  "master_identity_matches": true,
+  "worker_state": "R",
+  "worker_memory": [
+    "VmHWM:\t 1528048 kB",
+    "VmRSS:\t 1528048 kB"
+  ],
+  "worker_alive": true,
+  "worker_identity_matches": true,
+  "gpu0": "0, 442, 24576, 0",
+  "cgroup_memory_current": "59051839488",
+  "cgroup_memory_max": "100663296000"
+}

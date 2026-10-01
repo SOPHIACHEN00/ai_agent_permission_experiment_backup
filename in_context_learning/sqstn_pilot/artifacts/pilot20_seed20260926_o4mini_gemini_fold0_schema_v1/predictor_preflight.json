@@ -1,0 +1,1150 @@
+[
+  {
+    "call_id": "gemini_0shot_P012_fold0",
+    "stage": "predictor",
+    "participant_id": "P012",
+    "shots": 0,
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are a personalized permission assistant predicting this user's data-access decisions.\nConsider demographics, AI usage, privacy attitudes, the user's own permission history, and the meaning of each new request. The four responses differ both in immediate sharing and whether the assistant should ask again next time.\nFor each new query and every listed permission key, return exactly one of these labels: [\"No, never share\", \"No, but ask me next time\", \"Yes, but ask me next time\", \"Yes, always share\"].\nReturn a JSON array with one object per new query. Each object must have id, query, and permission. Under permission, keep every input key exactly and return {\"label\": one allowed label, \"score\": a number from 0 to 1} for each key. The score is confidence in that exact four-class label. Return JSON only.\n\nUser demographic and bio information:\nAge group: 35-44; gender: Male; education: Bachelor's.\n\nUser AI tool usage and privacy information:\n{\n  \"AI familiarity (survey 1-5)\": \"4\",\n  \"AI usage frequency (survey 1-5)\": \"4\",\n  \"AI use purposes\": \"Personal\",\n  \"Trust in AI privacy (survey 1-5)\": \"3\",\n  \"Privacy importance (survey 1-5)\": \"4\",\n  \"Privacy concerns\": \"Just that I'm not exactly sure WHERE the information goes and how long it stays there\",\n  \"Privacy-sensitive domains\": []\n}\n\nUser permission decision history:\n[]\n\nNew permission requests (null values are to be predicted):\n[\n  {\n    \"query\": \"Could you give me a report of my workout?\",\n    \"id\": 10,\n    \"permission\": {\n      \"mira,Exercise type (e.g. cardio)\": null,\n      \"mira,Exercise data (e.g. sets, distance, pace)\": null,\n      \"mira,Heart rate data\": null,\n      \"mira,Calories burned\": null\n    }\n  },\n  {\n    \"query\": \"Can you post a message in the #team-meeting channel on Slack reminding everyone about our meeting tomorrow at 10 AM?\",\n    \"id\": 11,\n    \"permission\": {\n      \"Slack,Message content\": null,\n      \"Slack,Scheduling details (i.e.  meeting details)\": null\n    }\n  },\n  {\n    \"query\": \"Plan my weekend in San Francisco. Please include surfing in the plan.\",\n    \"id\": 41,\n    \"permission\": {\n      \"Weather,Trip dates\": null,\n      \"Weather,Trip location\": null,\n      \"Local Search,Trip dates\": null,\n      \"Local Search,Trip location\": null,\n      \"Local Search,Trip activities\": null,\n      \"Local Search,Email content\": null\n    }\n  },\n  {\n    \"query\": \"Create a playlist titled \\\"Weekend Chill\\\" with my most played songs.\",\n    \"id\": 51,\n    \"permission\": {\n      \"Apple Music,Music playing history\": null\n    }\n  }\n]"
+      }
+    ],
+    "prompt_sha256": "0b27c1cd6a22d2ad8cd19a46dc7f13a08d050cb04e5dec303be32460ff308bc2",
+    "test_row_indices": [
+      16059,
+      16060,
+      16061,
+      16062,
+      16063,
+      16064,
+      16123,
+      16124,
+      16125,
+      16126,
+      16127,
+      16128,
+      16130
+    ]
+  },
+  {
+    "call_id": "gemini_4shot_P012_fold0",
+    "stage": "predictor",
+    "participant_id": "P012",
+    "shots": 4,
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are a personalized permission assistant predicting this user's data-access decisions.\nConsider demographics, AI usage, privacy attitudes, the user's own permission history, and the meaning of each new request. The four responses differ both in immediate sharing and whether the assistant should ask again next time.\nFor each new query and every listed permission key, return exactly one of these labels: [\"No, never share\", \"No, but ask me next time\", \"Yes, but ask me next time\", \"Yes, always share\"].\nReturn a JSON array with one object per new query. Each object must have id, query, and permission. Under permission, keep every input key exactly and return {\"label\": one allowed label, \"score\": a number from 0 to 1} for each key. The score is confidence in that exact four-class label. Return JSON only.\n\nUser demographic and bio information:\nAge group: 35-44; gender: Male; education: Bachelor's.\n\nUser AI tool usage and privacy information:\n{\n  \"AI familiarity (survey 1-5)\": \"4\",\n  \"AI usage frequency (survey 1-5)\": \"4\",\n  \"AI use purposes\": \"Personal\",\n  \"Trust in AI privacy (survey 1-5)\": \"3\",\n  \"Privacy importance (survey 1-5)\": \"4\",\n  \"Privacy concerns\": \"Just that I'm not exactly sure WHERE the information goes and how long it stays there\",\n  \"Privacy-sensitive domains\": []\n}\n\nUser permission decision history:\n[\n  {\n    \"query\": \"Can you invite my new intern, John Doe, to our Slack workspace?\",\n    \"id\": 12,\n    \"answer\": {\n      \"Slack,Slack workspace name\": \"Yes, but ask me next time\",\n      \"Slack,Colleague's email\": \"Yes, but ask me next time\"\n    }\n  },\n  {\n    \"query\": \"Can you check what tax deductions I qualify for this year based on my income?\",\n    \"id\": 24,\n    \"answer\": {\n      \"Tax Management,Filling status (e.g. single or married)\": \"Yes, but ask me next time\",\n      \"Tax Management,Other personal tax profile data (e.g. previously claimed deductions)\": \"Yes, always share\",\n      \"Tax Management,Income details\": \"Yes, always share\"\n    }\n  },\n  {\n    \"query\": \"Schedule a one-time payment of $1,200 to my landlord next Monday. Please label it \\\"Rent Payment\\\" and include my address for reference.\",\n    \"id\": 26,\n    \"answer\": {\n      \"Banking,Payment note\": \"Yes, but ask me next time\",\n      \"Banking,Recipient account information\": \"Yes, but ask me next time\",\n      \"Banking,Account number\": \"Yes, but ask me next time\",\n      \"Banking,Account email\": \"Yes, but ask me next time\",\n      \"Banking,Account password\": \"Yes, but ask me next time\"\n    }\n  },\n  {\n    \"query\": \"Can you order medications from my prescription? \",\n    \"id\": 37,\n    \"answer\": {\n      \"Amazon (Pharmacy),Prescription medicine list\": \"Yes, always share\",\n      \"Amazon (Pharmacy),Credit card details\": \"Yes, but ask me next time\",\n      \"Amazon (Pharmacy),Name\": \"Yes, always share\",\n      \"Amazon (Pharmacy),Address\": \"Yes, but ask me next time\",\n      \"Amazon (Pharmacy),Email\": \"Yes, always share\",\n      \"Amazon (Pharmacy),Phone number\": \"Yes, but ask me next time\",\n      \"Amazon (Pharmacy),Delivery address\": \"Yes, but ask me next time\",\n      \"Amazon (Pharmacy),Invoices and receipts data\": \"No, but ask me next time\"\n    }\n  }\n]\n\nNew permission requests (null values are to be predicted):\n[\n  {\n    \"query\": \"Could you give me a report of my workout?\",\n    \"id\": 10,\n    \"permission\": {\n      \"mira,Exercise type (e.g. cardio)\": null,\n      \"mira,Exercise data (e.g. sets, distance, pace)\": null,\n      \"mira,Heart rate data\": null,\n      \"mira,Calories burned\": null\n    }\n  },\n  {\n    \"query\": \"Can you post a message in the #team-meeting channel on Slack reminding everyone about our meeting tomorrow at 10 AM?\",\n    \"id\": 11,\n    \"permission\": {\n      \"Slack,Message content\": null,\n      \"Slack,Scheduling details (i.e.  meeting details)\": null\n    }\n  },\n  {\n    \"query\": \"Plan my weekend in San Francisco. Please include surfing in the plan.\",\n    \"id\": 41,\n    \"permission\": {\n      \"Weather,Trip dates\": null,\n      \"Weather,Trip location\": null,\n      \"Local Search,Trip dates\": null,\n      \"Local Search,Trip location\": null,\n      \"Local Search,Trip activities\": null,\n      \"Local Search,Email content\": null\n    }\n  },\n  {\n    \"query\": \"Create a playlist titled \\\"Weekend Chill\\\" with my most played songs.\",\n    \"id\": 51,\n    \"permission\": {\n      \"Apple Music,Music playing history\": null\n    }\n  }\n]"
+      }
+    ],
+    "prompt_sha256": "3a74da3d891e3101b597d6a6588463ffb40d46a262d0110a81fb1bbc8b592c6b",
+    "test_row_indices": [
+      16059,
+      16060,
+      16061,
+      16062,
+      16063,
+      16064,
+      16123,
+      16124,
+      16125,
+      16126,
+      16127,
+      16128,
+      16130
+    ]
+  },
+  {
+    "call_id": "gemini_0shot_P015_fold0",
+    "stage": "predictor",
+    "participant_id": "P015",
+    "shots": 0,
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are a personalized permission assistant predicting this user's data-access decisions.\nConsider demographics, AI usage, privacy attitudes, the user's own permission history, and the meaning of each new request. The four responses differ both in immediate sharing and whether the assistant should ask again next time.\nFor each new query and every listed permission key, return exactly one of these labels: [\"No, never share\", \"No, but ask me next time\", \"Yes, but ask me next time\", \"Yes, always share\"].\nReturn a JSON array with one object per new query. Each object must have id, query, and permission. Under permission, keep every input key exactly and return {\"label\": one allowed label, \"score\": a number from 0 to 1} for each key. The score is confidence in that exact four-class label. Return JSON only.\n\nUser demographic and bio information:\nAge group: 25-34; gender: Male; education: Bachelor's.\n\nUser AI tool usage and privacy information:\n{\n  \"AI familiarity (survey 1-5)\": \"4\",\n  \"AI usage frequency (survey 1-5)\": \"4\",\n  \"AI use purposes\": \"Personal misc. questions \\nHealth\\nOffice administration document preparation \\nproofreading\",\n  \"Trust in AI privacy (survey 1-5)\": \"3\",\n  \"Privacy importance (survey 1-5)\": \"2\",\n  \"Privacy concerns\": \"prompt inputs are kept private\",\n  \"Privacy-sensitive domains\": [\n    \"Entertainment\",\n    \"Health & Fitness\",\n    \"Work & Productivity\"\n  ]\n}\n\nUser permission decision history:\n[]\n\nNew permission requests (null values are to be predicted):\n[\n  {\n    \"query\": \"Could you give me a report of my workout?\",\n    \"id\": 10,\n    \"permission\": {\n      \"mira,Exercise data (e.g. sets, distance, pace)\": null,\n      \"mira,Exercise type (e.g. cardio)\": null,\n      \"mira,Heart rate data\": null,\n      \"mira,Calories burned\": null\n    }\n  },\n  {\n    \"query\": \"Can you post a message in the #team-meeting channel on Slack reminding everyone about our meeting tomorrow at 10 AM?\",\n    \"id\": 11,\n    \"permission\": {\n      \"Slack,Scheduling details (i.e.  meeting details)\": null,\n      \"Slack,Message content\": null\n    }\n  },\n  {\n    \"query\": \"Plan my weekend in San Francisco. Please include surfing in the plan.\",\n    \"id\": 41,\n    \"permission\": {\n      \"Weather,Trip dates\": null,\n      \"Weather,Trip location\": null,\n      \"Local Search,Trip dates\": null,\n      \"Local Search,Trip location\": null,\n      \"Local Search,Trip activities\": null,\n      \"Local Search,Email content\": null\n    }\n  },\n  {\n    \"query\": \"Create a playlist titled \\\"Weekend Chill\\\" with my most played songs.\",\n    \"id\": 51,\n    \"permission\": {\n      \"Apple Music,Music playing history\": null\n    }\n  }\n]"
+      }
+    ],
+    "prompt_sha256": "9d78072048a34b973bba60aff55789a51a902470df5274992ffe45597186a893",
+    "test_row_indices": [
+      6245,
+      6246,
+      6247,
+      6248,
+      6249,
+      6250,
+      6309,
+      6310,
+      6311,
+      6312,
+      6313,
+      6314,
+      6316
+    ]
+  },
+  {
+    "call_id": "gemini_4shot_P015_fold0",
+    "stage": "predictor",
+    "participant_id": "P015",
+    "shots": 4,
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are a personalized permission assistant predicting this user's data-access decisions.\nConsider demographics, AI usage, privacy attitudes, the user's own permission history, and the meaning of each new request. The four responses differ both in immediate sharing and whether the assistant should ask again next time.\nFor each new query and every listed permission key, return exactly one of these labels: [\"No, never share\", \"No, but ask me next time\", \"Yes, but ask me next time\", \"Yes, always share\"].\nReturn a JSON array with one object per new query. Each object must have id, query, and permission. Under permission, keep every input key exactly and return {\"label\": one allowed label, \"score\": a number from 0 to 1} for each key. The score is confidence in that exact four-class label. Return JSON only.\n\nUser demographic and bio information:\nAge group: 25-34; gender: Male; education: Bachelor's.\n\nUser AI tool usage and privacy information:\n{\n  \"AI familiarity (survey 1-5)\": \"4\",\n  \"AI usage frequency (survey 1-5)\": \"4\",\n  \"AI use purposes\": \"Personal misc. questions \\nHealth\\nOffice administration document preparation \\nproofreading\",\n  \"Trust in AI privacy (survey 1-5)\": \"3\",\n  \"Privacy importance (survey 1-5)\": \"2\",\n  \"Privacy concerns\": \"prompt inputs are kept private\",\n  \"Privacy-sensitive domains\": [\n    \"Entertainment\",\n    \"Health & Fitness\",\n    \"Work & Productivity\"\n  ]\n}\n\nUser permission decision history:\n[\n  {\n    \"query\": \"Can you fill my tax return forms using the tax documents in the \\\"2025 tax returns\\\" folder?\",\n    \"id\": 23,\n    \"answer\": {\n      \"Tax Management,W-2 details (e.g. income amounts, tax withholdings, employer information)\": \"Yes, always share\",\n      \"Tax Management,SSN\": \"Yes, always share\",\n      \"Tax Management,Name\": \"Yes, but ask me next time\",\n      \"Tax Management,Address\": \"Yes, always share\",\n      \"Tax Management,Marital status\": \"Yes, always share\",\n      \"mira,W-2 details (e.g. income amounts, tax withholdings, employer information)\": \"Yes, but ask me next time\",\n      \"mira,SSN\": \"Yes, always share\",\n      \"mira,Name\": \"Yes, always share\",\n      \"mira,Address\": \"Yes, always share\",\n      \"mira,Marital status\": \"Yes, always share\"\n    }\n  },\n  {\n    \"query\": \"Can you check what tax deductions I qualify for this year based on my income?\",\n    \"id\": 24,\n    \"answer\": {\n      \"Tax Management,Income details\": \"Yes, always share\",\n      \"Tax Management,Filling status (e.g. single or married)\": \"Yes, but ask me next time\",\n      \"Tax Management,Other personal tax profile data (e.g. previously claimed deductions)\": \"Yes, always share\"\n    }\n  },\n  {\n    \"query\": \"Schedule a one-time payment of $1,200 to my landlord next Monday. Please label it \\\"Rent Payment\\\" and include my address for reference.\",\n    \"id\": 26,\n    \"answer\": {\n      \"Banking,Payment note\": \"Yes, but ask me next time\",\n      \"Banking,Recipient account information\": \"Yes, but ask me next time\",\n      \"Banking,Account number\": \"Yes, but ask me next time\",\n      \"Banking,Account email\": \"Yes, but ask me next time\",\n      \"Banking,Account password\": \"Yes, but ask me next time\"\n    }\n  },\n  {\n    \"query\": \"Please automatically lock all doors 1 minute after no motion is detected in the house.\",\n    \"id\": 64,\n    \"answer\": {\n      \"mira,Home presence\": \"Yes, always share\",\n      \"mira,Motion detection logs\": \"Yes, always share\",\n      \"mira,Front door video recording\": \"Yes, always share\",\n      \"mira,Invoice and payment timelines\": \"No, never share\"\n    }\n  }\n]\n\nNew permission requests (null values are to be predicted):\n[\n  {\n    \"query\": \"Could you give me a report of my workout?\",\n    \"id\": 10,\n    \"permission\": {\n      \"mira,Exercise data (e.g. sets, distance, pace)\": null,\n      \"mira,Exercise type (e.g. cardio)\": null,\n      \"mira,Heart rate data\": null,\n      \"mira,Calories burned\": null\n    }\n  },\n  {\n    \"query\": \"Can you post a message in the #team-meeting channel on Slack reminding everyone about our meeting tomorrow at 10 AM?\",\n    \"id\": 11,\n    \"permission\": {\n      \"Slack,Scheduling details (i.e.  meeting details)\": null,\n      \"Slack,Message content\": null\n    }\n  },\n  {\n    \"query\": \"Plan my weekend in San Francisco. Please include surfing in the plan.\",\n    \"id\": 41,\n    \"permission\": {\n      \"Weather,Trip dates\": null,\n      \"Weather,Trip location\": null,\n      \"Local Search,Trip dates\": null,\n      \"Local Search,Trip location\": null,\n      \"Local Search,Trip activities\": null,\n      \"Local Search,Email content\": null\n    }\n  },\n  {\n    \"query\": \"Create a playlist titled \\\"Weekend Chill\\\" with my most played songs.\",\n    \"id\": 51,\n    \"permission\": {\n      \"Apple Music,Music playing history\": null\n    }\n  }\n]"
+      }
+    ],
+    "prompt_sha256": "d7e24047c7149692b5fa2224641f2403dcb83625261898c72e9421ff0f937337",
+    "test_row_indices": [
+      6245,
+      6246,
+      6247,
+      6248,
+      6249,
+      6250,
+      6309,
+      6310,
+      6311,
+      6312,
+      6313,
+      6314,
+      6316
+    ]
+  },
+  {
+    "call_id": "gemini_0shot_P031_fold0",
+    "stage": "predictor",
+    "participant_id": "P031",
+    "shots": 0,
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are a personalized permission assistant predicting this user's data-access decisions.\nConsider demographics, AI usage, privacy attitudes, the user's own permission history, and the meaning of each new request. The four responses differ both in immediate sharing and whether the assistant should ask again next time.\nFor each new query and every listed permission key, return exactly one of these labels: [\"No, never share\", \"No, but ask me next time\", \"Yes, but ask me next time\", \"Yes, always share\"].\nReturn a JSON array with one object per new query. Each object must have id, query, and permission. Under permission, keep every input key exactly and return {\"label\": one allowed label, \"score\": a number from 0 to 1} for each key. The score is confidence in that exact four-class label. Return JSON only.\n\nUser demographic and bio information:\nAge group: 35-44; gender: Male; education: Bachelor's.\n\nUser AI tool usage and privacy information:\n{\n  \"AI familiarity (survey 1-5)\": \"4\",\n  \"AI usage frequency (survey 1-5)\": \"4\",\n  \"AI use purposes\": \"research\",\n  \"Trust in AI privacy (survey 1-5)\": \"2\",\n  \"Privacy importance (survey 1-5)\": \"4\",\n  \"Privacy concerns\": \"Sometimes they listen to me when they're not supposed to.\",\n  \"Privacy-sensitive domains\": [\n    \"Shopping\",\n    \"Social\",\n    \"Finance\"\n  ]\n}\n\nUser permission decision history:\n[]\n\nNew permission requests (null values are to be predicted):\n[\n  {\n    \"query\": \"How has my sleep duration changed over the past week?\",\n    \"id\": 2,\n    \"permission\": {\n      \"mira,Sleep duration\": null,\n      \"mira,Sleep quality data (e.g. snoring)\": null,\n      \"mira,Blood pressure\": null,\n      \"mira,Account password\": null\n    }\n  },\n  {\n    \"query\": \"I need a meal plan to help me gain muscle. Can you make one?\",\n    \"id\": 3,\n    \"permission\": {\n      \"Nutrition and Diet,Nutritional goals (e.g. muscle gaining)\": null,\n      \"Nutrition and Diet,Weight\": null,\n      \"Nutrition and Diet,Allergies\": null,\n      \"Nutrition and Diet,Dietary preferences\": null,\n      \"Nutrition and Diet,Income/budget considerations\": null,\n      \"Nutrition and Diet,Daily activity events\": null,\n      \"Nutrition and Diet,Education level\": null,\n      \"Nutrition and Diet,Photos\": null\n    }\n  },\n  {\n    \"query\": \"Design a \\\"Beach Vibes\\\" Instagram post and share the photo I took yesterday at the beach from my Cloud Drive on Instagram.\",\n    \"id\": 54,\n    \"permission\": {\n      \"Cloud Drive,Photo details (e.g. file name, location, and timestamp)\": null,\n      \"Instagram,Photos\": null,\n      \"Instagram,Photo details (e.g. file name, location, and timestamp)\": null,\n      \"mira,Photos\": null,\n      \"mira,Instagram post content\": null\n    }\n  },\n  {\n    \"query\": \"I’ve got a new pic in my Cloud Drive. Can you upload it to my Tinder account?\",\n    \"id\": 56,\n    \"permission\": {\n      \"Cloud Drive,Photo details (e.g. file name, location, and timestamp)\": null,\n      \"Tinder,Photos\": null,\n      \"mira,Photos\": null\n    }\n  }\n]"
+      }
+    ],
+    "prompt_sha256": "a5f94b21265f417a0b8b87623c159db2a681109b06b31b68dcaff9769de5d28e",
+    "test_row_indices": [
+      7187,
+      7188,
+      7189,
+      7190,
+      7191,
+      7192,
+      7193,
+      7194,
+      7195,
+      7196,
+      7197,
+      7198,
+      7252,
+      7253,
+      7254,
+      7255,
+      7256,
+      7269,
+      7270,
+      7271
+    ]
+  },
+  {
+    "call_id": "gemini_4shot_P031_fold0",
+    "stage": "predictor",
+    "participant_id": "P031",
+    "shots": 4,
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are a personalized permission assistant predicting this user's data-access decisions.\nConsider demographics, AI usage, privacy attitudes, the user's own permission history, and the meaning of each new request. The four responses differ both in immediate sharing and whether the assistant should ask again next time.\nFor each new query and every listed permission key, return exactly one of these labels: [\"No, never share\", \"No, but ask me next time\", \"Yes, but ask me next time\", \"Yes, always share\"].\nReturn a JSON array with one object per new query. Each object must have id, query, and permission. Under permission, keep every input key exactly and return {\"label\": one allowed label, \"score\": a number from 0 to 1} for each key. The score is confidence in that exact four-class label. Return JSON only.\n\nUser demographic and bio information:\nAge group: 35-44; gender: Male; education: Bachelor's.\n\nUser AI tool usage and privacy information:\n{\n  \"AI familiarity (survey 1-5)\": \"4\",\n  \"AI usage frequency (survey 1-5)\": \"4\",\n  \"AI use purposes\": \"research\",\n  \"Trust in AI privacy (survey 1-5)\": \"2\",\n  \"Privacy importance (survey 1-5)\": \"4\",\n  \"Privacy concerns\": \"Sometimes they listen to me when they're not supposed to.\",\n  \"Privacy-sensitive domains\": [\n    \"Shopping\",\n    \"Social\",\n    \"Finance\"\n  ]\n}\n\nUser permission decision history:\n[\n  {\n    \"query\": \"Give me a summary of my meetings and tasks for tomorrow.\",\n    \"id\": 21,\n    \"answer\": {\n      \"mira,Meeting title or description\": \"Yes, always share\",\n      \"mira,Pending task information\": \"Yes, always share\"\n    }\n  },\n  {\n    \"query\": \"Retrieve all my stored visa applications, passport scans, and travel document history, and put them in a folder named \\\"travel docs\\\".\",\n    \"id\": 43,\n    \"answer\": {\n      \"Cloud Drive,Passport scans\": \"Yes, always share\",\n      \"Cloud Drive,Visa documents\": \"Yes, always share\",\n      \"Cloud Drive,Other travel permits\": \"Yes, always share\",\n      \"Cloud Drive,Past visa application details\": \"Yes, always share\",\n      \"Cloud Drive,Travel history\": \"Yes, always share\",\n      \"Cloud Drive,Passport number\": \"Yes, always share\"\n    }\n  },\n  {\n    \"query\": \"Can you check the details of my flight to New York next Monday and email them to me?\",\n    \"id\": 46,\n    \"answer\": {\n      \"Email,Flight itinerary details (e.g. identification, flight number, departure and arrival time)\": \"Yes, always share\",\n      \"Email,Email address\": \"Yes, but ask me next time\",\n      \"mira,Flight itinerary details (e.g. identification, flight number, departure and arrival time)\": \"Yes, but ask me next time\"\n    }\n  },\n  {\n    \"query\": \"Hey, I'm interested in connecting with women aged 25 to 35 near San Francisco. Can you help me find some matches?\",\n    \"id\": 58,\n    \"answer\": {\n      \"Tinder,Relationship preferences\": \"Yes, always share\",\n      \"Tinder,User location\": \"Yes, always share\",\n      \"Tinder,Relationship status (e.g. single, married)\": \"Yes, always share\"\n    }\n  }\n]\n\nNew permission requests (null values are to be predicted):\n[\n  {\n    \"query\": \"How has my sleep duration changed over the past week?\",\n    \"id\": 2,\n    \"permission\": {\n      \"mira,Sleep duration\": null,\n      \"mira,Sleep quality data (e.g. snoring)\": null,\n      \"mira,Blood pressure\": null,\n      \"mira,Account password\": null\n    }\n  },\n  {\n    \"query\": \"I need a meal plan to help me gain muscle. Can you make one?\",\n    \"id\": 3,\n    \"permission\": {\n      \"Nutrition and Diet,Nutritional goals (e.g. muscle gaining)\": null,\n      \"Nutrition and Diet,Weight\": null,\n      \"Nutrition and Diet,Allergies\": null,\n      \"Nutrition and Diet,Dietary preferences\": null,\n      \"Nutrition and Diet,Income/budget considerations\": null,\n      \"Nutrition and Diet,Daily activity events\": null,\n      \"Nutrition and Diet,Education level\": null,\n      \"Nutrition and Diet,Photos\": null\n    }\n  },\n  {\n    \"query\": \"Design a \\\"Beach Vibes\\\" Instagram post and share the photo I took yesterday at the beach from my Cloud Drive on Instagram.\",\n    \"id\": 54,\n    \"permission\": {\n      \"Cloud Drive,Photo details (e.g. file name, location, and timestamp)\": null,\n      \"Instagram,Photos\": null,\n      \"Instagram,Photo details (e.g. file name, location, and timestamp)\": null,\n      \"mira,Photos\": null,\n      \"mira,Instagram post content\": null\n    }\n  },\n  {\n    \"query\": \"I’ve got a new pic in my Cloud Drive. Can you upload it to my Tinder account?\",\n    \"id\": 56,\n    \"permission\": {\n      \"Cloud Drive,Photo details (e.g. file name, location, and timestamp)\": null,\n      \"Tinder,Photos\": null,\n      \"mira,Photos\": null\n    }\n  }\n]"
+      }
+    ],
+    "prompt_sha256": "64680de40c84b2f6991f16d59218bc069a284edf8a170061e25be13c1a0146ce",
+    "test_row_indices": [
+      7187,
+      7188,
+      7189,
+      7190,
+      7191,
+      7192,
+      7193,
+      7194,
+      7195,
+      7196,
+      7197,
+      7198,
+      7252,
+      7253,
+      7254,
+      7255,
+      7256,
+      7269,
+      7270,
+      7271
+    ]
+  },
+  {
+    "call_id": "gemini_0shot_P032_fold0",
+    "stage": "predictor",
+    "participant_id": "P032",
+    "shots": 0,
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are a personalized permission assistant predicting this user's data-access decisions.\nConsider demographics, AI usage, privacy attitudes, the user's own permission history, and the meaning of each new request. The four responses differ both in immediate sharing and whether the assistant should ask again next time.\nFor each new query and every listed permission key, return exactly one of these labels: [\"No, never share\", \"No, but ask me next time\", \"Yes, but ask me next time\", \"Yes, always share\"].\nReturn a JSON array with one object per new query. Each object must have id, query, and permission. Under permission, keep every input key exactly and return {\"label\": one allowed label, \"score\": a number from 0 to 1} for each key. The score is confidence in that exact four-class label. Return JSON only.\n\nUser demographic and bio information:\nAge group: 25-34; gender: Male; education: PhD.\n\nUser AI tool usage and privacy information:\n{\n  \"AI familiarity (survey 1-5)\": \"5\",\n  \"AI usage frequency (survey 1-5)\": \"5\",\n  \"AI use purposes\": \"Educational Purposes\\nResearch Assistance\\nConversation and Interaction\\nSummarization\",\n  \"Trust in AI privacy (survey 1-5)\": \"4\",\n  \"Privacy importance (survey 1-5)\": \"5\",\n  \"Privacy concerns\": \"Data Collection and Usage\\nData Security\\nData Retention\\nThird-Party Sharing\",\n  \"Privacy-sensitive domains\": [\n    \"Finance\",\n    \"Health & Fitness\",\n    \"Travel\"\n  ]\n}\n\nUser permission decision history:\n[]\n\nNew permission requests (null values are to be predicted):\n[\n  {\n    \"query\": \"How has my sleep duration changed over the past week?\",\n    \"id\": 2,\n    \"permission\": {\n      \"mira,Sleep duration\": null,\n      \"mira,Sleep quality data (e.g. snoring)\": null\n    }\n  },\n  {\n    \"query\": \"I need a meal plan to help me gain muscle. Can you make one?\",\n    \"id\": 3,\n    \"permission\": {\n      \"Nutrition and Diet,Nutritional goals (e.g. muscle gaining)\": null,\n      \"Nutrition and Diet,Weight\": null,\n      \"Nutrition and Diet,Allergies\": null,\n      \"Nutrition and Diet,Dietary preferences\": null,\n      \"Nutrition and Diet,Income/budget considerations\": null\n    }\n  },\n  {\n    \"query\": \"Please order 2 boxes of green tea for me from Amazon.\",\n    \"id\": 32,\n    \"permission\": {\n      \"Amazon,Credit card details\": null,\n      \"Amazon,Name\": null,\n      \"Amazon,Address\": null,\n      \"Amazon,Email\": null,\n      \"Amazon,Order information (e.g., product details)\": null\n    }\n  },\n  {\n    \"query\": \"Reschedule the delivery of my furniture to next Monday afternoon.\",\n    \"id\": 34,\n    \"permission\": {\n      \"Amazon,Delivery address\": null,\n      \"Amazon,Phone number\": null,\n      \"Amazon,Order information (e.g., product details)\": null\n    }\n  }\n]"
+      }
+    ],
+    "prompt_sha256": "f94395d4860fab11fbab4937e90a0c3ba0329d0e5d36b8258439d388299c8bf2",
+    "test_row_indices": [
+      3173,
+      3174,
+      3175,
+      3176,
+      3177,
+      3178,
+      3179,
+      3246,
+      3247,
+      3248,
+      3249,
+      3250,
+      3256,
+      3257,
+      3258
+    ]
+  },
+  {
+    "call_id": "gemini_4shot_P032_fold0",
+    "stage": "predictor",
+    "participant_id": "P032",
+    "shots": 4,
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are a personalized permission assistant predicting this user's data-access decisions.\nConsider demographics, AI usage, privacy attitudes, the user's own permission history, and the meaning of each new request. The four responses differ both in immediate sharing and whether the assistant should ask again next time.\nFor each new query and every listed permission key, return exactly one of these labels: [\"No, never share\", \"No, but ask me next time\", \"Yes, but ask me next time\", \"Yes, always share\"].\nReturn a JSON array with one object per new query. Each object must have id, query, and permission. Under permission, keep every input key exactly and return {\"label\": one allowed label, \"score\": a number from 0 to 1} for each key. The score is confidence in that exact four-class label. Return JSON only.\n\nUser demographic and bio information:\nAge group: 25-34; gender: Male; education: PhD.\n\nUser AI tool usage and privacy information:\n{\n  \"AI familiarity (survey 1-5)\": \"5\",\n  \"AI usage frequency (survey 1-5)\": \"5\",\n  \"AI use purposes\": \"Educational Purposes\\nResearch Assistance\\nConversation and Interaction\\nSummarization\",\n  \"Trust in AI privacy (survey 1-5)\": \"4\",\n  \"Privacy importance (survey 1-5)\": \"5\",\n  \"Privacy concerns\": \"Data Collection and Usage\\nData Security\\nData Retention\\nThird-Party Sharing\",\n  \"Privacy-sensitive domains\": [\n    \"Finance\",\n    \"Health & Fitness\",\n    \"Travel\"\n  ]\n}\n\nUser permission decision history:\n[\n  {\n    \"query\": \"Summarize all unread emails from today and highlight the urgent ones.\",\n    \"id\": 16,\n    \"answer\": {\n      \"mira,Content of recent emails\": \"Yes, but ask me next time\",\n      \"mira,Sender's email addresses\": \"Yes, always share\"\n    }\n  },\n  {\n    \"query\": \"Can you fill my tax return forms using the tax documents in the \\\"2025 tax returns\\\" folder?\",\n    \"id\": 23,\n    \"answer\": {\n      \"Tax Management,W-2 details (e.g. income amounts, tax withholdings, employer information)\": \"Yes, always share\",\n      \"Tax Management,SSN\": \"Yes, always share\",\n      \"Tax Management,Name\": \"Yes, always share\",\n      \"Tax Management,Address\": \"Yes, always share\",\n      \"Tax Management,Marital status\": \"Yes, always share\",\n      \"Tax Management,Film genre\": \"No, never share\",\n      \"Tax Management,Phone number\": \"No, but ask me next time\",\n      \"Tax Management,Movie watching history\": \"No, but ask me next time\",\n      \"mira,W-2 details (e.g. income amounts, tax withholdings, employer information)\": \"Yes, always share\",\n      \"mira,SSN\": \"Yes, always share\",\n      \"mira,Name\": \"Yes, always share\",\n      \"mira,Address\": \"Yes, always share\",\n      \"mira,Marital status\": \"Yes, always share\"\n    }\n  },\n  {\n    \"query\": \"What is my current credit score and full credit history?\",\n    \"id\": 29,\n    \"answer\": {\n      \"Banking,Home presence\": \"No, but ask me next time\",\n      \"Banking,Transaction histories related to investments\": \"No, but ask me next time\",\n      \"Banking,Employment information\": \"No, but ask me next time\",\n      \"Banking,Historical income\": \"Yes, but ask me next time\",\n      \"Banking,Outstanding debts\": \"Yes, always share\",\n      \"Banking,Payment history\": \"Yes, but ask me next time\",\n      \"Banking,Credit report data\": \"Yes, always share\",\n      \"Banking,Credit history\": \"Yes, but ask me next time\"\n    }\n  },\n  {\n    \"query\": \"Renew my monthly subscription for protein supplements.\",\n    \"id\": 33,\n    \"answer\": {\n      \"Amazon,Credit card details\": \"Yes, always share\",\n      \"Amazon,Name\": \"Yes, always share\",\n      \"Amazon,Address\": \"Yes, always share\",\n      \"Amazon,Email\": \"Yes, always share\",\n      \"Amazon,Order information (e.g., product details)\": \"Yes, always share\"\n    }\n  }\n]\n\nNew permission requests (null values are to be predicted):\n[\n  {\n    \"query\": \"How has my sleep duration changed over the past week?\",\n    \"id\": 2,\n    \"permission\": {\n      \"mira,Sleep duration\": null,\n      \"mira,Sleep quality data (e.g. snoring)\": null\n    }\n  },\n  {\n    \"query\": \"I need a meal plan to help me gain muscle. Can you make one?\",\n    \"id\": 3,\n    \"permission\": {\n      \"Nutrition and Diet,Nutritional goals (e.g. muscle gaining)\": null,\n      \"Nutrition and Diet,Weight\": null,\n      \"Nutrition and Diet,Allergies\": null,\n      \"Nutrition and Diet,Dietary preferences\": null,\n      \"Nutrition and Diet,Income/budget considerations\": null\n    }\n  },\n  {\n    \"query\": \"Please order 2 boxes of green tea for me from Amazon.\",\n    \"id\": 32,\n    \"permission\": {\n      \"Amazon,Credit card details\": null,\n      \"Amazon,Name\": null,\n      \"Amazon,Address\": null,\n      \"Amazon,Email\": null,\n      \"Amazon,Order information (e.g., product details)\": null\n    }\n  },\n  {\n    \"query\": \"Reschedule the delivery of my furniture to next Monday afternoon.\",\n    \"id\": 34,\n    \"permission\": {\n      \"Amazon,Delivery address\": null,\n      \"Amazon,Phone number\": null,\n      \"Amazon,Order information (e.g., product details)\": null\n    }\n  }\n]"
+      }
+    ],
+    "prompt_sha256": "ed241684c66c7984b30f1cde825d56c2183c93f4ef00b094d52569c02b8302a6",
+    "test_row_indices": [
+      3173,
+      3174,
+      3175,
+      3176,
+      3177,
+      3178,
+      3179,
+      3246,
+      3247,
+      3248,
+      3249,
+      3250,
+      3256,
+      3257,
+      3258
+    ]
+  },
+  {
+    "call_id": "gemini_0shot_P033_fold0",
+    "stage": "predictor",
+    "participant_id": "P033",
+    "shots": 0,
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are a personalized permission assistant predicting this user's data-access decisions.\nConsider demographics, AI usage, privacy attitudes, the user's own permission history, and the meaning of each new request. The four responses differ both in immediate sharing and whether the assistant should ask again next time.\nFor each new query and every listed permission key, return exactly one of these labels: [\"No, never share\", \"No, but ask me next time\", \"Yes, but ask me next time\", \"Yes, always share\"].\nReturn a JSON array with one object per new query. Each object must have id, query, and permission. Under permission, keep every input key exactly and return {\"label\": one allowed label, \"score\": a number from 0 to 1} for each key. The score is confidence in that exact four-class label. Return JSON only.\n\nUser demographic and bio information:\nAge group: 45-54; gender: Female; education: PhD.\n\nUser AI tool usage and privacy information:\n{\n  \"AI familiarity (survey 1-5)\": \"4\",\n  \"AI usage frequency (survey 1-5)\": \"1\",\n  \"AI use purposes\": \"Based on our previous conversations, you seem to have a strong interest in AI and its applications, particularly in workflows, tracking AI skills, and following AI trends. You also work in a technology-focused role at Dosagen, a Fortune 500 company investing in brain-computer interfaces (BCIs).\",\n  \"Trust in AI privacy (survey 1-5)\": \"4\",\n  \"Privacy importance (survey 1-5)\": \"5\",\n  \"Privacy concerns\": \"Privacy Concerns While Using AI Tools:\\nData Security & Storage\\n\\nWhere is my input data stored, and for how long?\\n\\nIs my data encrypted and protected from breaches?\\n\\nUsage of Personal & Sensitive Information\\n\\nDoes the AI tool retain, analyze, or share my input with third parties?\\n\\nCould my conversations be used for training future AI models?\\n\\nWorkplace Confidentiality\\n\\nIf discussing company-related or proprietary information, could AI responses leak sensitive data?\\n\\nDoes my employer track AI usage, and how does it impact security polici\",\n  \"Privacy-sensitive domains\": []\n}\n\nUser permission decision history:\n[]\n\nNew permission requests (null values are to be predicted):\n[\n  {\n    \"query\": \"I want to lose weight. Can you create an at-home full-body workout plan for me? \",\n    \"id\": 0,\n    \"permission\": {\n      \"Fitness Tracking,Fitness goal (i.e. weight loss)\": null,\n      \"Fitness Tracking,Physical limitations or injuries\": null,\n      \"Fitness Tracking,Gender\": null\n    }\n  },\n  {\n    \"query\": \"Can you give me a summary of my health data from the past month?\",\n    \"id\": 1,\n    \"permission\": {\n      \"mira,Weight\": null,\n      \"mira,Heart rate data\": null,\n      \"mira,Sleep duration/quality\": null,\n      \"mira,Blood pressure\": null,\n      \"mira,Exercise logs\": null\n    }\n  },\n  {\n    \"query\": \"I’m going to bed. Could you turn off all the lights and just dim my bedroom light a little?\",\n    \"id\": 60,\n    \"permission\": {\n      \"Lighting Control,Bedtime\": null,\n      \"Lighting Control,Motion detection logs\": null,\n      \"Lighting Control,Other travel permits\": null,\n      \"Lighting Control,Past visa application details\": null\n    }\n  },\n  {\n    \"query\": \"I heard a noise outside. Can you check what happened at the front door?\",\n    \"id\": 62,\n    \"permission\": {\n      \"mira,Front door video recording\": null,\n      \"mira,Garage access log\": null,\n      \"mira,Doctor's Name\": null,\n      \"mira,Health conditions\": null\n    }\n  }\n]"
+      }
+    ],
+    "prompt_sha256": "b68b52039ce97317d8c56cf2a4945278a322da166a5efa3fa8fc43d88b30a873",
+    "test_row_indices": [
+      10628,
+      10629,
+      10630,
+      10631,
+      10632,
+      10633,
+      10634,
+      10635,
+      10691,
+      10692,
+      10693,
+      10694,
+      10699,
+      10700,
+      10701,
+      10702
+    ]
+  },
+  {
+    "call_id": "gemini_4shot_P033_fold0",
+    "stage": "predictor",
+    "participant_id": "P033",
+    "shots": 4,
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are a personalized permission assistant predicting this user's data-access decisions.\nConsider demographics, AI usage, privacy attitudes, the user's own permission history, and the meaning of each new request. The four responses differ both in immediate sharing and whether the assistant should ask again next time.\nFor each new query and every listed permission key, return exactly one of these labels: [\"No, never share\", \"No, but ask me next time\", \"Yes, but ask me next time\", \"Yes, always share\"].\nReturn a JSON array with one object per new query. Each object must have id, query, and permission. Under permission, keep every input key exactly and return {\"label\": one allowed label, \"score\": a number from 0 to 1} for each key. The score is confidence in that exact four-class label. Return JSON only.\n\nUser demographic and bio information:\nAge group: 45-54; gender: Female; education: PhD.\n\nUser AI tool usage and privacy information:\n{\n  \"AI familiarity (survey 1-5)\": \"4\",\n  \"AI usage frequency (survey 1-5)\": \"1\",\n  \"AI use purposes\": \"Based on our previous conversations, you seem to have a strong interest in AI and its applications, particularly in workflows, tracking AI skills, and following AI trends. You also work in a technology-focused role at Dosagen, a Fortune 500 company investing in brain-computer interfaces (BCIs).\",\n  \"Trust in AI privacy (survey 1-5)\": \"4\",\n  \"Privacy importance (survey 1-5)\": \"5\",\n  \"Privacy concerns\": \"Privacy Concerns While Using AI Tools:\\nData Security & Storage\\n\\nWhere is my input data stored, and for how long?\\n\\nIs my data encrypted and protected from breaches?\\n\\nUsage of Personal & Sensitive Information\\n\\nDoes the AI tool retain, analyze, or share my input with third parties?\\n\\nCould my conversations be used for training future AI models?\\n\\nWorkplace Confidentiality\\n\\nIf discussing company-related or proprietary information, could AI responses leak sensitive data?\\n\\nDoes my employer track AI usage, and how does it impact security polici\",\n  \"Privacy-sensitive domains\": []\n}\n\nUser permission decision history:\n[\n  {\n    \"query\": \"How's the weather?\",\n    \"id\": 38,\n    \"answer\": {\n      \"Weather,User location\": \"Yes, but ask me next time\"\n    }\n  },\n  {\n    \"query\": \"Plan my weekend in San Francisco. Please include surfing in the plan.\",\n    \"id\": 41,\n    \"answer\": {\n      \"Weather,Trip dates\": \"Yes, but ask me next time\",\n      \"Weather,Trip location\": \"Yes, but ask me next time\",\n      \"Local Search,Trip dates\": \"Yes, but ask me next time\",\n      \"Local Search,Trip location\": \"Yes, but ask me next time\",\n      \"Local Search,Trip activities\": \"Yes, but ask me next time\"\n    }\n  },\n  {\n    \"query\": \"I’m on a road trip! Can you find a gas station near me?\",\n    \"id\": 44,\n    \"answer\": {\n      \"Local Search,User location\": \"Yes, but ask me next time\",\n      \"Local Search,Car details (e.g. car fuel types)\": \"Yes, but ask me next time\"\n    }\n  },\n  {\n    \"query\": \"There is a mess in my garage. Check the access history and security cameras to see what happened.\",\n    \"id\": 59,\n    \"answer\": {\n      \"mira,Garage access log\": \"Yes, but ask me next time\",\n      \"mira,Garage video recording\": \"Yes, but ask me next time\",\n      \"mira,Backyard video recording\": \"Yes, but ask me next time\",\n      \"mira,Geolocation\": \"No, but ask me next time\"\n    }\n  }\n]\n\nNew permission requests (null values are to be predicted):\n[\n  {\n    \"query\": \"I want to lose weight. Can you create an at-home full-body workout plan for me? \",\n    \"id\": 0,\n    \"permission\": {\n      \"Fitness Tracking,Fitness goal (i.e. weight loss)\": null,\n      \"Fitness Tracking,Physical limitations or injuries\": null,\n      \"Fitness Tracking,Gender\": null\n    }\n  },\n  {\n    \"query\": \"Can you give me a summary of my health data from the past month?\",\n    \"id\": 1,\n    \"permission\": {\n      \"mira,Weight\": null,\n      \"mira,Heart rate data\": null,\n      \"mira,Sleep duration/quality\": null,\n      \"mira,Blood pressure\": null,\n      \"mira,Exercise logs\": null\n    }\n  },\n  {\n    \"query\": \"I’m going to bed. Could you turn off all the lights and just dim my bedroom light a little?\",\n    \"id\": 60,\n    \"permission\": {\n      \"Lighting Control,Bedtime\": null,\n      \"Lighting Control,Motion detection logs\": null,\n      \"Lighting Control,Other travel permits\": null,\n      \"Lighting Control,Past visa application details\": null\n    }\n  },\n  {\n    \"query\": \"I heard a noise outside. Can you check what happened at the front door?\",\n    \"id\": 62,\n    \"permission\": {\n      \"mira,Front door video recording\": null,\n      \"mira,Garage access log\": null,\n      \"mira,Doctor's Name\": null,\n      \"mira,Health conditions\": null\n    }\n  }\n]"
+      }
+    ],
+    "prompt_sha256": "e4e005b9bce8c6f25cfa5b70e66110e4938789cd264cd350d46d84898d5e3d84",
+    "test_row_indices": [
+      10628,
+      10629,
+      10630,
+      10631,
+      10632,
+      10633,
+      10634,
+      10635,
+      10691,
+      10692,
+      10693,
+      10694,
+      10699,
+      10700,
+      10701,
+      10702
+    ]
+  },
+  {
+    "call_id": "gemini_0shot_P040_fold0",
+    "stage": "predictor",
+    "participant_id": "P040",
+    "shots": 0,
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are a personalized permission assistant predicting this user's data-access decisions.\nConsider demographics, AI usage, privacy attitudes, the user's own permission history, and the meaning of each new request. The four responses differ both in immediate sharing and whether the assistant should ask again next time.\nFor each new query and every listed permission key, return exactly one of these labels: [\"No, never share\", \"No, but ask me next time\", \"Yes, but ask me next time\", \"Yes, always share\"].\nReturn a JSON array with one object per new query. Each object must have id, query, and permission. Under permission, keep every input key exactly and return {\"label\": one allowed label, \"score\": a number from 0 to 1} for each key. The score is confidence in that exact four-class label. Return JSON only.\n\nUser demographic and bio information:\nAge group: 35-44; gender: Male; education: Bachelor's.\n\nUser AI tool usage and privacy information:\n{\n  \"AI familiarity (survey 1-5)\": \"3\",\n  \"AI usage frequency (survey 1-5)\": \"3\",\n  \"AI use purposes\": \"For the most part, I've been using them for help and ideas with single stocks in the stock market.\",\n  \"Trust in AI privacy (survey 1-5)\": \"3\",\n  \"Privacy importance (survey 1-5)\": \"2\",\n  \"Privacy concerns\": \"I suppose I've never really thought about it before while using them.\",\n  \"Privacy-sensitive domains\": [\n    \"Shopping\",\n    \"Social\",\n    \"Finance\"\n  ]\n}\n\nUser permission decision history:\n[]\n\nNew permission requests (null values are to be predicted):\n[\n  {\n    \"query\": \"Schedule a meeting with HR on Friday at 2 PM to discuss the cost-cutting.\",\n    \"id\": 14,\n    \"permission\": {\n      \"Calendar,HR email addresses\": null,\n      \"Calendar,Meeting date and time\": null,\n      \"Calendar,Meeting agenda (i.e. cost-cutting)\": null,\n      \"Calendar,Payment note\": null\n    }\n  },\n  {\n    \"query\": \"Find all invoices related to my recent business trip and store them in a folder called \\\"Expense Reports\\\" in my Cloud Drive.\",\n    \"id\": 17,\n    \"permission\": {\n      \"Cloud Drive,Invoices and receipts data\": null,\n      \"Cloud Drive,Content of recent emails\": null,\n      \"Cloud Drive,Movie watching history\": null,\n      \"Cloud Drive,Film genre\": null\n    }\n  },\n  {\n    \"query\": \"There is a mess in my garage. Check the access history and security cameras to see what happened.\",\n    \"id\": 59,\n    \"permission\": {\n      \"mira,Garage video recording\": null,\n      \"mira,Garage access log\": null\n    }\n  },\n  {\n    \"query\": \"How much energy did we use yesterday?\",\n    \"id\": 61,\n    \"permission\": {\n      \"mira,Energy consumption logs\": null\n    }\n  }\n]"
+      }
+    ],
+    "prompt_sha256": "95b5e9bb642c049b7765a915a11684e5fc9fd5c4a1b3dd4c19e52a84c994554b",
+    "test_row_indices": [
+      7508,
+      7509,
+      7510,
+      7511,
+      7512,
+      7513,
+      7514,
+      7515,
+      7570,
+      7571,
+      7573
+    ]
+  },
+  {
+    "call_id": "gemini_4shot_P040_fold0",
+    "stage": "predictor",
+    "participant_id": "P040",
+    "shots": 4,
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are a personalized permission assistant predicting this user's data-access decisions.\nConsider demographics, AI usage, privacy attitudes, the user's own permission history, and the meaning of each new request. The four responses differ both in immediate sharing and whether the assistant should ask again next time.\nFor each new query and every listed permission key, return exactly one of these labels: [\"No, never share\", \"No, but ask me next time\", \"Yes, but ask me next time\", \"Yes, always share\"].\nReturn a JSON array with one object per new query. Each object must have id, query, and permission. Under permission, keep every input key exactly and return {\"label\": one allowed label, \"score\": a number from 0 to 1} for each key. The score is confidence in that exact four-class label. Return JSON only.\n\nUser demographic and bio information:\nAge group: 35-44; gender: Male; education: Bachelor's.\n\nUser AI tool usage and privacy information:\n{\n  \"AI familiarity (survey 1-5)\": \"3\",\n  \"AI usage frequency (survey 1-5)\": \"3\",\n  \"AI use purposes\": \"For the most part, I've been using them for help and ideas with single stocks in the stock market.\",\n  \"Trust in AI privacy (survey 1-5)\": \"3\",\n  \"Privacy importance (survey 1-5)\": \"2\",\n  \"Privacy concerns\": \"I suppose I've never really thought about it before while using them.\",\n  \"Privacy-sensitive domains\": [\n    \"Shopping\",\n    \"Social\",\n    \"Finance\"\n  ]\n}\n\nUser permission decision history:\n[\n  {\n    \"query\": \"Hey, I just joined Tinder. Can you help set up my profile with my bio, contact info, relationship preferences, and so on?\",\n    \"id\": 55,\n    \"answer\": {\n      \"Tinder,User bio\": \"Yes, but ask me next time\",\n      \"Tinder,Email address\": \"Yes, but ask me next time\",\n      \"Tinder,Phone number\": \"Yes, but ask me next time\",\n      \"Tinder,Profile Pictures\": \"Yes, but ask me next time\",\n      \"Tinder,Age\": \"Yes, but ask me next time\",\n      \"Tinder,Birthday\": \"Yes, but ask me next time\",\n      \"Tinder,Gender\": \"Yes, but ask me next time\",\n      \"Tinder,Relationship preferences\": \"Yes, but ask me next time\",\n      \"Tinder,Education level\": \"Yes, but ask me next time\",\n      \"Tinder,Workplace\": \"Yes, but ask me next time\",\n      \"Tinder,Interests/hobbies\": \"Yes, but ask me next time\",\n      \"Tinder,User location\": \"Yes, but ask me next time\"\n    }\n  },\n  {\n    \"query\": \"I just changed my location. Can you update my Tinder profile location and then find matches nearby?\",\n    \"id\": 57,\n    \"answer\": {\n      \"Tinder,Geolocation\": \"Yes, but ask me next time\"\n    }\n  },\n  {\n    \"query\": \"Hey, I'm interested in connecting with women aged 25 to 35 near San Francisco. Can you help me find some matches?\",\n    \"id\": 58,\n    \"answer\": {\n      \"Tinder,Relationship preferences\": \"Yes, but ask me next time\",\n      \"Tinder,User location\": \"Yes, but ask me next time\",\n      \"Tinder,Relationship status (e.g. single, married)\": \"Yes, but ask me next time\"\n    }\n  },\n  {\n    \"query\": \"I’m going to bed. Could you turn off all the lights and just dim my bedroom light a little?\",\n    \"id\": 60,\n    \"answer\": {\n      \"Lighting Control,Bedtime\": \"No, never share\"\n    }\n  }\n]\n\nNew permission requests (null values are to be predicted):\n[\n  {\n    \"query\": \"Schedule a meeting with HR on Friday at 2 PM to discuss the cost-cutting.\",\n    \"id\": 14,\n    \"permission\": {\n      \"Calendar,HR email addresses\": null,\n      \"Calendar,Meeting date and time\": null,\n      \"Calendar,Meeting agenda (i.e. cost-cutting)\": null,\n      \"Calendar,Payment note\": null\n    }\n  },\n  {\n    \"query\": \"Find all invoices related to my recent business trip and store them in a folder called \\\"Expense Reports\\\" in my Cloud Drive.\",\n    \"id\": 17,\n    \"permission\": {\n      \"Cloud Drive,Invoices and receipts data\": null,\n      \"Cloud Drive,Content of recent emails\": null,\n      \"Cloud Drive,Movie watching history\": null,\n      \"Cloud Drive,Film genre\": null\n    }\n  },\n  {\n    \"query\": \"There is a mess in my garage. Check the access history and security cameras to see what happened.\",\n    \"id\": 59,\n    \"permission\": {\n      \"mira,Garage video recording\": null,\n      \"mira,Garage access log\": null\n    }\n  },\n  {\n    \"query\": \"How much energy did we use yesterday?\",\n    \"id\": 61,\n    \"permission\": {\n      \"mira,Energy consumption logs\": null\n    }\n  }\n]"
+      }
+    ],
+    "prompt_sha256": "5a4d75365b411f4467e324e158a1831c310308c060cfd7fb5978b10710cc7ac1",
+    "test_row_indices": [
+      7508,
+      7509,
+      7510,
+      7511,
+      7512,
+      7513,
+      7514,
+      7515,
+      7570,
+      7571,
+      7573
+    ]
+  },
+  {
+    "call_id": "gemini_0shot_P053_fold0",
+    "stage": "predictor",
+    "participant_id": "P053",
+    "shots": 0,
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are a personalized permission assistant predicting this user's data-access decisions.\nConsider demographics, AI usage, privacy attitudes, the user's own permission history, and the meaning of each new request. The four responses differ both in immediate sharing and whether the assistant should ask again next time.\nFor each new query and every listed permission key, return exactly one of these labels: [\"No, never share\", \"No, but ask me next time\", \"Yes, but ask me next time\", \"Yes, always share\"].\nReturn a JSON array with one object per new query. Each object must have id, query, and permission. Under permission, keep every input key exactly and return {\"label\": one allowed label, \"score\": a number from 0 to 1} for each key. The score is confidence in that exact four-class label. Return JSON only.\n\nUser demographic and bio information:\nAge group: 35-44; gender: Male; education: Bachelor's.\n\nUser AI tool usage and privacy information:\n{\n  \"AI familiarity (survey 1-5)\": \"5\",\n  \"AI usage frequency (survey 1-5)\": \"5\",\n  \"AI use purposes\": \"I will often use a daily credit website to create music for things that have happened in my day. It helps me diary in a fun way. I also use it for emails at work, to correct spelling and grammar.\",\n  \"Trust in AI privacy (survey 1-5)\": \"3\",\n  \"Privacy importance (survey 1-5)\": \"5\",\n  \"Privacy concerns\": \"I think that they will use the data I put to train new models. Data is how AI models will improve.\",\n  \"Privacy-sensitive domains\": []\n}\n\nUser permission decision history:\n[]\n\nNew permission requests (null values are to be predicted):\n[\n  {\n    \"query\": \"Could you give me a report of my workout?\",\n    \"id\": 10,\n    \"permission\": {\n      \"mira,Exercise type (e.g. cardio)\": null,\n      \"mira,Exercise data (e.g. sets, distance, pace)\": null,\n      \"mira,Heart rate data\": null,\n      \"mira,Calories burned\": null\n    }\n  },\n  {\n    \"query\": \"Can you post a message in the #team-meeting channel on Slack reminding everyone about our meeting tomorrow at 10 AM?\",\n    \"id\": 11,\n    \"permission\": {\n      \"Slack,Message content\": null,\n      \"Slack,Scheduling details (i.e.  meeting details)\": null\n    }\n  },\n  {\n    \"query\": \"Plan my weekend in San Francisco. Please include surfing in the plan.\",\n    \"id\": 41,\n    \"permission\": {\n      \"Weather,Trip dates\": null,\n      \"Weather,Trip location\": null,\n      \"Local Search,Trip dates\": null,\n      \"Local Search,Trip location\": null,\n      \"Local Search,Trip activities\": null,\n      \"Local Search,Email content\": null\n    }\n  },\n  {\n    \"query\": \"Create a playlist titled \\\"Weekend Chill\\\" with my most played songs.\",\n    \"id\": 51,\n    \"permission\": {\n      \"Apple Music,Music playing history\": null\n    }\n  }\n]"
+      }
+    ],
+    "prompt_sha256": "42d3498b5b0574e2719dd704d190eb9e1af33d7ae381068f1974dad0f87bb9fb",
+    "test_row_indices": [
+      10791,
+      10792,
+      10793,
+      10794,
+      10795,
+      10796,
+      10855,
+      10856,
+      10857,
+      10858,
+      10859,
+      10860,
+      10862
+    ]
+  },
+  {
+    "call_id": "gemini_4shot_P053_fold0",
+    "stage": "predictor",
+    "participant_id": "P053",
+    "shots": 4,
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are a personalized permission assistant predicting this user's data-access decisions.\nConsider demographics, AI usage, privacy attitudes, the user's own permission history, and the meaning of each new request. The four responses differ both in immediate sharing and whether the assistant should ask again next time.\nFor each new query and every listed permission key, return exactly one of these labels: [\"No, never share\", \"No, but ask me next time\", \"Yes, but ask me next time\", \"Yes, always share\"].\nReturn a JSON array with one object per new query. Each object must have id, query, and permission. Under permission, keep every input key exactly and return {\"label\": one allowed label, \"score\": a number from 0 to 1} for each key. The score is confidence in that exact four-class label. Return JSON only.\n\nUser demographic and bio information:\nAge group: 35-44; gender: Male; education: Bachelor's.\n\nUser AI tool usage and privacy information:\n{\n  \"AI familiarity (survey 1-5)\": \"5\",\n  \"AI usage frequency (survey 1-5)\": \"5\",\n  \"AI use purposes\": \"I will often use a daily credit website to create music for things that have happened in my day. It helps me diary in a fun way. I also use it for emails at work, to correct spelling and grammar.\",\n  \"Trust in AI privacy (survey 1-5)\": \"3\",\n  \"Privacy importance (survey 1-5)\": \"5\",\n  \"Privacy concerns\": \"I think that they will use the data I put to train new models. Data is how AI models will improve.\",\n  \"Privacy-sensitive domains\": []\n}\n\nUser permission decision history:\n[\n  {\n    \"query\": \"Can you retrieve and summarize the latest financial report from Cloud Drive?\",\n    \"id\": 13,\n    \"answer\": {\n      \"mira,Financial report file\": \"Yes, always share\"\n    }\n  },\n  {\n    \"query\": \"Summarize all unread emails from today and highlight the urgent ones.\",\n    \"id\": 16,\n    \"answer\": {\n      \"mira,Content of recent emails\": \"Yes, always share\",\n      \"mira,Sender's email addresses\": \"Yes, always share\"\n    }\n  },\n  {\n    \"query\": \"What is my current credit score and full credit history?\",\n    \"id\": 29,\n    \"answer\": {\n      \"Banking,Credit history\": \"Yes, always share\",\n      \"Banking,Credit report data\": \"Yes, but ask me next time\",\n      \"Banking,Payment history\": \"Yes, always share\",\n      \"Banking,Outstanding debts\": \"Yes, always share\",\n      \"Banking,Historical income\": \"No, but ask me next time\",\n      \"Banking,Employment information\": \"No, but ask me next time\"\n    }\n  },\n  {\n    \"query\": \"Find top-rated movies that I might like.\",\n    \"id\": 49,\n    \"answer\": {\n      \"The Movie Database,Movie watching history\": \"Yes, always share\"\n    }\n  }\n]\n\nNew permission requests (null values are to be predicted):\n[\n  {\n    \"query\": \"Could you give me a report of my workout?\",\n    \"id\": 10,\n    \"permission\": {\n      \"mira,Exercise type (e.g. cardio)\": null,\n      \"mira,Exercise data (e.g. sets, distance, pace)\": null,\n      \"mira,Heart rate data\": null,\n      \"mira,Calories burned\": null\n    }\n  },\n  {\n    \"query\": \"Can you post a message in the #team-meeting channel on Slack reminding everyone about our meeting tomorrow at 10 AM?\",\n    \"id\": 11,\n    \"permission\": {\n      \"Slack,Message content\": null,\n      \"Slack,Scheduling details (i.e.  meeting details)\": null\n    }\n  },\n  {\n    \"query\": \"Plan my weekend in San Francisco. Please include surfing in the plan.\",\n    \"id\": 41,\n    \"permission\": {\n      \"Weather,Trip dates\": null,\n      \"Weather,Trip location\": null,\n      \"Local Search,Trip dates\": null,\n      \"Local Search,Trip location\": null,\n      \"Local Search,Trip activities\": null,\n      \"Local Search,Email content\": null\n    }\n  },\n  {\n    \"query\": \"Create a playlist titled \\\"Weekend Chill\\\" with my most played songs.\",\n    \"id\": 51,\n    \"permission\": {\n      \"Apple Music,Music playing history\": null\n    }\n  }\n]"
+      }
+    ],
+    "prompt_sha256": "7f61cffda342e1b7e2749df8f5fccf6bd40f30a3556228d1984a06fb340ca3b7",
+    "test_row_indices": [
+      10791,
+      10792,
+      10793,
+      10794,
+      10795,
+      10796,
+      10855,
+      10856,
+      10857,
+      10858,
+      10859,
+      10860,
+      10862
+    ]
+  },
+  {
+    "call_id": "gemini_0shot_P055_fold0",
+    "stage": "predictor",
+    "participant_id": "P055",
+    "shots": 0,
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are a personalized permission assistant predicting this user's data-access decisions.\nConsider demographics, AI usage, privacy attitudes, the user's own permission history, and the meaning of each new request. The four responses differ both in immediate sharing and whether the assistant should ask again next time.\nFor each new query and every listed permission key, return exactly one of these labels: [\"No, never share\", \"No, but ask me next time\", \"Yes, but ask me next time\", \"Yes, always share\"].\nReturn a JSON array with one object per new query. Each object must have id, query, and permission. Under permission, keep every input key exactly and return {\"label\": one allowed label, \"score\": a number from 0 to 1} for each key. The score is confidence in that exact four-class label. Return JSON only.\n\nUser demographic and bio information:\nAge group: 45-54; gender: Male; education: Bachelor's.\n\nUser AI tool usage and privacy information:\n{\n  \"AI familiarity (survey 1-5)\": \"4\",\n  \"AI usage frequency (survey 1-5)\": \"3\",\n  \"AI use purposes\": \"Research, to ask a lot of questions, debate with, occasional coding help, sometimes just fun.\",\n  \"Trust in AI privacy (survey 1-5)\": \"1\",\n  \"Privacy importance (survey 1-5)\": \"5\",\n  \"Privacy concerns\": \"I tend to not use any personal information because of privacy concerns. Therefore my prompts are never personal in nature. However I have signed up to these services so any prompts from my account can be tied to me, my IP etc. I don't do anything nefarious so I don't have anything to worry about.\",\n  \"Privacy-sensitive domains\": [\n    \"Social\",\n    \"Finance\",\n    \"Health & Fitness\"\n  ]\n}\n\nUser permission decision history:\n[]\n\nNew permission requests (null values are to be predicted):\n[\n  {\n    \"query\": \"I want to lose weight. Can you create an at-home full-body workout plan for me? \",\n    \"id\": 0,\n    \"permission\": {\n      \"Fitness Tracking,Fitness goal (i.e. weight loss)\": null,\n      \"Fitness Tracking,Physical limitations or injuries\": null,\n      \"Fitness Tracking,Gender\": null\n    }\n  },\n  {\n    \"query\": \"Can you give me a summary of my health data from the past month?\",\n    \"id\": 1,\n    \"permission\": {\n      \"mira,Weight\": null,\n      \"mira,Blood pressure\": null,\n      \"mira,Heart rate data\": null,\n      \"mira,Sleep duration/quality\": null,\n      \"mira,Exercise logs\": null\n    }\n  },\n  {\n    \"query\": \"There is a mess in my garage. Check the access history and security cameras to see what happened.\",\n    \"id\": 59,\n    \"permission\": {\n      \"mira,Garage access log\": null,\n      \"mira,Garage video recording\": null\n    }\n  },\n  {\n    \"query\": \"How much energy did we use yesterday?\",\n    \"id\": 61,\n    \"permission\": {\n      \"mira,Energy consumption logs\": null\n    }\n  }\n]"
+      }
+    ],
+    "prompt_sha256": "42be669f31895a14111140684074220affd0682c32996a202bf887015b8abaad",
+    "test_row_indices": [
+      8097,
+      8098,
+      8099,
+      8100,
+      8101,
+      8102,
+      8103,
+      8104,
+      8164,
+      8165,
+      8167
+    ]
+  },
+  {
+    "call_id": "gemini_4shot_P055_fold0",
+    "stage": "predictor",
+    "participant_id": "P055",
+    "shots": 4,
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are a personalized permission assistant predicting this user's data-access decisions.\nConsider demographics, AI usage, privacy attitudes, the user's own permission history, and the meaning of each new request. The four responses differ both in immediate sharing and whether the assistant should ask again next time.\nFor each new query and every listed permission key, return exactly one of these labels: [\"No, never share\", \"No, but ask me next time\", \"Yes, but ask me next time\", \"Yes, always share\"].\nReturn a JSON array with one object per new query. Each object must have id, query, and permission. Under permission, keep every input key exactly and return {\"label\": one allowed label, \"score\": a number from 0 to 1} for each key. The score is confidence in that exact four-class label. Return JSON only.\n\nUser demographic and bio information:\nAge group: 45-54; gender: Male; education: Bachelor's.\n\nUser AI tool usage and privacy information:\n{\n  \"AI familiarity (survey 1-5)\": \"4\",\n  \"AI usage frequency (survey 1-5)\": \"3\",\n  \"AI use purposes\": \"Research, to ask a lot of questions, debate with, occasional coding help, sometimes just fun.\",\n  \"Trust in AI privacy (survey 1-5)\": \"1\",\n  \"Privacy importance (survey 1-5)\": \"5\",\n  \"Privacy concerns\": \"I tend to not use any personal information because of privacy concerns. Therefore my prompts are never personal in nature. However I have signed up to these services so any prompts from my account can be tied to me, my IP etc. I don't do anything nefarious so I don't have anything to worry about.\",\n  \"Privacy-sensitive domains\": [\n    \"Social\",\n    \"Finance\",\n    \"Health & Fitness\"\n  ]\n}\n\nUser permission decision history:\n[\n  {\n    \"query\": \"Based on my current weight, dietary habits, and pregnancy complications from my medical history, what lifestyle or nutritional changes should I consider?\",\n    \"id\": 6,\n    \"answer\": {\n      \"PregnancyPal,Medical/pregnancy history\": \"Yes, but ask me next time\",\n      \"PregnancyPal,Dietary details\": \"Yes, but ask me next time\",\n      \"PregnancyPal,Personal weight history\": \"Yes, but ask me next time\"\n    }\n  },\n  {\n    \"query\": \"Can you retrieve my tax filing details from last year?\",\n    \"id\": 25,\n    \"answer\": {\n      \"Tax Management,SSN\": \"Yes, but ask me next time\",\n      \"Tax Management,Full name\": \"Yes, but ask me next time\",\n      \"Tax Management,Address\": \"Yes, but ask me next time\",\n      \"Tax Management,Previous tax filing details\": \"Yes, but ask me next time\",\n      \"Tax Management,Account password\": \"No, never share\",\n      \"Tax Management,Movie watching history\": \"No, never share\",\n      \"Tax Management,Geolocation\": \"No, never share\",\n      \"Tax Management,Age\": \"No, but ask me next time\"\n    }\n  },\n  {\n    \"query\": \"I’m on a road trip! Can you find a gas station near me?\",\n    \"id\": 44,\n    \"answer\": {\n      \"Local Search,User location\": \"Yes, but ask me next time\",\n      \"Local Search,Car details (e.g. car fuel types)\": \"Yes, but ask me next time\"\n    }\n  },\n  {\n    \"query\": \"Book a hotel in Paris for my vacation from June 1st to June 7th.\",\n    \"id\": 45,\n    \"answer\": {\n      \"Travel Booking,Trip dates\": \"Yes, but ask me next time\",\n      \"Travel Booking,Trip location\": \"Yes, but ask me next time\",\n      \"Travel Booking,Hotel preferences\": \"Yes, but ask me next time\",\n      \"Travel Booking,Payment method details\": \"Yes, but ask me next time\",\n      \"Travel Booking,Name\": \"Yes, but ask me next time\",\n      \"Travel Booking,Address\": \"Yes, but ask me next time\",\n      \"Travel Booking,Email address\": \"Yes, but ask me next time\",\n      \"Travel Booking,Phone number\": \"Yes, but ask me next time\"\n    }\n  }\n]\n\nNew permission requests (null values are to be predicted):\n[\n  {\n    \"query\": \"I want to lose weight. Can you create an at-home full-body workout plan for me? \",\n    \"id\": 0,\n    \"permission\": {\n      \"Fitness Tracking,Fitness goal (i.e. weight loss)\": null,\n      \"Fitness Tracking,Physical limitations or injuries\": null,\n      \"Fitness Tracking,Gender\": null\n    }\n  },\n  {\n    \"query\": \"Can you give me a summary of my health data from the past month?\",\n    \"id\": 1,\n    \"permission\": {\n      \"mira,Weight\": null,\n      \"mira,Blood pressure\": null,\n      \"mira,Heart rate data\": null,\n      \"mira,Sleep duration/quality\": null,\n      \"mira,Exercise logs\": null\n    }\n  },\n  {\n    \"query\": \"There is a mess in my garage. Check the access history and security cameras to see what happened.\",\n    \"id\": 59,\n    \"permission\": {\n      \"mira,Garage access log\": null,\n      \"mira,Garage video recording\": null\n    }\n  },\n  {\n    \"query\": \"How much energy did we use yesterday?\",\n    \"id\": 61,\n    \"permission\": {\n      \"mira,Energy consumption logs\": null\n    }\n  }\n]"
+      }
+    ],
+    "prompt_sha256": "e13bd2a2c0a5a1b7434d822dfe3b3a1c4d9f35112c60cb7cea5b1cd8f4a8217b",
+    "test_row_indices": [
+      8097,
+      8098,
+      8099,
+      8100,
+      8101,
+      8102,
+      8103,
+      8104,
+      8164,
+      8165,
+      8167
+    ]
+  },
+  {
+    "call_id": "gemini_0shot_P057_fold0",
+    "stage": "predictor",
+    "participant_id": "P057",
+    "shots": 0,
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are a personalized permission assistant predicting this user's data-access decisions.\nConsider demographics, AI usage, privacy attitudes, the user's own permission history, and the meaning of each new request. The four responses differ both in immediate sharing and whether the assistant should ask again next time.\nFor each new query and every listed permission key, return exactly one of these labels: [\"No, never share\", \"No, but ask me next time\", \"Yes, but ask me next time\", \"Yes, always share\"].\nReturn a JSON array with one object per new query. Each object must have id, query, and permission. Under permission, keep every input key exactly and return {\"label\": one allowed label, \"score\": a number from 0 to 1} for each key. The score is confidence in that exact four-class label. Return JSON only.\n\nUser demographic and bio information:\nAge group: 25-34; gender: Female; education: Master's.\n\nUser AI tool usage and privacy information:\n{\n  \"AI familiarity (survey 1-5)\": \"5\",\n  \"AI usage frequency (survey 1-5)\": \"4\",\n  \"AI use purposes\": \"Research and knowledge acquisition\",\n  \"Trust in AI privacy (survey 1-5)\": \"3\",\n  \"Privacy importance (survey 1-5)\": \"5\",\n  \"Privacy concerns\": \"Whether my personal information will be shared to third parties.\",\n  \"Privacy-sensitive domains\": []\n}\n\nUser permission decision history:\n[]\n\nNew permission requests (null values are to be predicted):\n[\n  {\n    \"query\": \"Could you give me a report of my workout?\",\n    \"id\": 10,\n    \"permission\": {\n      \"mira,Exercise data (e.g. sets, distance, pace)\": null,\n      \"mira,Exercise type (e.g. cardio)\": null,\n      \"mira,Heart rate data\": null,\n      \"mira,Calories burned\": null\n    }\n  },\n  {\n    \"query\": \"Can you post a message in the #team-meeting channel on Slack reminding everyone about our meeting tomorrow at 10 AM?\",\n    \"id\": 11,\n    \"permission\": {\n      \"Slack,Message content\": null,\n      \"Slack,Scheduling details (i.e.  meeting details)\": null\n    }\n  },\n  {\n    \"query\": \"Plan my weekend in San Francisco. Please include surfing in the plan.\",\n    \"id\": 41,\n    \"permission\": {\n      \"Weather,Trip dates\": null,\n      \"Weather,Trip location\": null,\n      \"Local Search,Trip dates\": null,\n      \"Local Search,Trip location\": null,\n      \"Local Search,Trip activities\": null,\n      \"Local Search,Email content\": null\n    }\n  },\n  {\n    \"query\": \"Create a playlist titled \\\"Weekend Chill\\\" with my most played songs.\",\n    \"id\": 51,\n    \"permission\": {\n      \"Apple Music,Music playing history\": null\n    }\n  }\n]"
+      }
+    ],
+    "prompt_sha256": "95882ae85f77ab51541e7e02d32367afb8f5febadda48b05f4d2741f090b9594",
+    "test_row_indices": [
+      15385,
+      15386,
+      15387,
+      15388,
+      15389,
+      15390,
+      15449,
+      15450,
+      15451,
+      15452,
+      15453,
+      15454,
+      15456
+    ]
+  },
+  {
+    "call_id": "gemini_4shot_P057_fold0",
+    "stage": "predictor",
+    "participant_id": "P057",
+    "shots": 4,
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are a personalized permission assistant predicting this user's data-access decisions.\nConsider demographics, AI usage, privacy attitudes, the user's own permission history, and the meaning of each new request. The four responses differ both in immediate sharing and whether the assistant should ask again next time.\nFor each new query and every listed permission key, return exactly one of these labels: [\"No, never share\", \"No, but ask me next time\", \"Yes, but ask me next time\", \"Yes, always share\"].\nReturn a JSON array with one object per new query. Each object must have id, query, and permission. Under permission, keep every input key exactly and return {\"label\": one allowed label, \"score\": a number from 0 to 1} for each key. The score is confidence in that exact four-class label. Return JSON only.\n\nUser demographic and bio information:\nAge group: 25-34; gender: Female; education: Master's.\n\nUser AI tool usage and privacy information:\n{\n  \"AI familiarity (survey 1-5)\": \"5\",\n  \"AI usage frequency (survey 1-5)\": \"4\",\n  \"AI use purposes\": \"Research and knowledge acquisition\",\n  \"Trust in AI privacy (survey 1-5)\": \"3\",\n  \"Privacy importance (survey 1-5)\": \"5\",\n  \"Privacy concerns\": \"Whether my personal information will be shared to third parties.\",\n  \"Privacy-sensitive domains\": []\n}\n\nUser permission decision history:\n[\n  {\n    \"query\": \"Can you retrieve and summarize the latest financial report from Cloud Drive?\",\n    \"id\": 13,\n    \"answer\": {\n      \"mira,Financial report file\": \"Yes, but ask me next time\"\n    }\n  },\n  {\n    \"query\": \"Can you fill my tax return forms using the tax documents in the \\\"2025 tax returns\\\" folder?\",\n    \"id\": 23,\n    \"answer\": {\n      \"Tax Management,W-2 details (e.g. income amounts, tax withholdings, employer information)\": \"Yes, but ask me next time\",\n      \"Tax Management,SSN\": \"Yes, but ask me next time\",\n      \"Tax Management,Name\": \"Yes, but ask me next time\",\n      \"Tax Management,Address\": \"Yes, but ask me next time\",\n      \"Tax Management,Marital status\": \"Yes, but ask me next time\",\n      \"mira,W-2 details (e.g. income amounts, tax withholdings, employer information)\": \"Yes, but ask me next time\",\n      \"mira,SSN\": \"Yes, but ask me next time\",\n      \"mira,Name\": \"Yes, but ask me next time\",\n      \"mira,Address\": \"Yes, but ask me next time\",\n      \"mira,Marital status\": \"Yes, but ask me next time\"\n    }\n  },\n  {\n    \"query\": \"Schedule a one-time payment of $1,200 to my landlord next Monday. Please label it \\\"Rent Payment\\\" and include my address for reference.\",\n    \"id\": 26,\n    \"answer\": {\n      \"Banking,Payment note\": \"Yes, but ask me next time\",\n      \"Banking,Recipient account information\": \"Yes, but ask me next time\",\n      \"Banking,Account number\": \"Yes, but ask me next time\",\n      \"Banking,Account email\": \"Yes, but ask me next time\",\n      \"Banking,Account password\": \"Yes, but ask me next time\"\n    }\n  },\n  {\n    \"query\": \"Retrieve and compile all my expenses from last month for reimbursement.\",\n    \"id\": 28,\n    \"answer\": {\n      \"Banking,Receipt images\": \"Yes, but ask me next time\",\n      \"Banking,Transaction logs (dates, amounts, merchant details)\": \"Yes, but ask me next time\",\n      \"Banking,Travel details\": \"Yes, but ask me next time\",\n      \"Banking,Meeting details\": \"No, never share\",\n      \"Banking,Front door video recording\": \"No, never share\",\n      \"Banking,Address\": \"No, never share\",\n      \"Banking,Filling status\": \"No, but ask me next time\",\n      \"Banking,Garage access log\": \"No, never share\"\n    }\n  }\n]\n\nNew permission requests (null values are to be predicted):\n[\n  {\n    \"query\": \"Could you give me a report of my workout?\",\n    \"id\": 10,\n    \"permission\": {\n      \"mira,Exercise data (e.g. sets, distance, pace)\": null,\n      \"mira,Exercise type (e.g. cardio)\": null,\n      \"mira,Heart rate data\": null,\n      \"mira,Calories burned\": null\n    }\n  },\n  {\n    \"query\": \"Can you post a message in the #team-meeting channel on Slack reminding everyone about our meeting tomorrow at 10 AM?\",\n    \"id\": 11,\n    \"permission\": {\n      \"Slack,Message content\": null,\n      \"Slack,Scheduling details (i.e.  meeting details)\": null\n    }\n  },\n  {\n    \"query\": \"Plan my weekend in San Francisco. Please include surfing in the plan.\",\n    \"id\": 41,\n    \"permission\": {\n      \"Weather,Trip dates\": null,\n      \"Weather,Trip location\": null,\n      \"Local Search,Trip dates\": null,\n      \"Local Search,Trip location\": null,\n      \"Local Search,Trip activities\": null,\n      \"Local Search,Email content\": null\n    }\n  },\n  {\n    \"query\": \"Create a playlist titled \\\"Weekend Chill\\\" with my most played songs.\",\n    \"id\": 51,\n    \"permission\": {\n      \"Apple Music,Music playing history\": null\n    }\n  }\n]"
+      }
+    ],
+    "prompt_sha256": "eac6c0acca4b580dce8c39e23d758cc0bdbfabfeb6e5d92562950606cdca0f14",
+    "test_row_indices": [
+      15385,
+      15386,
+      15387,
+      15388,
+      15389,
+      15390,
+      15449,
+      15450,
+      15451,
+      15452,
+      15453,
+      15454,
+      15456
+    ]
+  },
+  {
+    "call_id": "gemini_0shot_P073_fold0",
+    "stage": "predictor",
+    "participant_id": "P073",
+    "shots": 0,
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are a personalized permission assistant predicting this user's data-access decisions.\nConsider demographics, AI usage, privacy attitudes, the user's own permission history, and the meaning of each new request. The four responses differ both in immediate sharing and whether the assistant should ask again next time.\nFor each new query and every listed permission key, return exactly one of these labels: [\"No, never share\", \"No, but ask me next time\", \"Yes, but ask me next time\", \"Yes, always share\"].\nReturn a JSON array with one object per new query. Each object must have id, query, and permission. Under permission, keep every input key exactly and return {\"label\": one allowed label, \"score\": a number from 0 to 1} for each key. The score is confidence in that exact four-class label. Return JSON only.\n\nUser demographic and bio information:\nAge group: 25-34; gender: Female; education: Master's.\n\nUser AI tool usage and privacy information:\n{\n  \"AI familiarity (survey 1-5)\": \"3\",\n  \"AI usage frequency (survey 1-5)\": \"3\",\n  \"AI use purposes\": \"i use them for work and to help with school questions.\",\n  \"Trust in AI privacy (survey 1-5)\": \"4\",\n  \"Privacy importance (survey 1-5)\": \"4\",\n  \"Privacy concerns\": \"i think theyre very secure with finding and securing your information.\",\n  \"Privacy-sensitive domains\": []\n}\n\nUser permission decision history:\n[]\n\nNew permission requests (null values are to be predicted):\n[\n  {\n    \"query\": \"I want to lose weight. Can you create an at-home full-body workout plan for me? \",\n    \"id\": 0,\n    \"permission\": {\n      \"Fitness Tracking,Fitness goal (i.e. weight loss)\": null,\n      \"Fitness Tracking,Physical limitations or injuries\": null,\n      \"Fitness Tracking,Gender\": null\n    }\n  },\n  {\n    \"query\": \"Can you give me a summary of my health data from the past month?\",\n    \"id\": 1,\n    \"permission\": {\n      \"mira,Weight\": null,\n      \"mira,Blood pressure\": null,\n      \"mira,Heart rate data\": null,\n      \"mira,Sleep duration/quality\": null,\n      \"mira,Exercise logs\": null\n    }\n  },\n  {\n    \"query\": \"There is a mess in my garage. Check the access history and security cameras to see what happened.\",\n    \"id\": 59,\n    \"permission\": {\n      \"mira,Garage access log\": null,\n      \"mira,Garage video recording\": null\n    }\n  },\n  {\n    \"query\": \"How much energy did we use yesterday?\",\n    \"id\": 61,\n    \"permission\": {\n      \"mira,Energy consumption logs\": null\n    }\n  }\n]"
+      }
+    ],
+    "prompt_sha256": "ff8ba635c104957bddccfd9d85a21d1b024b38f02464e37e93e07b5cc128baa3",
+    "test_row_indices": [
+      15312,
+      15313,
+      15314,
+      15315,
+      15316,
+      15317,
+      15318,
+      15319,
+      15379,
+      15380,
+      15382
+    ]
+  },
+  {
+    "call_id": "gemini_4shot_P073_fold0",
+    "stage": "predictor",
+    "participant_id": "P073",
+    "shots": 4,
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are a personalized permission assistant predicting this user's data-access decisions.\nConsider demographics, AI usage, privacy attitudes, the user's own permission history, and the meaning of each new request. The four responses differ both in immediate sharing and whether the assistant should ask again next time.\nFor each new query and every listed permission key, return exactly one of these labels: [\"No, never share\", \"No, but ask me next time\", \"Yes, but ask me next time\", \"Yes, always share\"].\nReturn a JSON array with one object per new query. Each object must have id, query, and permission. Under permission, keep every input key exactly and return {\"label\": one allowed label, \"score\": a number from 0 to 1} for each key. The score is confidence in that exact four-class label. Return JSON only.\n\nUser demographic and bio information:\nAge group: 25-34; gender: Female; education: Master's.\n\nUser AI tool usage and privacy information:\n{\n  \"AI familiarity (survey 1-5)\": \"3\",\n  \"AI usage frequency (survey 1-5)\": \"3\",\n  \"AI use purposes\": \"i use them for work and to help with school questions.\",\n  \"Trust in AI privacy (survey 1-5)\": \"4\",\n  \"Privacy importance (survey 1-5)\": \"4\",\n  \"Privacy concerns\": \"i think theyre very secure with finding and securing your information.\",\n  \"Privacy-sensitive domains\": []\n}\n\nUser permission decision history:\n[\n  {\n    \"query\": \"What is my current stock portfolio balance and asset allocation?\",\n    \"id\": 30,\n    \"answer\": {\n      \"mira,Investment holdings\": \"Yes, but ask me next time\",\n      \"mira,Stock purchase dates and values\": \"No, but ask me next time\",\n      \"mira,Transaction histories related to investments\": \"No, but ask me next time\",\n      \"mira,Front door video recording\": \"No, never share\"\n    }\n  },\n  {\n    \"query\": \"Generate a complete report of my travel expenses that includes my credit card numbers, transaction IDs, and all receipts from my trips last year.\",\n    \"id\": 31,\n    \"answer\": {\n      \"Banking,Trip dates\": \"Yes, but ask me next time\",\n      \"mira,Bank or credit card statements\": \"Yes, but ask me next time\",\n      \"mira,Account number\": \"No, never share\",\n      \"mira,Detailed receipts\": \"No, never share\",\n      \"mira,Transaction logs\": \"No, never share\",\n      \"mira,Dates of expenses\": \"Yes, but ask me next time\",\n      \"mira,Receipt images\": \"Yes, but ask me next time\",\n      \"mira,Car rental details\": \"Yes, but ask me next time\"\n    }\n  },\n  {\n    \"query\": \"I heard a noise outside. Can you check what happened at the front door?\",\n    \"id\": 62,\n    \"answer\": {\n      \"mira,Front door video recording\": \"Yes, but ask me next time\"\n    }\n  },\n  {\n    \"query\": \"Start recording the backyard camera feed from 8 PM to 6 AM every night.\",\n    \"id\": 63,\n    \"answer\": {\n      \"mira,Backyard video recording\": \"No, but ask me next time\"\n    }\n  }\n]\n\nNew permission requests (null values are to be predicted):\n[\n  {\n    \"query\": \"I want to lose weight. Can you create an at-home full-body workout plan for me? \",\n    \"id\": 0,\n    \"permission\": {\n      \"Fitness Tracking,Fitness goal (i.e. weight loss)\": null,\n      \"Fitness Tracking,Physical limitations or injuries\": null,\n      \"Fitness Tracking,Gender\": null\n    }\n  },\n  {\n    \"query\": \"Can you give me a summary of my health data from the past month?\",\n    \"id\": 1,\n    \"permission\": {\n      \"mira,Weight\": null,\n      \"mira,Blood pressure\": null,\n      \"mira,Heart rate data\": null,\n      \"mira,Sleep duration/quality\": null,\n      \"mira,Exercise logs\": null\n    }\n  },\n  {\n    \"query\": \"There is a mess in my garage. Check the access history and security cameras to see what happened.\",\n    \"id\": 59,\n    \"permission\": {\n      \"mira,Garage access log\": null,\n      \"mira,Garage video recording\": null\n    }\n  },\n  {\n    \"query\": \"How much energy did we use yesterday?\",\n    \"id\": 61,\n    \"permission\": {\n      \"mira,Energy consumption logs\": null\n    }\n  }\n]"
+      }
+    ],
+    "prompt_sha256": "26d203b00d60f7527fb8e2bbfb6b29b14d4fe838a0c5f2ae17aef7e1808baf50",
+    "test_row_indices": [
+      15312,
+      15313,
+      15314,
+      15315,
+      15316,
+      15317,
+      15318,
+      15319,
+      15379,
+      15380,
+      15382
+    ]
+  },
+  {
+    "call_id": "gemini_0shot_P082_fold0",
+    "stage": "predictor",
+    "participant_id": "P082",
+    "shots": 0,
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are a personalized permission assistant predicting this user's data-access decisions.\nConsider demographics, AI usage, privacy attitudes, the user's own permission history, and the meaning of each new request. The four responses differ both in immediate sharing and whether the assistant should ask again next time.\nFor each new query and every listed permission key, return exactly one of these labels: [\"No, never share\", \"No, but ask me next time\", \"Yes, but ask me next time\", \"Yes, always share\"].\nReturn a JSON array with one object per new query. Each object must have id, query, and permission. Under permission, keep every input key exactly and return {\"label\": one allowed label, \"score\": a number from 0 to 1} for each key. The score is confidence in that exact four-class label. Return JSON only.\n\nUser demographic and bio information:\nAge group: 45-54; gender: Female; education: Master's.\n\nUser AI tool usage and privacy information:\n{\n  \"AI familiarity (survey 1-5)\": \"4\",\n  \"AI usage frequency (survey 1-5)\": \"4\",\n  \"AI use purposes\": \"I use AI tools to monitor and manage social media campaigns, generate contents, identify trends, and also engage with customers.\",\n  \"Trust in AI privacy (survey 1-5)\": \"4\",\n  \"Privacy importance (survey 1-5)\": \"5\",\n  \"Privacy concerns\": \"I am sometimes concerned about the AI mistakenly sharing my information with another party.\",\n  \"Privacy-sensitive domains\": [\n    \"Finance\",\n    \"Work & Productivity\",\n    \"Smart Home\"\n  ]\n}\n\nUser permission decision history:\n[]\n\nNew permission requests (null values are to be predicted):\n[\n  {\n    \"query\": \"How has my sleep duration changed over the past week?\",\n    \"id\": 2,\n    \"permission\": {\n      \"mira,Sleep duration\": null,\n      \"mira,Sleep quality data (e.g. snoring)\": null\n    }\n  },\n  {\n    \"query\": \"I need a meal plan to help me gain muscle. Can you make one?\",\n    \"id\": 3,\n    \"permission\": {\n      \"Nutrition and Diet,Nutritional goals (e.g. muscle gaining)\": null,\n      \"Nutrition and Diet,Weight\": null,\n      \"Nutrition and Diet,Allergies\": null,\n      \"Nutrition and Diet,Dietary preferences\": null,\n      \"Nutrition and Diet,Income/budget considerations\": null\n    }\n  },\n  {\n    \"query\": \"Check the weather forecast for my trip to Tokyo next week and recommend sightseeing spots nearby.\",\n    \"id\": 40,\n    \"permission\": {\n      \"Weather,Trip location\": null,\n      \"Local Search,Trip dates\": null,\n      \"Local Search,Trip location\": null,\n      \"Weather,Trip dates\": null\n    }\n  },\n  {\n    \"query\": \"Retrieve all my stored visa applications, passport scans, and travel document history, and put them in a folder named \\\"travel docs\\\".\",\n    \"id\": 43,\n    \"permission\": {\n      \"Cloud Drive,Passport scans\": null,\n      \"Cloud Drive,Visa documents\": null,\n      \"Cloud Drive,Other travel permits\": null,\n      \"Cloud Drive,Past visa application details\": null,\n      \"Cloud Drive,Travel history\": null,\n      \"Cloud Drive,Passport number\": null\n    }\n  }\n]"
+      }
+    ],
+    "prompt_sha256": "23331370c800c4ab253e303ac70b4b7352dafc33fc7c178814882a6432760c48",
+    "test_row_indices": [
+      8014,
+      8015,
+      8016,
+      8017,
+      8018,
+      8019,
+      8020,
+      8075,
+      8076,
+      8077,
+      8078,
+      8080,
+      8081,
+      8082,
+      8083,
+      8084,
+      8085
+    ]
+  },
+  {
+    "call_id": "gemini_4shot_P082_fold0",
+    "stage": "predictor",
+    "participant_id": "P082",
+    "shots": 4,
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are a personalized permission assistant predicting this user's data-access decisions.\nConsider demographics, AI usage, privacy attitudes, the user's own permission history, and the meaning of each new request. The four responses differ both in immediate sharing and whether the assistant should ask again next time.\nFor each new query and every listed permission key, return exactly one of these labels: [\"No, never share\", \"No, but ask me next time\", \"Yes, but ask me next time\", \"Yes, always share\"].\nReturn a JSON array with one object per new query. Each object must have id, query, and permission. Under permission, keep every input key exactly and return {\"label\": one allowed label, \"score\": a number from 0 to 1} for each key. The score is confidence in that exact four-class label. Return JSON only.\n\nUser demographic and bio information:\nAge group: 45-54; gender: Female; education: Master's.\n\nUser AI tool usage and privacy information:\n{\n  \"AI familiarity (survey 1-5)\": \"4\",\n  \"AI usage frequency (survey 1-5)\": \"4\",\n  \"AI use purposes\": \"I use AI tools to monitor and manage social media campaigns, generate contents, identify trends, and also engage with customers.\",\n  \"Trust in AI privacy (survey 1-5)\": \"4\",\n  \"Privacy importance (survey 1-5)\": \"5\",\n  \"Privacy concerns\": \"I am sometimes concerned about the AI mistakenly sharing my information with another party.\",\n  \"Privacy-sensitive domains\": [\n    \"Finance\",\n    \"Work & Productivity\",\n    \"Smart Home\"\n  ]\n}\n\nUser permission decision history:\n[\n  {\n    \"query\": \"Send a follow-up email to thank everyone who attended the all-hands meeting today.\",\n    \"id\": 18,\n    \"answer\": {\n      \"Email,Attendees email addresses\": \"Yes, always share\",\n      \"Email,Email content\": \"Yes, always share\",\n      \"Email,Message content\": \"Yes, but ask me next time\",\n      \"Email,Interests/hobbies\": \"No, but ask me next time\",\n      \"mira,Attendees email addresses\": \"Yes, but ask me next time\"\n    }\n  },\n  {\n    \"query\": \"Find the contract document for my upcoming client meeting and attach it to the event in my calendar.\",\n    \"id\": 19,\n    \"answer\": {\n      \"Calendar,Contract details\": \"Yes, but ask me next time\",\n      \"Calendar,Invoices and receipts data\": \"No, but ask me next time\",\n      \"Calendar,Previous tax filing details\": \"No, but ask me next time\",\n      \"Calendar,Travel details\": \"No, but ask me next time\",\n      \"mira,Contract details\": \"Yes, but ask me next time\"\n    }\n  },\n  {\n    \"query\": \"What should I buy my son for his birthday? He is turning 13.\",\n    \"id\": 35,\n    \"answer\": {\n      \"Amazon,Child name\": \"Yes, but ask me next time\",\n      \"Amazon,Child age\": \"Yes, but ask me next time\",\n      \"Amazon,Child gender\": \"Yes, but ask me next time\"\n    }\n  },\n  {\n    \"query\": \"Can you help me find dog-friendly parks in Los Angeles?\",\n    \"id\": 42,\n    \"answer\": {\n      \"Local Search,Pet ownership status (e.g. dog status)\": \"Yes, always share\"\n    }\n  }\n]\n\nNew permission requests (null values are to be predicted):\n[\n  {\n    \"query\": \"How has my sleep duration changed over the past week?\",\n    \"id\": 2,\n    \"permission\": {\n      \"mira,Sleep duration\": null,\n      \"mira,Sleep quality data (e.g. snoring)\": null\n    }\n  },\n  {\n    \"query\": \"I need a meal plan to help me gain muscle. Can you make one?\",\n    \"id\": 3,\n    \"permission\": {\n      \"Nutrition and Diet,Nutritional goals (e.g. muscle gaining)\": null,\n      \"Nutrition and Diet,Weight\": null,\n      \"Nutrition and Diet,Allergies\": null,\n      \"Nutrition and Diet,Dietary preferences\": null,\n      \"Nutrition and Diet,Income/budget considerations\": null\n    }\n  },\n  {\n    \"query\": \"Check the weather forecast for my trip to Tokyo next week and recommend sightseeing spots nearby.\",\n    \"id\": 40,\n    \"permission\": {\n      \"Weather,Trip location\": null,\n      \"Local Search,Trip dates\": null,\n      \"Local Search,Trip location\": null,\n      \"Weather,Trip dates\": null\n    }\n  },\n  {\n    \"query\": \"Retrieve all my stored visa applications, passport scans, and travel document history, and put them in a folder named \\\"travel docs\\\".\",\n    \"id\": 43,\n    \"permission\": {\n      \"Cloud Drive,Passport scans\": null,\n      \"Cloud Drive,Visa documents\": null,\n      \"Cloud Drive,Other travel permits\": null,\n      \"Cloud Drive,Past visa application details\": null,\n      \"Cloud Drive,Travel history\": null,\n      \"Cloud Drive,Passport number\": null\n    }\n  }\n]"
+      }
+    ],
+    "prompt_sha256": "325a126fddf370a35617ac12da7d83b719e45c884b9fe1f5f1c28a0ae56f5868",
+    "test_row_indices": [
+      8014,
+      8015,
+      8016,
+      8017,
+      8018,
+      8019,
+      8020,
+      8075,
+      8076,
+      8077,
+      8078,
+      8080,
+      8081,
+      8082,
+      8083,
+      8084,
+      8085
+    ]
+  },
+  {
+    "call_id": "gemini_0shot_P103_fold0",
+    "stage": "predictor",
+    "participant_id": "P103",
+    "shots": 0,
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are a personalized permission assistant predicting this user's data-access decisions.\nConsider demographics, AI usage, privacy attitudes, the user's own permission history, and the meaning of each new request. The four responses differ both in immediate sharing and whether the assistant should ask again next time.\nFor each new query and every listed permission key, return exactly one of these labels: [\"No, never share\", \"No, but ask me next time\", \"Yes, but ask me next time\", \"Yes, always share\"].\nReturn a JSON array with one object per new query. Each object must have id, query, and permission. Under permission, keep every input key exactly and return {\"label\": one allowed label, \"score\": a number from 0 to 1} for each key. The score is confidence in that exact four-class label. Return JSON only.\n\nUser demographic and bio information:\nAge group: 35-44; gender: Female; education: Bachelor's.\n\nUser AI tool usage and privacy information:\n{\n  \"AI familiarity (survey 1-5)\": \"2\",\n  \"AI usage frequency (survey 1-5)\": \"2\",\n  \"AI use purposes\": \"I use AI tools to get quick summary answers on search queries, and I have played around with AI for entertainment (creating art)\",\n  \"Trust in AI privacy (survey 1-5)\": \"2\",\n  \"Privacy importance (survey 1-5)\": \"4\",\n  \"Privacy concerns\": \"All information that AI gathers is used to profile and market products. I do not like the marketing aspect unless I specifically request it.\",\n  \"Privacy-sensitive domains\": [\n    \"Shopping\",\n    \"Finance\",\n    \"Health & Fitness\"\n  ]\n}\n\nUser permission decision history:\n[]\n\nNew permission requests (null values are to be predicted):\n[\n  {\n    \"query\": \"Could you give me a report of my workout?\",\n    \"id\": 10,\n    \"permission\": {\n      \"mira,Exercise data (e.g. sets, distance, pace)\": null,\n      \"mira,Calories burned\": null,\n      \"mira,Exercise type (e.g. cardio)\": null,\n      \"mira,Heart rate data\": null\n    }\n  },\n  {\n    \"query\": \"Can you post a message in the #team-meeting channel on Slack reminding everyone about our meeting tomorrow at 10 AM?\",\n    \"id\": 11,\n    \"permission\": {\n      \"Slack,Message content\": null,\n      \"Slack,Scheduling details (i.e.  meeting details)\": null\n    }\n  },\n  {\n    \"query\": \"Can you book an electric car near the airport in Berlin for my trip from May 2nd to May 5th and add it to my calendar?\",\n    \"id\": 48,\n    \"permission\": {\n      \"Travel Booking,Past visa application details\": null,\n      \"Travel Booking,Passport\": null,\n      \"Travel Booking,Driving license\": null,\n      \"Travel Booking,Car preferences\": null,\n      \"Travel Booking,Trip location\": null,\n      \"Travel Booking,Trip dates\": null,\n      \"Travel Booking,Pending task information\": null,\n      \"Calendar,Trip dates\": null,\n      \"Calendar,Trip location\": null,\n      \"Calendar,Car rental details (e.g. car type\": null,\n      \"mira,Car rental details (e.g. car type\": null\n    }\n  },\n  {\n    \"query\": \"Create a playlist titled \\\"Weekend Chill\\\" with my most played songs.\",\n    \"id\": 51,\n    \"permission\": {\n      \"Apple Music,Music playing history\": null\n    }\n  }\n]"
+      }
+    ],
+    "prompt_sha256": "ada2e6873d031028ff6156181be842eac8a1f09811915d82bcb619f70f46bb31",
+    "test_row_indices": [
+      2766,
+      2767,
+      2768,
+      2769,
+      2770,
+      2771,
+      2837,
+      2838,
+      2839,
+      2840,
+      2841,
+      2842,
+      2843,
+      2844,
+      2845,
+      2846,
+      2847,
+      2849
+    ]
+  },
+  {
+    "call_id": "gemini_4shot_P103_fold0",
+    "stage": "predictor",
+    "participant_id": "P103",
+    "shots": 4,
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are a personalized permission assistant predicting this user's data-access decisions.\nConsider demographics, AI usage, privacy attitudes, the user's own permission history, and the meaning of each new request. The four responses differ both in immediate sharing and whether the assistant should ask again next time.\nFor each new query and every listed permission key, return exactly one of these labels: [\"No, never share\", \"No, but ask me next time\", \"Yes, but ask me next time\", \"Yes, always share\"].\nReturn a JSON array with one object per new query. Each object must have id, query, and permission. Under permission, keep every input key exactly and return {\"label\": one allowed label, \"score\": a number from 0 to 1} for each key. The score is confidence in that exact four-class label. Return JSON only.\n\nUser demographic and bio information:\nAge group: 35-44; gender: Female; education: Bachelor's.\n\nUser AI tool usage and privacy information:\n{\n  \"AI familiarity (survey 1-5)\": \"2\",\n  \"AI usage frequency (survey 1-5)\": \"2\",\n  \"AI use purposes\": \"I use AI tools to get quick summary answers on search queries, and I have played around with AI for entertainment (creating art)\",\n  \"Trust in AI privacy (survey 1-5)\": \"2\",\n  \"Privacy importance (survey 1-5)\": \"4\",\n  \"Privacy concerns\": \"All information that AI gathers is used to profile and market products. I do not like the marketing aspect unless I specifically request it.\",\n  \"Privacy-sensitive domains\": [\n    \"Shopping\",\n    \"Finance\",\n    \"Health & Fitness\"\n  ]\n}\n\nUser permission decision history:\n[\n  {\n    \"query\": \"Can you fill my tax return forms using the tax documents in the \\\"2025 tax returns\\\" folder?\",\n    \"id\": 23,\n    \"answer\": {\n      \"Tax Management,W-2 details (e.g. income amounts, tax withholdings, employer information)\": \"Yes, but ask me next time\",\n      \"Tax Management,SSN\": \"Yes, but ask me next time\",\n      \"Tax Management,Name\": \"Yes, but ask me next time\",\n      \"Tax Management,Address\": \"Yes, but ask me next time\",\n      \"Tax Management,Marital status\": \"Yes, but ask me next time\",\n      \"mira,W-2 details (e.g. income amounts, tax withholdings, employer information)\": \"Yes, but ask me next time\",\n      \"mira,Name\": \"Yes, but ask me next time\",\n      \"mira,Address\": \"Yes, but ask me next time\",\n      \"mira,SSN\": \"Yes, but ask me next time\",\n      \"mira,Marital status\": \"Yes, but ask me next time\"\n    }\n  },\n  {\n    \"query\": \"I’m on a road trip! Can you find a gas station near me?\",\n    \"id\": 44,\n    \"answer\": {\n      \"Local Search,User location\": \"Yes, but ask me next time\",\n      \"Local Search,Car details (e.g. car fuel types)\": \"Yes, but ask me next time\",\n      \"Local Search,Visa documents\": \"No, never share\",\n      \"Local Search,Music playing history\": \"No, never share\"\n    }\n  },\n  {\n    \"query\": \"Book a hotel in Paris for my vacation from June 1st to June 7th.\",\n    \"id\": 45,\n    \"answer\": {\n      \"Travel Booking,Trip dates\": \"Yes, but ask me next time\",\n      \"Travel Booking,Trip location\": \"Yes, but ask me next time\",\n      \"Travel Booking,Hotel preferences\": \"Yes, but ask me next time\",\n      \"Travel Booking,Payment method details\": \"Yes, but ask me next time\",\n      \"Travel Booking,Name\": \"Yes, but ask me next time\",\n      \"Travel Booking,Address\": \"Yes, but ask me next time\",\n      \"Travel Booking,Email address\": \"Yes, but ask me next time\",\n      \"Travel Booking,Phone number\": \"Yes, but ask me next time\"\n    }\n  },\n  {\n    \"query\": \"Find top-rated movies that I might like.\",\n    \"id\": 49,\n    \"answer\": {\n      \"The Movie Database,Movie watching history\": \"Yes, but ask me next time\"\n    }\n  }\n]\n\nNew permission requests (null values are to be predicted):\n[\n  {\n    \"query\": \"Could you give me a report of my workout?\",\n    \"id\": 10,\n    \"permission\": {\n      \"mira,Exercise data (e.g. sets, distance, pace)\": null,\n      \"mira,Calories burned\": null,\n      \"mira,Exercise type (e.g. cardio)\": null,\n      \"mira,Heart rate data\": null\n    }\n  },\n  {\n    \"query\": \"Can you post a message in the #team-meeting channel on Slack reminding everyone about our meeting tomorrow at 10 AM?\",\n    \"id\": 11,\n    \"permission\": {\n      \"Slack,Message content\": null,\n      \"Slack,Scheduling details (i.e.  meeting details)\": null\n    }\n  },\n  {\n    \"query\": \"Can you book an electric car near the airport in Berlin for my trip from May 2nd to May 5th and add it to my calendar?\",\n    \"id\": 48,\n    \"permission\": {\n      \"Travel Booking,Past visa application details\": null,\n      \"Travel Booking,Passport\": null,\n      \"Travel Booking,Driving license\": null,\n      \"Travel Booking,Car preferences\": null,\n      \"Travel Booking,Trip location\": null,\n      \"Travel Booking,Trip dates\": null,\n      \"Travel Booking,Pending task information\": null,\n      \"Calendar,Trip dates\": null,\n      \"Calendar,Trip location\": null,\n      \"Calendar,Car rental details (e.g. car type\": null,\n      \"mira,Car rental details (e.g. car type\": null\n    }\n  },\n  {\n    \"query\": \"Create a playlist titled \\\"Weekend Chill\\\" with my most played songs.\",\n    \"id\": 51,\n    \"permission\": {\n      \"Apple Music,Music playing history\": null\n    }\n  }\n]"
+      }
+    ],
+    "prompt_sha256": "61cec3f32df0598577e61e55594e8e2fb2ff67c06180eb53569356f726777175",
+    "test_row_indices": [
+      2766,
+      2767,
+      2768,
+      2769,
+      2770,
+      2771,
+      2837,
+      2838,
+      2839,
+      2840,
+      2841,
+      2842,
+      2843,
+      2844,
+      2845,
+      2846,
+      2847,
+      2849
+    ]
+  },
+  {
+    "call_id": "gemini_0shot_P120_fold0",
+    "stage": "predictor",
+    "participant_id": "P120",
+    "shots": 0,
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are a personalized permission assistant predicting this user's data-access decisions.\nConsider demographics, AI usage, privacy attitudes, the user's own permission history, and the meaning of each new request. The four responses differ both in immediate sharing and whether the assistant should ask again next time.\nFor each new query and every listed permission key, return exactly one of these labels: [\"No, never share\", \"No, but ask me next time\", \"Yes, but ask me next time\", \"Yes, always share\"].\nReturn a JSON array with one object per new query. Each object must have id, query, and permission. Under permission, keep every input key exactly and return {\"label\": one allowed label, \"score\": a number from 0 to 1} for each key. The score is confidence in that exact four-class label. Return JSON only.\n\nUser demographic and bio information:\nAge group: 18-24; gender: Female; education: Master's.\n\nUser AI tool usage and privacy information:\n{\n  \"AI familiarity (survey 1-5)\": \"5\",\n  \"AI usage frequency (survey 1-5)\": \"5\",\n  \"AI use purposes\": \"Research, writing assistance, business support, casual conversation\",\n  \"Trust in AI privacy (survey 1-5)\": \"2\",\n  \"Privacy importance (survey 1-5)\": \"5\",\n  \"Privacy concerns\": \"Data collection, third-party sharing, lack of transparency\",\n  \"Privacy-sensitive domains\": [\n    \"Finance\",\n    \"Health & Fitness\",\n    \"Work & Productivity\"\n  ]\n}\n\nUser permission decision history:\n[]\n\nNew permission requests (null values are to be predicted):\n[\n  {\n    \"query\": \"Schedule a meeting with HR on Friday at 2 PM to discuss the cost-cutting.\",\n    \"id\": 14,\n    \"permission\": {\n      \"Calendar,HR email addresses\": null,\n      \"Calendar,Meeting date and time\": null,\n      \"Calendar,Meeting agenda (i.e. cost-cutting)\": null\n    }\n  },\n  {\n    \"query\": \"Find all invoices related to my recent business trip and store them in a folder called \\\"Expense Reports\\\" in my Cloud Drive.\",\n    \"id\": 17,\n    \"permission\": {\n      \"Cloud Drive,Invoices and receipts data\": null\n    }\n  },\n  {\n    \"query\": \"Design a \\\"Beach Vibes\\\" Instagram post and share the photo I took yesterday at the beach from my Cloud Drive on Instagram.\",\n    \"id\": 54,\n    \"permission\": {\n      \"Cloud Drive,Photo details (e.g. file name, location, and timestamp)\": null,\n      \"Instagram,Photos\": null,\n      \"Instagram,Photo details (e.g. file name, location, and timestamp)\": null,\n      \"mira,Photos\": null,\n      \"mira,Instagram post content\": null\n    }\n  },\n  {\n    \"query\": \"I’ve got a new pic in my Cloud Drive. Can you upload it to my Tinder account?\",\n    \"id\": 56,\n    \"permission\": {\n      \"Cloud Drive,Photo details (e.g. file name, location, and timestamp)\": null,\n      \"Tinder,Photos\": null,\n      \"mira,Photos\": null\n    }\n  }\n]"
+      }
+    ],
+    "prompt_sha256": "a845aa650e63bd3f3a9476220f50894c67261501d888aad69b116d342dec7e8c",
+    "test_row_indices": [
+      2682,
+      2683,
+      2684,
+      2685,
+      2742,
+      2743,
+      2744,
+      2745,
+      2746,
+      2759,
+      2760,
+      2761
+    ]
+  },
+  {
+    "call_id": "gemini_4shot_P120_fold0",
+    "stage": "predictor",
+    "participant_id": "P120",
+    "shots": 4,
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are a personalized permission assistant predicting this user's data-access decisions.\nConsider demographics, AI usage, privacy attitudes, the user's own permission history, and the meaning of each new request. The four responses differ both in immediate sharing and whether the assistant should ask again next time.\nFor each new query and every listed permission key, return exactly one of these labels: [\"No, never share\", \"No, but ask me next time\", \"Yes, but ask me next time\", \"Yes, always share\"].\nReturn a JSON array with one object per new query. Each object must have id, query, and permission. Under permission, keep every input key exactly and return {\"label\": one allowed label, \"score\": a number from 0 to 1} for each key. The score is confidence in that exact four-class label. Return JSON only.\n\nUser demographic and bio information:\nAge group: 18-24; gender: Female; education: Master's.\n\nUser AI tool usage and privacy information:\n{\n  \"AI familiarity (survey 1-5)\": \"5\",\n  \"AI usage frequency (survey 1-5)\": \"5\",\n  \"AI use purposes\": \"Research, writing assistance, business support, casual conversation\",\n  \"Trust in AI privacy (survey 1-5)\": \"2\",\n  \"Privacy importance (survey 1-5)\": \"5\",\n  \"Privacy concerns\": \"Data collection, third-party sharing, lack of transparency\",\n  \"Privacy-sensitive domains\": [\n    \"Finance\",\n    \"Health & Fitness\",\n    \"Work & Productivity\"\n  ]\n}\n\nUser permission decision history:\n[\n  {\n    \"query\": \"Give me a summary of my meetings and tasks for tomorrow.\",\n    \"id\": 21,\n    \"answer\": {\n      \"mira,Meeting title or description\": \"Yes, but ask me next time\",\n      \"mira,Pending task information\": \"Yes, but ask me next time\"\n    }\n  },\n  {\n    \"query\": \"Can you retrieve my tax filing details from last year?\",\n    \"id\": 25,\n    \"answer\": {\n      \"Tax Management,SSN\": \"Yes, but ask me next time\",\n      \"Tax Management,Full name\": \"Yes, but ask me next time\",\n      \"Tax Management,Address\": \"Yes, but ask me next time\",\n      \"Tax Management,Previous tax filing details\": \"Yes, but ask me next time\"\n    }\n  },\n  {\n    \"query\": \"Generate a complete report of my travel expenses that includes my credit card numbers, transaction IDs, and all receipts from my trips last year.\",\n    \"id\": 31,\n    \"answer\": {\n      \"Banking,Trip dates\": \"Yes, but ask me next time\",\n      \"mira,Bank or credit card statements\": \"Yes, but ask me next time\",\n      \"mira,Account number\": \"Yes, but ask me next time\",\n      \"mira,Detailed receipts\": \"Yes, but ask me next time\",\n      \"mira,Transaction logs\": \"Yes, but ask me next time\",\n      \"mira,Dates of expenses\": \"Yes, but ask me next time\"\n    }\n  },\n  {\n    \"query\": \"Hey, I'm interested in connecting with women aged 25 to 35 near San Francisco. Can you help me find some matches?\",\n    \"id\": 58,\n    \"answer\": {\n      \"Tinder,Relationship preferences\": \"Yes, but ask me next time\",\n      \"Tinder,User location\": \"Yes, but ask me next time\",\n      \"Tinder,Relationship status (e.g. single, married)\": \"Yes, but ask me next time\"\n    }\n  }\n]\n\nNew permission requests (null values are to be predicted):\n[\n  {\n    \"query\": \"Schedule a meeting with HR on Friday at 2 PM to discuss the cost-cutting.\",\n    \"id\": 14,\n    \"permission\": {\n      \"Calendar,HR email addresses\": null,\n      \"Calendar,Meeting date and time\": null,\n      \"Calendar,Meeting agenda (i.e. cost-cutting)\": null\n    }\n  },\n  {\n    \"query\": \"Find all invoices related to my recent business trip and store them in a folder called \\\"Expense Reports\\\" in my Cloud Drive.\",\n    \"id\": 17,\n    \"permission\": {\n      \"Cloud Drive,Invoices and receipts data\": null\n    }\n  },\n  {\n    \"query\": \"Design a \\\"Beach Vibes\\\" Instagram post and share the photo I took yesterday at the beach from my Cloud Drive on Instagram.\",\n    \"id\": 54,\n    \"permission\": {\n      \"Cloud Drive,Photo details (e.g. file name, location, and timestamp)\": null,\n      \"Instagram,Photos\": null,\n      \"Instagram,Photo details (e.g. file name, location, and timestamp)\": null,\n      \"mira,Photos\": null,\n      \"mira,Instagram post content\": null\n    }\n  },\n  {\n    \"query\": \"I’ve got a new pic in my Cloud Drive. Can you upload it to my Tinder account?\",\n    \"id\": 56,\n    \"permission\": {\n      \"Cloud Drive,Photo details (e.g. file name, location, and timestamp)\": null,\n      \"Tinder,Photos\": null,\n      \"mira,Photos\": null\n    }\n  }\n]"
+      }
+    ],
+    "prompt_sha256": "20ef920705bb9dcdfe92962742380a45831ad9501e3cf3360859be7af0c090d5",
+    "test_row_indices": [
+      2682,
+      2683,
+      2684,
+      2685,
+      2742,
+      2743,
+      2744,
+      2745,
+      2746,
+      2759,
+      2760,
+      2761
+    ]
+  },
+  {
+    "call_id": "gemini_0shot_P125_fold0",
+    "stage": "predictor",
+    "participant_id": "P125",
+    "shots": 0,
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are a personalized permission assistant predicting this user's data-access decisions.\nConsider demographics, AI usage, privacy attitudes, the user's own permission history, and the meaning of each new request. The four responses differ both in immediate sharing and whether the assistant should ask again next time.\nFor each new query and every listed permission key, return exactly one of these labels: [\"No, never share\", \"No, but ask me next time\", \"Yes, but ask me next time\", \"Yes, always share\"].\nReturn a JSON array with one object per new query. Each object must have id, query, and permission. Under permission, keep every input key exactly and return {\"label\": one allowed label, \"score\": a number from 0 to 1} for each key. The score is confidence in that exact four-class label. Return JSON only.\n\nUser demographic and bio information:\nAge group: 35-44; gender: Male; education: Master's.\n\nUser AI tool usage and privacy information:\n{\n  \"AI familiarity (survey 1-5)\": \"3\",\n  \"AI usage frequency (survey 1-5)\": \"3\",\n  \"AI use purposes\": \"answering questions, getting recipe ideas.\",\n  \"Trust in AI privacy (survey 1-5)\": \"3\",\n  \"Privacy importance (survey 1-5)\": \"4\",\n  \"Privacy concerns\": \"i don't know what they do with the information they have about the questions i ask.\",\n  \"Privacy-sensitive domains\": []\n}\n\nUser permission decision history:\n[]\n\nNew permission requests (null values are to be predicted):\n[\n  {\n    \"query\": \"How has my sleep duration changed over the past week?\",\n    \"id\": 2,\n    \"permission\": {\n      \"mira,Sleep duration\": null,\n      \"mira,Sleep quality data (e.g. snoring)\": null\n    }\n  },\n  {\n    \"query\": \"I need a meal plan to help me gain muscle. Can you make one?\",\n    \"id\": 3,\n    \"permission\": {\n      \"Nutrition and Diet,Nutritional goals (e.g. muscle gaining)\": null,\n      \"Nutrition and Diet,Weight\": null,\n      \"Nutrition and Diet,Allergies\": null,\n      \"Nutrition and Diet,Dietary preferences\": null,\n      \"Nutrition and Diet,Income/budget considerations\": null\n    }\n  },\n  {\n    \"query\": \"Please order 2 boxes of green tea for me from Amazon.\",\n    \"id\": 32,\n    \"permission\": {\n      \"Amazon,Credit card details\": null,\n      \"Amazon,Name\": null,\n      \"Amazon,Address\": null,\n      \"Amazon,Email\": null,\n      \"Amazon,Order information (e.g., product details)\": null\n    }\n  },\n  {\n    \"query\": \"Reschedule the delivery of my furniture to next Monday afternoon.\",\n    \"id\": 34,\n    \"permission\": {\n      \"Amazon,Delivery address\": null,\n      \"Amazon,Phone number\": null,\n      \"Amazon,Order information (e.g., product details)\": null\n    }\n  }\n]"
+      }
+    ],
+    "prompt_sha256": "76abf63cc833dc077cb6cca87b93929853655657529057cd28d3fbcd1a89f773",
+    "test_row_indices": [
+      12232,
+      12233,
+      12234,
+      12235,
+      12236,
+      12237,
+      12238,
+      12305,
+      12306,
+      12307,
+      12308,
+      12309,
+      12315,
+      12316,
+      12317
+    ]
+  },
+  {
+    "call_id": "gemini_4shot_P125_fold0",
+    "stage": "predictor",
+    "participant_id": "P125",
+    "shots": 4,
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are a personalized permission assistant predicting this user's data-access decisions.\nConsider demographics, AI usage, privacy attitudes, the user's own permission history, and the meaning of each new request. The four responses differ both in immediate sharing and whether the assistant should ask again next time.\nFor each new query and every listed permission key, return exactly one of these labels: [\"No, never share\", \"No, but ask me next time\", \"Yes, but ask me next time\", \"Yes, always share\"].\nReturn a JSON array with one object per new query. Each object must have id, query, and permission. Under permission, keep every input key exactly and return {\"label\": one allowed label, \"score\": a number from 0 to 1} for each key. The score is confidence in that exact four-class label. Return JSON only.\n\nUser demographic and bio information:\nAge group: 35-44; gender: Male; education: Master's.\n\nUser AI tool usage and privacy information:\n{\n  \"AI familiarity (survey 1-5)\": \"3\",\n  \"AI usage frequency (survey 1-5)\": \"3\",\n  \"AI use purposes\": \"answering questions, getting recipe ideas.\",\n  \"Trust in AI privacy (survey 1-5)\": \"3\",\n  \"Privacy importance (survey 1-5)\": \"4\",\n  \"Privacy concerns\": \"i don't know what they do with the information they have about the questions i ask.\",\n  \"Privacy-sensitive domains\": []\n}\n\nUser permission decision history:\n[\n  {\n    \"query\": \"Please review my cholesterol test results and suggest dietary changes to reduce my cholesterol.\",\n    \"id\": 4,\n    \"answer\": {\n      \"Nutrition and Diet,Current cholesterol level\": \"Yes, always share\",\n      \"Nutrition and Diet,Medical history (e.g. heart disease, diabetes)\": \"Yes, always share\",\n      \"Nutrition and Diet,Dietary preference\": \"Yes, always share\",\n      \"Nutrition and Diet,Allergies\": \"Yes, always share\",\n      \"mira,Current cholesterol level\": \"Yes, always share\",\n      \"mira,Medical history (e.g. heart disease, diabetes)\": \"Yes, always share\"\n    }\n  },\n  {\n    \"query\": \"Find the contract document for my upcoming client meeting and attach it to the event in my calendar.\",\n    \"id\": 19,\n    \"answer\": {\n      \"Calendar,Contract details\": \"Yes, always share\",\n      \"mira,Contract details\": \"Yes, always share\"\n    }\n  },\n  {\n    \"query\": \"How much will I be able to save in the next six months?\",\n    \"id\": 27,\n    \"answer\": {\n      \"Banking,Historical income\": \"Yes, always share\",\n      \"Banking,Historial expense data\": \"Yes, always share\",\n      \"Banking,Invoice and payment timelines\": \"Yes, but ask me next time\",\n      \"Banking,Financial commitments\": \"Yes, but ask me next time\",\n      \"Banking,Recurring payments\": \"Yes, always share\",\n      \"Banking,Address\": \"No, but ask me next time\",\n      \"Banking,Passport\": \"No, never share\",\n      \"Banking,Email address\": \"No, but ask me next time\"\n    }\n  },\n  {\n    \"query\": \"What should I buy my son for his birthday? He is turning 13.\",\n    \"id\": 35,\n    \"answer\": {\n      \"Amazon,Child name\": \"No, but ask me next time\",\n      \"Amazon,Child age\": \"Yes, but ask me next time\",\n      \"Amazon,Child gender\": \"Yes, but ask me next time\"\n    }\n  }\n]\n\nNew permission requests (null values are to be predicted):\n[\n  {\n    \"query\": \"How has my sleep duration changed over the past week?\",\n    \"id\": 2,\n    \"permission\": {\n      \"mira,Sleep duration\": null,\n      \"mira,Sleep quality data (e.g. snoring)\": null\n    }\n  },\n  {\n    \"query\": \"I need a meal plan to help me gain muscle. Can you make one?\",\n    \"id\": 3,\n    \"permission\": {\n      \"Nutrition and Diet,Nutritional goals (e.g. muscle gaining)\": null,\n      \"Nutrition and Diet,Weight\": null,\n      \"Nutrition and Diet,Allergies\": null,\n      \"Nutrition and Diet,Dietary preferences\": null,\n      \"Nutrition and Diet,Income/budget considerations\": null\n    }\n  },\n  {\n    \"query\": \"Please order 2 boxes of green tea for me from Amazon.\",\n    \"id\": 32,\n    \"permission\": {\n      \"Amazon,Credit card details\": null,\n      \"Amazon,Name\": null,\n      \"Amazon,Address\": null,\n      \"Amazon,Email\": null,\n      \"Amazon,Order information (e.g., product details)\": null\n    }\n  },\n  {\n    \"query\": \"Reschedule the delivery of my furniture to next Monday afternoon.\",\n    \"id\": 34,\n    \"permission\": {\n      \"Amazon,Delivery address\": null,\n      \"Amazon,Phone number\": null,\n      \"Amazon,Order information (e.g., product details)\": null\n    }\n  }\n]"
+      }
+    ],
+    "prompt_sha256": "4d5876ab09f503ac13ce4dca5938c888e8a3226be0f77ab93bd5bc6dbd7dc827",
+    "test_row_indices": [
+      12232,
+      12233,
+      12234,
+      12235,
+      12236,
+      12237,
+      12238,
+      12305,
+      12306,
+      12307,
+      12308,
+      12309,
+      12315,
+      12316,
+      12317
+    ]
+  },
+  {
+    "call_id": "gemini_0shot_P143_fold0",
+    "stage": "predictor",
+    "participant_id": "P143",
+    "shots": 0,
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are a personalized permission assistant predicting this user's data-access decisions.\nConsider demographics, AI usage, privacy attitudes, the user's own permission history, and the meaning of each new request. The four responses differ both in immediate sharing and whether the assistant should ask again next time.\nFor each new query and every listed permission key, return exactly one of these labels: [\"No, never share\", \"No, but ask me next time\", \"Yes, but ask me next time\", \"Yes, always share\"].\nReturn a JSON array with one object per new query. Each object must have id, query, and permission. Under permission, keep every input key exactly and return {\"label\": one allowed label, \"score\": a number from 0 to 1} for each key. The score is confidence in that exact four-class label. Return JSON only.\n\nUser demographic and bio information:\nAge group: 25-34; gender: Male; education: Bachelor's.\n\nUser AI tool usage and privacy information:\n{\n  \"AI familiarity (survey 1-5)\": \"3\",\n  \"AI usage frequency (survey 1-5)\": \"2\",\n  \"AI use purposes\": \"I use ChatGPT for entertainment purposes, and I sometimes use other AI tools to create artwork for non-commercial reasons as well.\",\n  \"Trust in AI privacy (survey 1-5)\": \"1\",\n  \"Privacy importance (survey 1-5)\": \"5\",\n  \"Privacy concerns\": \"I do not want them to track any of my personal information. I will not use any of these tools if they require personal information beyond an ordinary email address or sign-up process. I will never share private information with them, either.\",\n  \"Privacy-sensitive domains\": [\n    \"Shopping\",\n    \"Social\",\n    \"Entertainment\"\n  ]\n}\n\nUser permission decision history:\n[]\n\nNew permission requests (null values are to be predicted):\n[\n  {\n    \"query\": \"Could you give me a report of my workout?\",\n    \"id\": 10,\n    \"permission\": {\n      \"mira,Exercise type (e.g. cardio)\": null,\n      \"mira,Exercise data (e.g. sets, distance, pace)\": null,\n      \"mira,Heart rate data\": null,\n      \"mira,Calories burned\": null\n    }\n  },\n  {\n    \"query\": \"Can you post a message in the #team-meeting channel on Slack reminding everyone about our meeting tomorrow at 10 AM?\",\n    \"id\": 11,\n    \"permission\": {\n      \"Slack,Message content\": null,\n      \"Slack,Scheduling details (i.e.  meeting details)\": null\n    }\n  },\n  {\n    \"query\": \"Can you book an electric car near the airport in Berlin for my trip from May 2nd to May 5th and add it to my calendar?\",\n    \"id\": 48,\n    \"permission\": {\n      \"Travel Booking,Trip dates\": null,\n      \"Travel Booking,Trip location\": null,\n      \"Travel Booking,Car preferences\": null,\n      \"Travel Booking,Driving license\": null,\n      \"Travel Booking,Passport\": null,\n      \"Travel Booking,Past visa application details\": null,\n      \"Travel Booking,Pending task information\": null,\n      \"Calendar,Trip dates\": null,\n      \"Calendar,Trip location\": null,\n      \"Calendar,Car rental details (e.g. car type\": null,\n      \"mira,Car rental details (e.g. car type\": null\n    }\n  },\n  {\n    \"query\": \"Create a playlist titled \\\"Weekend Chill\\\" with my most played songs.\",\n    \"id\": 51,\n    \"permission\": {\n      \"Apple Music,Music playing history\": null\n    }\n  }\n]"
+      }
+    ],
+    "prompt_sha256": "fcca7a4a43b4a10af3991a91c192e235f38e77582895c44ccc305b2c85072aad",
+    "test_row_indices": [
+      254,
+      255,
+      256,
+      257,
+      258,
+      259,
+      325,
+      326,
+      327,
+      328,
+      329,
+      330,
+      331,
+      332,
+      333,
+      334,
+      335,
+      337
+    ]
+  },
+  {
+    "call_id": "gemini_4shot_P143_fold0",
+    "stage": "predictor",
+    "participant_id": "P143",
+    "shots": 4,
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are a personalized permission assistant predicting this user's data-access decisions.\nConsider demographics, AI usage, privacy attitudes, the user's own permission history, and the meaning of each new request. The four responses differ both in immediate sharing and whether the assistant should ask again next time.\nFor each new query and every listed permission key, return exactly one of these labels: [\"No, never share\", \"No, but ask me next time\", \"Yes, but ask me next time\", \"Yes, always share\"].\nReturn a JSON array with one object per new query. Each object must have id, query, and permission. Under permission, keep every input key exactly and return {\"label\": one allowed label, \"score\": a number from 0 to 1} for each key. The score is confidence in that exact four-class label. Return JSON only.\n\nUser demographic and bio information:\nAge group: 25-34; gender: Male; education: Bachelor's.\n\nUser AI tool usage and privacy information:\n{\n  \"AI familiarity (survey 1-5)\": \"3\",\n  \"AI usage frequency (survey 1-5)\": \"2\",\n  \"AI use purposes\": \"I use ChatGPT for entertainment purposes, and I sometimes use other AI tools to create artwork for non-commercial reasons as well.\",\n  \"Trust in AI privacy (survey 1-5)\": \"1\",\n  \"Privacy importance (survey 1-5)\": \"5\",\n  \"Privacy concerns\": \"I do not want them to track any of my personal information. I will not use any of these tools if they require personal information beyond an ordinary email address or sign-up process. I will never share private information with them, either.\",\n  \"Privacy-sensitive domains\": [\n    \"Shopping\",\n    \"Social\",\n    \"Entertainment\"\n  ]\n}\n\nUser permission decision history:\n[\n  {\n    \"query\": \"Can you fill my tax return forms using the tax documents in the \\\"2025 tax returns\\\" folder?\",\n    \"id\": 23,\n    \"answer\": {\n      \"Tax Management,W-2 details (e.g. income amounts, tax withholdings, employer information)\": \"Yes, but ask me next time\",\n      \"Tax Management,SSN\": \"Yes, but ask me next time\",\n      \"Tax Management,Name\": \"Yes, but ask me next time\",\n      \"Tax Management,Address\": \"Yes, but ask me next time\",\n      \"Tax Management,Marital status\": \"Yes, but ask me next time\",\n      \"mira,W-2 details (e.g. income amounts, tax withholdings, employer information)\": \"Yes, but ask me next time\",\n      \"mira,SSN\": \"Yes, but ask me next time\",\n      \"mira,Name\": \"Yes, but ask me next time\",\n      \"mira,Address\": \"Yes, but ask me next time\",\n      \"mira,Marital status\": \"Yes, but ask me next time\"\n    }\n  },\n  {\n    \"query\": \"How's the weather?\",\n    \"id\": 38,\n    \"answer\": {\n      \"Weather,User location\": \"Yes, but ask me next time\",\n      \"Weather,Allergies\": \"No, never share\",\n      \"Weather,Energy consumption logs\": \"No, but ask me next time\",\n      \"Weather,Home presence\": \"No, never share\"\n    }\n  },\n  {\n    \"query\": \"Find top-rated movies that I might like.\",\n    \"id\": 49,\n    \"answer\": {\n      \"The Movie Database,Movie watching history\": \"Yes, but ask me next time\"\n    }\n  },\n  {\n    \"query\": \"Can you message my family group to remind them that we're having dinner at Grandma’s house today at 7:30 PM?\",\n    \"id\": 53,\n    \"answer\": {\n      \"SMS,Parents' phone numbers\": \"Yes, but ask me next time\",\n      \"SMS,Children's phone numbers\": \"Yes, but ask me next time\",\n      \"SMS,Siblings' phone numbers\": \"Yes, but ask me next time\",\n      \"SMS,Message content\": \"Yes, but ask me next time\",\n      \"SMS,Event details\": \"Yes, but ask me next time\"\n    }\n  }\n]\n\nNew permission requests (null values are to be predicted):\n[\n  {\n    \"query\": \"Could you give me a report of my workout?\",\n    \"id\": 10,\n    \"permission\": {\n      \"mira,Exercise type (e.g. cardio)\": null,\n      \"mira,Exercise data (e.g. sets, distance, pace)\": null,\n      \"mira,Heart rate data\": null,\n      \"mira,Calories burned\": null\n    }\n  },\n  {\n    \"query\": \"Can you post a message in the #team-meeting channel on Slack reminding everyone about our meeting tomorrow at 10 AM?\",\n    \"id\": 11,\n    \"permission\": {\n      \"Slack,Message content\": null,\n      \"Slack,Scheduling details (i.e.  meeting details)\": null\n    }\n  },\n  {\n    \"query\": \"Can you book an electric car near the airport in Berlin for my trip from May 2nd to May 5th and add it to my calendar?\",\n    \"id\": 48,\n    \"permission\": {\n      \"Travel Booking,Trip dates\": null,\n      \"Travel Booking,Trip location\": null,\n      \"Travel Booking,Car preferences\": null,\n      \"Travel Booking,Driving license\": null,\n      \"Travel Booking,Passport\": null,\n      \"Travel Booking,Past visa application details\": null,\n      \"Travel Booking,Pending task information\": null,\n      \"Calendar,Trip dates\": null,\n      \"Calendar,Trip location\": null,\n      \"Calendar,Car rental details (e.g. car type\": null,\n      \"mira,Car rental details (e.g. car type\": null\n    }\n  },\n  {\n    \"query\": \"Create a playlist titled \\\"Weekend Chill\\\" with my most played songs.\",\n    \"id\": 51,\n    \"permission\": {\n      \"Apple Music,Music playing history\": null\n    }\n  }\n]"
+      }
+    ],
+    "prompt_sha256": "afbc7c7ae4f26d542dcc21ebfeef4c513f190ee3b0e026acd265df0fa3a683e0",
+    "test_row_indices": [
+      254,
+      255,
+      256,
+      257,
+      258,
+      259,
+      325,
+      326,
+      327,
+      328,
+      329,
+      330,
+      331,
+      332,
+      333,
+      334,
+      335,
+      337
+    ]
+  },
+  {
+    "call_id": "gemini_0shot_P144_fold0",
+    "stage": "predictor",
+    "participant_id": "P144",
+    "shots": 0,
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are a personalized permission assistant predicting this user's data-access decisions.\nConsider demographics, AI usage, privacy attitudes, the user's own permission history, and the meaning of each new request. The four responses differ both in immediate sharing and whether the assistant should ask again next time.\nFor each new query and every listed permission key, return exactly one of these labels: [\"No, never share\", \"No, but ask me next time\", \"Yes, but ask me next time\", \"Yes, always share\"].\nReturn a JSON array with one object per new query. Each object must have id, query, and permission. Under permission, keep every input key exactly and return {\"label\": one allowed label, \"score\": a number from 0 to 1} for each key. The score is confidence in that exact four-class label. Return JSON only.\n\nUser demographic and bio information:\nAge group: 35-44; gender: Female; education: PhD.\n\nUser AI tool usage and privacy information:\n{\n  \"AI familiarity (survey 1-5)\": \"2\",\n  \"AI usage frequency (survey 1-5)\": \"2\",\n  \"AI use purposes\": \"To look up information.\",\n  \"Trust in AI privacy (survey 1-5)\": \"3\",\n  \"Privacy importance (survey 1-5)\": \"5\",\n  \"Privacy concerns\": \"I am worried about my questions, IP address, etc directly being linked to me. I am also worried that whatever I search or lookup will be stored in a database\",\n  \"Privacy-sensitive domains\": [\n    \"Shopping\",\n    \"Social\",\n    \"Finance\"\n  ]\n}\n\nUser permission decision history:\n[]\n\nNew permission requests (null values are to be predicted):\n[\n  {\n    \"query\": \"Schedule a meeting with HR on Friday at 2 PM to discuss the cost-cutting.\",\n    \"id\": 14,\n    \"permission\": {\n      \"Calendar,Payment note\": null,\n      \"Calendar,Meeting agenda (i.e. cost-cutting)\": null,\n      \"Calendar,Meeting date and time\": null,\n      \"Calendar,HR email addresses\": null\n    }\n  },\n  {\n    \"query\": \"Find all invoices related to my recent business trip and store them in a folder called \\\"Expense Reports\\\" in my Cloud Drive.\",\n    \"id\": 17,\n    \"permission\": {\n      \"Cloud Drive,Invoices and receipts data\": null,\n      \"Cloud Drive,Content of recent emails\": null,\n      \"Cloud Drive,Movie watching history\": null,\n      \"Cloud Drive,Film genre\": null\n    }\n  },\n  {\n    \"query\": \"There is a mess in my garage. Check the access history and security cameras to see what happened.\",\n    \"id\": 59,\n    \"permission\": {\n      \"mira,Garage access log\": null,\n      \"mira,Garage video recording\": null\n    }\n  },\n  {\n    \"query\": \"How much energy did we use yesterday?\",\n    \"id\": 61,\n    \"permission\": {\n      \"mira,Energy consumption logs\": null\n    }\n  }\n]"
+      }
+    ],
+    "prompt_sha256": "cb697f27a0f435b84d1a9073cbdd3fd3ec94827609aa8bcfc8cd1f5201338b85",
+    "test_row_indices": [
+      7946,
+      7947,
+      7948,
+      7949,
+      7950,
+      7951,
+      7952,
+      7953,
+      8008,
+      8009,
+      8011
+    ]
+  },
+  {
+    "call_id": "gemini_4shot_P144_fold0",
+    "stage": "predictor",
+    "participant_id": "P144",
+    "shots": 4,
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are a personalized permission assistant predicting this user's data-access decisions.\nConsider demographics, AI usage, privacy attitudes, the user's own permission history, and the meaning of each new request. The four responses differ both in immediate sharing and whether the assistant should ask again next time.\nFor each new query and every listed permission key, return exactly one of these labels: [\"No, never share\", \"No, but ask me next time\", \"Yes, but ask me next time\", \"Yes, always share\"].\nReturn a JSON array with one object per new query. Each object must have id, query, and permission. Under permission, keep every input key exactly and return {\"label\": one allowed label, \"score\": a number from 0 to 1} for each key. The score is confidence in that exact four-class label. Return JSON only.\n\nUser demographic and bio information:\nAge group: 35-44; gender: Female; education: PhD.\n\nUser AI tool usage and privacy information:\n{\n  \"AI familiarity (survey 1-5)\": \"2\",\n  \"AI usage frequency (survey 1-5)\": \"2\",\n  \"AI use purposes\": \"To look up information.\",\n  \"Trust in AI privacy (survey 1-5)\": \"3\",\n  \"Privacy importance (survey 1-5)\": \"5\",\n  \"Privacy concerns\": \"I am worried about my questions, IP address, etc directly being linked to me. I am also worried that whatever I search or lookup will be stored in a database\",\n  \"Privacy-sensitive domains\": [\n    \"Shopping\",\n    \"Social\",\n    \"Finance\"\n  ]\n}\n\nUser permission decision history:\n[\n  {\n    \"query\": \"Design a \\\"Beach Vibes\\\" Instagram post and share the photo I took yesterday at the beach from my Cloud Drive on Instagram.\",\n    \"id\": 54,\n    \"answer\": {\n      \"Cloud Drive,Photo details (e.g. file name, location, and timestamp)\": \"Yes, but ask me next time\",\n      \"Instagram,Photos\": \"Yes, but ask me next time\",\n      \"Instagram,Photo details (e.g. file name, location, and timestamp)\": \"Yes, but ask me next time\",\n      \"mira,Instagram post content\": \"Yes, but ask me next time\",\n      \"mira,Photos\": \"Yes, but ask me next time\"\n    }\n  },\n  {\n    \"query\": \"Hey, I just joined Tinder. Can you help set up my profile with my bio, contact info, relationship preferences, and so on?\",\n    \"id\": 55,\n    \"answer\": {\n      \"Tinder,User bio\": \"Yes, but ask me next time\",\n      \"Tinder,Email address\": \"Yes, but ask me next time\",\n      \"Tinder,Phone number\": \"Yes, but ask me next time\",\n      \"Tinder,Profile Pictures\": \"Yes, but ask me next time\",\n      \"Tinder,Age\": \"Yes, but ask me next time\",\n      \"Tinder,Birthday\": \"Yes, but ask me next time\",\n      \"Tinder,Gender\": \"Yes, but ask me next time\",\n      \"Tinder,Relationship preferences\": \"Yes, but ask me next time\",\n      \"Tinder,Education level\": \"Yes, but ask me next time\",\n      \"Tinder,Workplace\": \"Yes, but ask me next time\",\n      \"Tinder,Interests/hobbies\": \"Yes, but ask me next time\",\n      \"Tinder,User location\": \"Yes, but ask me next time\"\n    }\n  },\n  {\n    \"query\": \"Hey, I'm interested in connecting with women aged 25 to 35 near San Francisco. Can you help me find some matches?\",\n    \"id\": 58,\n    \"answer\": {\n      \"Tinder,Relationship preferences\": \"Yes, but ask me next time\",\n      \"Tinder,User location\": \"Yes, but ask me next time\",\n      \"Tinder,Relationship status (e.g. single, married)\": \"Yes, but ask me next time\"\n    }\n  },\n  {\n    \"query\": \"I heard a noise outside. Can you check what happened at the front door?\",\n    \"id\": 62,\n    \"answer\": {\n      \"mira,Front door video recording\": \"Yes, but ask me next time\"\n    }\n  }\n]\n\nNew permission requests (null values are to be predicted):\n[\n  {\n    \"query\": \"Schedule a meeting with HR on Friday at 2 PM to discuss the cost-cutting.\",\n    \"id\": 14,\n    \"permission\": {\n      \"Calendar,Payment note\": null,\n      \"Calendar,Meeting agenda (i.e. cost-cutting)\": null,\n      \"Calendar,Meeting date and time\": null,\n      \"Calendar,HR email addresses\": null\n    }\n  },\n  {\n    \"query\": \"Find all invoices related to my recent business trip and store them in a folder called \\\"Expense Reports\\\" in my Cloud Drive.\",\n    \"id\": 17,\n    \"permission\": {\n      \"Cloud Drive,Invoices and receipts data\": null,\n      \"Cloud Drive,Content of recent emails\": null,\n      \"Cloud Drive,Movie watching history\": null,\n      \"Cloud Drive,Film genre\": null\n    }\n  },\n  {\n    \"query\": \"There is a mess in my garage. Check the access history and security cameras to see what happened.\",\n    \"id\": 59,\n    \"permission\": {\n      \"mira,Garage access log\": null,\n      \"mira,Garage video recording\": null\n    }\n  },\n  {\n    \"query\": \"How much energy did we use yesterday?\",\n    \"id\": 61,\n    \"permission\": {\n      \"mira,Energy consumption logs\": null\n    }\n  }\n]"
+      }
+    ],
+    "prompt_sha256": "a04c74228b04127795d4e06237cba13a0346c5601ececd7aef9061c48054451a",
+    "test_row_indices": [
+      7946,
+      7947,
+      7948,
+      7949,
+      7950,
+      7951,
+      7952,
+      7953,
+      8008,
+      8009,
+      8011
+    ]
+  },
+  {
+    "call_id": "gemini_0shot_P167_fold0",
+    "stage": "predictor",
+    "participant_id": "P167",
+    "shots": 0,
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are a personalized permission assistant predicting this user's data-access decisions.\nConsider demographics, AI usage, privacy attitudes, the user's own permission history, and the meaning of each new request. The four responses differ both in immediate sharing and whether the assistant should ask again next time.\nFor each new query and every listed permission key, return exactly one of these labels: [\"No, never share\", \"No, but ask me next time\", \"Yes, but ask me next time\", \"Yes, always share\"].\nReturn a JSON array with one object per new query. Each object must have id, query, and permission. Under permission, keep every input key exactly and return {\"label\": one allowed label, \"score\": a number from 0 to 1} for each key. The score is confidence in that exact four-class label. Return JSON only.\n\nUser demographic and bio information:\nAge group: 35-44; gender: Female; education: Master's.\n\nUser AI tool usage and privacy information:\n{\n  \"AI familiarity (survey 1-5)\": \"2\",\n  \"AI usage frequency (survey 1-5)\": \"2\",\n  \"AI use purposes\": \"To ask about how to make money\",\n  \"Trust in AI privacy (survey 1-5)\": \"1\",\n  \"Privacy importance (survey 1-5)\": \"4\",\n  \"Privacy concerns\": \"That the information I share with AI will be used against me\",\n  \"Privacy-sensitive domains\": [\n    \"Finance\",\n    \"Work & Productivity\",\n    \"Smart Home\"\n  ]\n}\n\nUser permission decision history:\n[]\n\nNew permission requests (null values are to be predicted):\n[\n  {\n    \"query\": \"Could you give me a report of my workout?\",\n    \"id\": 10,\n    \"permission\": {\n      \"mira,Exercise type (e.g. cardio)\": null,\n      \"mira,Exercise data (e.g. sets, distance, pace)\": null,\n      \"mira,Heart rate data\": null,\n      \"mira,Calories burned\": null\n    }\n  },\n  {\n    \"query\": \"Can you post a message in the #team-meeting channel on Slack reminding everyone about our meeting tomorrow at 10 AM?\",\n    \"id\": 11,\n    \"permission\": {\n      \"Slack,Message content\": null,\n      \"Slack,Scheduling details (i.e.  meeting details)\": null\n    }\n  },\n  {\n    \"query\": \"Plan my weekend in San Francisco. Please include surfing in the plan.\",\n    \"id\": 41,\n    \"permission\": {\n      \"Weather,Trip dates\": null,\n      \"Weather,Trip location\": null,\n      \"Local Search,Trip dates\": null,\n      \"Local Search,Trip location\": null,\n      \"Local Search,Trip activities\": null,\n      \"Local Search,Email content\": null\n    }\n  },\n  {\n    \"query\": \"Create a playlist titled \\\"Weekend Chill\\\" with my most played songs.\",\n    \"id\": 51,\n    \"permission\": {\n      \"Apple Music,Music playing history\": null\n    }\n  }\n]"
+      }
+    ],
+    "prompt_sha256": "aab909cde1138423db9efb49ecec7139ed3a7697068d140d6b8daca1b1072709",
+    "test_row_indices": [
+      5311,
+      5312,
+      5313,
+      5314,
+      5315,
+      5316,
+      5375,
+      5376,
+      5377,
+      5378,
+      5379,
+      5380,
+      5382
+    ]
+  },
+  {
+    "call_id": "gemini_4shot_P167_fold0",
+    "stage": "predictor",
+    "participant_id": "P167",
+    "shots": 4,
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are a personalized permission assistant predicting this user's data-access decisions.\nConsider demographics, AI usage, privacy attitudes, the user's own permission history, and the meaning of each new request. The four responses differ both in immediate sharing and whether the assistant should ask again next time.\nFor each new query and every listed permission key, return exactly one of these labels: [\"No, never share\", \"No, but ask me next time\", \"Yes, but ask me next time\", \"Yes, always share\"].\nReturn a JSON array with one object per new query. Each object must have id, query, and permission. Under permission, keep every input key exactly and return {\"label\": one allowed label, \"score\": a number from 0 to 1} for each key. The score is confidence in that exact four-class label. Return JSON only.\n\nUser demographic and bio information:\nAge group: 35-44; gender: Female; education: Master's.\n\nUser AI tool usage and privacy information:\n{\n  \"AI familiarity (survey 1-5)\": \"2\",\n  \"AI usage frequency (survey 1-5)\": \"2\",\n  \"AI use purposes\": \"To ask about how to make money\",\n  \"Trust in AI privacy (survey 1-5)\": \"1\",\n  \"Privacy importance (survey 1-5)\": \"4\",\n  \"Privacy concerns\": \"That the information I share with AI will be used against me\",\n  \"Privacy-sensitive domains\": [\n    \"Finance\",\n    \"Work & Productivity\",\n    \"Smart Home\"\n  ]\n}\n\nUser permission decision history:\n[\n  {\n    \"query\": \"Can you retrieve and summarize the latest financial report from Cloud Drive?\",\n    \"id\": 13,\n    \"answer\": {\n      \"mira,Financial report file\": \"No, but ask me next time\"\n    }\n  },\n  {\n    \"query\": \"Can you check what tax deductions I qualify for this year based on my income?\",\n    \"id\": 24,\n    \"answer\": {\n      \"Tax Management,Income details\": \"Yes, but ask me next time\",\n      \"Tax Management,Filling status (e.g. single or married)\": \"Yes, but ask me next time\",\n      \"Tax Management,Other personal tax profile data (e.g. previously claimed deductions)\": \"No, but ask me next time\"\n    }\n  },\n  {\n    \"query\": \"Retrieve and compile all my expenses from last month for reimbursement.\",\n    \"id\": 28,\n    \"answer\": {\n      \"Banking,Receipt images\": \"Yes, but ask me next time\",\n      \"Banking,Transaction logs (dates, amounts, merchant details)\": \"Yes, but ask me next time\",\n      \"Banking,Travel details\": \"Yes, but ask me next time\",\n      \"Banking,Meeting details\": \"No, never share\",\n      \"Banking,Front door video recording\": \"No, never share\",\n      \"Banking,Address\": \"No, never share\",\n      \"Banking,Filling status\": \"No, but ask me next time\",\n      \"Banking,Garage access log\": \"No, never share\"\n    }\n  },\n  {\n    \"query\": \"What is my current credit score and full credit history?\",\n    \"id\": 29,\n    \"answer\": {\n      \"Banking,Credit history\": \"No, but ask me next time\",\n      \"Banking,Credit report data\": \"No, never share\",\n      \"Banking,Payment history\": \"No, but ask me next time\",\n      \"Banking,Outstanding debts\": \"No, never share\",\n      \"Banking,Historical income\": \"No, never share\",\n      \"Banking,Employment information\": \"No, never share\"\n    }\n  }\n]\n\nNew permission requests (null values are to be predicted):\n[\n  {\n    \"query\": \"Could you give me a report of my workout?\",\n    \"id\": 10,\n    \"permission\": {\n      \"mira,Exercise type (e.g. cardio)\": null,\n      \"mira,Exercise data (e.g. sets, distance, pace)\": null,\n      \"mira,Heart rate data\": null,\n      \"mira,Calories burned\": null\n    }\n  },\n  {\n    \"query\": \"Can you post a message in the #team-meeting channel on Slack reminding everyone about our meeting tomorrow at 10 AM?\",\n    \"id\": 11,\n    \"permission\": {\n      \"Slack,Message content\": null,\n      \"Slack,Scheduling details (i.e.  meeting details)\": null\n    }\n  },\n  {\n    \"query\": \"Plan my weekend in San Francisco. Please include surfing in the plan.\",\n    \"id\": 41,\n    \"permission\": {\n      \"Weather,Trip dates\": null,\n      \"Weather,Trip location\": null,\n      \"Local Search,Trip dates\": null,\n      \"Local Search,Trip location\": null,\n      \"Local Search,Trip activities\": null,\n      \"Local Search,Email content\": null\n    }\n  },\n  {\n    \"query\": \"Create a playlist titled \\\"Weekend Chill\\\" with my most played songs.\",\n    \"id\": 51,\n    \"permission\": {\n      \"Apple Music,Music playing history\": null\n    }\n  }\n]"
+      }
+    ],
+    "prompt_sha256": "6d233c8254f03e2fa7bbf1efd429428def7be0238cf6bff66977be31fe03617c",
+    "test_row_indices": [
+      5311,
+      5312,
+      5313,
+      5314,
+      5315,
+      5316,
+      5375,
+      5376,
+      5377,
+      5378,
+      5379,
+      5380,
+      5382
+    ]
+  },
+  {
+    "call_id": "gemini_0shot_P174_fold0",
+    "stage": "predictor",
+    "participant_id": "P174",
+    "shots": 0,
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are a personalized permission assistant predicting this user's data-access decisions.\nConsider demographics, AI usage, privacy attitudes, the user's own permission history, and the meaning of each new request. The four responses differ both in immediate sharing and whether the assistant should ask again next time.\nFor each new query and every listed permission key, return exactly one of these labels: [\"No, never share\", \"No, but ask me next time\", \"Yes, but ask me next time\", \"Yes, always share\"].\nReturn a JSON array with one object per new query. Each object must have id, query, and permission. Under permission, keep every input key exactly and return {\"label\": one allowed label, \"score\": a number from 0 to 1} for each key. The score is confidence in that exact four-class label. Return JSON only.\n\nUser demographic and bio information:\nAge group: 45-54; gender: Male; education: Master's.\n\nUser AI tool usage and privacy information:\n{\n  \"AI familiarity (survey 1-5)\": \"4\",\n  \"AI usage frequency (survey 1-5)\": \"3\",\n  \"AI use purposes\": \"Photoshop editing\",\n  \"Trust in AI privacy (survey 1-5)\": \"3\",\n  \"Privacy importance (survey 1-5)\": \"5\",\n  \"Privacy concerns\": \"AI pulls from every source on the internet and I am all over the internet due to my career\",\n  \"Privacy-sensitive domains\": [\n    \"Shopping\",\n    \"Social\",\n    \"Finance\"\n  ]\n}\n\nUser permission decision history:\n[]\n\nNew permission requests (null values are to be predicted):\n[\n  {\n    \"query\": \"I want to lose weight. Can you create an at-home full-body workout plan for me? \",\n    \"id\": 0,\n    \"permission\": {\n      \"Fitness Tracking,Fitness goal (i.e. weight loss)\": null,\n      \"Fitness Tracking,Physical limitations or injuries\": null,\n      \"Fitness Tracking,Gender\": null\n    }\n  },\n  {\n    \"query\": \"Can you give me a summary of my health data from the past month?\",\n    \"id\": 1,\n    \"permission\": {\n      \"mira,Weight\": null,\n      \"mira,Blood pressure\": null,\n      \"mira,Heart rate data\": null,\n      \"mira,Sleep duration/quality\": null,\n      \"mira,Exercise logs\": null\n    }\n  },\n  {\n    \"query\": \"There is a mess in my garage. Check the access history and security cameras to see what happened.\",\n    \"id\": 59,\n    \"permission\": {\n      \"mira,Garage access log\": null,\n      \"mira,Garage video recording\": null\n    }\n  },\n  {\n    \"query\": \"How much energy did we use yesterday?\",\n    \"id\": 61,\n    \"permission\": {\n      \"mira,Energy consumption logs\": null\n    }\n  }\n]"
+      }
+    ],
+    "prompt_sha256": "133053e5f2016677e09705efdf80f9dff306c676ba08501ddc61191622bfb623",
+    "test_row_indices": [
+      1863,
+      1864,
+      1865,
+      1866,
+      1867,
+      1868,
+      1869,
+      1870,
+      1930,
+      1931,
+      1933
+    ]
+  },
+  {
+    "call_id": "gemini_4shot_P174_fold0",
+    "stage": "predictor",
+    "participant_id": "P174",
+    "shots": 4,
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are a personalized permission assistant predicting this user's data-access decisions.\nConsider demographics, AI usage, privacy attitudes, the user's own permission history, and the meaning of each new request. The four responses differ both in immediate sharing and whether the assistant should ask again next time.\nFor each new query and every listed permission key, return exactly one of these labels: [\"No, never share\", \"No, but ask me next time\", \"Yes, but ask me next time\", \"Yes, always share\"].\nReturn a JSON array with one object per new query. Each object must have id, query, and permission. Under permission, keep every input key exactly and return {\"label\": one allowed label, \"score\": a number from 0 to 1} for each key. The score is confidence in that exact four-class label. Return JSON only.\n\nUser demographic and bio information:\nAge group: 45-54; gender: Male; education: Master's.\n\nUser AI tool usage and privacy information:\n{\n  \"AI familiarity (survey 1-5)\": \"4\",\n  \"AI usage frequency (survey 1-5)\": \"3\",\n  \"AI use purposes\": \"Photoshop editing\",\n  \"Trust in AI privacy (survey 1-5)\": \"3\",\n  \"Privacy importance (survey 1-5)\": \"5\",\n  \"Privacy concerns\": \"AI pulls from every source on the internet and I am all over the internet due to my career\",\n  \"Privacy-sensitive domains\": [\n    \"Shopping\",\n    \"Social\",\n    \"Finance\"\n  ]\n}\n\nUser permission decision history:\n[\n  {\n    \"query\": \"What’s my average resting heart rate this month?\",\n    \"id\": 8,\n    \"answer\": {\n      \"mira,Heart rate data\": \"Yes, but ask me next time\",\n      \"mira,Daily activity events (e.g. walking, exercise)\": \"Yes, but ask me next time\"\n    }\n  },\n  {\n    \"query\": \"What is my current stock portfolio balance and asset allocation?\",\n    \"id\": 30,\n    \"answer\": {\n      \"mira,Investment holdings\": \"Yes, but ask me next time\",\n      \"mira,Stock purchase dates and values\": \"Yes, but ask me next time\",\n      \"mira,Transaction histories related to investments\": \"Yes, but ask me next time\",\n      \"mira,Front door video recording\": \"No, never share\"\n    }\n  },\n  {\n    \"query\": \"I’m on a road trip! Can you find a gas station near me?\",\n    \"id\": 44,\n    \"answer\": {\n      \"Local Search,User location\": \"Yes, but ask me next time\",\n      \"Local Search,Car details (e.g. car fuel types)\": \"Yes, but ask me next time\"\n    }\n  },\n  {\n    \"query\": \"I heard a noise outside. Can you check what happened at the front door?\",\n    \"id\": 62,\n    \"answer\": {\n      \"mira,Front door video recording\": \"Yes, but ask me next time\"\n    }\n  }\n]\n\nNew permission requests (null values are to be predicted):\n[\n  {\n    \"query\": \"I want to lose weight. Can you create an at-home full-body workout plan for me? \",\n    \"id\": 0,\n    \"permission\": {\n      \"Fitness Tracking,Fitness goal (i.e. weight loss)\": null,\n      \"Fitness Tracking,Physical limitations or injuries\": null,\n      \"Fitness Tracking,Gender\": null\n    }\n  },\n  {\n    \"query\": \"Can you give me a summary of my health data from the past month?\",\n    \"id\": 1,\n    \"permission\": {\n      \"mira,Weight\": null,\n      \"mira,Blood pressure\": null,\n      \"mira,Heart rate data\": null,\n      \"mira,Sleep duration/quality\": null,\n      \"mira,Exercise logs\": null\n    }\n  },\n  {\n    \"query\": \"There is a mess in my garage. Check the access history and security cameras to see what happened.\",\n    \"id\": 59,\n    \"permission\": {\n      \"mira,Garage access log\": null,\n      \"mira,Garage video recording\": null\n    }\n  },\n  {\n    \"query\": \"How much energy did we use yesterday?\",\n    \"id\": 61,\n    \"permission\": {\n      \"mira,Energy consumption logs\": null\n    }\n  }\n]"
+      }
+    ],
+    "prompt_sha256": "1b2fb79e987c147b03a435ce44bc621b5878f906184a88446825faede101a022",
+    "test_row_indices": [
+      1863,
+      1864,
+      1865,
+      1866,
+      1867,
+      1868,
+      1869,
+      1870,
+      1930,
+      1931,
+      1933
+    ]
+  },
+  {
+    "call_id": "gemini_0shot_P179_fold0",
+    "stage": "predictor",
+    "participant_id": "P179",
+    "shots": 0,
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are a personalized permission assistant predicting this user's data-access decisions.\nConsider demographics, AI usage, privacy attitudes, the user's own permission history, and the meaning of each new request. The four responses differ both in immediate sharing and whether the assistant should ask again next time.\nFor each new query and every listed permission key, return exactly one of these labels: [\"No, never share\", \"No, but ask me next time\", \"Yes, but ask me next time\", \"Yes, always share\"].\nReturn a JSON array with one object per new query. Each object must have id, query, and permission. Under permission, keep every input key exactly and return {\"label\": one allowed label, \"score\": a number from 0 to 1} for each key. The score is confidence in that exact four-class label. Return JSON only.\n\nUser demographic and bio information:\nAge group: 45-54; gender: Male; education: unspecified.\n\nUser AI tool usage and privacy information:\n{\n  \"AI familiarity (survey 1-5)\": \"3\",\n  \"AI usage frequency (survey 1-5)\": \"2\",\n  \"AI use purposes\": \"usually to perform searchs for products to buy\",\n  \"Trust in AI privacy (survey 1-5)\": \"4\",\n  \"Privacy importance (survey 1-5)\": \"2\",\n  \"Privacy concerns\": \"just that they arent selling my data\",\n  \"Privacy-sensitive domains\": []\n}\n\nUser permission decision history:\n[]\n\nNew permission requests (null values are to be predicted):\n[\n  {\n    \"query\": \"Schedule a meeting with HR on Friday at 2 PM to discuss the cost-cutting.\",\n    \"id\": 14,\n    \"permission\": {\n      \"Calendar,HR email addresses\": null,\n      \"Calendar,Meeting date and time\": null,\n      \"Calendar,Meeting agenda (i.e. cost-cutting)\": null\n    }\n  },\n  {\n    \"query\": \"Find all invoices related to my recent business trip and store them in a folder called \\\"Expense Reports\\\" in my Cloud Drive.\",\n    \"id\": 17,\n    \"permission\": {\n      \"Cloud Drive,Invoices and receipts data\": null\n    }\n  },\n  {\n    \"query\": \"Design a \\\"Beach Vibes\\\" Instagram post and share the photo I took yesterday at the beach from my Cloud Drive on Instagram.\",\n    \"id\": 54,\n    \"permission\": {\n      \"Cloud Drive,Photo details (e.g. file name, location, and timestamp)\": null,\n      \"Instagram,Photos\": null,\n      \"Instagram,Photo details (e.g. file name, location, and timestamp)\": null,\n      \"mira,Photos\": null,\n      \"mira,Instagram post content\": null\n    }\n  },\n  {\n    \"query\": \"I’ve got a new pic in my Cloud Drive. Can you upload it to my Tinder account?\",\n    \"id\": 56,\n    \"permission\": {\n      \"Cloud Drive,Photo details (e.g. file name, location, and timestamp)\": null,\n      \"Tinder,Photos\": null,\n      \"mira,Photos\": null\n    }\n  }\n]"
+      }
+    ],
+    "prompt_sha256": "b7eef84af75da494b66459c7005744488f57d4e1d8c378a45dab4f2529df0b66",
+    "test_row_indices": [
+      9747,
+      9748,
+      9749,
+      9750,
+      9807,
+      9808,
+      9809,
+      9810,
+      9811,
+      9824,
+      9825,
+      9826
+    ]
+  },
+  {
+    "call_id": "gemini_4shot_P179_fold0",
+    "stage": "predictor",
+    "participant_id": "P179",
+    "shots": 4,
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are a personalized permission assistant predicting this user's data-access decisions.\nConsider demographics, AI usage, privacy attitudes, the user's own permission history, and the meaning of each new request. The four responses differ both in immediate sharing and whether the assistant should ask again next time.\nFor each new query and every listed permission key, return exactly one of these labels: [\"No, never share\", \"No, but ask me next time\", \"Yes, but ask me next time\", \"Yes, always share\"].\nReturn a JSON array with one object per new query. Each object must have id, query, and permission. Under permission, keep every input key exactly and return {\"label\": one allowed label, \"score\": a number from 0 to 1} for each key. The score is confidence in that exact four-class label. Return JSON only.\n\nUser demographic and bio information:\nAge group: 45-54; gender: Male; education: unspecified.\n\nUser AI tool usage and privacy information:\n{\n  \"AI familiarity (survey 1-5)\": \"3\",\n  \"AI usage frequency (survey 1-5)\": \"2\",\n  \"AI use purposes\": \"usually to perform searchs for products to buy\",\n  \"Trust in AI privacy (survey 1-5)\": \"4\",\n  \"Privacy importance (survey 1-5)\": \"2\",\n  \"Privacy concerns\": \"just that they arent selling my data\",\n  \"Privacy-sensitive domains\": []\n}\n\nUser permission decision history:\n[\n  {\n    \"query\": \"Give me a summary of my meetings and tasks for tomorrow.\",\n    \"id\": 21,\n    \"answer\": {\n      \"mira,Meeting title or description\": \"Yes, but ask me next time\",\n      \"mira,Pending task information\": \"Yes, but ask me next time\"\n    }\n  },\n  {\n    \"query\": \"Can you retrieve my tax filing details from last year?\",\n    \"id\": 25,\n    \"answer\": {\n      \"Tax Management,SSN\": \"Yes, but ask me next time\",\n      \"Tax Management,Full name\": \"Yes, but ask me next time\",\n      \"Tax Management,Address\": \"Yes, but ask me next time\",\n      \"Tax Management,Previous tax filing details\": \"Yes, but ask me next time\"\n    }\n  },\n  {\n    \"query\": \"Hey, I just joined Tinder. Can you help set up my profile with my bio, contact info, relationship preferences, and so on?\",\n    \"id\": 55,\n    \"answer\": {\n      \"Tinder,User bio\": \"Yes, but ask me next time\",\n      \"Tinder,Email address\": \"Yes, but ask me next time\",\n      \"Tinder,Phone number\": \"Yes, but ask me next time\",\n      \"Tinder,Profile Pictures\": \"Yes, but ask me next time\",\n      \"Tinder,Age\": \"Yes, but ask me next time\",\n      \"Tinder,Birthday\": \"Yes, but ask me next time\",\n      \"Tinder,Gender\": \"Yes, but ask me next time\",\n      \"Tinder,Relationship preferences\": \"Yes, but ask me next time\",\n      \"Tinder,Education level\": \"Yes, but ask me next time\",\n      \"Tinder,Workplace\": \"Yes, but ask me next time\",\n      \"Tinder,Interests/hobbies\": \"Yes, but ask me next time\",\n      \"Tinder,User location\": \"Yes, but ask me next time\"\n    }\n  },\n  {\n    \"query\": \"Hey, I'm interested in connecting with women aged 25 to 35 near San Francisco. Can you help me find some matches?\",\n    \"id\": 58,\n    \"answer\": {\n      \"Tinder,Relationship preferences\": \"Yes, but ask me next time\",\n      \"Tinder,User location\": \"Yes, but ask me next time\",\n      \"Tinder,Relationship status (e.g. single, married)\": \"Yes, but ask me next time\"\n    }\n  }\n]\n\nNew permission requests (null values are to be predicted):\n[\n  {\n    \"query\": \"Schedule a meeting with HR on Friday at 2 PM to discuss the cost-cutting.\",\n    \"id\": 14,\n    \"permission\": {\n      \"Calendar,HR email addresses\": null,\n      \"Calendar,Meeting date and time\": null,\n      \"Calendar,Meeting agenda (i.e. cost-cutting)\": null\n    }\n  },\n  {\n    \"query\": \"Find all invoices related to my recent business trip and store them in a folder called \\\"Expense Reports\\\" in my Cloud Drive.\",\n    \"id\": 17,\n    \"permission\": {\n      \"Cloud Drive,Invoices and receipts data\": null\n    }\n  },\n  {\n    \"query\": \"Design a \\\"Beach Vibes\\\" Instagram post and share the photo I took yesterday at the beach from my Cloud Drive on Instagram.\",\n    \"id\": 54,\n    \"permission\": {\n      \"Cloud Drive,Photo details (e.g. file name, location, and timestamp)\": null,\n      \"Instagram,Photos\": null,\n      \"Instagram,Photo details (e.g. file name, location, and timestamp)\": null,\n      \"mira,Photos\": null,\n      \"mira,Instagram post content\": null\n    }\n  },\n  {\n    \"query\": \"I’ve got a new pic in my Cloud Drive. Can you upload it to my Tinder account?\",\n    \"id\": 56,\n    \"permission\": {\n      \"Cloud Drive,Photo details (e.g. file name, location, and timestamp)\": null,\n      \"Tinder,Photos\": null,\n      \"mira,Photos\": null\n    }\n  }\n]"
+      }
+    ],
+    "prompt_sha256": "dbe284a7f30f9d79e15b801fc7d84167f233adfc78eabfe91e432f6246b5b228",
+    "test_row_indices": [
+      9747,
+      9748,
+      9749,
+      9750,
+      9807,
+      9808,
+      9809,
+      9810,
+      9811,
+      9824,
+      9825,
+      9826
+    ]
+  },
+  {
+    "call_id": "gemini_0shot_P183_fold0",
+    "stage": "predictor",
+    "participant_id": "P183",
+    "shots": 0,
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are a personalized permission assistant predicting this user's data-access decisions.\nConsider demographics, AI usage, privacy attitudes, the user's own permission history, and the meaning of each new request. The four responses differ both in immediate sharing and whether the assistant should ask again next time.\nFor each new query and every listed permission key, return exactly one of these labels: [\"No, never share\", \"No, but ask me next time\", \"Yes, but ask me next time\", \"Yes, always share\"].\nReturn a JSON array with one object per new query. Each object must have id, query, and permission. Under permission, keep every input key exactly and return {\"label\": one allowed label, \"score\": a number from 0 to 1} for each key. The score is confidence in that exact four-class label. Return JSON only.\n\nUser demographic and bio information:\nAge group: 35-44; gender: Female; education: Bachelor's.\n\nUser AI tool usage and privacy information:\n{\n  \"AI familiarity (survey 1-5)\": \"3\",\n  \"AI usage frequency (survey 1-5)\": \"3\",\n  \"AI use purposes\": \"To help come up with ideas and write emails\",\n  \"Trust in AI privacy (survey 1-5)\": \"3\",\n  \"Privacy importance (survey 1-5)\": \"5\",\n  \"Privacy concerns\": \"Just that hackers can find my info\",\n  \"Privacy-sensitive domains\": [\n    \"Shopping\",\n    \"Social\",\n    \"Entertainment\"\n  ]\n}\n\nUser permission decision history:\n[]\n\nNew permission requests (null values are to be predicted):\n[\n  {\n    \"query\": \"Schedule a meeting with HR on Friday at 2 PM to discuss the cost-cutting.\",\n    \"id\": 14,\n    \"permission\": {\n      \"Calendar,HR email addresses\": null,\n      \"Calendar,Meeting date and time\": null,\n      \"Calendar,Meeting agenda (i.e. cost-cutting)\": null,\n      \"Calendar,Payment note\": null\n    }\n  },\n  {\n    \"query\": \"Find all invoices related to my recent business trip and store them in a folder called \\\"Expense Reports\\\" in my Cloud Drive.\",\n    \"id\": 17,\n    \"permission\": {\n      \"Cloud Drive,Invoices and receipts data\": null,\n      \"Cloud Drive,Content of recent emails\": null,\n      \"Cloud Drive,Movie watching history\": null,\n      \"Cloud Drive,Film genre\": null\n    }\n  },\n  {\n    \"query\": \"There is a mess in my garage. Check the access history and security cameras to see what happened.\",\n    \"id\": 59,\n    \"permission\": {\n      \"mira,Garage access log\": null,\n      \"mira,Garage video recording\": null\n    }\n  },\n  {\n    \"query\": \"How much energy did we use yesterday?\",\n    \"id\": 61,\n    \"permission\": {\n      \"mira,Energy consumption logs\": null\n    }\n  }\n]"
+      }
+    ],
+    "prompt_sha256": "b067f142ad8ef12543fc854f139e783e108def76d0ab7c79fffe028b8d4ed62b",
+    "test_row_indices": [
+      7440,
+      7441,
+      7442,
+      7443,
+      7444,
+      7445,
+      7446,
+      7447,
+      7502,
+      7503,
+      7505
+    ]
+  },
+  {
+    "call_id": "gemini_4shot_P183_fold0",
+    "stage": "predictor",
+    "participant_id": "P183",
+    "shots": 4,
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are a personalized permission assistant predicting this user's data-access decisions.\nConsider demographics, AI usage, privacy attitudes, the user's own permission history, and the meaning of each new request. The four responses differ both in immediate sharing and whether the assistant should ask again next time.\nFor each new query and every listed permission key, return exactly one of these labels: [\"No, never share\", \"No, but ask me next time\", \"Yes, but ask me next time\", \"Yes, always share\"].\nReturn a JSON array with one object per new query. Each object must have id, query, and permission. Under permission, keep every input key exactly and return {\"label\": one allowed label, \"score\": a number from 0 to 1} for each key. The score is confidence in that exact four-class label. Return JSON only.\n\nUser demographic and bio information:\nAge group: 35-44; gender: Female; education: Bachelor's.\n\nUser AI tool usage and privacy information:\n{\n  \"AI familiarity (survey 1-5)\": \"3\",\n  \"AI usage frequency (survey 1-5)\": \"3\",\n  \"AI use purposes\": \"To help come up with ideas and write emails\",\n  \"Trust in AI privacy (survey 1-5)\": \"3\",\n  \"Privacy importance (survey 1-5)\": \"5\",\n  \"Privacy concerns\": \"Just that hackers can find my info\",\n  \"Privacy-sensitive domains\": [\n    \"Shopping\",\n    \"Social\",\n    \"Entertainment\"\n  ]\n}\n\nUser permission decision history:\n[\n  {\n    \"query\": \"Generate a complete report of my travel expenses that includes my credit card numbers, transaction IDs, and all receipts from my trips last year.\",\n    \"id\": 31,\n    \"answer\": {\n      \"Banking,Trip dates\": \"Yes, but ask me next time\",\n      \"mira,Bank or credit card statements\": \"No, never share\",\n      \"mira,Account number\": \"No, never share\",\n      \"mira,Detailed receipts\": \"Yes, but ask me next time\",\n      \"mira,Transaction logs\": \"No, never share\",\n      \"mira,Dates of expenses\": \"No, but ask me next time\"\n    }\n  },\n  {\n    \"query\": \"I recently watched Interstellar, Blade Runner 2049, and The Matrix. Can you recommend sci-fi movies based on these?\",\n    \"id\": 50,\n    \"answer\": {\n      \"The Movie Database,Movie watching history\": \"No, but ask me next time\",\n      \"The Movie Database,Film genre\": \"Yes, but ask me next time\"\n    }\n  },\n  {\n    \"query\": \"What concerts or events are happening near me this weekend?\",\n    \"id\": 52,\n    \"answer\": {\n      \"Web,Geolocation\": \"No, but ask me next time\"\n    }\n  },\n  {\n    \"query\": \"I’m going to bed. Could you turn off all the lights and just dim my bedroom light a little?\",\n    \"id\": 60,\n    \"answer\": {\n      \"Lighting Control,Bedtime\": \"No, but ask me next time\"\n    }\n  }\n]\n\nNew permission requests (null values are to be predicted):\n[\n  {\n    \"query\": \"Schedule a meeting with HR on Friday at 2 PM to discuss the cost-cutting.\",\n    \"id\": 14,\n    \"permission\": {\n      \"Calendar,HR email addresses\": null,\n      \"Calendar,Meeting date and time\": null,\n      \"Calendar,Meeting agenda (i.e. cost-cutting)\": null,\n      \"Calendar,Payment note\": null\n    }\n  },\n  {\n    \"query\": \"Find all invoices related to my recent business trip and store them in a folder called \\\"Expense Reports\\\" in my Cloud Drive.\",\n    \"id\": 17,\n    \"permission\": {\n      \"Cloud Drive,Invoices and receipts data\": null,\n      \"Cloud Drive,Content of recent emails\": null,\n      \"Cloud Drive,Movie watching history\": null,\n      \"Cloud Drive,Film genre\": null\n    }\n  },\n  {\n    \"query\": \"There is a mess in my garage. Check the access history and security cameras to see what happened.\",\n    \"id\": 59,\n    \"permission\": {\n      \"mira,Garage access log\": null,\n      \"mira,Garage video recording\": null\n    }\n  },\n  {\n    \"query\": \"How much energy did we use yesterday?\",\n    \"id\": 61,\n    \"permission\": {\n      \"mira,Energy consumption logs\": null\n    }\n  }\n]"
+      }
+    ],
+    "prompt_sha256": "140a19d947d4c3577c310abc30327c9647ddfcbd3d849cd44015317051aaad53",
+    "test_row_indices": [
+      7440,
+      7441,
+      7442,
+      7443,
+      7444,
+      7445,
+      7446,
+      7447,
+      7502,
+      7503,
+      7505
+    ]
+  }
+]

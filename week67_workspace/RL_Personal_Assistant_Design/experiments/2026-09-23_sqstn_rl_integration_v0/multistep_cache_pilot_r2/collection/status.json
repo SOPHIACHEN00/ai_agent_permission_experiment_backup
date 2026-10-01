@@ -1,0 +1,47 @@
+{
+  "status": "DATA_READY",
+  "started_utc": "2026-09-23T17:48:21.500066+00:00",
+  "api_attempts": 26,
+  "training_steps": 0,
+  "complete_graphs": 8,
+  "budget": {
+    "attempts": 26,
+    "max_attempts": 64,
+    "prior_attempts": 9,
+    "new_attempts": 17,
+    "budget_usd": 4.0,
+    "accounted_cost_upper_usd": 0.084348,
+    "estimated_cost_usd": 0.084348,
+    "failed": false,
+    "automatic_retry": false
+  },
+  "updated_utc": "2026-09-23T17:49:48.291543+00:00",
+  "completed_utc": "2026-09-23T17:49:54.353279+00:00",
+  "dataset_sha256": "cd59daff4ef177457cc46f7bb824975a28be3062b5b8c86217afaef45e849d0c",
+  "coverage": {
+    "passed": true,
+    "gates": {
+      "eight_graphs": true,
+      "at_most_64_entries": true,
+      "closed_edges": true,
+      "safety_zero": true,
+      "train_four_families": true,
+      "train_allow_once": true,
+      "train_allow_reuse": true,
+      "train_denial": true,
+      "train_multistep_success": true,
+      "train_allow_then_deny_expansion": true,
+      "train_forced_disable_then_refresh": true,
+      "dev_four_families": true,
+      "dev_allow_once": true,
+      "dev_allow_reuse": true,
+      "dev_denial": true,
+      "dev_multistep_success": true,
+      "dev_allow_then_deny_expansion": true,
+      "dev_forced_disable_then_refresh": true
+    },
+    "graph_count": 8,
+    "nodes": 256,
+    "cache_entries": 26
+  }
+}

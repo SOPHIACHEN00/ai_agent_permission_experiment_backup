@@ -1,0 +1,19 @@
+{
+  "python": "3.12.3 (tags/v3.12.3:f6650f9, Apr  9 2024, 14:05:25) [MSC v.1938 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "numpy": "2.0.0",
+  "pandas": "2.2.2",
+  "torch": "2.11.0+cpu",
+  "transformers": "5.5.0",
+  "tokenizers": "0.22.2",
+  "device": "cpu",
+  "cuda_available": false,
+  "cuda_version": null,
+  "gpu_name": null,
+  "gpu_total_memory_bytes": null,
+  "cuda_bf16_supported": false,
+  "torch_threads": 14,
+  "torch_interop_threads": 1,
+  "mixed_precision": "none",
+  "allow_tf32": false
+}

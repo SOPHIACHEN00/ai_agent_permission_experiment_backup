@@ -1,0 +1,17 @@
+{
+  "expected_red": {
+    "chunk_id": "04eb65",
+    "wall_time_seconds": 3.0791559,
+    "exit_code": 1,
+    "original_token_count": 398,
+    "output": "test_same_uuid_without_vendor_prefix_matches_but_other_gpu_fails (test_gpu_identity.IdentityTests.test_same_uuid_without_vendor_prefix_matches_but_other_gpu_fails) ... ERROR\r\n\r\n======================================================================\r\nERROR: test_same_uuid_without_vendor_prefix_matches_but_other_gpu_fails (test_gpu_identity.IdentityTests.test_same_uuid_without_vendor_prefix_matches_but_other_gpu_fails)\r\n----------------------------------------------------------------------\r\nTraceback (most recent call last):\r\n  File \"D:\\Study\\Graduate_Study_UofG\\Research\\paper\\Week67\\RL_Personal_Assistant_Design\\experiments\\2026-09-22_family3_next_stage\\stage_b\\test_gpu_identity.py\", line 18, in test_same_uuid_without_vendor_prefix_matches_but_other_gpu_fails\r\n    self.assertEqual(r.gpu_metadata()['physical_gpu_index'], 2)\r\n                     ^^^^^^^^^^^^^^^^\r\n  File \"D:\\Study\\Graduate_Study_UofG\\Research\\paper\\Week67\\RL_Personal_Assistant_Design\\experiments\\2026-09-22_family3_next_stage\\stage_b\\run_learner_pilot.py\", line 56, in gpu_metadata\r\n    require(visible_uuid.lower() == query[1].strip().lower(), \"visible CUDA UUID differs from selected GPU2\")\r\n  File \"D:\\Study\\Graduate_Study_UofG\\Research\\paper\\Week67\\RL_Personal_Assistant_Design\\experiments\\2026-09-22_family3_next_stage\\stage_b\\run_learner_pilot.py\", line 42, in require\r\n    raise IntegrityError(counter, detail)\r\nrun_learner_pilot.IntegrityError: visible CUDA UUID differs from selected GPU2\r\n\r\n----------------------------------------------------------------------\r\nRan 1 test in 2.431s\r\n\r\nFAILED (errors=1)\r\n"
+  },
+  "green": {
+    "chunk_id": "395115",
+    "wall_time_seconds": 2.9235726,
+    "exit_code": 0,
+    "original_token_count": 69,
+    "output": "test_same_uuid_without_vendor_prefix_matches_but_other_gpu_fails (test_gpu_identity.IdentityTests.test_same_uuid_without_vendor_prefix_matches_but_other_gpu_fails) ... ok\r\n\r\n----------------------------------------------------------------------\r\nRan 1 test in 2.338s\r\n\r\nOK\r\n"
+  },
+  "scope": "Pre-run identifier formatting only; no change to learning or GPU identity equality."
+}

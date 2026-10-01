@@ -1,0 +1,4 @@
+scope,profile_name,condition_id,n_rows,n_participants,accuracy,macro_f1,distribution_tv_distance,over_sharing_rate,under_sharing_rate,predicted_share_rate,human_share_rate
+profile,Broad Restrictors,raw_participant_profile_plus_empirical_card,30,10,0.23333333333333334,0.18421052631578946,0.43333333333333335,0.1875,0.6428571428571429,0.26666666666666666,0.4666666666666667
+profile,Persistent Granters,raw_participant_profile_plus_empirical_card,30,10,0.26666666666666666,0.2013888888888889,0.1333333333333333,0.14285714285714285,0.08695652173913043,0.7333333333333333,0.7666666666666667
+profile,Re-consent Seekers,raw_participant_profile_plus_empirical_card,30,10,0.4666666666666667,0.24880382775119617,0.33333333333333337,0.6666666666666666,0.1111111111111111,0.8,0.6

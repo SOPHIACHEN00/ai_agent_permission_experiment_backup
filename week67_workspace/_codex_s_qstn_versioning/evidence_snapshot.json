@@ -1,0 +1,668 @@
+{
+  "workbook_summary": {
+    "ndjson": "{\"kind\":\"workbook\",\"id\":\"wb/opyzkz\",\"sheets\":10}\n{\"kind\":\"sheet\",\"id\":\"ws/g7yg84\",\"name\":\"README\",\"index\":0,\"range\":\"A1:B10\",\"address\":\"A1:B10\"}\n{\"kind\":\"sheet\",\"id\":\"ws/72k8io\",\"name\":\"Cao_Rules\",\"index\":1,\"range\":\"A1:K12\",\"address\":\"A1:K12\"}\n{\"kind\":\"sheet\",\"id\":\"ws/die1e8\",\"name\":\"Sources\",\"index\":2,\"range\":\"A1:F10\",\"address\":\"A1:F10\"}\n{\"kind\":\"sheet\",\"id\":\"ws/5zu4f2\",\"name\":\"Wijesekera_2017_Rules\",\"index\":3,\"range\":\"A1:K12\",\"address\":\"A1:K12\"}\n{\"kind\":\"sheet\",\"id\":\"ws/3b98kj\",\"name\":\"Elbitar_2021_Rules\",\"index\":4,\"range\":\"A1:K12\",\"address\":\"A1:K12\"}\n{\"kind\":\"sheet\",\"id\":\"ws/tzyuqd\",\"name\":\"Wijesekera_2015_Rules\",\"index\":5,\"range\":\"A1:K12\",\"address\":\"A1:K12\"}\n{\"kind\":\"sheet\",\"id\":\"ws/g8d2dk\",\"name\":\"Malkin_2022_Rules\",\"index\":6,\"range\":\"A1:K12\",\"address\":\"A1:K12\"}\n{\"kind\":\"sheet\",\"id\":\"ws/6pjmy9\",\"name\":\"Harborth_2021_Rules\",\"index\":7,\"range\":\"A1:K12\",\"address\":\"A1:K12\"}\n{\"kind\":\"sheet\",\"id\":\"ws/9d9km3\",\"name\":\"Esterwood_2023_Rules\",\"index\":8,\"range\":\"A1:K12\",\"address\":\"A1:K12\"}\n{\"kind\":\"sheet\",\"id\":\"ws/6bsmd1\",\"name\":\"Principle_Coverage\",\"index\":9,\"range\":\"A1:I18\",\"address\":\"A1:I18\"}",
+    "truncated": false,
+    "metadata": {
+      "revision": "lja4zf",
+      "target": {
+        "id": "wb/opyzkz",
+        "beforeLines": 0,
+        "afterLines": 0
+      },
+      "kind": {
+        "requested": "workbook,sheet",
+        "tokens": [
+          "workbook",
+          "sheet"
+        ]
+      },
+      "include": {
+        "tokens": []
+      },
+      "exclude": {
+        "tokens": []
+      },
+      "notices": []
+    }
+  },
+  "principles": [
+    {
+      "id": "P1",
+      "english": "Trust Loss Asymmetry",
+      "chinese": "信任损失不对称原则",
+      "status": "部分覆盖",
+      "rule_ids": "Esterwood-R1/R2/R3/R5/R6",
+      "covered": "已有重复可验证错误累积、修复不能清零、可验证错误后的责任否认损失更大。",
+      "gap": "尚未写成通用的 Δtrust_loss > Δtrust_repair；普通成功行为与严重违约也未分级。",
+      "layer": "受访者行为（纵向）",
+      "priority": "P1"
+    },
+    {
+      "id": "P2",
+      "english": "Trust Recovery Lag",
+      "chinese": "信任恢复滞后原则",
+      "status": "部分覆盖",
+      "rule_ids": "Esterwood-R2/R5",
+      "covered": "已有逐步恢复、连续无错误行为比一句道歉更重要。",
+      "gap": "没有显式时间滞后、恢复窗口或连续正确行为门槛；应把 recovery lag 写成状态转移。",
+      "layer": "受访者行为（纵向）",
+      "priority": "P1"
+    },
+    {
+      "id": "P3",
+      "english": "Recency Dominance",
+      "chinese": "近期事件主导原则",
+      "status": "未覆盖",
+      "rule_ids": "—",
+      "covered": "现有规则使用历史回答/违约记录作为软特征。",
+      "gap": "没有 Δt、时间衰减、近期窗口或 recency 与严重性联合加权。",
+      "layer": "受访者行为（纵向）",
+      "priority": "P0"
+    },
+    {
+      "id": "P4",
+      "english": "Expectation Violation Effect",
+      "chinese": "预期违背效应",
+      "status": "已覆盖",
+      "rule_ids": "Cao-R2; Wij2015-R2; Wij2017-R2",
+      "covered": "未预期或情境不匹配的请求提高 deny / ask-explanation 倾向。",
+      "gap": "无需新增原则；保持为软效应，不迁移 Android 系数，不写成确定性开关。",
+      "layer": "受访者行为",
+      "priority": "—"
+    },
+    {
+      "id": "P5",
+      "english": "Perceived Control Principle",
+      "chinese": "感知控制原则",
+      "status": "已覆盖",
+      "rule_ids": "Cao-R7; Elbitar-R6; Malkin-R6/R7; Harborth-R6",
+      "covered": "可撤销性、控制感、自动化接受度、review 与 scope 限制已有独立表示。",
+      "gap": "已有规则明确说明 explanation 不会自动带来 control；可继续做纵向校准，但不需另起原则。",
+      "layer": "受访者行为",
+      "priority": "—"
+    },
+    {
+      "id": "P6",
+      "english": "Transparency Calibration",
+      "chinese": "透明度校准原则",
+      "status": "已覆盖",
+      "rule_ids": "Cao-R5; Elbitar-R1/R2/R7; Harborth-R1/R2/R7",
+      "covered": "已覆盖 explanation 的存在、时机、可读性、注意力、理解度与来源；不把透明度等同于 allow nudge。",
+      "gap": "可将现有多条规则整理为 quality × timing × profile 的统一接口，但行为内容已覆盖。",
+      "layer": "受访者行为",
+      "priority": "—"
+    },
+    {
+      "id": "P7",
+      "english": "Permission Fatigue",
+      "chinese": "权限疲劳原则",
+      "status": "已覆盖",
+      "rule_ids": "Wij2017-R8; Wij2015-R7; Malkin-R4; Harborth-R7",
+      "covered": "已有 prompt burden、interruption、habituation 与 selective prompting。",
+      "gap": "不应写成疲劳必然导致 deny 或更安全；影响应保持 profile-specific、随机并由 calibration 估计。",
+      "layer": "受访者行为",
+      "priority": "—"
+    },
+    {
+      "id": "P8",
+      "english": "Severity Dominance",
+      "chinese": "错误严重性主导原则",
+      "status": "未覆盖",
+      "rule_ids": "Harborth-R4/R5；Malkin-R8（assistant 层）",
+      "covered": "已有感知隐私危险、风险低估；Malkin-R8 是高后果操作的 assistant 安全硬门。",
+      "gap": "缺少受访者层的 severity → trust/caution 更新规则。不能把 Malkin-R8 当作人类允许/拒绝规律；需新增严重性加权并与客观安全 oracle 分离。",
+      "layer": "受访者行为（需新增）",
+      "priority": "P0"
+    },
+    {
+      "id": "P9",
+      "english": "Privacy Calculus",
+      "chinese": "隐私权衡原则",
+      "status": "部分覆盖",
+      "rule_ids": "Cao-R3/R4; Wij2015-R1/R6; Harborth-R3/R4; Malkin-R2",
+      "covered": "已有 utility、功能必要性、数据风险、scope 与 deny_reason。",
+      "gap": "还没有统一的 benefit–privacy cost 权衡规则；必须区分 not_useful_now 与 inappropriate，不能把所有 deny 合并。",
+      "layer": "受访者行为",
+      "priority": "P1"
+    },
+    {
+      "id": "P10",
+      "english": "Stable Privacy Trait",
+      "chinese": "稳定隐私倾向原则",
+      "status": "已覆盖",
+      "rule_ids": "Cao-R8; Wij2017-R3; Wij2015-R4/R8; Elbitar-R4/R5",
+      "covered": "已有稳定 privacy concern / profile heterogeneity，并明确静态 attitude 不是充分预测器。",
+      "gap": "应保留为 baseline/prior 和调节项，不能把稳定 trait 写成对所有情境都有效的确定性政策。",
+      "layer": "受访者行为",
+      "priority": "—"
+    },
+    {
+      "id": "P11",
+      "english": "Context Dependency",
+      "chinese": "情境依赖原则",
+      "status": "已覆盖",
+      "rule_ids": "Cao-R1; Wij2017-R1/R2/R4; Wij2015-R2/R3/R6; Harborth-R1/R8",
+      "covered": "任务、时机、可见性、请求方、scope、数据类型和相似历史均已进入情境建模。",
+      "gap": "保持 profile × context 结构；不要让单一 persona 或全局 allow rate 覆盖情境。",
+      "layer": "受访者行为",
+      "priority": "—"
+    },
+    {
+      "id": "P12",
+      "english": "Trust Calibration",
+      "chinese": "信任校准原则",
+      "status": "部分覆盖",
+      "rule_ids": "Esterwood-R1/R2/R4/R5; Malkin-R6",
+      "covered": "已有 trust 累积、trust 维度分离和 automation trust heterogeneity。",
+      "gap": "缺少‘实际可靠性 ↔ 信任/依赖程度应匹配’的显式校准规则，也没有 confidence/reliance calibration 状态。",
+      "layer": "受访者行为（纵向）",
+      "priority": "P0"
+    }
+  ],
+  "rules": [
+    {
+      "sheet": "Cao_Rules",
+      "rule_id": "Cao-R1",
+      "name": "Context rule",
+      "summary": "必须根据当前任务/请求情境回答，不能只依赖全局 persona。",
+      "evidence_rating": "部分直接支持",
+      "model_rule": "将 profile_i 与 runtime_context_t 联合输入；context 至少含 runtime expectation、当前功能、请求解释、数据类型与 scope。不要用 context 覆盖 profile。",
+      "evidence_boundary": "支持“情境进入模型”，不支持“只看当前任务、忽略个体差异”。应为 profile × context。"
+    },
+    {
+      "sheet": "Cao_Rules",
+      "rule_id": "Cao-R2",
+      "name": "Expectation rule",
+      "summary": "意外/未预期的权限请求更容易被拒绝或要求说明。",
+      "evidence_rating": "直接支持",
+      "model_rule": "if runtime_expected=false: raise deny and ask_explanation propensity; update expectation_mismatch flag。",
+      "evidence_boundary": "该结果来自 Android runtime permissions；用于 agent 时作为方向性先验，不直接迁移数值。"
+    },
+    {
+      "sheet": "Cao_Rules",
+      "rule_id": "Cao-R3",
+      "name": "Functionality / utility rule",
+      "summary": "当前功能真正需要的数据更容易被允许。",
+      "evidence_rating": "直接支持（理由层）",
+      "model_rule": "use utility_need / feature_required as a positive, soft feature for allow_once；不要视为确定性因果规则。",
+      "evidence_boundary": "这是用户报告的理由分布，不是随机实验给出的功能必要性因果系数。"
+    },
+    {
+      "sheet": "Cao_Rules",
+      "rule_id": "Cao-R4",
+      "name": "Least-privilege rule",
+      "summary": "不使用的功能对应权限更倾向拒绝；用户会判断应用是否确实需要该权限。",
+      "evidence_rating": "直接支持（理由层）",
+      "model_rule": "if feature_used=false or necessity_match=false: raise deny / narrow_scope propensity; retain deny_reason。",
+      "evidence_boundary": "需将“没有当下效用”与“访问不正当”分开存为 deny_reason，避免错误更新 trust/caution。"
+    },
+    {
+      "sheet": "Cao_Rules",
+      "rule_id": "Cao-R5",
+      "name": "Explanation rule",
+      "summary": "具体、相关且可信的 explanation 提高允许概率。",
+      "evidence_rating": "需改写",
+      "model_rule": "Cao-only version: explanation_present=true softens deny. explanation_quality / relevance / truthfulness 必须由其他研究或独立 oracle 处理。",
+      "evidence_boundary": "不能把“具体、相关、可信”归因于 Cao。该强化说法需由 Elbitar et al. (2021) / Harborth & Frik (2021) 另行支持。"
+    },
+    {
+      "sheet": "Cao_Rules",
+      "rule_id": "Cao-R6",
+      "name": "Temporal / temporary-grant rule",
+      "summary": "用户不舒服于永久授权时，更偏好临时或一次性授权。",
+      "evidence_rating": "直接支持",
+      "model_rule": "if consent_duration=persistent and comfort is low: raise allow_once / temporary preference; record reluctant_consent when temporary is unavailable。",
+      "evidence_boundary": "论文未直接测量“未来用途不确定”。规则应依据 comfort/persistence，而不是把未来不确定性当作已证实变量。"
+    },
+    {
+      "sheet": "Cao_Rules",
+      "rule_id": "Cao-R7",
+      "name": "Reversibility rule",
+      "summary": "用户知道决定可以修改时，可能先拒绝/延后；历史 grant 必须允许后续撤销。",
+      "evidence_rating": "直接支持（需拆分）",
+      "model_rule": "if reversible=true: permit defer_or_deny_now without inferring permanent rejection; ledger must support later grant and revoke. Model temporary grant separately under Cao-R6。",
+      "evidence_boundary": "可撤销性支持 defer/deny-now 与 revoke，不自动证明“先临时 allow”；temporary evidence 见 Cao-R6。"
+    },
+    {
+      "sheet": "Cao_Rules",
+      "rule_id": "Cao-R8",
+      "name": "Attitude–behavior separation rule",
+      "summary": "隐私态度、期望准确性/情境理解与实际 grant/deny 行为应分别建模。",
+      "evidence_rating": "直接支持（术语已校正）",
+      "model_rule": "keep privacy_attitude_i, expectation_accuracy_i, observed_decision_history_i as separate variables; do not derive behavior only from privacy attitude。",
+      "evidence_boundary": "Cao 未独立测量通用“knowledge level”。应写 expectation_accuracy/context understanding，而不是泛称知识水平。"
+    },
+    {
+      "sheet": "Wijesekera_2017_Rules",
+      "rule_id": "Wij2017-R1",
+      "name": "Context-change / no blind reuse rule",
+      "summary": "一次历史 allow 不能自动继承到未来不同情境；当情境改变时，应重新评估是否仍符合用户偏好。",
+      "evidence_rating": "直接支持",
+      "model_rule": "Store a context_signature with every authorization. If current_context is not sufficiently similar to the ledger entry: do_not_blindly_reuse; re-evaluate and permit ask_user. Context fields must be explicit, not hidden in free text。",
+      "evidence_boundary": "直接支持“不能盲目复用”，但没有证明 purpose、recipient、scope 等每一个 agent 字段都独立改变决定。具体 context schema 仍须由 CI / 其他研究补足。"
+    },
+    {
+      "sheet": "Wijesekera_2017_Rules",
+      "rule_id": "Wij2017-R2",
+      "name": "Observable runtime-context rule",
+      "summary": "当前可观察的请求情境必须进入决策，尤其是请求方是否可见、用户当时正在使用什么前台任务/应用。",
+      "evidence_rating": "直接支持",
+      "model_rule": "Include requester_visibility, foreground_task_or_app, permission_or_data_type and request_time in runtime_context_t. Treat their effects as profile-specific features, not universal deterministic switches。",
+      "evidence_boundary": "visibility / foreground app 是 Android 代理变量；迁移到 agent 场景时可映射为 task stage、active tool、user-visible action 等，但不应照搬特征重要性排序。"
+    },
+    {
+      "sheet": "Wijesekera_2017_Rules",
+      "rule_id": "Wij2017-R3",
+      "name": "Profile heterogeneity rule",
+      "summary": "用户并非同一种“平均型隐私决策者”：一部分呈稳定默认 allow/deny，另一部分会随情境细化判断。",
+      "evidence_rating": "直接支持",
+      "model_rule": "Represent at least a profile-level context_sensitivity / default_tendency parameter. Let it modulate how strongly runtime context and prior history affect the next action; do not simulate every profile as equally contextual。",
+      "evidence_boundary": "53%/47% 是该 Android 样本与其分类阈值下的描述性比例，不得作为 S-QSTN profile 的固定先验或人口结论。"
+    },
+    {
+      "sheet": "Wijesekera_2017_Rules",
+      "rule_id": "Wij2017-R4",
+      "name": "Similar-history ledger rule",
+      "summary": "与当前请求相似的历史 grant/deny，比只记全局 allow rate 更适合预测后续决策。",
+      "evidence_rating": "直接支持",
+      "model_rule": "Index authorization_history by request_signature and context_signature. Use prior outcomes for similar (requester, data/permission, visibility, foreground-task) combinations as soft features; never let history override a new high-risk or incorrect_explicit signal。",
+      "evidence_boundary": "这是预测关联而非因果定律；历史也不等于长期同意。S-QSTN 的 ledger 仍须表达 purpose、recipient、scope、expiry 与 revoke。"
+    },
+    {
+      "sheet": "Wijesekera_2017_Rules",
+      "rule_id": "Wij2017-R5",
+      "name": "Cold-start / elicitation rule",
+      "summary": "新用户不能只靠其他人的数据可靠推断，尤其是情境型用户；早期需要有限、结构化的显式询问来校准个人偏好。",
+      "evidence_rating": "直接支持（系统策略）",
+      "model_rule": "During bootstrap: use a bounded, coverage-oriented elicitation schedule to collect user-specific labels. Keep cold_start_uncertainty high until enough diverse contexts are observed; do not infer a contextual profile from population averages alone。",
+      "evidence_boundary": "这是 permission-system 的学习/采样策略，不是“用户必会改变”的心理规则。12 次与 96.8% 都不能直接迁移到 agent 权限任务。"
+    },
+    {
+      "sheet": "Wijesekera_2017_Rules",
+      "rule_id": "Wij2017-R6",
+      "name": "Low-confidence re-ask rule",
+      "summary": "系统在无法可靠判断用户偏好时，应再次询问，而非自信地自动 allow 或 deny。",
+      "evidence_rating": "直接支持（系统策略）",
+      "model_rule": "If preference_prediction_confidence < calibrated_threshold: emit ask_user / clarification request and update ledger only after the response. In high-risk contexts, combine this with the independent safety gate rather than trusting confidence alone。",
+      "evidence_boundary": "“confidence → ask”是自动化策略而非人类行为法则。阈值 0.60、提示比例和准确率受模型校准及分布漂移影响，不能写死。"
+    },
+    {
+      "sheet": "Wijesekera_2017_Rules",
+      "rule_id": "Wij2017-R7",
+      "name": "False-allow asymmetry / safety-evaluation rule",
+      "summary": "false allow 与 false deny 必须分开计量；用户本想拒绝却被允许是 privacy violation，且数据披露通常比拒绝后再授权更难逆转。",
+      "evidence_rating": "直接支持（评估设计）",
+      "model_rule": "Track false_allow_privacy_violation and false_deny_functionality_loss separately. For high-risk or incorrect_explicit requests, use false_allow as a hard safety gate; do not optimize only aggregate accuracy or a symmetric reward。",
+      "evidence_boundary": "这支持风险不对称与分层指标；不提供 AI-agent 场景下的统一 reward 权重。high-risk / incorrect_explicit 仍必须由独立 security/task oracle 判定。"
+    },
+    {
+      "sheet": "Wijesekera_2017_Rules",
+      "rule_id": "Wij2017-R8",
+      "name": "Prompt-burden / habituation rule",
+      "summary": "频繁、低必要性的权限提示会造成 burden，并可能使人对后续更重要的提示习惯化；但过少提示又可能让系统违背用户意愿。",
+      "evidence_rating": "部分直接支持",
+      "model_rule": "Maintain burden_t as a state affected by prompt frequency and interruption cost, but make its behavioral effect profile-specific and stochastic. Optimize for selective re-asking, never assume burden mechanically increases deny or safety。",
+      "evidence_boundary": "此文为 burden 变量提供强设计动机，但不是长期 burden→allow/deny 行为转移的直接因果证据。相关状态更新需要 Malkin 等研究及本项目真人 calibration。"
+    },
+    {
+      "sheet": "Elbitar_2021_Rules",
+      "rule_id": "Elbitar-R1",
+      "name": "Rationale-presence rule",
+      "summary": "提供 explanation / rationale 会影响本轮授权；在该实验的标准化 rationale 下，用户更可能 grant，并感到更知情、更理解目的。",
+      "evidence_rating": "直接支持",
+      "model_rule": "When rationale_present=true AND rationale_integrity_oracle=true: add a soft communication feature to the decision model; update explanation_seen / comprehension probabilistically. Never let a rationale override high-risk, incorrect_explicit, or an integrity failure。",
+      "evidence_boundary": "只测试一个标准化 rationale 设计；不能从此推出“任何 explanation 的质量、相关性、真实性或可信性都会提高 allow”。安全场景必须由独立 integrity oracle 判定。"
+    },
+    {
+      "sheet": "Elbitar_2021_Rules",
+      "rule_id": "Elbitar-R2",
+      "name": "Timing × rationale interaction rule",
+      "summary": "请求时机与 rationale 必须联合建模；不能把二者的影响当作彼此独立、在所有结果上相同的加分项。",
+      "evidence_rating": "直接支持",
+      "model_rule": "Represent request_timing and rationale_present as separate inputs plus an interaction for subjective outcomes (informedness, clarity, satisfaction). Do not use a single global timing bonus or explanation bonus across all action and feedback channels。",
+      "evidence_boundary": "grant/deny 的最终模型中没有 timing×rationale 交互，只有两个正向主效应。因此不能把“交互”错误外推为所有输出（尤其是 allow）都存在。"
+    },
+    {
+      "sheet": "Elbitar_2021_Rules",
+      "rule_id": "Elbitar-R3",
+      "name": "Timing trade-off / no universal best rule",
+      "summary": "in-context 请求会提高 grant，但它并不在每个用户体验指标上都更好；尤其没有 rationale 时，才对知情感与清晰度有额外好处。",
+      "evidence_rating": "直接支持",
+      "model_rule": "Model timing as a context-dependent trade-off: in_context can raise allow propensity, while its feedback benefit depends on rationale presence. Do not encode in_context as inherently safer, more informed, or universally preferred。",
+      "evidence_boundary": "“in-context”在移动端由 app 状态定义。迁移到 assistant 时应映射为 task stage / active feature / user-visible action，而不是把 timing 当作固定安全标签。"
+    },
+    {
+      "sheet": "Elbitar_2021_Rules",
+      "rule_id": "Elbitar-R4",
+      "name": "Individuality / profile-modulated communication rule",
+      "summary": "不同用户对 timing 与 rationale 的反应真实不同，不存在适合所有人的统一请求策略。",
+      "evidence_rating": "直接支持",
+      "model_rule": "Keep user-level profile variables that modulate communication effects (e.g., rationale_preference, timing_preference, privacy_concern). Preserve profile-specific response variance instead of averaging it into a universal prompting rule。",
+      "evidence_boundary": "论文没有给出可直接复用的 persona taxonomy 或群体比例。S-QSTN profile 应被校准，而不是把 ICC 当作固定权重。"
+    },
+    {
+      "sheet": "Elbitar_2021_Rules",
+      "rule_id": "Elbitar-R5",
+      "name": "Attitude, sensitivity, and clarity separation rule",
+      "summary": "隐私关切、请求的感知敏感度和用户对目的的初始清晰度应分开表示；不能只用单一“privacy attitude”解释 grant/deny。",
+      "evidence_rating": "直接支持",
+      "model_rule": "Maintain separate state/features: privacy_concern_i, perceived_sensitivity_t, and purpose_clarity_t. Let a verified explanation update clarity, but do not treat it as proof that data access is necessary or safe。",
+      "evidence_boundary": "这些是经控制变量后的关联，不能直接解释为 AI-agent 许可中的因果系数。实际 data sensitivity / necessity 必须来自独立 task/security oracle。"
+    },
+    {
+      "sheet": "Elbitar_2021_Rules",
+      "rule_id": "Elbitar-R6",
+      "name": "Decision-evaluation separation / no automatic control rule",
+      "summary": "allow/deny、是否知情、满意度和控制感是不同结果；有 explanation 或合适 timing 不会自动令用户觉得自己更有 control。",
+      "evidence_rating": "直接支持（反证）",
+      "model_rule": "Store action and structured feedback separately: consent_action, informedness, satisfaction, perceived_control, and purpose_clarity. Do not deterministically increase control_need satisfaction merely because an explanation was shown。",
+      "evidence_boundary": "这是一次性主观评价，而非长期 autonomy/trust trajectory；不能替代对 revoke、override 或 repeated-error 行为的纵向证据。"
+    },
+    {
+      "sheet": "Elbitar_2021_Rules",
+      "rule_id": "Elbitar-R7",
+      "name": "Explanation attention and provenance rule",
+      "summary": "展示 rationale 不等于用户已阅读、理解或正确识别其来源；attention 与 explanation_source 应显式表示。",
+      "evidence_rating": "直接支持（需拆分）",
+      "model_rule": "Track rationale_present, rationale_seen, rationale_comprehended, and explanation_source separately. If source is app/agent supplied, label it; never assume system endorsement or user comprehension from message delivery alone。",
+      "evidence_boundary": "recall 是实验后的测量，不能直接规定 agent 对话中的注意力转移概率；应作为 attention/comprehension 噪声的证据，而非固定参数。"
+    },
+    {
+      "sheet": "Elbitar_2021_Rules",
+      "rule_id": "Elbitar-R8",
+      "name": "Rationale-integrity boundary rule",
+      "summary": "未核验的 explanation 不能因为“有 rationale”就增加 allow；误导、错误或恶意 rationale 必须由独立安全机制处理。",
+      "evidence_rating": "需改写",
+      "model_rule": "Only apply any explanation-related allow effect when rationale_integrity_oracle=true. If false/unknown: do not reward allow; surface uncertainty or ask for clarification. Keep rationale text/source auditable for the safety layer。",
+      "evidence_boundary": "这是面向 agent 安全的必要推断，不是 Elbitar 直接测得的用户行为效应。必须与 task/security oracle 及 false-allow hard gate 联用。"
+    },
+    {
+      "sheet": "Wijesekera_2015_Rules",
+      "rule_id": "Wij2015-R1",
+      "name": "Perceived-necessity / functionality rule",
+      "summary": "用户若认为请求与当前任务功能无关，更可能拒绝或要求说明；认为其对核心功能必要时，更可能允许。",
+      "evidence_rating": "直接支持",
+      "model_rule": "Maintain perceived_necessity_t separately from objective_necessity_oracle. If perceived_necessity_t is low, raise deny / ask_explanation propensity; do not treat a merely asserted purpose as proof that access is necessary or safe.",
+      "evidence_boundary": "这是事后访谈中的主观“感知必要性”，并非技术上的客观必要性；不能把它误写成 developer/agent 的声明一定可信，或直接外推为 explanation 的因果效应。"
+    },
+    {
+      "sheet": "Wijesekera_2015_Rules",
+      "rule_id": "Wij2015-R2",
+      "name": "Expectation / contextual-integrity rule",
+      "summary": "越不符合当前情境预期的访问，越应提高拒绝、要求说明或再次询问的概率。",
+      "evidence_rating": "直接支持",
+      "model_rule": "Compute an expectation_mismatch_t feature from active task, recent user action, requester identity, data/scope, and contextual cues. A higher mismatch softly increases deny / ask_explanation; it never overrides a hard safety gate.",
+      "evidence_boundary": "测量来自一周后的截图回顾，属于关联证据；不要把该相关系数当作 AI-agent 场景可复用的固定转移概率。"
+    },
+    {
+      "sheet": "Wijesekera_2015_Rules",
+      "rule_id": "Wij2015-R3",
+      "name": "Visibility / active-use rule",
+      "summary": "请求方在前台、用户正主动使用且有上下文线索时，访问更可预期；后台或不可见访问会显著提高拒绝倾向。",
+      "evidence_rating": "直接支持",
+      "model_rule": "Represent agent_visible_t / user_active_task_t / contextual_cue_t explicitly. When an agent acts outside the visible task context, raise deny / ask_explanation propensity and consider a refresh prompt; do not use a universal allow rule.",
+      "evidence_boundary": "原变量是 Android app 的 foreground/background visibility。迁移到 assistant 时应映射为用户可见的任务阶段、当前交互与明确的执行通知，不能机械地等同于“聊天窗口是否打开”。"
+    },
+    {
+      "sheet": "Wijesekera_2015_Rules",
+      "rule_id": "Wij2015-R4",
+      "name": "Individual-history calibration rule",
+      "summary": "不同用户对相同请求会有稳定但不同的反应；模型必须从该用户的实际决策历史校准，而不能使用总体平均用户。",
+      "evidence_rating": "直接支持",
+      "model_rule": "Keep user-specific decision state and update it from observed consent_action / structured feedback. Use profile-conditioned parameters, but treat global-population estimates only as priors rather than as the user’s final policy.",
+      "evidence_boundary": "36 人、1 周的 Android 研究没有给出可直接搬用的 persona taxonomy、群体比例或长期信任参数；AUC 也不是 S-QSTN 应达到的 fidelity 指标。"
+    },
+    {
+      "sheet": "Wijesekera_2015_Rules",
+      "rule_id": "Wij2015-R5",
+      "name": "Context-scoped authorization ledger rule",
+      "summary": "一次授权不能只按“请求方 × permission”永久复用；历史授权至少需要绑定请求方、资源与可见性/情境。",
+      "evidence_rating": "直接支持",
+      "model_rule": "Store consent history at a context-scoped key such as (agent_id, data/scope, purpose, recipient, action, contextual_visibility). Reuse a prior decision only when the key matches; otherwise ask, deny, or request clarification according to risk and uncertainty.",
+      "evidence_boundary": "该研究的三元组不含 AI-agent 的 purpose、recipient、duration、retention、revoke 或 scope edit。对 S-QSTN 必须扩展 ledger，而不是把 83.5% 当作通用允许率。"
+    },
+    {
+      "sheet": "Wijesekera_2015_Rules",
+      "rule_id": "Wij2015-R6",
+      "name": "Context-over-data-type rule",
+      "summary": "数据类型/permission type 本身不足以决定允许或拒绝；请求方身份、是否正在使用、可见性和情境同样重要。",
+      "evidence_rating": "直接支持",
+      "model_rule": "Model data_sensitivity_t as one input, not the sole decision rule. Combine it with requester identity, current activity, visibility, scope and user-specific history; allow screen/activity state to change feature importance.",
+      "evidence_boundary": "仅覆盖论文列出的敏感 Android resources；不能据此降低 high-risk / incorrect-explicit 情境中的安全 hard gate，也不能把屏幕关闭的结果泛化为任何后台 agent 行为。"
+    },
+    {
+      "sheet": "Wijesekera_2015_Rules",
+      "rule_id": "Wij2015-R7",
+      "name": "Prompt-burden / selective-prompting rule",
+      "summary": "系统不能对每次敏感访问都询问；高频提示会造成用户负担与 habituation 风险，因此应将 prompt burden 纳入动态状态。",
+      "evidence_rating": "部分直接支持",
+      "model_rule": "Maintain prompt_burden_t (recent prompt count, interruption cost, unresolved requests). Prefer selective prompting for uncertain or expectation-violating requests; never suppress a prompt when a hard safety/consent-refresh rule requires it.",
+      "evidence_boundary": "论文证明的是提示频率与设计可行性/潜在 habituation 问题，不是“提示越多，某个用户必然越谨慎、越信任或越愿意 allow”的纵向因果转移。该类 transition 须由其他纵向证据或 calibration study 估计。"
+    },
+    {
+      "sheet": "Wijesekera_2015_Rules",
+      "rule_id": "Wij2015-R8",
+      "name": "Static-privacy-attitude insufficiency rule",
+      "summary": "不能仅凭一个静态 privacy-concern 问卷或“谨慎 persona”预测用户会否拒绝；应依赖具体情境与个人历史。",
+      "evidence_rating": "直接支持（反证）",
+      "model_rule": "Do not derive a user’s consent policy from a single privacy_attitude score. Treat static attitude as a weak prior at most; update behavior from contextual decisions, feedback and permission history.",
+      "evidence_boundary": "这不是“隐私担忧从不重要”的结论；它只否定把静态问卷分数作为充分预测器。高风险安全 gate 仍必须独立于用户 stated preference 执行。"
+    },
+    {
+      "sheet": "Malkin_2022_Rules",
+      "rule_id": "Malkin-R1",
+      "name": "Scoped disclosure / requester-identity rule",
+      "summary": "授权不能笼统覆盖“assistant 听到的一切”；应绑定具体请求方与所需内容/数据范围，并让用户知道谁将访问数据。",
+      "evidence_rating": "直接支持（系统策略/评估设计）",
+      "model_rule": "Represent each consent decision with a ledger key such as (agent_or_app_id, data_entity_or_type, stated_purpose, recipient_or_network_release, scope, duration). Require identity/provenance to be shown in the request and log every automated decision for audit.",
+      "evidence_boundary": "这是论文的 threat-model / system-design 前提，不是对真实部署的因果测量；其假设平台可信，但参与者仍常把 app 与 assistant 混为一体。因此 S-QSTN 不能把“已展示身份”视为用户已理解。"
+    },
+    {
+      "sheet": "Malkin_2022_Rules",
+      "rule_id": "Malkin-R2",
+      "name": "Deny-reason separation rule",
+      "summary": "用户拒绝请求既可能因为访问不当，也可能只是此刻服务没有用；这两类 deny 不能作为同一训练标签。",
+      "evidence_rating": "直接支持",
+      "model_rule": "Store structured deny_reason separately from consent_action, e.g. {not_useful_now, perceived_overreach, integrity_or_trust_concern, scope_confusion, interruption_burden}. Do not update the privacy preference model in the same direction for all denials.",
+      "evidence_boundary": "来自短时、脚本化 Wizard-of-Oz 互动；S-QSTN 应通过结构化 follow-up 采集原因，而不是假设 action label 自带语义。"
+    },
+    {
+      "sheet": "Malkin_2022_Rules",
+      "rule_id": "Malkin-R3",
+      "name": "Anomaly attention / false-allow rule",
+      "summary": "不相关、异常的权限请求通常会引发警觉和拒绝，但人仍可能因未注意或 habituation 而错误允许。",
+      "evidence_rating": "直接支持",
+      "model_rule": "Maintain anomaly_salience_t and attention_t. An irrelevant request raises deny / ask_explanation propensity, but the simulator may still emit a bounded human false_allow outcome. Never use that outcome to relax the independent high-risk / incorrect-explicit safety gate for RL.",
+      "evidence_boundary": "异常 app、任务主题和出现时机均由研究者设计；这说明 human false allow 的存在，而不意味着危险策略可被评为更好。对本项目，它恰好支持 false-allow / over-sharing 必须是 hard gate。"
+    },
+    {
+      "sheet": "Malkin_2022_Rules",
+      "rule_id": "Malkin-R4",
+      "name": "Prompt-burden / interruption rule",
+      "summary": "ask-every-time 会造成显著打扰；permission history 与 selective prompting 必须以减少中断为目标之一。",
+      "evidence_rating": "直接支持",
+      "model_rule": "Maintain prompt_burden_t from recent prompt frequency, unresolved requests and interruption cost. Use it to choose low-risk timing or selective prompting, but never suppress a mandatory safety / consent-refresh prompt.",
+      "evidence_boundary": "支持的是 prompt burden 的存在，不是“每次提示必然改变用户长期 trust 或严格度”的状态转移。后者仍需纵向 calibration。"
+    },
+    {
+      "sheet": "Malkin_2022_Rules",
+      "rule_id": "Malkin-R5",
+      "name": "Persistent-scope comprehension and renewal rule",
+      "summary": "“always allow/deny”必须显式区分请求方、数据 scope 与 duration；长期规则不应被视为永久、无歧义的授权。",
+      "evidence_rating": "直接支持",
+      "model_rule": "Represent allow_once, persistent_allow, persistent_deny, expiry, scope and renewal separately. When scope/duration is unclear or has changed, ask a refresh question rather than silently reusing an old grant.",
+      "evidence_boundary": "结果针对特定语音界面和 Rules UI；它支持 scope / expiry / refresh 的明确表示，但没有直接测量长期 revoke rate 或最佳到期时长。"
+    },
+    {
+      "sheet": "Malkin_2022_Rules",
+      "rule_id": "Malkin-R6",
+      "name": "Automation-control heterogeneity rule",
+      "summary": "不同用户对自动学习授权的接受度不同：有人偏好少打扰的 Learning，有人因不信任自动化而偏好直接控制。",
+      "evidence_rating": "直接支持",
+      "model_rule": "Keep automation_trust_i and control_preference_i as profile-conditioned, updateable state. Let them modulate acceptance of automation and review requests; do not assign one universal preference for Rules versus Learning.",
+      "evidence_boundary": "Learning 在研究中只是理想化模拟：每个 app 仅展示 1–2 次请求，未运行真实在线学习算法；不能据此声称已验证长期个性化更新。"
+    },
+    {
+      "sheet": "Malkin_2022_Rules",
+      "rule_id": "Malkin-R7",
+      "name": "Review/audit is not a safety substitute rule",
+      "summary": "事后 review/audit 可作为反馈与纠错通道，但不能替代对高风险请求的事前确认或安全阻断。",
+      "evidence_rating": "直接支持",
+      "model_rule": "Store review_available and review_engagement separately. Support audit, override and correction in the interaction loop, but keep high-risk / invalid-scope decisions behind proactive safety gates rather than relying on retrospective review.",
+      "evidence_boundary": "短时实验可能低估长期 review 使用；但不能反向将“用户喜欢 audit”解释为安全。对 S-QSTN，review 是结构化反馈 channel，而非对 false allow 的补救借口。"
+    },
+    {
+      "sheet": "Malkin_2022_Rules",
+      "rule_id": "Malkin-R8",
+      "name": "Consequential-action and sensitive-data safety rule",
+      "summary": "超出环境信息展示的高后果行动应在运行时要求人工确认；金融等已知高敏感内容应默认受到更严格保护。",
+      "evidence_rating": "需改写",
+      "model_rule": "Apply an independent security oracle: if action_consequence is high, require manual confirmation; if data_risk is high or purpose/scope is invalid, block or request explicit scoped consent. Keep these hard constraints outside the user-simulator reward and learned allow propensity.",
+      "evidence_boundary": "这是安全设计建议和研究者推断，不能误标为已测得的 universal human action policy。高风险分类、purpose validity 和例外条件必须由任务/安全 oracle 定义并另行验证。"
+    },
+    {
+      "sheet": "Harborth_2021_Rules",
+      "rule_id": "Harborth-R1",
+      "name": "Contextualized-purpose explanation rule",
+      "summary": "解释只有明确连接到该 app、该权限和该功能/数据用途时，才会稳定提高用户对数据实践的理解。",
+      "evidence_rating": "直接支持",
+      "model_rule": "When requesting a permission, present the stated purpose as a structured link: {agent/app, requested data/resource, concrete task function, use of data}. Increase comprehension_t only when the explanation is contextualized and readable; do not automatically increase allow propensity.",
+      "evidence_boundary": "直接支持的是短期、假设性 MAR app 情境中的理解，不是长期信任更新，也不是允许行为的因果提升。"
+    },
+    {
+      "sheet": "Harborth_2021_Rules",
+      "rule_id": "Harborth-R2",
+      "name": "Explanation is not an allow-nudge rule",
+      "summary": "提高透明度/理解不能被写成‘解释越好，用户就越应该允许’；解释对 allow 的作用必须与风险、必要性分开。",
+      "evidence_rating": "直接支持（反向约束）",
+      "model_rule": "Keep explanation_effect_on_comprehension separate from explanation_effect_on_action. A contextual explanation may lower uncertainty or concerns, but leave final allow/deny governed by utility, risk, scope and profile; never reward an agent merely for persuasive wording.",
+      "evidence_boundary": "论文也报告较低 privacy concern 与较高 grant 相关；但这不授权把说明设计成诱导允许的因果规则，更不能绕过 S-QSTN 的安全 gate。"
+    },
+    {
+      "sheet": "Harborth_2021_Rules",
+      "rule_id": "Harborth-R3",
+      "name": "Current functional necessity / least-privilege rule",
+      "summary": "若用户认为 app 即使没有该权限仍可完成当前功能，则允许倾向显著下降；必要性应按当前功能与权限逐项判断。",
+      "evidence_rating": "直接支持（相关模型）",
+      "model_rule": "Compute necessity_match_t for the specific requested function. If the function is non-essential or works without the requested access, raise deny / narrow-scope / ask-why propensity. Keep it a soft behavioral feature, not a permission bypass.",
+      "evidence_boundary": "这是对虚构 MAR 家具 app 的态度/意图回归，不能作为真实任务必要性的 oracle；实际必要性须由环境/安全 oracle 提供。"
+    },
+    {
+      "sheet": "Harborth_2021_Rules",
+      "rule_id": "Harborth-R4",
+      "name": "Perceived privacy-danger rule",
+      "summary": "用户感到某权限侵犯隐私或风险更高时，允许倾向下降；风险感知应保留为 persona × context 的变量。",
+      "evidence_rating": "直接支持（相关模型）",
+      "model_rule": "Maintain perceived_privacy_danger_i,t separately from objective risk. Higher perceived danger raises deny, ask-explanation, restrict-scope and revoke propensity; objective high-risk requests remain subject to a separate hard safety gate even when perceived danger is low.",
+      "evidence_boundary": "测量的是感知而非客观风险；不能把低 concern（例如某些传感器）模拟为低风险或自动允许。"
+    },
+    {
+      "sheet": "Harborth_2021_Rules",
+      "rule_id": "Harborth-R5",
+      "name": "Risk-perception gap / novel-sensor caution rule",
+      "summary": "用户不熟悉或未被系统单列提示的传感器，可能低估其隐私风险；模型不能从用户的低 concern 推断可以安全地分享。",
+      "evidence_rating": "部分直接支持",
+      "model_rule": "For novel or hard-to-interpret data sources, keep objective_risk_oracle separate from user comprehension and perceived danger. If risk is high but comprehension is low, generate clarification/ask-more-information behavior or enforce a safety gate; never convert low salience into permissive consent.",
+      "evidence_boundary": "‘风险较高时必须 block’是 S-QSTN 安全层的设计推论，并非本论文测得的用户行为；外部风险证据不应误记作本实验的因果效应。"
+    },
+    {
+      "sheet": "Harborth_2021_Rules",
+      "rule_id": "Harborth-R6",
+      "name": "Scope, timing and revocability disclosure rule",
+      "summary": "用户会询问能否拒绝/限制单项权限、何时收集数据，以及拒绝会怎样影响功能；这些应成为请求与后续反馈的可见字段。",
+      "evidence_rating": "直接支持（质性发现 + 设计建议）",
+      "model_rule": "Expose and log {scope, foreground/background or access time, required_vs_optional, consequence_of_decline, restrictability}. When a field is missing, raise ask-explanation / defer propensity rather than treating a generic grant as full, persistent consent.",
+      "evidence_boundary": "开放回答支持信息需求和 UI 字段，不测量这些字段对多轮信任、revocation 或真实选择的因果大小。"
+    },
+    {
+      "sheet": "Harborth_2021_Rules",
+      "rule_id": "Harborth-R7",
+      "name": "Readability and progressive-detail rule",
+      "summary": "说明要可理解、简洁且可按需展开；术语过难或说明过长会削弱其信息价值并增加提示负担。",
+      "evidence_rating": "部分直接支持",
+      "model_rule": "Represent explanation_readability_t and detail_level_t. Use concise, plain-language base text plus optional detail; if readability is low, reduce comprehension and increase ask-clarification/defer propensity. Do not model shorter text as universally preferable for every profile.",
+      "evidence_boundary": "复杂度效应在本文主要是解释/设计控制，不是已估计的独立行为因果系数；可写为质量条件而非数值权重。"
+    },
+    {
+      "sheet": "Harborth_2021_Rules",
+      "rule_id": "Harborth-R8",
+      "name": "Temporal foreground-scope rule",
+      "summary": "授权不是单一的永久开关：用户普遍更愿在 app 前台使用时授权，较少愿意随时/后台授权；duration 和 runtime scope 应独立表示。",
+      "evidence_rating": "直接支持（描述性）",
+      "model_rule": "Represent foreground_only, one_time, session, persistent and background access as separate consent scopes. Default ambiguous requests to a narrower scope or an explicit scope question; record later scope changes/revocation in the permission ledger.",
+      "evidence_boundary": "研究未做长期追踪，也未估计 scope 变化或 revoke 的转移率；因此不能凭此设定 S-QSTN 的长期记忆更新速度。"
+    },
+    {
+      "sheet": "Esterwood_2023_Rules",
+      "rule_id": "Esterwood-R1",
+      "name": "Repeated verified-violation accumulation rule",
+      "summary": "同一协作对象反复发生、且用户可观察或被明确告知的错误，会累积降低其可信度；不能把每次请求当作独立问卷题。",
+      "evidence_rating": "部分直接支持（跨领域）",
+      "model_rule": "Maintain violation_history_t only for oracle-verified or user-observed agent failures. Each new verified violation raises caution_t and lowers relevant trust dimensions; keep ordinary user denial and unresolved ambiguity out of this counter.",
+      "evidence_boundary": "直接测量的是机器人协作信任，非隐私、权限或问卷回答。对 S-QSTN 仅可作为‘经验证错误累积’的方向性先验，不能设定逐轮衰减率。"
+    },
+    {
+      "sheet": "Esterwood_2023_Rules",
+      "rule_id": "Esterwood-R2",
+      "name": "No full reset after verbal repair rule",
+      "summary": "多次错误后，道歉、解释或承诺不能把用户信任恢复到从未出错的基线；长期记忆不得被一句补救语清零。",
+      "evidence_rating": "部分直接支持（跨领域）",
+      "model_rule": "After repeated verified violations, treat apology, explanation and promise as possible bounded mitigation signals, never as trust_t := baseline. Preserve violation history and require subsequently error-free behavior for any gradual recovery.",
+      "evidence_boundary": "论文没有测试真正长期的恢复轨迹，也没有测试连续正确行为能否恢复；‘逐步恢复’是 S-QSTN 的谨慎设计，而非其估计结果。"
+    },
+    {
+      "sheet": "Esterwood_2023_Rules",
+      "rule_id": "Esterwood-R3",
+      "name": "Denial-after-verifiable-error penalty rule",
+      "summary": "若 Agent 对用户已能验证的错误/越界请求否认责任，信任损失应大于沉默或诚实补救；不能将 denial 模拟成正常修复。",
+      "evidence_rating": "部分直接支持（跨领域）",
+      "model_rule": "If violation is independently verifiable and agent_response is false denial or blame-shifting, apply an additional integrity_trust penalty; increase ask-for-evidence, reject, revoke and manual-confirmation propensities. Keep this separate from a truthful uncertainty statement.",
+      "evidence_boundary": "适用前提是错误的事实和归因可验证。不能把合理争议、低置信度推断或用户单纯拒绝错误地编码为‘欺骗’。"
+    },
+    {
+      "sheet": "Esterwood_2023_Rules",
+      "rule_id": "Esterwood-R4",
+      "name": "Trust-dimension separation rule",
+      "summary": "对系统的长期评价至少应区分能力、诚信/完整性与善意，而不是仅用一个笼统 trust 分数。",
+      "evidence_rating": "直接支持（测量结构；跨领域）",
+      "model_rule": "Store competence_trust_i,t, integrity_trust_i,t and benevolence_trust_i,t separately. Map permission mistakes primarily to competence; scope/purpose deception or denial to integrity; user-benefit versus self-serving motives, if in scope, to benevolence. Do not collapse them into one action label.",
+      "evidence_boundary": "量表的对象是机器人，而非 privacy assistant。三个维度是有用的状态表示候选，不是已经验证的隐私问卷 persona taxonomy。"
+    },
+    {
+      "sheet": "Esterwood_2023_Rules",
+      "rule_id": "Esterwood-R5",
+      "name": "Integrity is not cheaply repairable rule",
+      "summary": "反复错误后，能力和诚信损失尤其不能靠话术恢复；后续行为记录比补救文本更重要。",
+      "evidence_rating": "部分直接支持（跨领域）",
+      "model_rule": "For repeated verified failures, keep ability/integrity recovery bounded by subsequent observed compliance. A repair utterance may create a feedback event, but cannot erase errors from the permission ledger or relax safety gates.",
+      "evidence_boundary": "该研究只在任务结束后一次性测量，不支持把 ability/integrity 写成每一轮都精确、等量下降的更新公式。"
+    },
+    {
+      "sheet": "Esterwood_2023_Rules",
+      "rule_id": "Esterwood-R6",
+      "name": "Do not over-rank apology, explanation and promise rule",
+      "summary": "在重复错误情境中，不能假设 apology、explanation、promise 存在稳定的修复优劣；应以诚实性和后续行为为主，而非优化措辞。",
+      "evidence_rating": "直接支持（跨领域的反向约束）",
+      "model_rule": "Do not assign a universal ranking or large fixed trust-repair bonus to apology/explanation/promise. Treat repair_type as a contextual feature whose effect is bounded and calibration-dependent; false denial is the only consistently poor strategy in this experiment.",
+      "evidence_boundary": "这不意味着三者在所有隐私场景完全等价；它只反驳将某种措辞作为可普适、强力信任修复器的做法。"
+    },
+    {
+      "sheet": "Esterwood_2023_Rules",
+      "rule_id": "Esterwood-R7",
+      "name": "Verified-violation trigger boundary rule",
+      "summary": "信任惩罚的触发事件必须与普通的不授权、低效用或不确定性分开；只有可验证的错误/违背承诺才应进入 violation history。",
+      "evidence_rating": "需改写（S-QSTN 必要边界）",
+      "model_rule": "Use a separate event type: {oracle_verified_error, incorrect_explicit_request, scope_violation, false_statement, ordinary_deny, low_utility_deny, uncertainty}. Only the first four may update violation history; preserve reason codes for all others.",
+      "evidence_boundary": "这是为避免错误迁移而加入的 S-QSTN 设计规则，不应宣称它由该论文直接测得。"
+    },
+    {
+      "sheet": "Esterwood_2023_Rules",
+      "rule_id": "Esterwood-R8",
+      "name": "No direct privacy-choice calibration rule",
+      "summary": "该研究只能更新信任/谨慎等中间状态，不能直接给 allow、deny、revoke 的概率赋值。",
+      "evidence_rating": "需改写（迁移限制）",
+      "model_rule": "Use this source only to constrain directionality of trust-memory updates. Calibrate consent_action probabilities from privacy/permission studies, and retain independent high-risk/incorrect-explicit hard gates outside the human simulator.",
+      "evidence_boundary": "这是该文最重要的外推限制：不能把 HRI trust 分数或统计量直接翻译为隐私问卷答案分布。"
+    }
+  ]
+}

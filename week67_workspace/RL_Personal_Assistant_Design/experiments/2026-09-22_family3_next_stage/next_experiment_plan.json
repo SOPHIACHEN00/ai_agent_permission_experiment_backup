@@ -1,0 +1,308 @@
+{
+  "schema_version": "increment8_budget_recourse_research_plan_v0",
+  "design_date": "2026-09-22",
+  "status": "DESIGN_COMPLETE_NOT_IMPLEMENTED_OR_RUN",
+  "experiment_id": "increment8_budget_recourse_pilot_v0",
+  "parent_increment": 8,
+  "frozen_family3_v2_unchanged": true,
+  "stage_b_launch_authorized": false,
+  "stage_a": {
+    "status": "NOT_STARTED",
+    "fixed_candidate_only": true,
+    "parameter_search": false,
+    "exact_arithmetic": true,
+    "max_nonterminal_states": 100000,
+    "max_wall_seconds": 60,
+    "max_rss_mib": 512,
+    "first_genuine_failure": "SAVE_EVIDENCE_AND_DISCUSS",
+    "required_evidence": [
+      "hand_calculation_matches_transition_and_dp",
+      "positive_feasibility_per_graph",
+      "resource_conditioned_optimal_action_witness",
+      "stage1_changes_stage2_feasibility",
+      "strict_current_task_rule_regret_on_train_or_validation",
+      "follow_up_public_information_used",
+      "safety_and_observation_firewall",
+      "pure_model_real_environment_conformance"
+    ]
+  },
+  "environment": {
+    "stages": 2,
+    "required_effects_per_stage": 2,
+    "horizon": 12,
+    "reward": "terminal_binary_both_tasks_complete",
+    "narrow_cost": "n_t",
+    "broader_cost": "2*n_t",
+    "exposure_charged_on": [
+      "grant_issuance",
+      "effect_commit"
+    ],
+    "stage_costs": {
+      "narrow_exact": {
+        "exposure": "3*n_t",
+        "prompts": 1
+      },
+      "broader_first": {
+        "exposure": "6*n_t",
+        "prompts": 1
+      },
+      "narrow_then_authorized_broader": {
+        "exposure": "6*n_t",
+        "prompts": 2
+      }
+    },
+    "p2_values": [
+      "1/5",
+      "4/5"
+    ],
+    "r_definition": "Pr(p2=4/5)",
+    "p2_disclosure": "at_stage2_entry",
+    "private_future_realization_visible_to_policy": false,
+    "shared_resources": [
+      "exposure",
+      "prompts"
+    ],
+    "grant_lifetime": "current_stage",
+    "recourse": "explicit_new_broader_authorization_after_revealed_noncoverage",
+    "refresh_valid": false,
+    "deterministic_user_consent": true,
+    "deterministic_tool_commit": true
+  },
+  "graphs": [
+    {
+      "graph_id": "br00",
+      "split": "train",
+      "p1": "4/5",
+      "r": "1/2",
+      "n1": 1,
+      "n2": 1,
+      "exposure_budget": 9,
+      "prompt_budget": 2
+    },
+    {
+      "graph_id": "br01",
+      "split": "train",
+      "p1": "1/5",
+      "r": "1/4",
+      "n1": 1,
+      "n2": 1,
+      "exposure_budget": 9,
+      "prompt_budget": 3
+    },
+    {
+      "graph_id": "br02",
+      "split": "train",
+      "p1": "4/5",
+      "r": "1/4",
+      "n1": 1,
+      "n2": 2,
+      "exposure_budget": 12,
+      "prompt_budget": 2
+    },
+    {
+      "graph_id": "br03",
+      "split": "train",
+      "p1": "1/5",
+      "r": "3/4",
+      "n1": 2,
+      "n2": 1,
+      "exposure_budget": 15,
+      "prompt_budget": 3
+    },
+    {
+      "graph_id": "br04",
+      "split": "train",
+      "p1": "4/5",
+      "r": "1/2",
+      "n1": 2,
+      "n2": 2,
+      "exposure_budget": 24,
+      "prompt_budget": 2
+    },
+    {
+      "graph_id": "br05",
+      "split": "validation",
+      "p1": "1/5",
+      "r": "1/2",
+      "n1": 1,
+      "n2": 1,
+      "exposure_budget": 9,
+      "prompt_budget": 2
+    },
+    {
+      "graph_id": "br06",
+      "split": "validation",
+      "p1": "4/5",
+      "r": "3/4",
+      "n1": 1,
+      "n2": 2,
+      "exposure_budget": 15,
+      "prompt_budget": 3
+    },
+    {
+      "graph_id": "br07",
+      "split": "test",
+      "p1": "4/5",
+      "r": "1/4",
+      "n1": 2,
+      "n2": 1,
+      "exposure_budget": 12,
+      "prompt_budget": 2
+    },
+    {
+      "graph_id": "br08",
+      "split": "test",
+      "p1": "1/5",
+      "r": "3/4",
+      "n1": 2,
+      "n2": 2,
+      "exposure_budget": 18,
+      "prompt_budget": 3
+    },
+    {
+      "graph_id": "br09",
+      "split": "test",
+      "p1": "1/5",
+      "r": "1/4",
+      "n1": 1,
+      "n2": 2,
+      "exposure_budget": 15,
+      "prompt_budget": 2
+    }
+  ],
+  "conditions": {
+    "original": "as_literal",
+    "prompt_toggle": "P=2 becomes 3; P=3 becomes 2",
+    "grouped_split": true,
+    "train_conditions": [
+      "original"
+    ]
+  },
+  "methods": [
+    "masked_ddqn_gamma1",
+    "masked_ddqn_gamma0",
+    "forecast_transfer_rule",
+    "current_task_rule",
+    "reservation_rule",
+    "random_valid"
+  ],
+  "oracle": {
+    "method": "public_information_exact_dp",
+    "role": "planning_comparator_and_value_ceiling",
+    "clairvoyant": false,
+    "labels_used_for_training": false
+  },
+  "training": {
+    "seeds": [
+      101,
+      211,
+      307
+    ],
+    "learner_arms": 2,
+    "transitions_per_arm_seed": 12000,
+    "transitions_per_training_graph": 2400,
+    "total_transitions": 72000,
+    "final_checkpoints": 6,
+    "checkpoint_selection": "final_only_all_seeds",
+    "device": "server_physical_gpu_1",
+    "gpu2_used": false,
+    "cpu_only_rl_experiment": false,
+    "openai_api_required": false,
+    "initialization": "fresh_matched_across_gamma_arms",
+    "learning_rate": 0.001,
+    "batch_size": 64,
+    "replay_capacity": 20000,
+    "warmup_transitions": 256,
+    "optimize_every": 4,
+    "target_update_every_optimizer_steps": 250,
+    "gradient_clip": 5,
+    "epsilon": {
+      "start": 1,
+      "end": 0.05,
+      "linear_decay_transitions": 9600
+    },
+    "encoder": "new_public_state_schema_to_be_frozen_before_training",
+    "hyperparameter_search": false
+  },
+  "evaluation": {
+    "conditions": 2,
+    "seeds": 3,
+    "episodes_per_graph_condition_seed": 50,
+    "validation_graphs": 2,
+    "validation_rows": 3600,
+    "test_graphs": 3,
+    "test_rows": 5400,
+    "test_once": true,
+    "seed_filtering_by_validation_performance": false,
+    "shared_exogenous_rng": true,
+    "oracle_relative_evaluation": "prefer_exact_frozen_policy_tree_with_tie_distribution",
+    "uncertainty_unit": "training_seed_not_episode",
+    "validation_unlock": "integrity_completion_and_analysis_freeze_only"
+  },
+  "proposed_criteria": {
+    "profile": "budget_recourse_pilot_criteria_v0_proposed",
+    "status": "PROPOSED_NOT_APPLIED_TO_OLD_RESULTS",
+    "max_hard_integrity_counts": 0,
+    "near_optimal_max_seed_mean_exact_regret": 0.05,
+    "learning_signal": "gamma1 strictly exceeds gamma0 and current_task_rule on every seed",
+    "strong_rule_advantage_min_each_seed_difference": 0.05,
+    "strong_comparator": "reservation_rule",
+    "significance_claim": false,
+    "change_policy": "version_and_freeze_before_any_new_test_not_after_results",
+    "failure_actions": [
+      "preserve_all_results",
+      "stop_on_genuine_integrity_or_definition_error",
+      "no_automatic_retry_tuning_or_threshold_change"
+    ]
+  },
+  "planned_data_fields": {
+    "run": [
+      "run_id",
+      "design_hash",
+      "criteria_hash",
+      "source_manifest_hash",
+      "config_hash",
+      "started_at_utc",
+      "ended_at_utc",
+      "status",
+      "last_durable_coordinate",
+      "exit_code"
+    ],
+    "episode": [
+      "split",
+      "graph_hash",
+      "condition",
+      "method",
+      "training_seed",
+      "evaluation_coordinate",
+      "rng_schema",
+      "checkpoint_hash",
+      "terminal_success",
+      "termination_kind",
+      "exposure_total",
+      "prompt_total",
+      "decision_count",
+      "hard_counts"
+    ],
+    "step": [
+      "stage",
+      "progress",
+      "public_observation_hash",
+      "semantic_candidates",
+      "action_mask",
+      "chosen_semantic_action",
+      "q_scores_if_recorded",
+      "public_forecast",
+      "remaining_budgets_before",
+      "remaining_budgets_after",
+      "authorization_and_effect_events"
+    ],
+    "evaluator_only": [
+      "private_branch_draws",
+      "exact_state_value",
+      "optimal_action_set"
+    ],
+    "separation": "evaluator_only_fields_must_not_enter_observations_or_replay"
+  },
+  "observed_new_results": null
+}

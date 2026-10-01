@@ -1,0 +1,9 @@
+# Install the pinned CUDA PyTorch wheel with bootstrap_env.sh first.
+numpy==2.0.0
+pandas==2.2.2
+transformers==5.5.0
+tokenizers==0.22.2
+safetensors==0.7.0
+packaging>=24.0,<26
+sentencepiece>=0.2.0,<0.3
+protobuf>=5.29,<7

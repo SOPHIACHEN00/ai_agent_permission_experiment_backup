@@ -1,0 +1,13 @@
+{
+  "physical_gpu": "0",
+  "expected_uuid": "GPU-19ad2811-c789-cfaa-02f1-aa42927d9f26",
+  "visible_uuid": "19ad2811-c789-cfaa-02f1-aa42927d9f26",
+  "torch": "2.11.0+cu130",
+  "memory": {
+    "available_bytes": 99924893696,
+    "cgroup_limit_bytes": 100663296000,
+    "cgroup_current_bytes": 1223344128,
+    "cgroup_headroom_bytes": 99439951872,
+    "headroom_bytes": 99439951872
+  }
+}

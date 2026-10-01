@@ -1,0 +1,29 @@
+test_real_update_save_reload_and_frozen_evaluation (test_cuda.CudaChecks.test_real_update_save_reload_and_frozen_evaluation) ... FAIL
+
+======================================================================
+FAIL: test_real_update_save_reload_and_frozen_evaluation (test_cuda.CudaChecks.test_real_update_save_reload_and_frozen_evaluation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Study\Graduate_Study_UofG\Research\paper\Week67\ai_agent_permission_experiment\rl_sqstn_integration_v0\tests\test_cuda.py", line 12, in test_real_update_save_reload_and_frozen_evaluation
+    runtime = importlib.import_module('rl_sqstn_integration_v0.learner')
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sophi\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'rl_sqstn_integration_v0.learner'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Study\Graduate_Study_UofG\Research\paper\Week67\ai_agent_permission_experiment\rl_sqstn_integration_v0\tests\test_cuda.py", line 15, in test_real_update_save_reload_and_frozen_evaluation
+    self.fail('Expected missing feature: CUDA integration learner')
+AssertionError: Expected missing feature: CUDA integration learner
+
+----------------------------------------------------------------------
+Ran 1 test in 0.002s
+
+FAILED (failures=1)
+

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520">
+<rect width="1000" height="520" fill="white"/>
+<g font-family="Segoe UI,Arial,sans-serif" fill="#17212b">
+<line x1="80" y1="415.0" x2="765" y2="415.0" stroke="#e1e5e9" stroke-width="1.5" stroke-dasharray=""/>
+<text x="65" y="420.0" font-size="15" text-anchor="end">0.00</text>
+<line x1="80" y1="327.5" x2="765" y2="327.5" stroke="#e1e5e9" stroke-width="1.5" stroke-dasharray=""/>
+<text x="65" y="332.5" font-size="15" text-anchor="end">0.20</text>
+<line x1="80" y1="240.0" x2="765" y2="240.0" stroke="#e1e5e9" stroke-width="1.5" stroke-dasharray=""/>
+<text x="65" y="245.0" font-size="15" text-anchor="end">0.40</text>
+<line x1="80" y1="152.49999999999994" x2="765" y2="152.49999999999994" stroke="#e1e5e9" stroke-width="1.5" stroke-dasharray=""/>
+<text x="65" y="157.49999999999994" font-size="15" text-anchor="end">0.60</text>
+<line x1="80" y1="65.0" x2="765" y2="65.0" stroke="#e1e5e9" stroke-width="1.5" stroke-dasharray=""/>
+<text x="65" y="70.0" font-size="15" text-anchor="end">0.80</text>
+<line x1="80" y1="65" x2="80" y2="415" stroke="#64748b" stroke-width="1.5" stroke-dasharray=""/>
+<text x="80" y="30" font-size="20" text-anchor="start">Exact validation success probability</text>
+<text x="795" y="75" font-size="15" text-anchor="start">Training seed</text>
+<line x1="113.0" y1="147.03125" x2="713.0" y2="152.50000000000006" stroke="#0072B2" stroke-width="1.5" stroke-dasharray="4 3"/>
+<circle cx="113.0" cy="147.03125" r="5" fill="#0072B2"><title>Seed 401: 0.612500</title></circle>
+<circle cx="713.0" cy="152.50000000000006" r="5" fill="#0072B2"><title>Seed 401: 0.600000</title></circle>
+<text x="795" y="104" font-size="14" text-anchor="start">401  (color + shape)</text>
+<rect x="965" y="94" width="10" height="10" fill="#0072B2"/>
+<line x1="125.0" y1="196.25" x2="725.0" y2="196.25" stroke="#D55E00" stroke-width="1.5" stroke-dasharray="4 3"/>
+<rect x="120.0" y="191.25" width="10" height="10" fill="#D55E00"><title>Seed 503: 0.500000</title></rect>
+<rect x="720.0" y="191.25" width="10" height="10" fill="#D55E00"><title>Seed 503: 0.500000</title></rect>
+<text x="795" y="129" font-size="14" text-anchor="start">503  (color + shape)</text>
+<rect x="965" y="119" width="10" height="10" fill="#D55E00"/>
+<line x1="137.0" y1="415.0" x2="737.0" y2="163.43750000000003" stroke="#009E73" stroke-width="1.5" stroke-dasharray="4 3"/>
+<polygon points="137.0,409.0 131.0,420.0 143.0,420.0" fill="#009E73"><title>Seed 607: 0.000000</title></polygon>
+<polygon points="737.0,157.43750000000003 731.0,168.43750000000003 743.0,168.43750000000003" fill="#009E73"><title>Seed 607: 0.575000</title></polygon>
+<text x="795" y="154" font-size="14" text-anchor="start">607  (color + shape)</text>
+<rect x="965" y="144" width="10" height="10" fill="#009E73"/>
+<line x1="80" y1="105.46875" x2="765" y2="105.46875" stroke="#687280" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="795" y="208" font-size="14" text-anchor="start">DP optimum 0.7075</text>
+<polygon points="125.0,245.76041666666666 132.0,252.76041666666666 125.0,259.76041666666663 118.0,252.76041666666666" fill="#17212b"/>
+<polygon points="725.0,163.72916666666669 732.0,170.72916666666669 725.0,177.72916666666669 718.0,170.72916666666669" fill="#17212b"/>
+<text x="795" y="238" font-size="14" text-anchor="start">Black diamond: mean</text>
+<text x="125.0" y="440" font-size="14" text-anchor="middle">A: lr .001</text>
+<text x="125.0" y="459" font-size="14" text-anchor="middle">update every 4</text>
+<text x="725.0" y="440" font-size="14" text-anchor="middle">B: lr .0003</text>
+<text x="725.0" y="459" font-size="14" text-anchor="middle">update every 4</text>
+<text x="80" y="498" font-size="13" text-anchor="start">All three new seeds shown; no smoothing/error bars. Fixed candidate, reused validation graphs; not test.</text>
+</g></svg>

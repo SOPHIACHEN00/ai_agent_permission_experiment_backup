@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "model": "o4-mini",
+  "persona_id": "P039",
+  "questionnaire_item_id": "permission_0_fitness_tracking_energy_consumption_logs",
+  "answer": "Yes, but ask me next time",
+  "raw_response": "{\"answer\":\"Yes, but ask me next time\"}"
+}

@@ -1,0 +1,75 @@
+{
+  "connected": true,
+  "checked_at_utc": "2026-09-23T01:47:01.317595+00:00",
+  "launch_receipt": {
+    "pid": 244708,
+    "start_ticks": "67456014",
+    "launched_epoch": 1790127763.0226912,
+    "physical_gpu": 0
+  },
+  "master_status": {
+    "status": "RUNNING",
+    "worker_pid": 244714,
+    "worker_start_ticks": "67456071",
+    "current_group": "a_lr1e3_every4_seed101",
+    "group_index": 0,
+    "groups_completed": 0,
+    "completed": [],
+    "test_opened": false,
+    "updated_at_utc": "2026-09-23T01:42:43.596006+00:00"
+  },
+  "group_status": {
+    "attempted_coordinate": {
+      "condition": "original",
+      "episode": 421,
+      "gamma": 1,
+      "graph_id": "br04",
+      "phase": "train",
+      "seed": 101,
+      "step": 4
+    },
+    "config_id": "a_lr1e3_every4",
+    "first_success_step": 71,
+    "group": "a_lr1e3_every4_seed101",
+    "hard_counts": {
+      "checkpoint_mismatch": 0,
+      "data_leakage": 0,
+      "invalid_actions": 0,
+      "source_config_mismatch": 0,
+      "unauthorized_effects": 0
+    },
+    "last_durable_coordinate": {
+      "condition": "original",
+      "episode": 421,
+      "gamma": 1,
+      "graph_id": "br04",
+      "phase": "train",
+      "seed": 101,
+      "step": 4
+    },
+    "optimizer_steps": 2937,
+    "seed": 101,
+    "status": "EXACT_VALIDATION",
+    "successful_episodes": 312,
+    "test_opened": false,
+    "transitions": 12000,
+    "updated_at_utc": "2026-09-23T01:46:59.922682+00:00"
+  },
+  "master_state": "S",
+  "master_memory": [
+    "VmHWM:\t   20792 kB",
+    "VmRSS:\t   20792 kB"
+  ],
+  "master_alive": true,
+  "master_identity_matches": true,
+  "worker_state": "R",
+  "worker_memory": [
+    "VmHWM:\t 1623404 kB",
+    "VmRSS:\t 1623404 kB"
+  ],
+  "worker_alive": true,
+  "worker_identity_matches": true,
+  "gpu0": "0, 440, 24576, 0",
+  "cgroup_memory_current": "88428609536",
+  "cgroup_memory_max": "100663296000"
+}

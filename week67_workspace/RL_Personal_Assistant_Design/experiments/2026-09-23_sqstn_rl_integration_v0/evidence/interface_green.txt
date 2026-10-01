@@ -1,0 +1,19 @@
+rg: ai_agent_permission_experiment/rl_personal_assistant/src/pa_rl/effects.py: The system cannot find the path specified. (os error 3)
+rg: ai_agent_permission_experiment/rl_personal_assistant/src/pa_rl/execution.py: The system cannot find the path specified. (os error 3)
+test_bad_responses_rejected_without_live_fallback (test_integration.IntegrationTests.test_bad_responses_rejected_without_live_fallback) ... ok
+test_both_denials_are_normal_and_do_not_mint_authority (test_integration.IntegrationTests.test_both_denials_are_normal_and_do_not_mint_authority) ... 
+ok
+test_cache_exact_replay_miss_and_tampering (test_integration.IntegrationTests.test_cache_exact_replay_miss_and_tampering) ... ok
+test_disable_revokes_then_explicit_refresh_restores (test_integration.IntegrationTests.test_disable_revokes_then_explicit_refresh_restores) ... ok
+test_episode_rejects_invalid_slot_before_effect (test_integration.IntegrationTests.test_episode_rejects_invalid_slot_before_effect) ... ok
+test_mab_evaluation_is_frozen_and_transfer_independent (test_integration.IntegrationTests.test_mab_evaluation_is_frozen_and_transfer_independent) ... ok
+test_mab_only_updates_real_selected_feedback (test_integration.IntegrationTests.test_mab_only_updates_real_selected_feedback) ... ok
+test_once_is_consumed_then_refresh_is_required (test_integration.IntegrationTests.test_once_is_consumed_then_refresh_is_required) ... ok
+test_real_v2_prompt_and_private_feature_firewall (test_integration.IntegrationTests.test_real_v2_prompt_and_private_feature_firewall) ... ok
+test_reusable_grant_commits_two_effects (test_integration.IntegrationTests.test_reusable_grant_commits_two_effects) ... ok
+test_scope_and_history_boundary_fail_closed (test_integration.IntegrationTests.test_scope_and_history_boundary_fail_closed) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 13.766s
+
+OK

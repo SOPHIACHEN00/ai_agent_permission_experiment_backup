@@ -1,0 +1,29 @@
+{
+  "reused_screening_40": {
+    "n_participants": 40,
+    "n_rows": 599,
+    "accuracy": 0.67779632721202,
+    "macro_f1": 0.5474836142322097,
+    "quadratic_weighted_kappa": 0.5686570746791297,
+    "over_sharing_rate": 0.4574468085106383,
+    "over_sharing_count": 43,
+    "over_sharing_denominator": 94,
+    "persistent_over_allow_rate": 0.14121037463976946,
+    "persistent_over_allow_count": 49,
+    "persistent_over_allow_denominator": 347
+  },
+  "additional_161": {
+    "n_participants": 161,
+    "n_rows": 2524,
+    "accuracy": 0.6164817749603804,
+    "macro_f1": 0.5425638222580917,
+    "quadratic_weighted_kappa": 0.5553968357105028,
+    "over_sharing_rate": 0.4192377495462795,
+    "over_sharing_count": 231,
+    "over_sharing_denominator": 551,
+    "persistent_over_allow_rate": 0.15022566086395875,
+    "persistent_over_allow_count": 233,
+    "persistent_over_allow_denominator": 1551
+  },
+  "interpretation": "Descriptive breakdown by previous screening exposure; these are different participant groups, not a paired comparison."
+}

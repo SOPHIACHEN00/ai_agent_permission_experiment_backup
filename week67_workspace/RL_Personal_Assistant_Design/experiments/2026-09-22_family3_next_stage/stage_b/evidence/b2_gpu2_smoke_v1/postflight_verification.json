@@ -1,0 +1,42 @@
+{
+  "status": "B2_GPU2_SMOKE_PASS_FORMAL_NOT_STARTED",
+  "scope": "One NON_EVIDENCE integration smoke, not a learning-effectiveness result.",
+  "server_exit_code": 0,
+  "server_wall_seconds": 7.365097522735596,
+  "physical_gpu": 2,
+  "gpu3_used": false,
+  "transitions": 320,
+  "optimizer_steps": 17,
+  "replay_transitions": 320,
+  "checkpoints": 1,
+  "checkpoint_reloaded_on_server": true,
+  "online_weights_changed": true,
+  "evaluation_rows": 2,
+  "evaluation_state_unchanged": true,
+  "sampled_successes": 0,
+  "sampled_total": 2,
+  "train_br00_exact_policy_value": "0",
+  "hard_counts": {
+    "checkpoint_mismatch": 0,
+    "data_leakage": 0,
+    "invalid_actions": 0,
+    "source_config_mismatch": 0,
+    "unauthorized_effects": 0
+  },
+  "test_opened": false,
+  "formal_training_started": false,
+  "record_chains_verified": 10,
+  "frozen_source_files_verified": 41,
+  "archive_sha256": "5bd5de7725492ae990b038714f51c3071a2756638fb6df6865203394d0756285",
+  "checkpoint_sha256": "22e6261873c2c61b5f49860ebb4ec5d4223bb0b2937d33977f528bccbebf2f2e",
+  "evaluator_resources": {
+    "additional_peak_rss_limit_mib": 512,
+    "baseline_current_rss_bytes": 1441394688,
+    "max_seconds": 60,
+    "max_states": 100000,
+    "sampled_peak_current_rss_bytes": 1441394688,
+    "seconds": 0.002623941982164979,
+    "states": 1
+  },
+  "verification_did_not_train_or_infer": true
+}

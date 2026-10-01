@@ -1,0 +1,8 @@
+{
+  "status": "inference_complete",
+  "completed_at_utc": "2026-07-22T01:13:57.202903+00:00",
+  "run_id": "minimal_heldout_calibration_v1",
+  "run_fingerprint": "760d0279a96cbcb5225f4c758d0fe81b959b98faaef494aac7fe733ed6e3d5af",
+  "completed_request_count": 90,
+  "planned_request_count": 90
+}

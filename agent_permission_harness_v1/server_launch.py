@@ -1,0 +1,56 @@
+"""One-shot server launch. Credentials traverse pipes only, never argv/files."""
+import json
+import os
+from pathlib import Path
+import subprocess
+import sys
+
+RUN_NAME='sqstn_longitudinal_20260929_001'
+
+def launch(key,*,project,popen=subprocess.Popen):
+    if not isinstance(key,str) or not key or len(key)>16384 or any(c.isspace() for c in key):
+        raise ValueError('invalid credential')
+    project=Path(project).resolve()
+    results=project/'agent_permission_harness_v1'/'results'
+    output=results/RUN_NAME
+    if output.exists(): raise FileExistsError('run output already exists')
+    receipt=results/(RUN_NAME+'_launch')
+    receipt.mkdir(mode=0o700,exist_ok=False)
+    log=receipt/'process.log'
+    env={k:v for k,v in os.environ.items() if k in {
+        'PATH','HOME','LANG','LC_ALL','LD_LIBRARY_PATH','CUDA_VISIBLE_DEVICES','NVIDIA_VISIBLE_DEVICES'}}
+    env.update(PYTHONPATH='.:rl_personal_assistant/src',OMP_NUM_THREADS='1',MKL_NUM_THREADS='1')
+    command=['timeout','--signal=TERM','--kill-after=20s','1800s',sys.executable,
+        '-m','agent_permission_harness_v1.run_sqstn_pilot','--live','--key-stdin',
+        '--device','cuda:0','--output',str(output)]
+    with log.open('xb') as handle:
+        os.fchmod(handle.fileno(),0o600)
+        process=popen(command,cwd=str(project),env=env,stdin=subprocess.PIPE,
+            stdout=handle,stderr=subprocess.STDOUT,start_new_session=True)
+        process.stdin.write((key+'\n').encode())
+        process.stdin.flush()
+        process.stdin.close()
+    result={'pid':process.pid,'output':str(output),'log':str(log),'automatic_retry':False}
+    with (receipt/'receipt.json').open('x',encoding='utf-8') as f:
+        os.fchmod(f.fileno(),0o600)
+        json.dump(result,f); f.flush(); os.fsync(f.fileno())
+    return result
+
+def main():
+    os.umask(0o077)
+    project=Path.cwd().resolve()
+    expected=Path('/hyperai/home/agenticAI/ddqn_agent_bridge_20260929_001').resolve()
+    if project!=expected: raise SystemExit('wrong remote project; no launch')
+    key=sys.stdin.readline(16386).rstrip('\r\n')
+    try:
+        result=launch(key,project=project)
+    except Exception as error:
+        print(json.dumps({'status':'launch_failed','error_type':type(error).__name__}),flush=True)
+        return 2
+    finally:
+        del key
+    print(json.dumps(result),flush=True)
+    return 0
+
+if __name__=='__main__':
+    raise SystemExit(main())

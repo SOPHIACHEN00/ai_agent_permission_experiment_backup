@@ -1,0 +1,308 @@
+{
+  "source_run": "D:\\Study\\Graduate_Study_UofG\\Research\\paper\\Week67\\ai_agent_permission_experiment\\in_context_learning\\multi_model_screening\\artifacts\\screen_40_seed20260925_4shot_8k_low",
+  "source_config_sha256": "982a36b12ef08ad4bd8db205ae7aaf515b442b8caeae9ae41d1e27632425f871",
+  "accounting_note": "Prior offset excludes the reused success charges; copied checkpoints retain original costs, so cumulative spending counts each original call once.",
+  "summary": {
+    "compatibility": {
+      "data": true,
+      "raw": true,
+      "icl_source": true,
+      "runner_source": true,
+      "gemini_spec": true
+    },
+    "dataset_users": 201,
+    "dataset_rows": 16361,
+    "fold0_test_rows": 3123,
+    "reusable_calls": 40,
+    "new_calls": 161,
+    "reused_cost_usd": 0.14366925,
+    "prior_cumulative_usd": 0.5081607180000001,
+    "runner_prior_offset_usd": 0.3644914680000001,
+    "new_calls_worst_case_bound_usd": 5.3753685,
+    "cumulative_with_remaining_bound_usd": 5.8835292180000005,
+    "rough_new_cost_from_old_mean_usd": 0.57826873125,
+    "output": "D:\\Study\\Graduate_Study_UofG\\Research\\paper\\Week67\\ai_agent_permission_experiment\\in_context_learning\\multi_model_screening\\artifacts\\full_201_gemini_4shot_fold0_seed20260925_8k_low"
+  },
+  "reused_checkpoints": [
+    {
+      "job_id": "P002_fold0",
+      "source": "D:\\Study\\Graduate_Study_UofG\\Research\\paper\\Week67\\ai_agent_permission_experiment\\in_context_learning\\multi_model_screening\\artifacts\\screen_40_seed20260925_4shot_8k_low\\checkpoints\\gemini_P002_fold0.json",
+      "sha256": "3fa828c09c7070f8e357d0ce1e011c7930bf105d81047bc4f19cf1c1d9092b49",
+      "prompt_sha256": "ca25ea4655689335917c98ebda4e022384563baaad6f18704bb620c743da0e3a",
+      "cost_usd": 0.003354
+    },
+    {
+      "job_id": "P009_fold0",
+      "source": "D:\\Study\\Graduate_Study_UofG\\Research\\paper\\Week67\\ai_agent_permission_experiment\\in_context_learning\\multi_model_screening\\artifacts\\screen_40_seed20260925_4shot_8k_low\\checkpoints\\gemini_P009_fold0.json",
+      "sha256": "f6dcf451494c2af9e24f50fcf8584ae3976e50592b15481ec82f6b5f6158f5a6",
+      "prompt_sha256": "4d3ed2afb8914eb20dbc7760a0674b6476e8dcbb1dfa1bd0e150e5bfe952ba72",
+      "cost_usd": 0.00389775
+    },
+    {
+      "job_id": "P012_fold0",
+      "source": "D:\\Study\\Graduate_Study_UofG\\Research\\paper\\Week67\\ai_agent_permission_experiment\\in_context_learning\\multi_model_screening\\artifacts\\screen_40_seed20260925_4shot_8k_low\\checkpoints\\gemini_P012_fold0.json",
+      "sha256": "a340712507b131f308339a787169064254d0e6c4658f4d474e654e1d2702e4c5",
+      "prompt_sha256": "e06ea0545479ae1ceaa10f3087ffaf8fce2e5b7fe91d411b690122891206046f",
+      "cost_usd": 0.0031995
+    },
+    {
+      "job_id": "P013_fold0",
+      "source": "D:\\Study\\Graduate_Study_UofG\\Research\\paper\\Week67\\ai_agent_permission_experiment\\in_context_learning\\multi_model_screening\\artifacts\\screen_40_seed20260925_4shot_8k_low\\checkpoints\\gemini_P013_fold0.json",
+      "sha256": "13df1377bade9ae71452ed5fae8a9fe4043782576344365f90a94f567b89670b",
+      "prompt_sha256": "5076f96f1fe66374824d79596b81ef2ffb7a343c4267235a3c1bd575bcb16c1b",
+      "cost_usd": 0.00281025
+    },
+    {
+      "job_id": "P015_fold0",
+      "source": "D:\\Study\\Graduate_Study_UofG\\Research\\paper\\Week67\\ai_agent_permission_experiment\\in_context_learning\\multi_model_screening\\artifacts\\screen_40_seed20260925_4shot_8k_low\\checkpoints\\gemini_P015_fold0.json",
+      "sha256": "e9013899dc5db864fe9d8ba74454df5815feb2d87e898d8fc1de9e103180dd00",
+      "prompt_sha256": "5c62e6ad2e5f4b32fa3e693eecc1ba01e9217331c149b3e5417919cac398ec52",
+      "cost_usd": 0.0033015
+    },
+    {
+      "job_id": "P016_fold0",
+      "source": "D:\\Study\\Graduate_Study_UofG\\Research\\paper\\Week67\\ai_agent_permission_experiment\\in_context_learning\\multi_model_screening\\artifacts\\screen_40_seed20260925_4shot_8k_low\\checkpoints\\gemini_P016_fold0.json",
+      "sha256": "435ef33d14a683e255f3f8d31c5448cfc86cd8644620cc9aa9d6dd89fdefd441",
+      "prompt_sha256": "eab2ecccf114c1e65b1b16d18884fed4f06639d3b14f77ee90c986fd06ebdcdc",
+      "cost_usd": 0.0032475
+    },
+    {
+      "job_id": "P026_fold0",
+      "source": "D:\\Study\\Graduate_Study_UofG\\Research\\paper\\Week67\\ai_agent_permission_experiment\\in_context_learning\\multi_model_screening\\artifacts\\screen_40_seed20260925_4shot_8k_low\\checkpoints\\gemini_P026_fold0.json",
+      "sha256": "9b8f02f1c36d7a640240db72ca894ef06a7e6d3fecafebc4ef72a12abc8f38a5",
+      "prompt_sha256": "696c071e96b21470ad23f570262a7c65baaf7ef62082b610e54cdf4c6b0e1c0a",
+      "cost_usd": 0.004965
+    },
+    {
+      "job_id": "P031_fold0",
+      "source": "D:\\Study\\Graduate_Study_UofG\\Research\\paper\\Week67\\ai_agent_permission_experiment\\in_context_learning\\multi_model_screening\\artifacts\\screen_40_seed20260925_4shot_8k_low\\checkpoints\\gemini_P031_fold0.json",
+      "sha256": "636e875d81d4464958e1b40de09ee089c9dff4c490d9aec4b7cdf97aef3a6b9f",
+      "prompt_sha256": "956f859c0353a43c5d079c79a64c024bcb5308aca69c1c134594b33bbfa67b34",
+      "cost_usd": 0.004308
+    },
+    {
+      "job_id": "P032_fold0",
+      "source": "D:\\Study\\Graduate_Study_UofG\\Research\\paper\\Week67\\ai_agent_permission_experiment\\in_context_learning\\multi_model_screening\\artifacts\\screen_40_seed20260925_4shot_8k_low\\checkpoints\\gemini_P032_fold0.json",
+      "sha256": "fb14a79385dfa31a7cc533a5683ffba08f6771833e65096eab322206946216b6",
+      "prompt_sha256": "8401758e7307fe75681da8afdbaa28287fd1cd8d06375217afd1acbcf61e44dc",
+      "cost_usd": 0.00361275
+    },
+    {
+      "job_id": "P033_fold0",
+      "source": "D:\\Study\\Graduate_Study_UofG\\Research\\paper\\Week67\\ai_agent_permission_experiment\\in_context_learning\\multi_model_screening\\artifacts\\screen_40_seed20260925_4shot_8k_low\\checkpoints\\gemini_P033_fold0.json",
+      "sha256": "8638dbc4a9e3b908c9d78748a94f23bd799a7d5a0f8a50bd136f4f53296775e2",
+      "prompt_sha256": "1e022040d4df691ddaa523e5101c07452d11e0eb46f54450b41f850f7382af49",
+      "cost_usd": 0.00367425
+    },
+    {
+      "job_id": "P037_fold0",
+      "source": "D:\\Study\\Graduate_Study_UofG\\Research\\paper\\Week67\\ai_agent_permission_experiment\\in_context_learning\\multi_model_screening\\artifacts\\screen_40_seed20260925_4shot_8k_low\\checkpoints\\gemini_P037_fold0.json",
+      "sha256": "81ca287271a84db0d3d0c04e63a12e8562878ad843091497c9115572ccbe8899",
+      "prompt_sha256": "f5b18d2e793d8f51f13dec70b1b853566c56720b7402f8e15f03e958b2738db7",
+      "cost_usd": 0.0029925
+    },
+    {
+      "job_id": "P040_fold0",
+      "source": "D:\\Study\\Graduate_Study_UofG\\Research\\paper\\Week67\\ai_agent_permission_experiment\\in_context_learning\\multi_model_screening\\artifacts\\screen_40_seed20260925_4shot_8k_low\\checkpoints\\gemini_P040_fold0.json",
+      "sha256": "ed5eec8f2ebc1f46698222617440d216d840681619343c98dcaf28259cb107c9",
+      "prompt_sha256": "7b90c9eb7a79e2dc15c2d3f9cdb1e304ba9485642dac08d71a771894ad8ddbb4",
+      "cost_usd": 0.0030885
+    },
+    {
+      "job_id": "P048_fold0",
+      "source": "D:\\Study\\Graduate_Study_UofG\\Research\\paper\\Week67\\ai_agent_permission_experiment\\in_context_learning\\multi_model_screening\\artifacts\\screen_40_seed20260925_4shot_8k_low\\checkpoints\\gemini_P048_fold0.json",
+      "sha256": "df9dc1d2fde78afaf96a7f3833a79ff419049d51316db755570febb98ff276c3",
+      "prompt_sha256": "8927e04688ab3e8939ce013579904daf15051994a5be0a83a7ca979c4cdc8901",
+      "cost_usd": 0.0044925
+    },
+    {
+      "job_id": "P049_fold0",
+      "source": "D:\\Study\\Graduate_Study_UofG\\Research\\paper\\Week67\\ai_agent_permission_experiment\\in_context_learning\\multi_model_screening\\artifacts\\screen_40_seed20260925_4shot_8k_low\\checkpoints\\gemini_P049_fold0.json",
+      "sha256": "9704d7e3a437173acfe513bfa5c4ef9f3b23cb825969aea8cfda31e93651b23c",
+      "prompt_sha256": "fb85abf09c881e774ae968d3abd2231b0d5150b1c1bfa578703e22b32005e0bb",
+      "cost_usd": 0.004617
+    },
+    {
+      "job_id": "P053_fold0",
+      "source": "D:\\Study\\Graduate_Study_UofG\\Research\\paper\\Week67\\ai_agent_permission_experiment\\in_context_learning\\multi_model_screening\\artifacts\\screen_40_seed20260925_4shot_8k_low\\checkpoints\\gemini_P053_fold0.json",
+      "sha256": "07e1a1a46ffffe455cec249fdbfd977e8a11a796aa5056236963e3362ad39562",
+      "prompt_sha256": "d5a13c9d9bdf5bb58afc46d42f65b3734bba1beecf10769974871f8e6d24e590",
+      "cost_usd": 0.00307425
+    },
+    {
+      "job_id": "P055_fold0",
+      "source": "D:\\Study\\Graduate_Study_UofG\\Research\\paper\\Week67\\ai_agent_permission_experiment\\in_context_learning\\multi_model_screening\\artifacts\\screen_40_seed20260925_4shot_8k_low\\checkpoints\\gemini_P055_fold0.json",
+      "sha256": "aa307c2d788929d65bdedfc44eee2b54a22ce2428d84df4e4ff493512f66b4fe",
+      "prompt_sha256": "03fb1760e026bd84fdc49a4d235a806e53112e735d479ba8db537b49ea830dfc",
+      "cost_usd": 0.003081
+    },
+    {
+      "job_id": "P057_fold0",
+      "source": "D:\\Study\\Graduate_Study_UofG\\Research\\paper\\Week67\\ai_agent_permission_experiment\\in_context_learning\\multi_model_screening\\artifacts\\screen_40_seed20260925_4shot_8k_low\\checkpoints\\gemini_P057_fold0.json",
+      "sha256": "a2ad31a8e889352b6e70982960a52a85b1b52570bf8cd269bd46410f0cd38439",
+      "prompt_sha256": "d514db5447cbb33250b8aeb7430e20cdfa79449feb4bac343295acc727bf5f93",
+      "cost_usd": 0.0034365
+    },
+    {
+      "job_id": "P061_fold0",
+      "source": "D:\\Study\\Graduate_Study_UofG\\Research\\paper\\Week67\\ai_agent_permission_experiment\\in_context_learning\\multi_model_screening\\artifacts\\screen_40_seed20260925_4shot_8k_low\\checkpoints\\gemini_P061_fold0.json",
+      "sha256": "3b0e05a19ae281bfe35ced619081889367e4e03c75120c764944305a54d4086f",
+      "prompt_sha256": "39082be146f4661899e370c7bae2f3954888173694c526cfdf87ea253b24dab3",
+      "cost_usd": 0.0039645
+    },
+    {
+      "job_id": "P073_fold0",
+      "source": "D:\\Study\\Graduate_Study_UofG\\Research\\paper\\Week67\\ai_agent_permission_experiment\\in_context_learning\\multi_model_screening\\artifacts\\screen_40_seed20260925_4shot_8k_low\\checkpoints\\gemini_P073_fold0.json",
+      "sha256": "f3b66506314f4b10a00e80503151fc7fc1548987238e7c0f9644f966fc6f6b6e",
+      "prompt_sha256": "8f7c165a39c1fefe18a5c569a199ce198691dcf42073e54d933ad8cea14cdbf4",
+      "cost_usd": 0.00284175
+    },
+    {
+      "job_id": "P074_fold0",
+      "source": "D:\\Study\\Graduate_Study_UofG\\Research\\paper\\Week67\\ai_agent_permission_experiment\\in_context_learning\\multi_model_screening\\artifacts\\screen_40_seed20260925_4shot_8k_low\\checkpoints\\gemini_P074_fold0.json",
+      "sha256": "d34e982a07e52cddb0341ed407c5e2128661580588d535b806e2a843ca2cb75b",
+      "prompt_sha256": "8a4ac19ee7bff05f94555b5a1c3866ab03235c12452dd16a47be7fc7019c5fa6",
+      "cost_usd": 0.00371475
+    },
+    {
+      "job_id": "P080_fold0",
+      "source": "D:\\Study\\Graduate_Study_UofG\\Research\\paper\\Week67\\ai_agent_permission_experiment\\in_context_learning\\multi_model_screening\\artifacts\\screen_40_seed20260925_4shot_8k_low\\checkpoints\\gemini_P080_fold0.json",
+      "sha256": "c25f666a781bf4a83d0457017961c97f1f9d05844b744a717a6fa21f09c13fda",
+      "prompt_sha256": "d8ca0743d3a7d13b794bd353422328dc223bdc93ba5fd64fbb3c8eb9251ae8e7",
+      "cost_usd": 0.0035625
+    },
+    {
+      "job_id": "P082_fold0",
+      "source": "D:\\Study\\Graduate_Study_UofG\\Research\\paper\\Week67\\ai_agent_permission_experiment\\in_context_learning\\multi_model_screening\\artifacts\\screen_40_seed20260925_4shot_8k_low\\checkpoints\\gemini_P082_fold0.json",
+      "sha256": "b12b10b6f8d858bc81a75bfba69416d5410bdfd4d7c3e0c15a28861c0817680a",
+      "prompt_sha256": "6287e9b95b87ed7bf1423b461f359d8d1d43bcad1a053d41e3b9f9270c0abc6b",
+      "cost_usd": 0.00372975
+    },
+    {
+      "job_id": "P083_fold0",
+      "source": "D:\\Study\\Graduate_Study_UofG\\Research\\paper\\Week67\\ai_agent_permission_experiment\\in_context_learning\\multi_model_screening\\artifacts\\screen_40_seed20260925_4shot_8k_low\\checkpoints\\gemini_P083_fold0.json",
+      "sha256": "e8ec2fb5746eefb1036889e4274b6b28c3e1eb892594eb93cb3d47010068f7bd",
+      "prompt_sha256": "a9933e082edd321f0882a989ccbdfb6824a34b3b94964049ccade08335938d55",
+      "cost_usd": 0.00399375
+    },
+    {
+      "job_id": "P085_fold0",
+      "source": "D:\\Study\\Graduate_Study_UofG\\Research\\paper\\Week67\\ai_agent_permission_experiment\\in_context_learning\\multi_model_screening\\artifacts\\screen_40_seed20260925_4shot_8k_low\\checkpoints\\gemini_P085_fold0.json",
+      "sha256": "4c967c4d6d58d13d2bef782eb0e287f2151f2d9c183f1bf36998605058707711",
+      "prompt_sha256": "0bf1a8aaba1b8db99c8d73623002151329fc31021d883b828fedf3c9dc6928ad",
+      "cost_usd": 0.00348675
+    },
+    {
+      "job_id": "P088_fold0",
+      "source": "D:\\Study\\Graduate_Study_UofG\\Research\\paper\\Week67\\ai_agent_permission_experiment\\in_context_learning\\multi_model_screening\\artifacts\\screen_40_seed20260925_4shot_8k_low\\checkpoints\\gemini_P088_fold0.json",
+      "sha256": "a078f85826d4190532549831cad28219ab689c18b16b1fc7d868fd497daf721c",
+      "prompt_sha256": "24dcdf3994c34e089a79fcaa2245a821d382fe9c7a989f6de9f6532808456250",
+      "cost_usd": 0.0029475
+    },
+    {
+      "job_id": "P089_fold0",
+      "source": "D:\\Study\\Graduate_Study_UofG\\Research\\paper\\Week67\\ai_agent_permission_experiment\\in_context_learning\\multi_model_screening\\artifacts\\screen_40_seed20260925_4shot_8k_low\\checkpoints\\gemini_P089_fold0.json",
+      "sha256": "bec3a20500bc3558a4ae3ef37429fb9924eaf0070c5e8febc2a8f8873b27549c",
+      "prompt_sha256": "032b42ca1957721fdf14fd964e8ea1a37a3a1d600ed1606b99b789166ad3eb8f",
+      "cost_usd": 0.00355275
+    },
+    {
+      "job_id": "P103_fold0",
+      "source": "D:\\Study\\Graduate_Study_UofG\\Research\\paper\\Week67\\ai_agent_permission_experiment\\in_context_learning\\multi_model_screening\\artifacts\\screen_40_seed20260925_4shot_8k_low\\checkpoints\\gemini_P103_fold0.json",
+      "sha256": "3f2f2200ce871226e1b146aaa8c8e8d930152f121e4b019c06c2ee62f0d20de2",
+      "prompt_sha256": "400970594577473417d1d13540442a3c68b20bb9561383d2e1575d07206b271c",
+      "cost_usd": 0.004275
+    },
+    {
+      "job_id": "P120_fold0",
+      "source": "D:\\Study\\Graduate_Study_UofG\\Research\\paper\\Week67\\ai_agent_permission_experiment\\in_context_learning\\multi_model_screening\\artifacts\\screen_40_seed20260925_4shot_8k_low\\checkpoints\\gemini_P120_fold0.json",
+      "sha256": "238e87b4f4cb2952cd77c6dd65ca87b74e4ef12ac036bf369fe641fd69e922c9",
+      "prompt_sha256": "b9e99966aa7eb36a4c81708c42c9de2d0fcaf20be6f09023791d37678197c768",
+      "cost_usd": 0.00338775
+    },
+    {
+      "job_id": "P121_fold0",
+      "source": "D:\\Study\\Graduate_Study_UofG\\Research\\paper\\Week67\\ai_agent_permission_experiment\\in_context_learning\\multi_model_screening\\artifacts\\screen_40_seed20260925_4shot_8k_low\\checkpoints\\gemini_P121_fold0.json",
+      "sha256": "3cd8c967f36ba7f37fe5ef15544db95aa8e300d8a3cba050d0d28a6b83bb129e",
+      "prompt_sha256": "003326bd3a7d24a44451560bd478655735bef537a51e84af6311097f355b4869",
+      "cost_usd": 0.004374
+    },
+    {
+      "job_id": "P125_fold0",
+      "source": "D:\\Study\\Graduate_Study_UofG\\Research\\paper\\Week67\\ai_agent_permission_experiment\\in_context_learning\\multi_model_screening\\artifacts\\screen_40_seed20260925_4shot_8k_low\\checkpoints\\gemini_P125_fold0.json",
+      "sha256": "742128ca649461764bcb5d3cea10eb78b93ce3ad9117f50c27c08873943f2c6e",
+      "prompt_sha256": "54512433704ea9f1ad4f4585e56423539c9c9e9b819c1a804182c4d7e51122c2",
+      "cost_usd": 0.00348225
+    },
+    {
+      "job_id": "P128_fold0",
+      "source": "D:\\Study\\Graduate_Study_UofG\\Research\\paper\\Week67\\ai_agent_permission_experiment\\in_context_learning\\multi_model_screening\\artifacts\\screen_40_seed20260925_4shot_8k_low\\checkpoints\\gemini_P128_fold0.json",
+      "sha256": "848f7f9598adbe00d7ea484874ff01bc599ad2a5986966ad4df3197eeb8ba645",
+      "prompt_sha256": "c89913b0fbddada1bc24a94c03b54fe3d4710cfbb4f04acf73411ac09d2bc721",
+      "cost_usd": 0.00380925
+    },
+    {
+      "job_id": "P143_fold0",
+      "source": "D:\\Study\\Graduate_Study_UofG\\Research\\paper\\Week67\\ai_agent_permission_experiment\\in_context_learning\\multi_model_screening\\artifacts\\screen_40_seed20260925_4shot_8k_low\\checkpoints\\gemini_P143_fold0.json",
+      "sha256": "d48a150017887361eb584172bc91240bd7f889eb3bca429b1f895004451f29dc",
+      "prompt_sha256": "a258583a3c9baf84fecc510aa0745a16bb26600223ff9ed7897dcfa960424c75",
+      "cost_usd": 0.00430275
+    },
+    {
+      "job_id": "P144_fold0",
+      "source": "D:\\Study\\Graduate_Study_UofG\\Research\\paper\\Week67\\ai_agent_permission_experiment\\in_context_learning\\multi_model_screening\\artifacts\\screen_40_seed20260925_4shot_8k_low\\checkpoints\\gemini_P144_fold0.json",
+      "sha256": "7d10aa584e3eb5218030ca5248e6f7e72e0715875abc1a5c24a324347e559c45",
+      "prompt_sha256": "3263b9c9e583d5108a2ba0e8e1dbd9bd1304502a99d8c7785a70b31c0ab4ff3a",
+      "cost_usd": 0.00314925
+    },
+    {
+      "job_id": "P167_fold0",
+      "source": "D:\\Study\\Graduate_Study_UofG\\Research\\paper\\Week67\\ai_agent_permission_experiment\\in_context_learning\\multi_model_screening\\artifacts\\screen_40_seed20260925_4shot_8k_low\\checkpoints\\gemini_P167_fold0.json",
+      "sha256": "e308b56b63db015d6a2df35f70d606cf08632cad36751d073587fbcce3e1f6ef",
+      "prompt_sha256": "1081ff92ca54c6f2cfba1555d4da514fa777e192b35352d556c7994077a7f143",
+      "cost_usd": 0.00334425
+    },
+    {
+      "job_id": "P170_fold0",
+      "source": "D:\\Study\\Graduate_Study_UofG\\Research\\paper\\Week67\\ai_agent_permission_experiment\\in_context_learning\\multi_model_screening\\artifacts\\screen_40_seed20260925_4shot_8k_low\\checkpoints\\gemini_P170_fold0.json",
+      "sha256": "bddf91f7f647bd00b9a4e14f04c7c9218f3e7a902675c2216c079b756f68e86b",
+      "prompt_sha256": "2d24340913b3965e652974f86f56c199d53c7516067f91fac1a2c02349d56dd9",
+      "cost_usd": 0.00328275
+    },
+    {
+      "job_id": "P174_fold0",
+      "source": "D:\\Study\\Graduate_Study_UofG\\Research\\paper\\Week67\\ai_agent_permission_experiment\\in_context_learning\\multi_model_screening\\artifacts\\screen_40_seed20260925_4shot_8k_low\\checkpoints\\gemini_P174_fold0.json",
+      "sha256": "0b948c147df8c348b53776a89ca36ea2883816dffb2fb95197af86efbf51c390",
+      "prompt_sha256": "2ce58c7f16f978567f0d23d9d92a83ac6dc98e281e0b71be89c639d1c2efc97e",
+      "cost_usd": 0.00279975
+    },
+    {
+      "job_id": "P179_fold0",
+      "source": "D:\\Study\\Graduate_Study_UofG\\Research\\paper\\Week67\\ai_agent_permission_experiment\\in_context_learning\\multi_model_screening\\artifacts\\screen_40_seed20260925_4shot_8k_low\\checkpoints\\gemini_P179_fold0.json",
+      "sha256": "4ee417778bce47b502c9091cc80c59b39bda8ae36e759b2c6b725697e988abfb",
+      "prompt_sha256": "44d94c8c35276ea77d85c1d09bdc63dff9288f8d8adf30d763fee51002cc13e4",
+      "cost_usd": 0.00347775
+    },
+    {
+      "job_id": "P180_fold0",
+      "source": "D:\\Study\\Graduate_Study_UofG\\Research\\paper\\Week67\\ai_agent_permission_experiment\\in_context_learning\\multi_model_screening\\artifacts\\screen_40_seed20260925_4shot_8k_low\\checkpoints\\gemini_P180_fold0.json",
+      "sha256": "054319fed5c37774a491b9b4cc8ce76dd65bd51d35a381092ffa10f2ad9f7080",
+      "prompt_sha256": "6d9926919155bed5561d8e94d9d1aced56f53d8d389e596afc58c3c0dc681c40",
+      "cost_usd": 0.00422475
+    },
+    {
+      "job_id": "P183_fold0",
+      "source": "D:\\Study\\Graduate_Study_UofG\\Research\\paper\\Week67\\ai_agent_permission_experiment\\in_context_learning\\multi_model_screening\\artifacts\\screen_40_seed20260925_4shot_8k_low\\checkpoints\\gemini_P183_fold0.json",
+      "sha256": "c2dd4a9a3ed122ccb0fae607d6db529a42918c62bd79a47c9f2d1f8c9d0c160e",
+      "prompt_sha256": "757bc01adffc8eeaea2e125dc49fcdf2e192b8e61b6ddcbfd621003e9b88047e",
+      "cost_usd": 0.00288375
+    },
+    {
+      "job_id": "P194_fold0",
+      "source": "D:\\Study\\Graduate_Study_UofG\\Research\\paper\\Week67\\ai_agent_permission_experiment\\in_context_learning\\multi_model_screening\\artifacts\\screen_40_seed20260925_4shot_8k_low\\checkpoints\\gemini_P194_fold0.json",
+      "sha256": "09a28dcf949d429b5285ff56b4f7784687f4f0c4b9693034f9d86870152df4ec",
+      "prompt_sha256": "4611484b272809ac2544cc30a2cba6bb1e0dd1a96825752c7ec1c291ad156763",
+      "cost_usd": 0.00392925
+    }
+  ]
+}

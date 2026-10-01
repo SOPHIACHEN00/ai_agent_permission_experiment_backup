@@ -1,0 +1,12 @@
+{
+  "schema": "budget_recourse_minimal_repair_check_v1",
+  "recorded_at_utc": "2026-09-22 13:31:36 UTC",
+  "change": "Only supply explicit successful MockTool outcome plan in Environment.step. Original six tests unchanged.",
+  "execution": {
+    "chunk_id": "cccff1",
+    "wall_time_seconds": 0.5075524,
+    "exit_code": 0,
+    "original_token_count": 264,
+    "output": "test_forecast_hidden_until_boundary_and_disable_cannot_reopen (test_budget_recourse.BudgetRecourseTests.test_forecast_hidden_until_boundary_and_disable_cannot_reopen) ... ok\r\ntest_last_stage_budget_changes_completion_value (test_budget_recourse.BudgetRecourseTests.test_last_stage_budget_changes_completion_value) ... ok\r\ntest_prompt_budget_reverses_optimal_first_action (test_budget_recourse.BudgetRecourseTests.test_prompt_budget_reverses_optimal_first_action) ... ok\r\ntest_real_consent_costs_and_invalid_execution_are_nonvacuous (test_budget_recourse.BudgetRecourseTests.test_real_consent_costs_and_invalid_execution_are_nonvacuous) ... ok\r\ntest_strong_and_myopic_rules_use_the_specified_horizons (test_budget_recourse.BudgetRecourseTests.test_strong_and_myopic_rules_use_the_specified_horizons) ... ok\r\ntest_structural_solver_honors_its_resource_cap (test_budget_recourse.BudgetRecourseTests.test_structural_solver_honors_its_resource_cap) ... ok\r\n\r\n----------------------------------------------------------------------\r\nRan 6 tests in 0.147s\r\n\r\nOK\r\n"
+  }
+}

@@ -1,5 +1,7 @@
 # Source notes: task-Agent DDQN integration
 
+> Historical preparation notes below describe the pre-implementation state. Update 2026-09-29: native DDQN bridge, CPU/CUDA execution and the remote pilot are now implemented; actual outcomes and limitations are in [the execution report](../06_DDQN_IMPLEMENTATION_AND_REMOTE_RUN_zh.md). Do not treat historical “pending” wording below as current status.
+
 ## Boundaries
 - Source inspection and documentation only in this preparation stage.
 - User-selected DDQN/task-Agent integration is separate from S-QSTN human-answer simulation.
@@ -31,4 +33,4 @@
 - Disclosure and authorization footprint are distinct. Pending/refused refresh retains the old grant; approved refresh supersedes it; narrow projections do not revoke it.
 - The written specification deliberately uses a new 38/35/64 schema and grant-field/control-step proxy; it does not represent an old Family3 checkpoint or claim measured DDQN efficacy.
 - Self-review corrected the actual permission enum name to `deny_persist`, separated resource-guard accepted decisions from committed tool effects, raised the offline planner limit for eight-step held-out tasks, and required an external evaluation RNG because even greedy native DDQN selection consumes RNG.
-- See `../superpowers/specs/2026-09-29-ddqn-agent-integration-design.md`. User review is the next design gate.
+- See `../superpowers/specs/2026-09-29-ddqn-agent-integration-design.md`. The user approved this specification on 2026-09-29; the current steering is to preserve a local recap and design the auxiliary fine-tuned security checker. The approved DDQN implementation remains pending, not awaiting another routine approval.

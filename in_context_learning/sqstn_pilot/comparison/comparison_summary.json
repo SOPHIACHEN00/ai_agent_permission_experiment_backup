@@ -1,0 +1,175 @@
+{
+  "description": "Local descriptive comparison of frozen runs, 2026-09-26. No new model calls. Different target labels across real and synthetic data.",
+  "sources": {
+    "human_data": "D:\\Study\\Graduate_Study_UofG\\Research\\paper\\Week67\\ai_agent_permission_experiment\\data\\processed\\four_label_dataset.csv",
+    "real_run": "D:\\Study\\Graduate_Study_UofG\\Research\\paper\\Week67\\ai_agent_permission_experiment\\in_context_learning\\multi_model_screening\\artifacts\\full_201_gemini_4shot_fold0_seed20260925_8k_low",
+    "synthetic_run": "D:\\Study\\Graduate_Study_UofG\\Research\\paper\\Week67\\ai_agent_permission_experiment\\in_context_learning\\sqstn_pilot\\artifacts\\pilot20_seed20260926_o4mini_gemini_fold0_schema_v1"
+  },
+  "pairing": {
+    "same_test_contexts": true,
+    "same_0shot_4shot_test_truth": true,
+    "same_history_and_test_query_lists": true,
+    "real20_predictions_identical_to_old40_subset": true
+  },
+  "volumes": {
+    "real201": {
+      "n_users": 201,
+      "available_human_rows": 16361,
+      "history": {
+        "permission_rows": 3256,
+        "user_query_pairs": 804,
+        "distinct_query_ids": 61,
+        "distinct_permission_items": 331
+      },
+      "test": {
+        "permission_rows": 3123,
+        "user_query_pairs": 804,
+        "distinct_query_ids": 30,
+        "distinct_permission_items": 147
+      },
+      "selected_permission_rows": 6379,
+      "selected_distinct_query_ids": 65,
+      "selected_distinct_permission_items": 371
+    },
+    "matched20": {
+      "n_users": 20,
+      "available_human_rows": 1628,
+      "history": {
+        "permission_rows": 350,
+        "user_query_pairs": 80,
+        "distinct_query_ids": 41,
+        "distinct_permission_items": 181
+      },
+      "test": {
+        "permission_rows": 274,
+        "user_query_pairs": 80,
+        "distinct_query_ids": 21,
+        "distinct_permission_items": 89
+      },
+      "selected_permission_rows": 624,
+      "selected_distinct_query_ids": 56,
+      "selected_distinct_permission_items": 250
+    }
+  },
+  "metrics": {
+    "real201_4shot": {
+      "n_users": 201,
+      "n_rows": 3123,
+      "n_correct": 1962,
+      "accuracy": 0.6282420749279539,
+      "macro_f1_fixed_four_labels": 0.5451340588043565,
+      "quadratic_weighted_kappa": 0.5589757260081931,
+      "false_allow_count": 274,
+      "false_allow_denominator": 645,
+      "false_allow_rate": 0.4248062015503876,
+      "persistent_over_allow_count": 282,
+      "persistent_over_allow_denominator": 1898,
+      "persistent_over_allow_rate": 0.14857744994731295,
+      "truth_counts": {
+        "0": 345,
+        "1": 300,
+        "2": 1253,
+        "3": 1225
+      }
+    },
+    "real20_4shot": {
+      "n_users": 20,
+      "n_rows": 274,
+      "n_correct": 183,
+      "accuracy": 0.6678832116788321,
+      "macro_f1_fixed_four_labels": 0.5224777780861131,
+      "quadratic_weighted_kappa": 0.6473838622005437,
+      "false_allow_count": 18,
+      "false_allow_denominator": 40,
+      "false_allow_rate": 0.45,
+      "persistent_over_allow_count": 19,
+      "persistent_over_allow_denominator": 166,
+      "persistent_over_allow_rate": 0.1144578313253012,
+      "truth_counts": {
+        "0": 20,
+        "1": 20,
+        "2": 126,
+        "3": 108
+      }
+    },
+    "synthetic20_0shot": {
+      "n_users": 20,
+      "n_rows": 274,
+      "n_correct": 152,
+      "accuracy": 0.5547445255474452,
+      "macro_f1_fixed_four_labels": 0.45675526024363233,
+      "quadratic_weighted_kappa": 0.5427685179731826,
+      "false_allow_count": 15,
+      "false_allow_denominator": 41,
+      "false_allow_rate": 0.36585365853658536,
+      "persistent_over_allow_count": 72,
+      "persistent_over_allow_denominator": 214,
+      "persistent_over_allow_rate": 0.3364485981308411,
+      "truth_counts": {
+        "0": 12,
+        "1": 29,
+        "2": 173,
+        "3": 60
+      }
+    },
+    "synthetic20_4shot": {
+      "n_users": 20,
+      "n_rows": 274,
+      "n_correct": 203,
+      "accuracy": 0.7408759124087592,
+      "macro_f1_fixed_four_labels": 0.5845095527444651,
+      "quadratic_weighted_kappa": 0.7233168165699927,
+      "false_allow_count": 15,
+      "false_allow_denominator": 41,
+      "false_allow_rate": 0.36585365853658536,
+      "persistent_over_allow_count": 28,
+      "persistent_over_allow_denominator": 214,
+      "persistent_over_allow_rate": 0.1308411214953271,
+      "truth_counts": {
+        "0": 12,
+        "1": 29,
+        "2": 173,
+        "3": 60
+      }
+    }
+  },
+  "costs_usd": {
+    "real201": {
+      "currency": "USD",
+      "completed_users": 201,
+      "reused_calls": 40,
+      "new_calls": 161,
+      "error_files": 0,
+      "reused_gemini_cost_usd": 0.14366925,
+      "new_gemini_cost_usd": 0.59536725,
+      "all_201_gemini_cost_usd": 0.7390365,
+      "previous_cumulative_cost_usd": 0.5081607180000001,
+      "cumulative_cost_usd": 1.1035279679999999,
+      "formula": "Previous cumulative spending + new Gemini spending = cumulative spending; reused charges are included once."
+    },
+    "real20_4shot_reported": 0.06845025,
+    "synthetic20": {
+      "currency": "USD",
+      "successful_generator_calls": 624,
+      "successful_predictor_calls": 40,
+      "failed_format_attempts": 1,
+      "generator_success_estimated_usd": 1.039269,
+      "generator_failed_estimated_usd": 0.0026048,
+      "predictor_0shot_reported_usd": 0.06020925,
+      "predictor_4shot_reported_usd": 0.068973,
+      "total_tracked_usd": 1.17105605,
+      "budget_usd": 8.0,
+      "generator_cost_basis": "Estimated from OpenAI token usage and public pricing, including cached-input discount; not an account invoice.",
+      "predictor_cost_basis": "OpenRouter provider-reported usage cost.",
+      "generator_returned_models": [
+        "o4-mini-2025-04-16"
+      ],
+      "predictor_returned_models": [
+        "google/gemini-3.8-flash"
+      ],
+      "generator_prompt_tokens": 1145382,
+      "generator_completion_tokens": 96876,
+      "generator_cached_prompt_tokens": 784128
+    }
+  }
+}

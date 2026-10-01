@@ -1,0 +1,2 @@
+model,variant,test_loss,accuracy,macro_f1,quadratic_weighted_kappa,over_sharing_rate,over_sharing_count,over_sharing_denominator,persistent_over_allow_rate,persistent_over_allow_count,persistent_over_allow_denominator
+roberta_base_flat_four_class,tuned,1.2428804684431483,0.4468853445681613,0.33514121307484596,0.24651598862227897,0.6933962264150944,588,848,0.3271441202475685,740,2262

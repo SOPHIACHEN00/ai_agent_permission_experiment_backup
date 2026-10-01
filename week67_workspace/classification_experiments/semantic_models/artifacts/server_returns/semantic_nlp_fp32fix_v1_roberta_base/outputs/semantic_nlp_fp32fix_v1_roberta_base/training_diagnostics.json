@@ -1,0 +1,26 @@
+{
+  "run_completed": true,
+  "smoke": false,
+  "losses_all_finite": true,
+  "candidate_epochs_completed": {
+    "lr_1em05_balanced": 3,
+    "lr_1em05_none": 3,
+    "lr_2em05_balanced": 3,
+    "lr_2em05_none": 3,
+    "lr_3em05_balanced": 3,
+    "lr_3em05_none": 3
+  },
+  "early_stopping_triggered": {
+    "lr_1em05_balanced": false,
+    "lr_1em05_none": false,
+    "lr_2em05_balanced": false,
+    "lr_2em05_none": true,
+    "lr_3em05_balanced": false,
+    "lr_3em05_none": true
+  },
+  "selected_candidate": "lr_2em05_none",
+  "selected_epoch": 1,
+  "final_refit_completed": true,
+  "frozen_test_evaluations": 1,
+  "elapsed_seconds": 558.2173893153667
+}

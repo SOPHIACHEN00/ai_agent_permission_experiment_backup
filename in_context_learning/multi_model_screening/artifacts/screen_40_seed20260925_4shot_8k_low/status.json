@@ -1,0 +1,14 @@
+{
+  "completed_calls": 120,
+  "total_calls": 120,
+  "complete": true,
+  "api_calls_this_invocation": 59,
+  "tracked_spend_usd": 0.5081607180000001,
+  "run_spend_usd": 0.211928077,
+  "prior_spend_usd": 0.296232641,
+  "warning_threshold_usd": 10.0,
+  "warning_reached": false,
+  "max_cost_usd": 24.0,
+  "planned_worst_case_cost_usd": 2.0398345410000003,
+  "budget_stop": false
+}

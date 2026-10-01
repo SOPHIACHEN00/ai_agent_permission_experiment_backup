@@ -1,0 +1,77 @@
+{
+  "statistics": [
+    {
+      "config": "a_lr1e3_every4",
+      "n_seeds": 3,
+      "mean": 0.38333333333333336,
+      "sample_sd": 0.3378085009784883,
+      "paired_mean_change": 0.0,
+      "paired_changes": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "config": "b_lr3e4_every4",
+      "n_seeds": 3,
+      "mean": 0.59,
+      "sample_sd": 0.025372228912730565,
+      "paired_mean_change": 0.2066666666666667,
+      "paired_changes": [
+        0.0825,
+        -0.075,
+        0.6125
+      ],
+      "wins": 2,
+      "non_tied_pairs": 3,
+      "sign_test_p": 1.0,
+      "marginal_seed_win_probability_95ci": [
+        0.09429932405024608,
+        0.9915962413403874
+      ],
+      "holm_adjusted_p": 1.0
+    },
+    {
+      "config": "c_lr1e3_every2",
+      "n_seeds": 3,
+      "mean": 0.575,
+      "sample_sd": 0.03750000000000003,
+      "paired_mean_change": 0.19166666666666665,
+      "paired_changes": [
+        0.1,
+        -0.1,
+        0.575
+      ],
+      "wins": 2,
+      "non_tied_pairs": 3,
+      "sign_test_p": 1.0,
+      "marginal_seed_win_probability_95ci": [
+        0.09429932405024608,
+        0.9915962413403874
+      ],
+      "holm_adjusted_p": 1.0
+    },
+    {
+      "config": "d_lr3e4_every2",
+      "n_seeds": 3,
+      "mean": 0.5783333333333334,
+      "sample_sd": 0.035029749261639535,
+      "paired_mean_change": 0.19499999999999998,
+      "paired_changes": [
+        0.1,
+        -0.095,
+        0.58
+      ],
+      "wins": 2,
+      "non_tied_pairs": 3,
+      "sign_test_p": 1.0,
+      "marginal_seed_win_probability_95ci": [
+        0.09429932405024608,
+        0.9915962413403874
+      ],
+      "holm_adjusted_p": 1.0
+    }
+  ],
+  "inference_caveat": "Exploratory, not preregistered inference. Sign/CI assume independent representative seed pairs. CI concerns win probability, not mean policy value; marginal intervals are not simultaneous. n=3 and validation selection do not establish population improvement."
+}

@@ -1,0 +1,7 @@
+method,seed,successes,episodes,success_rate,requests,fallbacks
+ddqn_b,1301,4,8,0.5,23,2
+ddqn_b,1601,0,8,0.0,0,8
+wp_fts_public_transfer_v0,1301,4,8,0.5,11,4
+wp_fts_public_transfer_v0,1601,4,8,0.5,11,4
+fixed_rule,1301,4,8,0.5,11,4
+fixed_rule,1601,4,8,0.5,11,4

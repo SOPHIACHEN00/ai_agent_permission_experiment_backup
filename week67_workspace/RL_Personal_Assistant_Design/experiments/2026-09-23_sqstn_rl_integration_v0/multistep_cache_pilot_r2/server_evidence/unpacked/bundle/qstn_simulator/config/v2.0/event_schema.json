@@ -1,0 +1,127 @@
+{
+  "schema_id": "s_qstn_v2_event_ledger",
+  "version": "2.0.0",
+  "description": "Structured external events for the S-QSTN v2.0 bounded memory layer. Events are not full transcripts and do not contain chain-of-thought.",
+  "state_schema_version": "2.0.0",
+  "required_fields": [
+    "event_id",
+    "subject_id",
+    "event_type",
+    "turn_index",
+    "event_time",
+    "source",
+    "verification_status"
+  ],
+  "source_policies": [
+    "external_verified",
+    "synthetic_oracle",
+    "runner_derived",
+    "unknown"
+  ],
+  "verification_statuses": [
+    "verified",
+    "unverified",
+    "rejected",
+    "unknown"
+  ],
+  "trust_dimensions": [
+    "competence",
+    "integrity",
+    "benevolence",
+    "unknown"
+  ],
+  "event_types": [
+    {
+      "event_type": "permission_request_presented",
+      "principles": ["P3", "P7"],
+      "state_update_allowed": true,
+      "requires_verified_source": true,
+      "retention_class": "recent_only"
+    },
+    {
+      "event_type": "permission_response_recorded",
+      "principles": ["P3", "P7"],
+      "state_update_allowed": false,
+      "requires_verified_source": true,
+      "retention_class": "recent_only"
+    },
+    {
+      "event_type": "explicit_grant",
+      "principles": ["P7"],
+      "state_update_allowed": false,
+      "requires_verified_source": true,
+      "retention_class": "recent_only"
+    },
+    {
+      "event_type": "explicit_revoke",
+      "principles": ["P5", "P7"],
+      "state_update_allowed": true,
+      "requires_verified_source": true,
+      "retention_class": "until_repaired"
+    },
+    {
+      "event_type": "scope_change",
+      "principles": ["P5", "P7"],
+      "state_update_allowed": true,
+      "requires_verified_source": true,
+      "retention_class": "until_repaired"
+    },
+    {
+      "event_type": "verified_agent_error",
+      "principles": ["P1", "P2", "P12"],
+      "state_update_allowed": true,
+      "requires_verified_source": true,
+      "retention_class": "persistent_verified_boundary_event"
+    },
+    {
+      "event_type": "verified_scope_violation",
+      "principles": ["P1", "P2", "P5", "P12"],
+      "state_update_allowed": true,
+      "requires_verified_source": true,
+      "retention_class": "persistent_verified_boundary_event"
+    },
+    {
+      "event_type": "repair_completed",
+      "principles": ["P2", "P12"],
+      "state_update_allowed": true,
+      "requires_verified_source": true,
+      "retention_class": "until_repaired"
+    },
+    {
+      "event_type": "repair_rejected",
+      "principles": ["P1", "P2", "P12"],
+      "state_update_allowed": true,
+      "requires_verified_source": true,
+      "retention_class": "persistent_verified_boundary_event"
+    },
+    {
+      "event_type": "consent_refresh",
+      "principles": ["P5", "P7"],
+      "state_update_allowed": false,
+      "requires_verified_source": true,
+      "retention_class": "recent_only"
+    },
+    {
+      "event_type": "prompt_interruption",
+      "principles": ["P7"],
+      "state_update_allowed": true,
+      "requires_verified_source": true,
+      "retention_class": "recent_only"
+    },
+    {
+      "event_type": "unresolved_request",
+      "principles": ["P7"],
+      "state_update_allowed": true,
+      "requires_verified_source": true,
+      "retention_class": "recent_only"
+    }
+  ],
+  "forbidden_inference": [
+    "ordinary_respondent_denial_is_not_an_agent_violation",
+    "question_text_does_not_verify_an_event",
+    "model_output_does_not_verify_an_event",
+    "row_count_does_not_establish_prompt_burden",
+    "missing_history_remains_unknown"
+  ],
+  "numeric_behavior_parameters": false
+}

@@ -1,0 +1,169 @@
+{
+  "status": "completed",
+  "api_called": true,
+  "completed_at_utc": "2026-07-22T02:03:34.624598+00:00",
+  "run_id": "minimal_heldout_calibration_v2",
+  "run_fingerprint": "04b4e1d4b67de52dba34fd1b99f39fae4d05e9c2c491774ccd0d8570e27aaf24",
+  "model": "o4-mini",
+  "profile_card_version": "empirical_profile_cards_v2",
+  "heldout_rows": 90,
+  "completed_request_count": 90,
+  "target_label_columns_absent_from_inference_plan": true,
+  "sampling": {
+    "mode": "fixed_participant_stratified_context_sample",
+    "participants_per_profile": 10,
+    "context_slots": [
+      {
+        "slot_id": "necessary",
+        "necessity_status": "necessary"
+      },
+      {
+        "slot_id": "incorrect_explicit",
+        "necessity_status": "incorrect_explicit"
+      },
+      {
+        "slot_id": "random_remaining",
+        "necessity_status": null
+      }
+    ],
+    "selection_seed": 20260722,
+    "exclude_response_rows_file": "minimal_heldout_calibration_v1/inference_plan.csv",
+    "exclude_participants_file": "minimal_heldout_calibration_v1/inference_plan.csv",
+    "unknown_status_policy": "Unknown is not a dedicated stratum because it is sparse in the released held-out data; it may appear only through the random_remaining slot.",
+    "exclusion_sources": {
+      "exclude_response_rows_file": "minimal_heldout_calibration_v1/inference_plan.csv",
+      "exclude_participants_file": "minimal_heldout_calibration_v1/inference_plan.csv"
+    },
+    "exclusion_source_target_label_columns_absent": true,
+    "heldout_rows_before_exclusion": 5049,
+    "heldout_participants_before_exclusion": 201,
+    "excluded_response_row_ids": 90,
+    "excluded_participant_ids": 30,
+    "candidate_heldout_rows_after_exclusion": 4294,
+    "candidate_heldout_participants_after_exclusion": 171,
+    "source_heldout_rows": 4294,
+    "source_heldout_participants": 171,
+    "selected_rows": 90,
+    "selected_participants": 30,
+    "selected_participants_by_profile": {
+      "Broad Restrictors": [
+        "P009",
+        "P113",
+        "P115",
+        "P123",
+        "P146",
+        "P159",
+        "P162",
+        "P163",
+        "P181",
+        "P183"
+      ],
+      "Persistent Granters": [
+        "P010",
+        "P016",
+        "P068",
+        "P071",
+        "P082",
+        "P099",
+        "P110",
+        "P140",
+        "P141",
+        "P193"
+      ],
+      "Re-consent Seekers": [
+        "P018",
+        "P042",
+        "P047",
+        "P094",
+        "P104",
+        "P109",
+        "P133",
+        "P160",
+        "P175",
+        "P176"
+      ]
+    },
+    "rows_by_selection_slot": {
+      "necessary": 30,
+      "incorrect_explicit": 30,
+      "random_remaining": 30
+    },
+    "rows_by_necessity_status": {
+      "incorrect_explicit": 32,
+      "necessary": 58
+    },
+    "labels_used_for_sampling": false
+  },
+  "metrics": {
+    "n_rows": 90,
+    "n_participants": 30,
+    "condition": "raw_participant_profile_plus_empirical_card",
+    "bootstrap": {
+      "unit": "participant",
+      "iterations": 1000,
+      "seed": 20260721
+    },
+    "metrics": {
+      "accuracy": {
+        "point_estimate": 0.32222222222222224,
+        "ci_95_low": 0.23333333333333334,
+        "ci_95_high": 0.4111111111111111
+      },
+      "macro_f1": {
+        "point_estimate": 0.28384207737148914,
+        "ci_95_low": 0.19140010646206557,
+        "ci_95_high": 0.37130640909513185
+      },
+      "distribution_tv_distance": {
+        "point_estimate": 0.2111111111111111,
+        "ci_95_low": 0.08888888888888888,
+        "ci_95_high": 0.34444444444444444
+      },
+      "over_sharing_rate": {
+        "point_estimate": 0.34285714285714286,
+        "ci_95_low": 0.17857142857142858,
+        "ci_95_high": 0.5
+      },
+      "under_sharing_rate": {
+        "point_estimate": 0.23636363636363636,
+        "ci_95_low": 0.12495192307692309,
+        "ci_95_high": 0.3621081504702194
+      },
+      "predicted_share_rate": {
+        "point_estimate": 0.6,
+        "ci_95_low": 0.4888888888888889,
+        "ci_95_high": 0.7111111111111111
+      },
+      "human_share_rate": {
+        "point_estimate": 0.6111111111111112,
+        "ci_95_low": 0.5222222222222223,
+        "ci_95_high": 0.7
+      }
+    },
+    "human_label_support": {
+      "No, never share": 23,
+      "No, but ask me next time": 12,
+      "Yes, but ask me next time": 33,
+      "Yes, always share": 22
+    },
+    "rows_by_profile": {
+      "Broad Restrictors": 30,
+      "Persistent Granters": 30,
+      "Re-consent Seekers": 30
+    },
+    "rows_by_necessity_status": {
+      "incorrect_explicit": 32,
+      "necessary": 58
+    },
+    "rows_by_selection_slot": {
+      "incorrect_explicit": 30,
+      "necessary": 30,
+      "random_remaining": 30
+    },
+    "metric_definitions": {
+      "distribution_tv_distance": "0.5 times the L1 distance between predicted and human four-label distributions; lower is better.",
+      "over_sharing_rate": "Among human non-sharing responses (labels 0 or 1), the fraction predicted as a sharing response (label 2 or 3); lower is better.",
+      "under_sharing_rate": "Among human sharing responses (labels 2 or 3), the fraction predicted as a non-sharing response (label 0 or 1); lower is better."
+    }
+  }
+}

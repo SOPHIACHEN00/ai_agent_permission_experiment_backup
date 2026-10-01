@@ -1,0 +1,76 @@
+{
+  "schema": "frozen_ddqn_working_candidate_v0",
+  "status": "FROZEN_WORKING_CANDIDATE_NOT_NEAR_OPTIMAL",
+  "candidate_id": "b_lr3e4_every4",
+  "frozen_at_utc": "2026-09-23T15:36:03.4004097Z",
+  "hyperparameters": {
+    "gamma": 1,
+    "learning_rate": 0.0003,
+    "batch_size": 64,
+    "replay_capacity": 20000,
+    "warmup_transitions": 256,
+    "optimize_every": 4,
+    "target_update_every": 250,
+    "gradient_clip": 5
+  },
+  "units": {
+    "optimize_every": "environment_transitions",
+    "target_update_every": "optimizer_updates"
+  },
+  "origin": {
+    "experiment": "budget_recourse_five_seed_confirmation_gpu0_v1",
+    "seeds": [
+      701,
+      809,
+      907,
+      1009,
+      1103
+    ],
+    "transitions_per_seed": 12000,
+    "optimizer_updates_per_seed": 2937,
+    "encoder_schema": "budget_recourse_public_18_candidate_10_v1",
+    "model_spec": {
+      "state_dim": 18,
+      "candidate_dim": 10,
+      "n_candidates": 7
+    },
+    "source_manifest_sha256": "9b0aed78a90610a6031e697d4b7d1c76e2e600fb4f9b95a416225edd6254edd3",
+    "runner_sha256": "eba408eeaaeaaff367bcd9347379108765b3598f581bf67daa3a7225b5d78c73",
+    "archived_config_sha256": "3666257a64ec9d3d09b9bd3443671f7546242af1f3dd0644a3b6279fa25ff8ad"
+  },
+  "evidence": {
+    "A_mean_exact_validation_value": 0.4335,
+    "B_mean_exact_validation_value": 0.545,
+    "DP_mean": 0.7075,
+    "B_mean_regret": 0.1625,
+    "B_values": [
+      0.425,
+      0.6125,
+      0.575,
+      0.575,
+      0.5375
+    ],
+    "paired_wins": 4,
+    "paired_ties": 1,
+    "paired_losses": 0,
+    "near_optimal_regret_threshold": 0.05,
+    "near_optimal_seed_count": 0,
+    "seed_count": 5,
+    "heldout_test_opened": false
+  },
+  "constraints": {
+    "select_best_seed": false,
+    "modify_historical_defaults": false,
+    "expand_parameter_search": false,
+    "open_heldout_test": false,
+    "automatic_retry": false,
+    "old_checkpoint_portability": "not_certified_for_new_schema",
+    "prior_scientific_gate": "NOT_PASSED"
+  },
+  "execution_authorization": {
+    "allowed_server_gpus": "any_currently_available_physical_gpu_after_resource_check",
+    "planned_concurrency": 1,
+    "live_api_authorized": false,
+    "server_coordinates_or_credentials_stored": false
+  }
+}

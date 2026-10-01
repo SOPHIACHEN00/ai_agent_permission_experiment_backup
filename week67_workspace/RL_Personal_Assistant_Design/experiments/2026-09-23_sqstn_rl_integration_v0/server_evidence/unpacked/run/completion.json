@@ -1,0 +1,36 @@
+{
+  "execution_status": "COMPLETE",
+  "training_steps": 4800,
+  "dev_rows": 48,
+  "learned_checkpoints": 4,
+  "safety": {
+    "invalid_actions": 0,
+    "unauthorized_effects": 0,
+    "adapter_faults": 0
+  },
+  "aggregates": {
+    "ddqn_b": {
+      "successes": 4,
+      "episodes": 16,
+      "requests": 23,
+      "fallbacks": 10
+    },
+    "wp_fts_public_transfer_v0": {
+      "successes": 8,
+      "episodes": 16,
+      "requests": 22,
+      "fallbacks": 8
+    },
+    "fixed_rule": {
+      "successes": 8,
+      "episodes": 16,
+      "requests": 22,
+      "fallbacks": 8
+    }
+  },
+  "elapsed_seconds": 42.02710485458374,
+  "api_calls": 0,
+  "test_opened": false,
+  "scientific_status": "ENGINEERING_FIXTURE_COMPARISON_ONLY",
+  "prior_near_optimal_gate": "NOT_PASSED"
+}

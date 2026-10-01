@@ -1,0 +1,11 @@
+{
+  "model": "o4-mini",
+  "attempts": 7,
+  "successful_responses": 7,
+  "estimated_cost_usd": 0.0134926,
+  "accounted_upper_usd": 2.8000000000000003,
+  "budget_usd": 3.6,
+  "max_calls": 8,
+  "stopped": false,
+  "automatic_retries": 0
+}
