@@ -11,6 +11,13 @@ chooses scoped permission actions before execution. A reference monitor enforces
 consent. DDQN learns choices among legal candidates from task outcomes and costs.
 The executable implementation uses **REQUEST, EXECUTE, RELEASE, END**.
 
+## Agent workflow and reward
+
+![Agent workflow: task query, planner, compiler and candidates, DDQN policy, dispatcher, reference monitor, S-QSTN, mock tools and evaluator](docs/images/agent-workflow-and-reward.png)
+
+The task loop handles execution and permission interactions. The learning loop
+updates the DDQN policy from observed outcomes and rewards during training.
+
 ## Components
 
 | Directory | Purpose | Entry point |
