@@ -1,1 +1,0 @@
-{"dp_invocations": 0, "firewall_audit": {"algebra_check_count": 4800, "leakage_check_count": 14400, "manifest_count": 480, "mismatches": [], "passed": true, "row_check_count": 4800, "schema_check_count": 4800}}

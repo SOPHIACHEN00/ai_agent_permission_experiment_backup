@@ -1,35 +1,46 @@
-# Python environments (including nested experiments)
-**/.venv/
-**/venv/
-
-# Python caches and test artifacts
-**/__pycache__/
-*.py[cod]
-**/.pytest_cache/
-**/.mypy_cache/
-**/.ruff_cache/
-
-# Local credentials and environment files
+# Credentials and local authorization/accounting state
 **/.env
 **/.env.*
 !**/.env.example
+s-qstn/state/
+**/*.pem
+**/*.key
 
-# SQLite transient files
-**/*.sqlite3-wal
-**/*.sqlite3-shm
+# Environments and caches
+.venv*/
+**/.venv*/
+**/venv/
+**/__pycache__/
+*.py[cod]
+**/.cache/
+**/.pytest_cache/
+**/.mypy_cache/
+**/.ruff_cache/
+*.egg-info/
+node_modules/
 
-# Preserved nested-repository metadata during outer backup
+# Generated runs and model artefacts
+**/outputs/
+**/artifacts/
+*.pt
+*.pth
+*.ckpt
+*.jsonl
+*.log
+*.zip
+*.sqlite3*
+*.exit_code
+
+# Retired source and workspace backups
+**/old_version/
+**/*-6actions/
+week67_workspace/
+.superpowers/
+.git.source-history/
 **/.git.source-history/
 
-# Large local training evidence and disposable server/runtime bundles
-**/*.jsonl
-**/*.pt
-**/*.zip
-**/*.sqlite3
-**/*.log
-**/*.exit
-**/*.exit_code
-rl_personal_assistant/tmp*/
-agent_permission_harness_v1/remote_patch_staging/*
-!agent_permission_harness_v1/remote_patch_staging/*.patch
-agent_permission_harness_v1/results/**/*.gz
+# Editor / OS files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

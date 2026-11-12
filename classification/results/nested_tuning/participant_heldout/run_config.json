@@ -1,0 +1,82 @@
+{
+  "data_path": "D:\\Study\\Graduate_Study_UofG\\Research\\paper\\Week67\\ai_agent_permission_experiment\\data\\processed\\four_label_dataset.csv",
+  "data_sha256": "4a6f61191318eaa79ba2fac1ab80e6fb850e099f1f0178eef2f53b3b527fe463",
+  "script_path": "D:\\Study\\Graduate_Study_UofG\\Research\\paper\\Week67\\ai_agent_permission_experiment\\src\\tune_four_label_classifiers.py",
+  "script_sha256": "a476b363255808d6ea82f1f4c5fa18fe51e65d9bfd196323b8b603a34ee1ab2c",
+  "split": "participant_heldout",
+  "outer_split_seed": 42,
+  "inner_cv_seed": null,
+  "inner_cv": "GroupKFold by participant",
+  "inner_folds": 3,
+  "n_rows": 16361,
+  "n_train": 13038,
+  "n_test": 3323,
+  "train_participants": 160,
+  "test_participants": 41,
+  "participant_overlap": 0,
+  "fold_summaries": [
+    {
+      "fold": 1,
+      "n_fit_rows": 8652,
+      "n_validation_rows": 4386,
+      "n_fit_participants": 106,
+      "n_validation_participants": 54,
+      "participant_overlap": 0
+    },
+    {
+      "fold": 2,
+      "n_fit_rows": 8712,
+      "n_validation_rows": 4326,
+      "n_fit_participants": 107,
+      "n_validation_participants": 53,
+      "participant_overlap": 0
+    },
+    {
+      "fold": 3,
+      "n_fit_rows": 8712,
+      "n_validation_rows": 4326,
+      "n_fit_participants": 107,
+      "n_validation_participants": 53,
+      "participant_overlap": 0
+    }
+  ],
+  "selection_metric": "macro_f1",
+  "c_values": [
+    0.1,
+    0.3,
+    1.0,
+    3.0,
+    10.0
+  ],
+  "class_weight_values": [
+    "balanced",
+    "none"
+  ],
+  "ordinal_decision_thresholds": [
+    0.35,
+    0.4,
+    0.45,
+    0.5,
+    0.55,
+    0.6,
+    0.65
+  ],
+  "factored_decision_thresholds": [
+    0.4,
+    0.5,
+    0.6
+  ],
+  "bootstrap_samples": 2000,
+  "bootstrap_unit": "participant",
+  "random_state": 20260809,
+  "python": "3.12.3",
+  "packages": {
+    "numpy": "2.5.0",
+    "pandas": "3.0.3",
+    "scikit-learn": "1.9.0",
+    "scipy": "1.18.0",
+    "joblib": "1.5.3",
+    "threadpoolctl": "3.6.0"
+  },
+  "test_metrics_file": "test_metrics.csv"
+}

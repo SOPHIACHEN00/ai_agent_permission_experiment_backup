@@ -1,74 +1,70 @@
-# AI Agent Permission Four-Label Benchmark
+# Learning Permission Decisions for AI Agents
 
-For the complete Week67 RL experiment backup and source map, see
-[WEEK67_RL_BACKUP_INDEX.md](WEEK67_RL_BACKUP_INDEX.md).
+Current four-action permission controller, stateful mock tools, S-QSTN user simulator,
+and the retained logistic-regression and contextual-bandit baselines.
 
-This folder contains the first-stage supervised benchmark for four-label AI-agent data-access permission prediction.
+**Start here:** [Method](docs/METHOD.md) · [中文方法说明](docs/METHOD.zh-CN.md) ·
+[Run the code](docs/RUNNING.md) · [Data and evaluation](docs/DATA_AND_EVIDENCE.md)
 
-The benchmark uses the original raw `user_study.json` from [`llm-platform-security/ai-agent-permissions`](https://github.com/llm-platform-security/ai-agent-permissions), not the released `processed_dataset.json`, because the processed file filters the two intermediate permission responses.
+The agent receives a task, proposes tool calls, obtains actual user consent, and
+chooses scoped permission actions before execution. A reference monitor enforces
+consent. DDQN learns choices among legal candidates from task outcomes and costs.
+The executable implementation uses **REQUEST, EXECUTE, RELEASE, END**.
 
-## Goal
+## Components
 
-Test whether the four permission responses are learnable and whether they are better modeled as:
+| Directory | Purpose | Entry point |
+| --- | --- | --- |
+| [rl_agent_structure](rl_agent_structure/README.md) | Agent, consent ledger, gates, monitor, evaluator, DDQN | `run_noapi.py`; `rl_testing/run.py` |
+| [mock_tools](mock_tools/README.md) | Minimal stateful read/write tools and receipts for 65 Wu tasks | `python -m mock_tools.run` |
+| [s-qstn](s-qstn/README.md) | Retrieval-calibrated simulation of four human permission responses | `python s-qstn/run.py` |
+| [classification](classification/README.md) | Flat, independent cumulative-threshold, and factored logistic regression | `classification/run_four_label_benchmark.py` |
+| [bandit_experiment](bandit_experiment/README.md) | Canonical offline stated-policy contextual bandits | `bandit_experiment/run_stated_policy_bandit.py` |
+| [online_bandit_experiment](online_bandit_experiment/README.md) | Warm-started Personalized Factored Thompson Sampling (WP-FTS) | `python -m online_bandit_experiment.run_wp_fts` |
+| [online_mab](online_mab/README.md) | Detailed Chinese MAB methods and final result interpretation | Documentation |
+| [in_context_learning](in_context_learning/README.md) | Retained four-label ICL implementation and S-QSTN adapter | `in_context_learning/run_ic_four_label.py` |
+| [data/processed](data/processed/README.md) | Four-label survey table and build metadata | 16,361 answers, 201 participants |
+| [external/ai-agent-permissions](external/ai-agent-permissions/README.md) | Attributed upstream task and survey inputs | `queries.json`, `data/` |
 
-1. flat four-class labels;
-2. ordered sharing-willingness levels;
-3. two factored permission decisions: current access and future persistence.
+The LR/MAB **four permission-response labels** and the Agent's **four controller
+actions** are different action spaces. A predicted permission label never grants
+permission to execute a tool.
 
-## Directory Layout
+## Quick start: offline functional check
 
-```text
-ai_agent_permission_experiment/
-  external/ai-agent-permissions/   # cloned source repo and raw data
-  data/processed/                  # generated four-label dataset and summaries
-  src/                             # dataset builder and benchmark runner
-  in_context_learning/             # four-label, within-user IC-only baseline
-  bandit_experiment/               # isolated no-weight stated-policy contextual-bandit benchmark
-  qstn_simulator/                  # isolated simulator work for later stages
-  results/                         # benchmark outputs
-  requirements.txt
-```
+Python 3.12 is the reference runtime. From the repository root:
 
-## Setup
-
-```powershell
+```bash
 python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-pip install -r requirements.txt
+# Activate .venv using your shell.
+python -m pip install -r requirements-agent.txt
+python rl_agent_structure/run_noapi.py --persist-rounds 3 --all-wu --output rl_agent_structure/outputs/functional_demo
 ```
 
-## Build Dataset
+Use a new output directory for every run. This command uses a scripted planner,
+explicit fixture answers and a rule controller. It performs no LLM API calls and
+no optimizer updates. The [running guide](docs/RUNNING.md) covers CPU DDQN checks,
+S-QSTN installation, baseline reproduction, and all offline test suites.
 
-```powershell
-python src/build_dataset.py --repo external/ai-agent-permissions --out data/processed/four_label_dataset.csv
-```
+## Current evidence
 
-## Run Benchmarks
+- The four-action workflow and all 65 task paths have passed offline functional checks.
+- Native DDQN optimizer updates have been observed. Stable execution without
+  exploration and individualized preference gains remain research questions.
+- The retained DDQN comparison uses Q40/Q41/Q55 with a fixed simulated response
+  rule. Its final success counts are 6/9 and 5/9 for the two exploration settings.
+- LR, MAB and S-QSTN have their own evaluation protocols. Their scores do not
+  establish the Agent's end-to-end task or personalization performance.
 
-```powershell
-python src/run_four_label_benchmark.py --data data/processed/four_label_dataset.csv --split row_stratified
-python src/run_four_label_benchmark.py --data data/processed/four_label_dataset.csv --split participant_heldout
-```
+Evidence dates and compact original result files are listed in
+[Data and evaluation](docs/DATA_AND_EVIDENCE.md). Shared-policy personalization,
+few-shot/meta-RL and model-based alternatives are [research directions](docs/RESEARCH_DIRECTIONS.md),
+not implemented methods in this release.
 
-## Four-label in-context learning
+## Repository scope
 
-See [in_context_learning/README.md](in_context_learning/README.md) for the paper-style personalized five-fold IC-only baseline. It uses all four survey responses as user history and predicts all four labels. Its within-user protocol differs from the classifier participant-heldout results.
-
-## Models
-
-- `flat_four_class_lr`: multinomial logistic regression over four labels.
-- `ordinal_lr`: three cumulative binary logistic regressions for `y > 0`, `y > 1`, and `y > 2`.
-- `factored_lr`: two binary logistic regressions for access (`deny`/`allow`) and persistence (`ask_again`/`persist`), then recombined into four labels.
-
-## Main Metrics
-
-- `accuracy`
-- `macro_f1`
-- `quadratic_weighted_kappa`
-- `over_sharing_rate`: true label is deny-like (`0` or `1`) while prediction is allow-like (`2` or `3`).
-- `persistent_over_allow_rate`: prediction is `Yes, always share` (`3`) while true label is not `3`.
-
-## Notes
-
-The supervised benchmark remains the data/model foundation. The isolated `bandit_experiment/` folder contains the Step 2 no-weight stated-policy contextual-bandit simulation; it does not depend on QSTN and is not sequential RL. Its canonical runner is `bandit_experiment/run_stated_policy_bandit.py`; the older manually weighted runner is retained only as legacy exploratory work.
-
+This tree contains the current implementations, required inputs, tests, method
+documentation and compact final evidence. Retired implementations, six-action
+snapshots, local environments, model checkpoints, credentials and raw run logs
+are excluded. Previous commits remain available through normal Git history.
+See [third-party attribution](THIRD_PARTY_NOTICES.md) for upstream data licensing.

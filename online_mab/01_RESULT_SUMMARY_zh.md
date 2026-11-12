@@ -80,4 +80,4 @@
 - 主指标：[test_metrics_summary.csv](../online_bandit_experiment/results/participant_heldout_wp_fts_v2/test_metrics_summary.csv)
 - WP-FTS vs frozen CI：[participant_bootstrap_summary.csv](../online_bandit_experiment/results/participant_heldout_wp_fts_v2/participant_bootstrap_summary.csv)
 - WP-FTS vs offline CI：[online_vs_canonical_greedy_bootstrap_summary.csv](../online_bandit_experiment/results/participant_heldout_wp_fts_v2/online_vs_canonical_greedy_bootstrap_summary.csv)
-- 完整解释：[原始中文报告](../online_bandit_experiment/RESULTS_COMPARISON_zh.md)
+- 方法和对照解释：[Online MAB 方法](02_ONLINE_MAB_METHOD_zh.md)、[Offline vs Online 对比](03_OFFLINE_VS_ONLINE_COMPARISON_zh.md)

@@ -1,9 +1,0 @@
-model,variant,label_id,label_text,precision,recall,f1,support
-distilbert_flat_four_class,tuned,0,"No, never share",0.32803468208092484,0.44509803921568625,0.37770382695507493,510
-distilbert_flat_four_class,tuned,1,"No, but ask me next time",0.16964285714285715,0.11242603550295859,0.13523131672597866,338
-distilbert_flat_four_class,tuned,2,"Yes, but ask me next time",0.4980694980694981,0.2736916548797737,0.3532633500684619,1414
-distilbert_flat_four_class,tuned,3,"Yes, always share",0.3914110429447853,0.6013195098963242,0.47417316982534374,1061
-flat_four_class_lr,tuned,0,"No, never share",0.3632286995515695,0.3176470588235294,0.3389121338912134,510
-flat_four_class_lr,tuned,1,"No, but ask me next time",0.14718019257221457,0.3165680473372781,0.20093896713615023,338
-flat_four_class_lr,tuned,2,"Yes, but ask me next time",0.5157807308970099,0.4391796322489392,0.4744079449961803,1414
-flat_four_class_lr,tuned,3,"Yes, always share",0.49682875264270615,0.4429783223374175,0.46836073741903334,1061

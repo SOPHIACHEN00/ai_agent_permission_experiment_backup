@@ -1,4 +1,4 @@
-"""Frozen 20-person S-QSTN/o4-mini answers with paired Gemini 0/4-shot prediction.
+"""Current S-QSTN synthetic users with frozen answers and paired 0/4-shot ICL.
 
 Default invocation prepares local artifacts only. --execute permits API calls.
 Every request is reserved in a durable cost ledger before dispatch; successful
@@ -12,6 +12,7 @@ from datetime import datetime, timezone
 import hashlib
 import importlib.metadata
 import json
+import os
 from pathlib import Path
 import sys
 from typing import Any
@@ -27,20 +28,16 @@ PROJECT = IC_DIR.parent
 sys.path.insert(0, str(IC_DIR))
 sys.path.insert(0, str(IC_DIR / "multi_model_screening"))
 from run_ic_four_label import (  # noqa: E402
-    ID_TO_LABEL, build_prompt, file_sha256, load_inputs, make_bundles,
+    ID_TO_LABEL, build_prompt, file_sha256, make_bundles,
     parse_response, save_json,
 )
 from screen_models import MODEL_SPECS, completion_for_job, usage_record  # noqa: E402
 from sqstn_backend import SQSTNBackend, parse_answer  # noqa: E402
 
-SOURCE_RUN = IC_DIR / "multi_model_screening/artifacts/screen_40_seed20260925_4shot_8k_low"
-PUBLIC_PROVENANCE = IC_DIR / "multi_model_screening/artifacts/full_201_gemini_4shot_fold0_seed20260925_8k_low/public_data_provenance.json"
+SOURCE_MANIFEST = IC_DIR / "resources/pilot_query_manifest.json"
 DATA = PROJECT / "data/processed/four_label_dataset.csv"
-RAW = PROJECT / "external/ai-agent-permissions/data/user_study.json"
-ENV_FILE = PROJECT / "qstn_simulator/.env"
-PERSONAS = PROJECT / "qstn_simulator/outputs/empirical_personas_v2/personas_with_empirical_profiles.csv"
-DEFAULT_OUT = HERE / "artifacts/pilot20_seed20260926_o4mini_gemini_fold0_schema_v1"
-QUOTAS = {"broad_restrictors": 3, "persistent_granters": 7, "reconsent_seekers": 10}
+DEFAULT_OUT = HERE / "artifacts/current_sqstn_pilot"
+SIMULATOR_PROTOCOL = "current_retrieval_calibrated"
 GENERATOR_MODEL = "o4-mini"
 GENERATOR_MAX_TOKENS = 4096
 PREDICTOR_MAX_TOKENS = 8000
@@ -99,47 +96,61 @@ def reserve(messages: list[dict[str, str]], stage: str) -> float:
     return (input_bound * spec.max_input_usd_per_million + PREDICTOR_MAX_TOKENS * spec.max_output_usd_per_million) / 1e6
 
 
-def select_participants() -> tuple[pd.DataFrame, list[dict[str, Any]]]:
-    jobs = read_json(SOURCE_RUN / "job_manifest.json")
-    personas = pd.read_csv(PERSONAS, keep_default_na=False)
-    if personas["participant_id"].duplicated().any():
-        raise ValueError("Persona participant IDs are not unique")
-    lookup = personas.set_index("participant_id")
-    source_ids = {job["participant_id"] for job in jobs}
-    rng = np.random.default_rng(20260926)
-    chosen: list[str] = []
-    for profile_id in sorted(QUOTAS):
-        candidates = sorted(pid for pid in source_ids if lookup.loc[pid, "profile_id"] == profile_id)
-        chosen.extend(str(pid) for pid in rng.choice(candidates, QUOTAS[profile_id], replace=False))
-    chosen = sorted(chosen)
-    selected = sorted([job for job in jobs if job["participant_id"] in chosen], key=lambda j: j["participant_id"])
-    participants = lookup.loc[chosen, ["persona_id", "profile_id"]].reset_index()
-    assert len(selected) == len(participants) == 20
-    for job in selected:
-        assert job["fold"] == 0
-        assert len(set(job["prompt_history_query_ids"])) == 4
-        assert len(set(job["test_query_ids"])) == 4
-        assert set(job["prompt_history_query_ids"]).issubset(job["train_query_ids"])
-        assert not set(job["train_query_ids"]) & set(job["test_query_ids"])
-    return participants, selected
+def select_participants(backend: SQSTNBackend | None = None) -> tuple[pd.DataFrame, list[dict[str, Any]]]:
+    """Reuse only the frozen query assignments, not the old persona assignments."""
+    backend = backend if backend is not None else SQSTNBackend(PROJECT)
+    source = read_json(SOURCE_MANIFEST)
+    if len(source) != 20 or len({j['participant_id'] for j in source}) != 20:
+        raise ValueError("Expected 20 unique query assignments")
+    participants, selected = [], []
+    for original in source:
+        job = dict(original)
+        if (job['fold'] != 0 or len(set(job['prompt_history_query_ids'])) != 4
+                or len(set(job['test_query_ids'])) != 4
+                or not set(job['prompt_history_query_ids']).issubset(job['train_query_ids'])
+                or set(job['train_query_ids']) & set(job['test_query_ids'])):
+            raise ValueError("Query assignment violates the fixed 0/4-shot protocol")
+        source_id = str(original['participant_id'])
+        synthetic_id = 'sim-' + source_id
+        job.update(participant_id=synthetic_id, source_participant_id=source_id,
+                   job_id=f'{synthetic_id}_fold0')
+        selected.append(job)
+        participants.append({'participant_id': synthetic_id, 'persona_id': synthetic_id,
+                             'profile_id': backend.profile_for(synthetic_id),
+                             'source_query_assignment_id': source_id})
+    return pd.DataFrame(participants), selected
 
 
 def prepare(out: Path, cap: float) -> tuple[pd.DataFrame, dict, list[dict], list[dict]]:
-    out.mkdir(parents=True, exist_ok=True)
-    (out / "calls").mkdir(exist_ok=True)
-    (out / "prompts").mkdir(exist_ok=True)
-    settings = dotenv_values(ENV_FILE)
-    if settings.get("OPENAI_MODEL") != GENERATOR_MODEL:
-        raise ValueError("Configured S-QSTN model changed; expected o4-mini")
-    df, public_profiles = load_inputs(DATA, RAW)
-    participants, jobs = select_participants()
+    out = Path(out)
+    if out.exists() and any(out.iterdir()):
+        config_path = out / 'run_config.json'
+        if not config_path.is_file() or read_json(config_path).get('simulator_protocol') != SIMULATOR_PROTOCOL:
+            raise ValueError('Refusing old or unrelated output directory; choose a fresh current S-QSTN run')
     backend = SQSTNBackend(PROJECT)
+    participants, jobs = select_participants(backend)
+    columns = ['participant_id', 'query_id', 'query', 'tool', 'raw_data_type']
+    df = pd.read_csv(DATA, usecols=columns, keep_default_na=False)
+    identities = {j['source_participant_id']: j['participant_id'] for j in jobs}
+    df = df.loc[df['participant_id'].isin(identities)].copy()
+    if df.duplicated(columns[:2] + columns[3:]).any():
+        raise ValueError('Duplicate query/tool/data rows')
+    df['participant_id'] = df['participant_id'].map(identities)
+    # Never retain the original human answer as a placeholder synthetic truth.
+    df['label_id'] = -1
+    df['label_text'] = ''
+    public_profiles = {j['participant_id']: {} for j in jobs}
     config = {
-        "schema_version": 1, "purpose": "synthetic_permission_predictability_pilot",
+        "schema_version": 2, "purpose": "synthetic_permission_predictability_pilot",
+        "simulator_protocol": SIMULATOR_PROTOCOL,
+        "human_demographics_used": False,
+        "generator_uses_reference_human_answers": True,
+        "source_participants_role": "query_assignment_only_not_simulated_human_identity",
         "generator_model": GENERATOR_MODEL, "generator_endpoint": "https://api.openai.com/v1",
         "predictor_model": MODEL_SPECS["gemini"].model_id,
         "predictor_endpoint": "https://openrouter.ai/api/v1",
-        "selection_seed": 20260926, "profile_quotas": QUOTAS,
+        "query_selection_seed": 20260926,
+        "profile_assignment": "current_s_qstn_frozen_population_mixture_per_synthetic_id",
         "fold": 0, "fold_seed": 42, "source_shot_seed": 20260925,
         "conditions": [0, 4], "generator_reasoning_effort": "low",
         "generator_max_completion_tokens": GENERATOR_MAX_TOKENS,
@@ -147,14 +158,13 @@ def prepare(out: Path, cap: float) -> tuple[pd.DataFrame, dict, list[dict], list
         "predictor_reasoning_effort": "low", "predictor_max_tokens": PREDICTOR_MAX_TOKENS,
         "generator_prices_per_million_usd": PRICES,
         "generator_pricing_source": "https://developers.openai.com/api/docs/models/o4-mini",
-        "max_run_cost_usd": cap, "source_run": str(SOURCE_RUN),
+        "max_run_cost_usd": cap, "source_query_manifest": str(SOURCE_MANIFEST),
         "state_mode": "fresh_empty_state_per_item_no_events",
-        "predictor_information": "original public profile fields; zero or four synthetic answered queries; unanswered test requests",
-        "human_calibration_claimed": False,
+        "predictor_information": "unspecified demographics; zero or four same-synthetic-user answered queries; unanswered test requests; no generator profile/rules/retrieval evidence",
+        "human_calibration_scope": "existing frozen generator population calibration, not individual human reconstruction",
         "hashes": {
-            "dataset": file_sha256(DATA), "raw_public_profiles": file_sha256(RAW),
-            "source_manifest": file_sha256(SOURCE_RUN / "job_manifest.json"),
-            "public_provenance": file_sha256(PUBLIC_PROVENANCE),
+            "dataset": file_sha256(DATA),
+            "source_manifest": file_sha256(SOURCE_MANIFEST),
             "runner": file_sha256(Path(__file__)),
             "backend": file_sha256(HERE / "sqstn_backend.py"),
             "analysis": file_sha256(HERE / "analyze_pilot.py"),
@@ -164,10 +174,14 @@ def prepare(out: Path, cap: float) -> tuple[pd.DataFrame, dict, list[dict], list
         "backend_assets": backend.metadata(),
         "packages": {name: importlib.metadata.version(name) for name in ("openai", "pandas", "numpy", "scikit-learn", "qstn")},
     }
+    if (out / 'run_config.json').exists() and read_json(out / 'run_config.json') != config:
+        raise ValueError('Frozen run differs: code, inputs, simulator or budget changed')
+    out.mkdir(parents=True, exist_ok=True)
+    (out / "calls").mkdir(exist_ok=True)
+    (out / "prompts").mkdir(exist_ok=True)
     frozen_json(out / "run_config.json", config)
     frozen_json(out / "job_manifest.json", jobs)
     frozen_csv(out / "participants.csv", participants)
-    frozen_json(out / "public_data_provenance.json", read_json(PUBLIC_PROVENANCE))
     generator_jobs: list[dict] = []
     for job in jobs:
         pid = job["participant_id"]
@@ -419,6 +433,8 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--out", type=Path, default=DEFAULT_OUT)
     parser.add_argument("--execute", action="store_true")
+    parser.add_argument("--env-file", type=Path, default=None,
+                        help="Optional explicit credential file, read only with --execute")
     parser.add_argument("--phase", choices=("all", "generate", "predict"), default="all")
     parser.add_argument("--max-cost-usd", type=float, default=8.0)
     parser.add_argument("--concurrency", type=int, default=4)
@@ -433,7 +449,7 @@ def main() -> None:
         write_status(out, len(generation), "prepared", args.max_cost_usd)
         print("Prepared locally; no API calls.", flush=True)
         return
-    settings = dotenv_values(ENV_FILE)
+    settings = dotenv_values(args.env_file) if args.env_file is not None else os.environ
     openai_key = str(settings.get("OPENAI_API_KEY") or "").strip()
     router_key = str(settings.get("OPENROUTER_API_KEY") or "").strip()
     if not openai_key or not router_key:

@@ -1,0 +1,8 @@
+# Isolated functional test/runtime dependencies, verified 2026-10-18.
+# No torch, no model provider SDK and no training dependency.
+attrs==26.1.0
+jsonschema==4.23.0
+jsonschema-specifications==2025.9.1
+referencing==0.37.0
+rpds-py==2026.9.1
+typing_extensions==4.16.0

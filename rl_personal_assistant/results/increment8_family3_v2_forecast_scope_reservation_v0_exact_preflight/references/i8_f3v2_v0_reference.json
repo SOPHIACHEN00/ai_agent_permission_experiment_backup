@@ -1,1 +1,0 @@
-{"action_count":32,"equality_result":true,"graph_id":"i8_f3v2_v0","max_decision_depth":3,"nonterminal_state_count":8,"root_q_values":[{"action_id":"request_narrow","value":{"denominator":5,"numerator":4}},{"action_id":"request_broader","value":{"denominator":5,"numerator":1}}],"root_value":{"denominator":5,"numerator":4},"terminal_leaf_count":27,"transition_count":34}

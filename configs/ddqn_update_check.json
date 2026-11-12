@@ -1,0 +1,48 @@
+{
+  "mode": "update-check",
+  "user_id": "cpu_update_fixture",
+  "seed": 3,
+  "queries": [40, 41],
+  "cycles": 2,
+  "eval_every": 1,
+  "persist_rounds": 3,
+  "fixture_answer": "allow_reuse",
+  "reward_weights": {
+    "success": 1.0,
+    "failure": 1.0,
+    "extra_read": 0.01,
+    "extra_write": 0.01,
+    "extra_question": 0.01,
+    "retention": 0.001
+  },
+  "public_effects": false,
+  "retention_weight": 0.0,
+  "exploration": "candidate",
+  "n_steps": 1,
+  "hyperparameters": {
+    "gamma": 1.0,
+    "learning_rate": 0.001,
+    "batch_size": 2,
+    "replay_capacity": 128,
+    "warmup_transitions": 2,
+    "optimize_every": 1,
+    "target_update_every": 5,
+    "gradient_clip": 5.0
+  },
+  "device": "cpu",
+  "epsilon_start": 0.3,
+  "epsilon_end": 0.05,
+  "max_seconds": 600.0,
+  "episode_mode": "query",
+  "runtime_limits": {
+    "max_control_steps": 64,
+    "max_planner_turns": 16,
+    "max_permission_messages": 16,
+    "max_active_gates": 16,
+    "max_checkpoints": 8,
+    "max_read_instances": 32,
+    "max_write_instances": 32,
+    "max_release_steps": 32,
+    "max_candidates": 128
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "resource": "pilot_query_manifest.json",
+  "sha256": "a39522c3df9b096251d4a7b9c2a78d60f89474d1011f059ec0decf250abbc932",
+  "copied_from_historical_record": "in_context_learning/sqstn_pilot/artifacts/pilot20_seed20260926_o4mini_gemini_fold0_schema_v1/job_manifest.json",
+  "copy_date": "2026-10-19",
+  "copy_semantics": "byte-identical query assignments only; no answers or demographic profiles",
+  "runtime_dependency_on_historical_record": false,
+  "users": 20,
+  "fold": 0,
+  "history_queries_per_user": 4,
+  "test_queries_per_user": 4,
+  "current_identity_rule": "prefix source assignment id with sim-; independently use current simulator profile_for; source ids do not identify simulated real people"
+}

@@ -1,0 +1,95 @@
+{
+  "flat_four_class_lr": {
+    "selection_metric": "macro_f1",
+    "tie_break_order": [
+      "quadratic_weighted_kappa",
+      "accuracy",
+      "lower over_sharing_rate",
+      "lower persistent_over_allow_rate"
+    ],
+    "cv_result": {
+      "model": "flat_four_class_lr",
+      "rank": 1,
+      "C": 0.3,
+      "class_weight": "balanced",
+      "accuracy": 0.4632487775061125,
+      "macro_f1": 0.425370141004633,
+      "quadratic_weighted_kappa": 0.37709244337439307,
+      "over_sharing_rate": 0.33537519142419603,
+      "over_sharing_count": 1095,
+      "over_sharing_denominator": 3265,
+      "persistent_over_allow_rate": 0.22572679313054214,
+      "persistent_over_allow_count": 2011,
+      "persistent_over_allow_denominator": 8909,
+      "decision_threshold": null,
+      "access_C": null,
+      "access_class_weight": null,
+      "persistence_C": null,
+      "persistence_class_weight": null,
+      "access_threshold": null,
+      "persistence_threshold": null
+    }
+  },
+  "ordinal_lr": {
+    "selection_metric": "macro_f1",
+    "tie_break_order": [
+      "quadratic_weighted_kappa",
+      "accuracy",
+      "lower over_sharing_rate",
+      "lower persistent_over_allow_rate"
+    ],
+    "cv_result": {
+      "model": "ordinal_lr",
+      "rank": 1,
+      "C": 10.0,
+      "class_weight": "none",
+      "accuracy": 0.5153575794621027,
+      "macro_f1": 0.4006600807588761,
+      "quadratic_weighted_kappa": 0.3758159910695822,
+      "over_sharing_rate": 0.6655436447166921,
+      "over_sharing_count": 2173,
+      "over_sharing_denominator": 3265,
+      "persistent_over_allow_rate": 0.12201144909641935,
+      "persistent_over_allow_count": 1087,
+      "persistent_over_allow_denominator": 8909,
+      "decision_threshold": 0.5,
+      "access_C": null,
+      "access_class_weight": null,
+      "persistence_C": null,
+      "persistence_class_weight": null,
+      "access_threshold": null,
+      "persistence_threshold": null
+    }
+  },
+  "factored_lr": {
+    "selection_metric": "macro_f1",
+    "tie_break_order": [
+      "quadratic_weighted_kappa",
+      "accuracy",
+      "lower over_sharing_rate",
+      "lower persistent_over_allow_rate"
+    ],
+    "cv_result": {
+      "model": "factored_lr",
+      "rank": 1,
+      "C": null,
+      "class_weight": null,
+      "accuracy": 0.4901436430317848,
+      "macro_f1": 0.4253126761270064,
+      "quadratic_weighted_kappa": 0.36981102976963354,
+      "over_sharing_rate": 0.47320061255742724,
+      "over_sharing_count": 1545,
+      "over_sharing_denominator": 3265,
+      "persistent_over_allow_rate": 0.24391065214951174,
+      "persistent_over_allow_count": 2173,
+      "persistent_over_allow_denominator": 8909,
+      "decision_threshold": null,
+      "access_C": 1.0,
+      "access_class_weight": "balanced",
+      "persistence_C": 1.0,
+      "persistence_class_weight": "balanced",
+      "access_threshold": 0.4,
+      "persistence_threshold": 0.5
+    }
+  }
+}

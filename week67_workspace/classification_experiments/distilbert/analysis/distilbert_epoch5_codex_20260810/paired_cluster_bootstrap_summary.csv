@@ -1,6 +1,0 @@
-metric,metric_label,metric_label_zh,preferred_direction,distilbert,flat_lr_tuned,delta_distilbert_minus_lr,ci_95_low,ci_95_high,ci_method,bootstrap_samples,bootstrap_seed,test_rows,test_participants
-accuracy,Accuracy,准确率,higher,0.3882034306349684,0.4092687330725248,-0.021065302437556388,-0.07062069140414333,0.024888846635076588,participant paired cluster bootstrap percentile,5000,20260810,3323,41
-macro_f1,Macro-F1,宏平均 F1,higher,0.3350929158937148,0.3706549458606443,-0.035562029966929476,-0.07304323731134035,0.0023645856849757118,participant paired cluster bootstrap percentile,5000,20260810,3323,41
-quadratic_weighted_kappa,Quadratic weighted kappa,二次加权 Kappa,higher,0.2529385792139792,0.3154949229526882,-0.062556343738709,-0.14843467595327353,0.021954639063925727,participant paired cluster bootstrap percentile,5000,20260810,3323,41
-over_sharing_rate,Over-sharing rate,过度分享率,lower,0.5459905660377359,0.4257075471698113,0.12028301886792458,0.018516810168101708,0.23418011465305855,participant paired cluster bootstrap percentile,5000,20260810,3323,41
-persistent_over_allow_rate,Persistent-over-allow rate,持续授权过度率,lower,0.4385499557913351,0.21043324491600354,0.22811671087533156,0.1383694867677431,0.3161165970071901,participant paired cluster bootstrap percentile,5000,20260810,3323,41

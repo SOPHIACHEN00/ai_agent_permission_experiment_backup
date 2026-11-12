@@ -1,2 +1,0 @@
-model_name,model_id,n_rows,accuracy,macro_f1,quadratic_weighted_kappa,over_sharing_rate,persistent_over_allow_rate,tracked_cost_usd
-gemini,google/gemini-3.8-flash,3123,0.6282420749279539,0.5451340588043565,0.5589757260081931,0.4248062015503876,0.14857744994731295,0.7390365

@@ -1,1 +1,0 @@
-{"status": "DETACHED_TEST_ONCE_LAUNCHED", "pid": 186763, "job_directory": "/output/agenticAI/family3_v2_cuda_v1/formal_test_once_v0", "command": ["python", "-m", "pa_rl.family3_v2_learner_pilot", "test-once"], "expected_test_rows": 6300, "physical_gpu": 1, "test_requested": true}

@@ -1,0 +1,4 @@
+-r requirements-agent.txt
+torch>=2.6
+numpy>=1.24
+matplotlib>=3.7

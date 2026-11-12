@@ -1,9 +1,0 @@
-{
-  "time_utc": "20260923T175541_277154Z",
-  "operation": "download",
-  "result": {
-    "status": "DOWNLOAD_VERIFIED",
-    "sha256": "30b262928ef8980e6858fc43ee11b3996657abc51c008ef2fdf17483a9d55be4",
-    "bytes": 2354415
-  }
-}

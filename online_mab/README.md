@@ -24,4 +24,4 @@
 - Canonical offline MAB 代码：[run_stated_policy_bandit.py](../bandit_experiment/run_stated_policy_bandit.py)
 - 历史 offline 结果：[participant_heldout](../bandit_experiment/stated_policy_results/participant_heldout/)
 
-`participant_heldout_wp_fts_v1` 保留为早期协议的审计记录；论文最终结果应使用 v2。
+本次整理只保留 v2 的代码与紧凑结果。早期 v1 协议及运行日志已从当前目录移除；既有提交可通过 Git 历史查看。

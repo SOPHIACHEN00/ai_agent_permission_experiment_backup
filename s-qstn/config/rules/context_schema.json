@@ -1,0 +1,292 @@
+{
+  "schema_id": "s_qstn_v2_current_turn_context",
+  "version": "2.1.0",
+  "state_schema_version": "2.0.0",
+  "description": "Explicit current-turn context for S-QSTN RulePack v2.0. Missing values remain unknown and are never inferred from question prose or model output. Longitudinal history is supplied separately through the bounded memory view.",
+  "unknown_token": "unknown",
+  "source_policies": [
+    "source_dataset",
+    "explicit_annotation",
+    "runner_default",
+    "wrapper_derivation",
+    "unknown"
+  ],
+  "behavior_parameter_policy": "No numeric weights, probabilities, confidence thresholds, or calibrated answer effects are defined by this schema. State transitions are categorical and explicit.",
+  "core_fields": [
+    "questionnaire_item_id",
+    "query_id",
+    "domain",
+    "tool",
+    "raw_data_type",
+    "generic_data_type",
+    "necessity_status"
+  ],
+  "optional_context_fields": [
+    "requester_id",
+    "requester_visibility",
+    "foreground_task",
+    "purpose_status",
+    "expectedness",
+    "expectation_match",
+    "scope",
+    "duration",
+    "scope_explicit",
+    "duration_explicit",
+    "revocable",
+    "review_available",
+    "required_vs_optional",
+    "consequence_of_decline",
+    "explanation_present",
+    "explanation_timing",
+    "provenance_present",
+    "explanation_source",
+    "explanation_readability",
+    "prompt_burden_signal",
+    "prompt_burden_bucket",
+    "burden_basis",
+    "presentation_mode"
+  ],
+  "derived_audit_fields": [
+    "uncertainty_bucket",
+    "unknown_context_fields",
+    "unknown_context_categories",
+    "reason_codes",
+    "context_source_policy"
+  ],
+  "fields": {
+    "questionnaire_item_id": {
+      "type": "string",
+      "source_policy": "source_dataset",
+      "prompt_exposure": false,
+      "missing_policy": "retain_unknown"
+    },
+    "query_id": {
+      "type": "string_or_unknown",
+      "source_policy": "source_dataset",
+      "prompt_exposure": false,
+      "missing_policy": "retain_unknown"
+    },
+    "domain": {
+      "type": "string_or_unknown",
+      "source_policy": "source_dataset",
+      "prompt_exposure": true,
+      "missing_policy": "retain_unknown"
+    },
+    "tool": {
+      "type": "string_or_unknown",
+      "source_policy": "source_dataset",
+      "prompt_exposure": true,
+      "missing_policy": "retain_unknown"
+    },
+    "raw_data_type": {
+      "type": "string_or_unknown",
+      "source_policy": "source_dataset",
+      "prompt_exposure": true,
+      "missing_policy": "retain_unknown"
+    },
+    "generic_data_type": {
+      "type": "string_or_unknown",
+      "source_policy": "source_dataset",
+      "prompt_exposure": false,
+      "missing_policy": "retain_unknown"
+    },
+    "necessity_status": {
+      "type": "enum",
+      "allowed_values": ["necessary", "not_useful_now", "incorrect_explicit", "unknown"],
+      "source_policy": "withheld_evaluator_only",
+      "prompt_exposure": false,
+      "missing_policy": "always_unknown_in_respondent_context"
+    },
+    "profile_id": {
+      "type": "enum_or_unknown",
+      "allowed_values": ["persistent_granters", "reconsent_seekers", "broad_restrictors", "unknown"],
+      "source_policy": "source_dataset",
+      "prompt_exposure": true,
+      "missing_policy": "profile_default_fallback"
+    },
+    "requester_id": {
+      "type": "string_or_unknown",
+      "source_policy": "explicit_annotation",
+      "prompt_exposure": true,
+      "missing_policy": "retain_unknown"
+    },
+    "requester_visibility": {
+      "type": "enum",
+      "allowed_values": ["unknown", "visible", "invisible", "not_applicable"],
+      "source_policy": "explicit_annotation",
+      "prompt_exposure": true,
+      "missing_policy": "retain_unknown"
+    },
+    "foreground_task": {
+      "type": "string_or_unknown",
+      "source_policy": "explicit_annotation",
+      "prompt_exposure": true,
+      "missing_policy": "retain_unknown"
+    },
+    "purpose_status": {
+      "type": "enum",
+      "allowed_values": ["explicit", "implicit", "unknown"],
+      "source_policy": "explicit_annotation",
+      "prompt_exposure": true,
+      "missing_policy": "retain_unknown"
+    },
+    "expectedness": {
+      "type": "enum",
+      "allowed_values": ["expected", "unexpected", "mismatch", "unknown"],
+      "source_policy": "explicit_annotation",
+      "prompt_exposure": true,
+      "missing_policy": "retain_unknown"
+    },
+    "expectation_match": {
+      "type": "boolean_or_unknown",
+      "source_policy": "explicit_annotation",
+      "prompt_exposure": true,
+      "missing_policy": "retain_unknown"
+    },
+    "scope": {
+      "type": "enum",
+      "allowed_values": ["foreground_only", "one_time", "session", "persistent", "background", "unknown"],
+      "source_policy": "explicit_annotation",
+      "prompt_exposure": true,
+      "missing_policy": "retain_unknown"
+    },
+    "duration": {
+      "type": "enum",
+      "allowed_values": ["one_time", "session", "persistent", "unknown"],
+      "source_policy": "explicit_annotation",
+      "prompt_exposure": true,
+      "missing_policy": "retain_unknown"
+    },
+    "scope_explicit": {
+      "type": "boolean_or_unknown",
+      "source_policy": "explicit_annotation",
+      "prompt_exposure": true,
+      "missing_policy": "retain_unknown"
+    },
+    "duration_explicit": {
+      "type": "boolean_or_unknown",
+      "source_policy": "explicit_annotation",
+      "prompt_exposure": true,
+      "missing_policy": "retain_unknown"
+    },
+    "revocable": {
+      "type": "boolean_or_unknown",
+      "source_policy": "explicit_annotation",
+      "prompt_exposure": true,
+      "missing_policy": "retain_unknown"
+    },
+    "review_available": {
+      "type": "boolean_or_unknown",
+      "source_policy": "explicit_annotation",
+      "prompt_exposure": true,
+      "missing_policy": "retain_unknown"
+    },
+    "required_vs_optional": {
+      "type": "enum",
+      "allowed_values": ["required", "optional", "unknown"],
+      "source_policy": "explicit_annotation",
+      "prompt_exposure": true,
+      "missing_policy": "retain_unknown"
+    },
+    "consequence_of_decline": {
+      "type": "enum",
+      "allowed_values": ["none", "limited_functionality", "unknown"],
+      "source_policy": "explicit_annotation",
+      "prompt_exposure": true,
+      "missing_policy": "retain_unknown"
+    },
+    "explanation_present": {
+      "type": "boolean_or_unknown",
+      "source_policy": "explicit_annotation",
+      "prompt_exposure": true,
+      "missing_policy": "retain_unknown"
+    },
+    "explanation_timing": {
+      "type": "enum",
+      "allowed_values": ["before_prompt", "just_in_time", "after_prompt", "unknown"],
+      "source_policy": "explicit_annotation",
+      "prompt_exposure": true,
+      "missing_policy": "retain_unknown"
+    },
+    "provenance_present": {
+      "type": "boolean_or_unknown",
+      "source_policy": "explicit_annotation",
+      "prompt_exposure": true,
+      "missing_policy": "retain_unknown"
+    },
+    "explanation_source": {
+      "type": "enum",
+      "allowed_values": ["app", "agent", "user", "system", "unknown"],
+      "source_policy": "explicit_annotation",
+      "prompt_exposure": true,
+      "missing_policy": "retain_unknown"
+    },
+    "explanation_readability": {
+      "type": "enum",
+      "allowed_values": ["readable", "unclear", "unknown"],
+      "source_policy": "explicit_annotation",
+      "prompt_exposure": true,
+      "missing_policy": "retain_unknown"
+    },
+    "prompt_burden_signal": {
+      "type": "enum",
+      "allowed_values": ["none", "low", "medium", "high", "unknown"],
+      "source_policy": "explicit_annotation",
+      "prompt_exposure": false,
+      "missing_policy": "retain_unknown"
+    },
+    "prompt_burden_bucket": {
+      "type": "enum",
+      "allowed_values": ["not_applicable_single_item", "none_explicit", "low_explicit", "medium_explicit", "high_explicit", "unknown"],
+      "source_policy": "runner_default",
+      "prompt_exposure": false,
+      "missing_policy": "retain_unknown"
+    },
+    "burden_basis": {
+      "type": "enum",
+      "allowed_values": ["single_item_presentation", "explicit_annotation", "runner_annotation", "unknown"],
+      "source_policy": "runner_default",
+      "prompt_exposure": false,
+      "missing_policy": "retain_unknown"
+    },
+    "presentation_mode": {
+      "type": "enum",
+      "allowed_values": ["single_item", "sequential", "unknown"],
+      "source_policy": "runner_default",
+      "prompt_exposure": false,
+      "missing_policy": "retain_unknown"
+    },
+    "uncertainty_bucket": {
+      "type": "enum",
+      "allowed_values": ["low", "medium", "high"],
+      "source_policy": "wrapper_derivation",
+      "prompt_exposure": false,
+      "missing_policy": "derive_from_explicit_fields"
+    },
+    "unknown_context_fields": {
+      "type": "list_of_strings",
+      "source_policy": "wrapper_derivation",
+      "prompt_exposure": false,
+      "missing_policy": "derive_from_explicit_fields"
+    },
+    "unknown_context_categories": {
+      "type": "list_of_strings",
+      "source_policy": "wrapper_derivation",
+      "prompt_exposure": false,
+      "missing_policy": "derive_from_explicit_fields"
+    },
+    "reason_codes": {
+      "type": "list_of_strings",
+      "source_policy": "wrapper_derivation",
+      "prompt_exposure": false,
+      "missing_policy": "derive_from_explicit_fields"
+    },
+    "context_source_policy": {
+      "type": "enum",
+      "allowed_values": ["source_dataset", "explicit_annotation", "runner_default", "mixed", "unknown"],
+      "source_policy": "wrapper_derivation",
+      "prompt_exposure": false,
+      "missing_policy": "derive_from_explicit_fields"
+    }
+  }
+}

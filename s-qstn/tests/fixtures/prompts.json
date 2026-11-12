@@ -1,0 +1,1514 @@
+[
+  {
+    "query_id": 47,
+    "tool": "Travel Booking",
+    "data_item": "Visa scan",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "5dd6a22512c90a115e01bf9dd9f1b73645fd2abb24d46c75b4aef0497600ce78"
+  },
+  {
+    "query_id": 47,
+    "tool": "Travel Booking",
+    "data_item": "Visa scan",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "7f522256986d04ed7b03600c2e8f3f5947c3f7b607344fa7cd1536beee4e1bd4"
+  },
+  {
+    "query_id": 47,
+    "tool": "Travel Booking",
+    "data_item": "Visa scan",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "3fdaea84a3a67bcfc21432a0929afdd7bad2404241ffa997c73ea053b3dd5b60"
+  },
+  {
+    "query_id": 45,
+    "tool": "Travel Booking",
+    "data_item": "Payment method details",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "f5e059224cf1fa2b2333ffd1a796dc39a90bf605eff7a22da357708631636bec"
+  },
+  {
+    "query_id": 45,
+    "tool": "Travel Booking",
+    "data_item": "Payment method details",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "3af7ec87366247b7c9e4e9b3b194f0cf9bf785d4521cec68f4b0ce4cbcdb22bc"
+  },
+  {
+    "query_id": 45,
+    "tool": "Travel Booking",
+    "data_item": "Payment method details",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "feb0382dcced86f24011120cd71ea6ee7cda51d0ed6455f4734a71eec7e994da"
+  },
+  {
+    "query_id": 50,
+    "tool": "The Movie Database",
+    "data_item": "Film genre",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "dd14f356daada44c021252a43687a1674bff4928ad25b8e3bc8a8594f6563aac"
+  },
+  {
+    "query_id": 50,
+    "tool": "The Movie Database",
+    "data_item": "Film genre",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "15178c7bc910805f6149855360b0f7f2a6e3a22a2877e9f27ecfe553e5d6145c"
+  },
+  {
+    "query_id": 50,
+    "tool": "The Movie Database",
+    "data_item": "Film genre",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "15e1f6cb6dc7747d5780e2a8910ce922b7634bee7ad0e9f68a2ad8ac69af4289"
+  },
+  {
+    "query_id": 23,
+    "tool": "mira",
+    "data_item": "SSN",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "2cc659f3f50aa35c70f1f1b1286f204f46b9b58239e2369fb0f3c29539fc94b2"
+  },
+  {
+    "query_id": 23,
+    "tool": "mira",
+    "data_item": "SSN",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "6883744cbd7f89c6cf04e52db9d41f03344fe9ee5dcd0c174c34a9f0f8bceaec"
+  },
+  {
+    "query_id": 23,
+    "tool": "mira",
+    "data_item": "SSN",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "098082e533e0fa0ea3692594bcbb771b45ef9d65f92bdef73165c376b58b73ca"
+  },
+  {
+    "query_id": 34,
+    "tool": "Amazon",
+    "data_item": "Order information (e.g., product details)",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "7ed64ad8babf0ae4a59db89d507b357d5f1f304d9b9a47ded4d7777d236225d5"
+  },
+  {
+    "query_id": 34,
+    "tool": "Amazon",
+    "data_item": "Order information (e.g., product details)",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "18d47cc1f395414919c6d3378154d3f2a00025b412e32c178c38d2ab33cd1bcc"
+  },
+  {
+    "query_id": 34,
+    "tool": "Amazon",
+    "data_item": "Order information (e.g., product details)",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "b8713b5174ef1bf1c85df23a6fc2b1d81e70102b795ec3091842908115d0f781"
+  },
+  {
+    "query_id": 53,
+    "tool": "SMS",
+    "data_item": "Message content",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "6cef02a7e9896b290d4eeacdbb6b4be840300ee28f810a7827fd463ade593e23"
+  },
+  {
+    "query_id": 53,
+    "tool": "SMS",
+    "data_item": "Message content",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "0492846268773bd20b5a770a022d2c67f2d545a93db9a37a6307cc62148ad85d"
+  },
+  {
+    "query_id": 53,
+    "tool": "SMS",
+    "data_item": "Message content",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "c3927cfe4e08ea7a07e37ac7dc285c63f4f20f44b4a7ef3b4ebd1d14a74fafd5"
+  },
+  {
+    "query_id": 31,
+    "tool": "mira",
+    "data_item": "Account number",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "40c5b4250e7be177d7a074f672f35b7316f4a179d3adcea4f36a264989f66efd"
+  },
+  {
+    "query_id": 31,
+    "tool": "mira",
+    "data_item": "Account number",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "296ee4df963e9c48141b38eb6ac3252ffa6f62b02c78f8cbf3f4d0e659d04a5a"
+  },
+  {
+    "query_id": 31,
+    "tool": "mira",
+    "data_item": "Account number",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "856b09e8e11c6cdb6d71de37375460bc9bb92265b3c2c4c055e772f1413b0f8d"
+  },
+  {
+    "query_id": 48,
+    "tool": "Travel Booking",
+    "data_item": "Trip location",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "3437f9a5a1d0a6b556011cc6d1c053feb97f24626d831f316d951a78d72ad755"
+  },
+  {
+    "query_id": 48,
+    "tool": "Travel Booking",
+    "data_item": "Trip location",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "5be9e3852bfc8b9613480530d8e21a5db7bf4a35a687187570b945e9c1dc5860"
+  },
+  {
+    "query_id": 48,
+    "tool": "Travel Booking",
+    "data_item": "Trip location",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "ce8d201824d8aea882ca5f83edd41610e4d720e038921d9006d39c6a5bf43eb2"
+  },
+  {
+    "query_id": 32,
+    "tool": "Amazon",
+    "data_item": "Order information (e.g., product details)",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "8de3eccb3ddbdf65d3c68db7117733ee2f9c6af2d001301f7839e9a5796b80ad"
+  },
+  {
+    "query_id": 32,
+    "tool": "Amazon",
+    "data_item": "Order information (e.g., product details)",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "35241b75e1d9818ff1a706804ac8376209dd5e6933e9ad4ddf0079fdda2dd6ba"
+  },
+  {
+    "query_id": 32,
+    "tool": "Amazon",
+    "data_item": "Order information (e.g., product details)",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "0977c76c5170df5c80be54b68a6c00b8572bc22a0048c4402ef8711558f6230e"
+  },
+  {
+    "query_id": 26,
+    "tool": "Banking",
+    "data_item": "Account password",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "e2079a7cf0a8a0c16d4242398171d0baac79961c156e1f7080bead59c770fc65"
+  },
+  {
+    "query_id": 26,
+    "tool": "Banking",
+    "data_item": "Account password",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "ec2e4d1a7e1528c1b526aab48b009fe668a410bc32ade4405e06aa489ca7e336"
+  },
+  {
+    "query_id": 26,
+    "tool": "Banking",
+    "data_item": "Account password",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "a3c6185e09e7dc7e83b414705d31b0d0a7956b9c5ea15bdec201bf41e077aec8"
+  },
+  {
+    "query_id": 37,
+    "tool": "Amazon (Pharmacy)",
+    "data_item": "Email",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "2ca70540c3c30df930e9d5e0c4fef92867b7bc9c617014bb13d385cf2a0f3614"
+  },
+  {
+    "query_id": 37,
+    "tool": "Amazon (Pharmacy)",
+    "data_item": "Email",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "a6eb8f91e3f194c7e0560f6b5bd4e3351633671e469abcdf3340b3f58a6717d1"
+  },
+  {
+    "query_id": 37,
+    "tool": "Amazon (Pharmacy)",
+    "data_item": "Email",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "9df5b7050d2188c02f8d43172d479e7d2167b63edb29269092f27a8f84d681db"
+  },
+  {
+    "query_id": 37,
+    "tool": "Amazon (Pharmacy)",
+    "data_item": "Name",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "36c8aa60020fd3c434f889dc9e2214f9cf95e1b59217103fae387f602e3627b3"
+  },
+  {
+    "query_id": 37,
+    "tool": "Amazon (Pharmacy)",
+    "data_item": "Name",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "8625e7b4815518a8570e354ef7a576536bae3fdaeeb11b83ff3791ae8942b895"
+  },
+  {
+    "query_id": 37,
+    "tool": "Amazon (Pharmacy)",
+    "data_item": "Name",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "4ed136be48465c20696ca99dcecf3e04e263e9a6fa475fd4795bdf55cfde7cc2"
+  },
+  {
+    "query_id": 3,
+    "tool": "Nutrition and Diet",
+    "data_item": "Dietary preferences",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "35bf4cb8989e7b5937884b7528dd4ce89b2184d91b43e3fd5776c1683cfcc312"
+  },
+  {
+    "query_id": 3,
+    "tool": "Nutrition and Diet",
+    "data_item": "Dietary preferences",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "202e8ec84c80396a16960ba55c8b781b63386e12666c47dbd3e407d663c76d0f"
+  },
+  {
+    "query_id": 3,
+    "tool": "Nutrition and Diet",
+    "data_item": "Dietary preferences",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "dc3a22f814e12db3bfed2b5d53a842ceedefed6a045e875d7de1702b21e93836"
+  },
+  {
+    "query_id": 7,
+    "tool": "PregnancyPal",
+    "data_item": "Family history",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "e6bc77482ade145ead692341ac090c000fee8f1f7e9ae747cb7be1b72f61d946"
+  },
+  {
+    "query_id": 7,
+    "tool": "PregnancyPal",
+    "data_item": "Family history",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "9ed0413a69730e4c925402ce90b4b019d6e9c856e3026578224a950cb803a9c6"
+  },
+  {
+    "query_id": 7,
+    "tool": "PregnancyPal",
+    "data_item": "Family history",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "24d10471e23bb558aa10fcc534189f2c5a7340cab9d6c5a095245ff9e0a3601d"
+  },
+  {
+    "query_id": 14,
+    "tool": "Calendar",
+    "data_item": "Meeting agenda (i.e. cost-cutting)",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "71cdc50cfefb8b1e7328594de90310b0a38272b566231849b7185e721240e54e"
+  },
+  {
+    "query_id": 14,
+    "tool": "Calendar",
+    "data_item": "Meeting agenda (i.e. cost-cutting)",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "ed1b64e4db1b0903689ba2f7a0a96598b7f1eca7ac5b1cbbf908c1d28e89c583"
+  },
+  {
+    "query_id": 14,
+    "tool": "Calendar",
+    "data_item": "Meeting agenda (i.e. cost-cutting)",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "5d9fb2c07e478f23abf90ace3e10ef3f5bc058dee31b34668357f73019e7a94a"
+  },
+  {
+    "query_id": 45,
+    "tool": "Travel Booking",
+    "data_item": "Email address",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "b4781addd895e3f7911ca25d3c1a25c994b57d31aeadb8a4981ec424d6c12b6f"
+  },
+  {
+    "query_id": 45,
+    "tool": "Travel Booking",
+    "data_item": "Email address",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "a28340567f2f5e74c9f105fdf5d3027e553f07aacb7296f9974617f4968ef19f"
+  },
+  {
+    "query_id": 45,
+    "tool": "Travel Booking",
+    "data_item": "Email address",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "6fc22b743c95b2d266063345c3ef3401c328c99cfe13f6f5716c9d2b184da82a"
+  },
+  {
+    "query_id": 0,
+    "tool": "Fitness Tracking",
+    "data_item": "Fitness goal (i.e. weight loss)",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "e1204bb9d392641926459262a75f8c13b903b02681e5f4a9deaac08343812225"
+  },
+  {
+    "query_id": 0,
+    "tool": "Fitness Tracking",
+    "data_item": "Fitness goal (i.e. weight loss)",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "2e119d49d1cf00f2155e7fd941dba54c123a4823e2458b1d80d832daec12eb84"
+  },
+  {
+    "query_id": 0,
+    "tool": "Fitness Tracking",
+    "data_item": "Fitness goal (i.e. weight loss)",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "d52465cd021e2f9a86971137f19103fca11fa9485a3563792fa12e8bced6e65a"
+  },
+  {
+    "query_id": 23,
+    "tool": "Tax Management",
+    "data_item": "Address",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "bf5eac9742d6a2fdfcd0960ad291dcf3bc72eabdc0695fee825f5b20ffb65b08"
+  },
+  {
+    "query_id": 23,
+    "tool": "Tax Management",
+    "data_item": "Address",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "dc33508df548825cb9d2b739821c617495f8bdc4fb5124e32f4f803a7ca2405c"
+  },
+  {
+    "query_id": 23,
+    "tool": "Tax Management",
+    "data_item": "Address",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "507e21b5eeb1eec11aa4f0a69deb39144244764cd73d2deb1c3f22c8181663e1"
+  },
+  {
+    "query_id": 9,
+    "tool": "mira",
+    "data_item": "Scheduling details",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "9030bc705681e8f4bee359adfbd53bf94962c1593b962b4c804c3b3fa34acff4"
+  },
+  {
+    "query_id": 9,
+    "tool": "mira",
+    "data_item": "Scheduling details",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "3b446bfa91e60a9930dc9ca72c6c5a324f80b900218771011aaf1597a0e5160b"
+  },
+  {
+    "query_id": 9,
+    "tool": "mira",
+    "data_item": "Scheduling details",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "f25ec525211601e4aa8c4e9b313efd713c5d38e5d6a0a6eea922677a92950254"
+  },
+  {
+    "query_id": 3,
+    "tool": "Nutrition and Diet",
+    "data_item": "Income/budget considerations",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "dc22f5ded69901bd5100ffefa1292bbe12d7f9eed5bd001932e52149ea73ed9c"
+  },
+  {
+    "query_id": 3,
+    "tool": "Nutrition and Diet",
+    "data_item": "Income/budget considerations",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "02fd151a46ac1772220f7385973750a86006f39a883eef8c77ec933be8f67081"
+  },
+  {
+    "query_id": 3,
+    "tool": "Nutrition and Diet",
+    "data_item": "Income/budget considerations",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "abf05e8a24f189a0c288bb275fc822fe62342725468787bddcd5a9b7c4437dde"
+  },
+  {
+    "query_id": 55,
+    "tool": "Tinder",
+    "data_item": "Workplace",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "03c1ad806ca0b42c51cd761798a46094aa2024f20bdf0d5875677a909752c494"
+  },
+  {
+    "query_id": 55,
+    "tool": "Tinder",
+    "data_item": "Workplace",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "e6d30cb4d0f2113f4c146cddcd09797a21f440709982b8ddcf53b03482fb4ac8"
+  },
+  {
+    "query_id": 55,
+    "tool": "Tinder",
+    "data_item": "Workplace",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "ee465c35b79dc60f452ab9a6dfde2cc70f38ffdb5d611adff892e79fab9f8df7"
+  },
+  {
+    "query_id": 21,
+    "tool": "mira",
+    "data_item": "Pending task information",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "1fb895f767f5ad7001841332292c0e2815c8bc0f42326f63d3e06a97f3835c0f"
+  },
+  {
+    "query_id": 21,
+    "tool": "mira",
+    "data_item": "Pending task information",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "4bb92e5a2b9d837e551f11ab61ab9b7fd48750c80045c849850d725f9a16bc86"
+  },
+  {
+    "query_id": 21,
+    "tool": "mira",
+    "data_item": "Pending task information",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "701a15922b3216846ee29a836cbb68aadb8b3e1c8e0d17dde422d111a9549bf7"
+  },
+  {
+    "query_id": 26,
+    "tool": "Banking",
+    "data_item": "Account email",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "0feeeaeac1050f39649ed629ed4c18f71f638361ac2e4034288798cca5c55c96"
+  },
+  {
+    "query_id": 26,
+    "tool": "Banking",
+    "data_item": "Account email",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "348718a77c67bb0f5bdb0ad7595f063f416e28bf720c5ab0400f172cd6bd4437"
+  },
+  {
+    "query_id": 26,
+    "tool": "Banking",
+    "data_item": "Account email",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "c83343eae47c7c218ce480a57dc975866a520cb1db5a5894af94d90de831d7d4"
+  },
+  {
+    "query_id": 53,
+    "tool": "SMS",
+    "data_item": "Children's phone numbers",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "020074d5bb64a6d80a206005ce5eae7a52e796505e129b59e083f588045cacc3"
+  },
+  {
+    "query_id": 53,
+    "tool": "SMS",
+    "data_item": "Children's phone numbers",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "a3a97ce12007f2e9710cbd44b9f0084b99dc86e3ea903592c2310e9031094091"
+  },
+  {
+    "query_id": 53,
+    "tool": "SMS",
+    "data_item": "Children's phone numbers",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "5d6924391a7e7964dcf282d068fe549037fd09746d744649dba8ef7eef6665b0"
+  },
+  {
+    "query_id": 35,
+    "tool": "Amazon",
+    "data_item": "Child gender",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "4f81bca7fc0791afbdd9483ace23559408fba7adbd3425163956338ac018eeb9"
+  },
+  {
+    "query_id": 35,
+    "tool": "Amazon",
+    "data_item": "Child gender",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "fad537372c2d83fc8a01e14b76ef5e9b986a785293dae668a867e2cd061b8f0a"
+  },
+  {
+    "query_id": 35,
+    "tool": "Amazon",
+    "data_item": "Child gender",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "23fe53a3938ce414e0553c5b5b47340c38bcc551dbab769d9cc4b2e23a1267a0"
+  },
+  {
+    "query_id": 41,
+    "tool": "Local Search",
+    "data_item": "Trip activities",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "786247f0cf4744b36b91c6466a2ec5e7dae104928c9d47a562c930a27fd42a85"
+  },
+  {
+    "query_id": 41,
+    "tool": "Local Search",
+    "data_item": "Trip activities",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "8e79f1c7e038e8d647cb7752567b47933a7b6a931179768ae39591864e96e2f9"
+  },
+  {
+    "query_id": 41,
+    "tool": "Local Search",
+    "data_item": "Trip activities",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "f09067efdb954ca0e319901aae37b52b21b744e9a6fb49bfaef1fc1fc79d12fe"
+  },
+  {
+    "query_id": 64,
+    "tool": "mira",
+    "data_item": "Motion detection logs",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "be002117f2515ddd93c4d1eb408d35360eb4f34ef554844a7a2ce1dee686afba"
+  },
+  {
+    "query_id": 64,
+    "tool": "mira",
+    "data_item": "Motion detection logs",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "2b87fd2f08dc0e2338fe57224144e4846fbc051e978168f5ca5576cc806e879a"
+  },
+  {
+    "query_id": 64,
+    "tool": "mira",
+    "data_item": "Motion detection logs",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "d972841d0ec245671103b163f1cbd15964289c985a6095edfdcbeedc79285d2e"
+  },
+  {
+    "query_id": 60,
+    "tool": "Lighting Control",
+    "data_item": "Bedtime",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "4c17db2dfdd24167cb2fe2bc5e3e66647184b24d6eb1fd85811b3924b621bc79"
+  },
+  {
+    "query_id": 60,
+    "tool": "Lighting Control",
+    "data_item": "Bedtime",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "d2a093a98284f60473c5556eeddef4434466c64edbb9faa88ac060621f774615"
+  },
+  {
+    "query_id": 60,
+    "tool": "Lighting Control",
+    "data_item": "Bedtime",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "21327074e5137f986eb015d417a6807fd65d46ea5a02ec2c25298e2e5859c626"
+  },
+  {
+    "query_id": 39,
+    "tool": "Local Search",
+    "data_item": "Food preferences",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "166b8a711e69f8c945f7ddc74f017b41bd6b6d38777b3be825de7b3f6011e522"
+  },
+  {
+    "query_id": 39,
+    "tool": "Local Search",
+    "data_item": "Food preferences",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "c04d33323f5cf07fb477e40de228c82df5296b5bfd764cd2a7043a0a74202f50"
+  },
+  {
+    "query_id": 39,
+    "tool": "Local Search",
+    "data_item": "Food preferences",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "e0a1e885333483b2f002b401dae0362ab01d3c4f99f024674f6054c151e07c53"
+  },
+  {
+    "query_id": 6,
+    "tool": "PregnancyPal",
+    "data_item": "Medical/pregnancy history",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "94141a158e8f8450a3c4f149349f61a22710228e98856ac5e12a3b897058177b"
+  },
+  {
+    "query_id": 6,
+    "tool": "PregnancyPal",
+    "data_item": "Medical/pregnancy history",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "3e5615d55247b1d04866242821fbe1edac191c1801ce573f7f339c167fa0da8b"
+  },
+  {
+    "query_id": 6,
+    "tool": "PregnancyPal",
+    "data_item": "Medical/pregnancy history",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "ede1be2ca6634b904ca3b6e39fb352660a1871bf553c15f7670a333ee7d0e98d"
+  },
+  {
+    "query_id": 4,
+    "tool": "mira",
+    "data_item": "Current cholesterol level",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "5762527f8a3da6161b415239c4d37c189aa7028e06126ec35ebffe96a924b5fe"
+  },
+  {
+    "query_id": 4,
+    "tool": "mira",
+    "data_item": "Current cholesterol level",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "92c1fe8abf1ecbba91b0e9fa340f71775c9963b5f9b140d024a65092c04f4f9d"
+  },
+  {
+    "query_id": 4,
+    "tool": "mira",
+    "data_item": "Current cholesterol level",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "ac9ff70f54af9f0fe463b636377d1d8fffe2b1fdbdb201f8d946a344713a0dea"
+  },
+  {
+    "query_id": 48,
+    "tool": "Travel Booking",
+    "data_item": "Passport",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "5d14156a4d7392cfc712bff5041079f1e8e30015578f47651d97ed514e002309"
+  },
+  {
+    "query_id": 48,
+    "tool": "Travel Booking",
+    "data_item": "Passport",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "6e1bc4d1d3b550de3cb5160406ebdbad7fbd1f4ba96b407d435d56c40602c60f"
+  },
+  {
+    "query_id": 48,
+    "tool": "Travel Booking",
+    "data_item": "Passport",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "96d7bc538655cd4355058bf8b08d71ae91e19ccd05d155e337c9f1c16e957411"
+  },
+  {
+    "query_id": 47,
+    "tool": "Travel Booking",
+    "data_item": "Trip dates",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "1681cfcee5b8bc88e02dde513986e21552e8a11807767f67b1d031d3914f9761"
+  },
+  {
+    "query_id": 47,
+    "tool": "Travel Booking",
+    "data_item": "Trip dates",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "99fd5ff5c58ce667ba1a06f86cb61fea886f34376a16c25a19c7c80bd597b48b"
+  },
+  {
+    "query_id": 47,
+    "tool": "Travel Booking",
+    "data_item": "Trip dates",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "880d7850118a00dd0a52573e95f90819d3c8258c1bcdb2632cff916f464d5553"
+  },
+  {
+    "query_id": 55,
+    "tool": "Tinder",
+    "data_item": "Education level",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "c0f8b30991585ac7fd94db4487eae3e755e7bc5c113c7257a7166a49428fade9"
+  },
+  {
+    "query_id": 55,
+    "tool": "Tinder",
+    "data_item": "Education level",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "c2dc1730854d1de4b4be753a5853050e2809aa104e0bd8e38ce91325606bc38a"
+  },
+  {
+    "query_id": 55,
+    "tool": "Tinder",
+    "data_item": "Education level",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "7cd068995703e1000ae27927edb709ae40bc77c176ea3e032679ffbca1fd8beb"
+  },
+  {
+    "query_id": 15,
+    "tool": "Email",
+    "data_item": "Manager's contact information",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "29095c99ddb9d3b8e1d85e282d2159278b5901bc7fe85dd635603cc4936ded27"
+  },
+  {
+    "query_id": 15,
+    "tool": "Email",
+    "data_item": "Manager's contact information",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "f29e563251df482ea0bba14ceb46375c503166d3e31bd9aed99cedeb98e31edd"
+  },
+  {
+    "query_id": 15,
+    "tool": "Email",
+    "data_item": "Manager's contact information",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "dea4536d47e5c7587044bb5961c529247077a409cbc38be39557e0716c6f99e3"
+  },
+  {
+    "query_id": 22,
+    "tool": "Email",
+    "data_item": "Revenue report",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "78d08cc4507c18ac2878f1f51d6c48729dd7b0248acbcbf8aea78e9a5a01d516"
+  },
+  {
+    "query_id": 22,
+    "tool": "Email",
+    "data_item": "Revenue report",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "8a113e3a45a3e66cb270ee5384f85605263f79e4c7413651808756d8590d1aad"
+  },
+  {
+    "query_id": 22,
+    "tool": "Email",
+    "data_item": "Revenue report",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "80a88eac179e1577fdce2987279680e4c130fa9e09120313f467fe312d65e72d"
+  },
+  {
+    "query_id": 33,
+    "tool": "Amazon",
+    "data_item": "Film genre",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "7f706b1ac423d117d490cddf13623a1525a0a662198edc7741808765af94c055"
+  },
+  {
+    "query_id": 33,
+    "tool": "Amazon",
+    "data_item": "Film genre",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "86cf96909068517ca9f7c4181ad89bb1d09faca4f6b05dde1c4ee6acebd720b4"
+  },
+  {
+    "query_id": 33,
+    "tool": "Amazon",
+    "data_item": "Film genre",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "d8ef0d2748bc4d45986671bd3c530635e71e25a1929a8b19c64884957d47deae"
+  },
+  {
+    "query_id": 2,
+    "tool": "mira",
+    "data_item": "Blood pressure",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "1ec5d94592cac869462ccb1780c5b814cefafd5fb9ffaf527605095318570196"
+  },
+  {
+    "query_id": 2,
+    "tool": "mira",
+    "data_item": "Blood pressure",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "578ce3255382a7f0e43a029b5887885db71f4dacab5d9eea91c32cd4e102764b"
+  },
+  {
+    "query_id": 2,
+    "tool": "mira",
+    "data_item": "Blood pressure",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "3c4a35d89ffb1844165310bf968eca2782a757c831af9eec3590c240b999b13a"
+  },
+  {
+    "query_id": 21,
+    "tool": "mira",
+    "data_item": "Credit report data",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "92c6d23a60718f4a0ecbf7132d3901e4ad25ff096079c022ebe14d296f95cc88"
+  },
+  {
+    "query_id": 21,
+    "tool": "mira",
+    "data_item": "Credit report data",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "06cdd0eeff85a463481d77dd9f0ae1084fd43783fd817217c048e635e06bff18"
+  },
+  {
+    "query_id": 21,
+    "tool": "mira",
+    "data_item": "Credit report data",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "1ae3b98b67d218cc3a9063dca5aad68245b64028527f4da31b8553bf1901bf3c"
+  },
+  {
+    "query_id": 51,
+    "tool": "Apple Music",
+    "data_item": "Geolocation",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "58afbffae10ce42933e8b8a3426440a216e339b017e8615e3c3e7b7db2ad3397"
+  },
+  {
+    "query_id": 51,
+    "tool": "Apple Music",
+    "data_item": "Geolocation",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "15ad645e7ca1e440f446b17bac2924094028731cef17d9813dc22e0e68c78b5e"
+  },
+  {
+    "query_id": 51,
+    "tool": "Apple Music",
+    "data_item": "Geolocation",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "7e0a8247d8cacd052c2bf8eba1151d994bfdf9114448040fc727828b165110d6"
+  },
+  {
+    "query_id": 40,
+    "tool": "Weather",
+    "data_item": "Pet ownership status",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "8cab32294a86b2a8e5202135bbc0c918482f389de2cdaef29f20c798aab5ac29"
+  },
+  {
+    "query_id": 40,
+    "tool": "Weather",
+    "data_item": "Pet ownership status",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "f67f1a4ef5dfb64e42a0859c7c27ab74f50a624769822514489151375a88aa16"
+  },
+  {
+    "query_id": 40,
+    "tool": "Weather",
+    "data_item": "Pet ownership status",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "6081763b224567c9b4474844cc3ef8ecb239b403a7d54c238b9a864cd5bdff31"
+  },
+  {
+    "query_id": 42,
+    "tool": "Local Search",
+    "data_item": "Motion detection logs",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "01c0dfea5c3894d136e5923db574431119a1384e187a98def6a4a2fa6571cf33"
+  },
+  {
+    "query_id": 42,
+    "tool": "Local Search",
+    "data_item": "Motion detection logs",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "185ed0e4e6d996c1f9c951e59b51e842725434a059bc999e8801d39261f07e62"
+  },
+  {
+    "query_id": 42,
+    "tool": "Local Search",
+    "data_item": "Motion detection logs",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "5eaba060146822076764ec8325786e8871fb853b6da14157efa1acc48c934440"
+  },
+  {
+    "query_id": 63,
+    "tool": "mira",
+    "data_item": "Home presence",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "96d4f1fb6597a495fe9d9a090c829dc98bd83982bc96a5ea47cabff7d47c95b3"
+  },
+  {
+    "query_id": 63,
+    "tool": "mira",
+    "data_item": "Home presence",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "080ab1a573b8ef89faec15bf20bbed4283638ffd21baf6797a7b21df267be89c"
+  },
+  {
+    "query_id": 63,
+    "tool": "mira",
+    "data_item": "Home presence",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "2aacdffbe328259a700cf3898bb261cb2d3aeb8c57739a406f69a4e3ee8e7e37"
+  },
+  {
+    "query_id": 49,
+    "tool": "The Movie Database",
+    "data_item": "Email address",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "6b5442fd2bf4567554aebd7c5c58c56b6429e040e3e990d4ae448a753cfa3da1"
+  },
+  {
+    "query_id": 49,
+    "tool": "The Movie Database",
+    "data_item": "Email address",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "e23427a48c2f4d633f39443d020b6aae04d0e9b99f68830234c39c5c40ba99f3"
+  },
+  {
+    "query_id": 49,
+    "tool": "The Movie Database",
+    "data_item": "Email address",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "619e9b04e12ccdb58d1d4eb121bda07f6b31154d9aeff5079dca47aac51f4272"
+  },
+  {
+    "query_id": 32,
+    "tool": "Amazon",
+    "data_item": "Child age",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "905eee7171e85faf22cace110d86aa5a4ba461f7cfb009c9eab510aabcb24aeb"
+  },
+  {
+    "query_id": 32,
+    "tool": "Amazon",
+    "data_item": "Child age",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "d6366338f96f6ea03e0d69e5283a9beff57afb35de45d96fc9323d8040f8f1c3"
+  },
+  {
+    "query_id": 32,
+    "tool": "Amazon",
+    "data_item": "Child age",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "dd116c5fb835fda4da30295c9b6886daab701a26543b1ab591ea7be00a526154"
+  },
+  {
+    "query_id": 2,
+    "tool": "mira",
+    "data_item": "Account password",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "f4015c05ef2c12ef84f00d1a03102c88d507896dcaffcd844b6565cd96041424"
+  },
+  {
+    "query_id": 2,
+    "tool": "mira",
+    "data_item": "Account password",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "453ba259e391f5c5510bdcb8d962c316228f364304fc72d1b867ac8a6cca64ff"
+  },
+  {
+    "query_id": 2,
+    "tool": "mira",
+    "data_item": "Account password",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "c3de69317dd8d5d71c2acbe59117e1587bf4fc1cead3ee50ad3dc27c4d7024a0"
+  },
+  {
+    "query_id": 56,
+    "tool": "Cloud Drive",
+    "data_item": "Medical/pregnancy history",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "352f8532b05a7613d5f5988958969d99acf51a32260f20cf5eb737b98332128c"
+  },
+  {
+    "query_id": 56,
+    "tool": "Cloud Drive",
+    "data_item": "Medical/pregnancy history",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "6971d5b2409ab07e90f8c2a5d4a504d7819d43040a4683a3065401fef6578403"
+  },
+  {
+    "query_id": 56,
+    "tool": "Cloud Drive",
+    "data_item": "Medical/pregnancy history",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "07023c93174371cfb1e4c006474b6c9169e9c7594a8803c06a130f1649e254a5"
+  },
+  {
+    "query_id": 19,
+    "tool": "Calendar",
+    "data_item": "Travel details",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "ed99a470e300cffbbc862276efa7ad20bb554327810aee54b118b931c443aafa"
+  },
+  {
+    "query_id": 19,
+    "tool": "Calendar",
+    "data_item": "Travel details",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "57afe169319328c5fa78cf07529d833d76e22870af25b14daf46ec1839885dd9"
+  },
+  {
+    "query_id": 19,
+    "tool": "Calendar",
+    "data_item": "Travel details",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "2f1ef2d4c197eaf6b46f031b690dabf00e56d3ac401691458a06e38f5207b6cf"
+  },
+  {
+    "query_id": 33,
+    "tool": "Amazon",
+    "data_item": "Prescription medicine list",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "ef41a00bfebe00f1d7336ccdcca87218873cbe8634b31f6e06062e9b9ff919c9"
+  },
+  {
+    "query_id": 33,
+    "tool": "Amazon",
+    "data_item": "Prescription medicine list",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "d360f706a6ebc781a3bda4fe0f5d95dcc7e8d2a801c7c855b205fffb2b84930a"
+  },
+  {
+    "query_id": 33,
+    "tool": "Amazon",
+    "data_item": "Prescription medicine list",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "34a071de4bcf4b4560865513edbfcd3967d3f1f26449d2f3bb6d33d338a3a9de"
+  },
+  {
+    "query_id": 54,
+    "tool": "Instagram",
+    "data_item": "Attendees email addresses",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "78dd72594fc733a2ab01ab7dd32bf705f37a5276ca1755d1ea69557590e5626e"
+  },
+  {
+    "query_id": 54,
+    "tool": "Instagram",
+    "data_item": "Attendees email addresses",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "0773331496cd05a218526192acb1e8503d1a92db32447b4c2eec1949d9ec0e21"
+  },
+  {
+    "query_id": 54,
+    "tool": "Instagram",
+    "data_item": "Attendees email addresses",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "b7ade094120aecc314f5e68172cea7e9caf9d47bf9d5e3b5fecbaf5df4af3ad7"
+  },
+  {
+    "query_id": 29,
+    "tool": "Banking",
+    "data_item": "Home presence",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "b5f7ba14d4d88729881aa54c20161f8b9e55d9f646e96d6f0fa17ddcb965e68b"
+  },
+  {
+    "query_id": 29,
+    "tool": "Banking",
+    "data_item": "Home presence",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "17a17745941150ddb2307bcf1f91581479530621e3c178964d37096e3d8b5dbb"
+  },
+  {
+    "query_id": 29,
+    "tool": "Banking",
+    "data_item": "Home presence",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "837aa663babf746c616eb3a303cb50676183eef0698e9b67ff68b2166742434c"
+  },
+  {
+    "query_id": 54,
+    "tool": "Instagram",
+    "data_item": "User location",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "8f16b89a21037f15416a2f57338c2dfa063c59e59850e1c814960be87eb85b01"
+  },
+  {
+    "query_id": 54,
+    "tool": "Instagram",
+    "data_item": "User location",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "7f27a27af2f11d6d1050d02ecab6c6446d74f4daffdcc3a4a87717e5227d3fcf"
+  },
+  {
+    "query_id": 54,
+    "tool": "Instagram",
+    "data_item": "User location",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "d7910f92a7b33213216ca1641caa6ded0697b286c6e810f1d9aaf32c4f594747"
+  },
+  {
+    "query_id": 26,
+    "tool": "Banking",
+    "data_item": "Account balance",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "bd1dd9063650c72b1783fdb499dafc20c6ce7738a6e248c825dcdc18434903e8"
+  },
+  {
+    "query_id": 26,
+    "tool": "Banking",
+    "data_item": "Account balance",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "9fc59d45ac8a09fc7657b9251622a18592d9dda8236451d4be4cb122d2c15e6f"
+  },
+  {
+    "query_id": 26,
+    "tool": "Banking",
+    "data_item": "Account balance",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "ca4332fbac9bee809d5d86ad190bb3a5d9343c95994d5097da4ebed4c3b89fc2"
+  },
+  {
+    "query_id": 1,
+    "tool": "mira",
+    "data_item": "Photos",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "ed692b271f844e61cd021b8dc609c6954fd31a3ccf559f70fb2c9c4fa994da18"
+  },
+  {
+    "query_id": 1,
+    "tool": "mira",
+    "data_item": "Photos",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "02c49b7b0868c9889c841109aaac45a1af543c4452dc0d16b01ebc32a06d8439"
+  },
+  {
+    "query_id": 1,
+    "tool": "mira",
+    "data_item": "Photos",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "1bbfa53d0bc7b6a1178ec4b620f236ce2ee0d81a61b5de477dfda03b14724a1c"
+  },
+  {
+    "query_id": 63,
+    "tool": "mira",
+    "data_item": "Credit history",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "321114100a455ac73f8aa67d2c709e4b540c4e7be4b9606a507bb0aedb3c01ed"
+  },
+  {
+    "query_id": 63,
+    "tool": "mira",
+    "data_item": "Credit history",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "94345f7198f3fe306b8cdfefb23d11a849689a095ecadad01fe891d8cc78b15e"
+  },
+  {
+    "query_id": 63,
+    "tool": "mira",
+    "data_item": "Credit history",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "cc374734af00a4230e0ee56db88d438ac45743c23e012c8f1e5c37f9e38cc3b7"
+  },
+  {
+    "query_id": 52,
+    "tool": "Web",
+    "data_item": "Profile Pictures",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "52549ce0fda7d1ba365290aebf06613f523e7c62539a9bd0944e9c94d3c186da"
+  },
+  {
+    "query_id": 52,
+    "tool": "Web",
+    "data_item": "Profile Pictures",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "005d51917451deb3b1800e56c41997f435cccd4a5bd6d8e7c7092ba9a00a3732"
+  },
+  {
+    "query_id": 52,
+    "tool": "Web",
+    "data_item": "Profile Pictures",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "e6c95d938c1c0b0bd4ff48ce483e1f2f8318b31073df42d566ee998b016a422f"
+  },
+  {
+    "query_id": 63,
+    "tool": "mira",
+    "data_item": "Filling status",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "ce4162af7e87a5d5cfd9d5095412cc80736c2098849fd75635530d3435cc0031"
+  },
+  {
+    "query_id": 63,
+    "tool": "mira",
+    "data_item": "Filling status",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "e275881125becb82a143b83dbf59f3a2d44cfbf6c3b7e1229b177b5e538e49e0"
+  },
+  {
+    "query_id": 63,
+    "tool": "mira",
+    "data_item": "Filling status",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "bc12b03b394c2d7aef072a01479f8ebb265e46f3b417d5ee5b78880260683700"
+  },
+  {
+    "query_id": 10,
+    "tool": "mira",
+    "data_item": "Backyard video recording",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "73dee1e36ba9f708613a89ae63e3aa4fb619f6786bb427a25cfc20931d7f6144"
+  },
+  {
+    "query_id": 10,
+    "tool": "mira",
+    "data_item": "Backyard video recording",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "e2cb3bd7860e65bf72c25b0f3640099304e4bf61c1acadb3664961f6e789a404"
+  },
+  {
+    "query_id": 10,
+    "tool": "mira",
+    "data_item": "Backyard video recording",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "650043401013f2c3d5c88bc27f846aa0f4dc51a12091eb3f5d569f28f2c0d400"
+  },
+  {
+    "query_id": 6,
+    "tool": "PregnancyPal",
+    "data_item": "Motion detection logs",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "3a31acc37ebfd53c39fa1bb8e7e745e2f9843f77b2458132afa86342c7efa955"
+  },
+  {
+    "query_id": 6,
+    "tool": "PregnancyPal",
+    "data_item": "Motion detection logs",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "72c870db6a90ac5965cc0a63d64fdb9ea8a2161c2e98ec9303da51091f525eb7"
+  },
+  {
+    "query_id": 6,
+    "tool": "PregnancyPal",
+    "data_item": "Motion detection logs",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "fdeed02d81d68e6aebf25f8218f9daf1a0cdc8c31ced5de9dfbcd06f90f1efa7"
+  },
+  {
+    "query_id": 19,
+    "tool": "Calendar",
+    "data_item": "Previous tax filing details",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "e1cb26e694864492b3fa5e531b0f76d34190e1ab7121bbf6dfb4d7c942e00350"
+  },
+  {
+    "query_id": 19,
+    "tool": "Calendar",
+    "data_item": "Previous tax filing details",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "401ccf9e3e68cf2f679b0faa797cdea5f8c1e6ab1539c000eb200c2f70ad795a"
+  },
+  {
+    "query_id": 19,
+    "tool": "Calendar",
+    "data_item": "Previous tax filing details",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "546cc1feb07ce575eb9ef22bc7f971b6180a5842ce6bf9f489d9557d644cf0fd"
+  },
+  {
+    "query_id": 61,
+    "tool": "mira",
+    "data_item": "Home presence",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "03b05abfac0f2cc9488cbc7144b0736d6ca22e412f4a6169ec370082ced0eefb"
+  },
+  {
+    "query_id": 61,
+    "tool": "mira",
+    "data_item": "Home presence",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "77fa27b88ea38446e9abfc86a0e93182568b8945efec2e082c43beffe543e98c"
+  },
+  {
+    "query_id": 61,
+    "tool": "mira",
+    "data_item": "Home presence",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "b5f85631b8d9cbbaa4086ea20b89d6048cadc9bf2aa600cf5a02539dec597ef4"
+  },
+  {
+    "query_id": 49,
+    "tool": "The Movie Database",
+    "data_item": "Parents' phone numbers",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "0cf4f55b6edf568634197a3f28a7ce98c2cdc0f495ebc94e413e00168a907ace"
+  },
+  {
+    "query_id": 49,
+    "tool": "The Movie Database",
+    "data_item": "Parents' phone numbers",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "8a09bd6066d20fab3736e7ec6eb7ee057d11b8f2dda40550f9fcace1932ff1d8"
+  },
+  {
+    "query_id": 49,
+    "tool": "The Movie Database",
+    "data_item": "Parents' phone numbers",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "e86b1fd3d230721a6f1452a85d1c158168b443454b1ced74225e536089d31ce9"
+  },
+  {
+    "query_id": 0,
+    "tool": "Fitness Tracking",
+    "data_item": "Energy consumption logs",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "15e4e6e79ef316e5203445e7c381af3b3be353a2a08fa6c039c5f55fcd99d471"
+  },
+  {
+    "query_id": 0,
+    "tool": "Fitness Tracking",
+    "data_item": "Energy consumption logs",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "8bfc8cd9ed8f3b6d13a435af3b41dc5efb29b18339076a6baadb92e82e4a0864"
+  },
+  {
+    "query_id": 0,
+    "tool": "Fitness Tracking",
+    "data_item": "Energy consumption logs",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "13be8215a01d591c5097153f614471a0f62f2f8682f16084fddb02adb8ab1cf2"
+  },
+  {
+    "query_id": 17,
+    "tool": "Cloud Drive",
+    "data_item": "Movie watching history",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "fa80027f63e8c10eec441ed0f25ff2f53aeee0fe2cbb7881bab1c6356b7e7ecf"
+  },
+  {
+    "query_id": 17,
+    "tool": "Cloud Drive",
+    "data_item": "Movie watching history",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "4d01c92abfb461c8cfe9932c9f39143c694fad7df916477470c173475a294365"
+  },
+  {
+    "query_id": 17,
+    "tool": "Cloud Drive",
+    "data_item": "Movie watching history",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "0e18ece3b5312f26af3a995a794fe1699b4a5fe83fea9731c60890c22bef0eb4"
+  },
+  {
+    "query_id": 42,
+    "tool": "Local Search",
+    "data_item": "Garage video recording",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "ea056abcc6359d751a56167d9e6d0f1895aee313dc4800fe86d98db7062a76f7"
+  },
+  {
+    "query_id": 42,
+    "tool": "Local Search",
+    "data_item": "Garage video recording",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "03e99f925289c9686307a5411b44d0b86e0becc43e5bb5215ba99c6fb41631ea"
+  },
+  {
+    "query_id": 42,
+    "tool": "Local Search",
+    "data_item": "Garage video recording",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "7a8679affccb55f0633eea1895de96561026bd72c3faf7b5481fc923d141f016"
+  },
+  {
+    "query_id": 26,
+    "tool": "Banking",
+    "data_item": "Geolocation",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "f951a4aad9d982edda1bf728b8dba2b31e93476e9c57e2a960759f79149e4302"
+  },
+  {
+    "query_id": 26,
+    "tool": "Banking",
+    "data_item": "Geolocation",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "c8177b2c393cd5a5646c704c4c726311b9e872e330f521daf6161b1ba70f1624"
+  },
+  {
+    "query_id": 26,
+    "tool": "Banking",
+    "data_item": "Geolocation",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "8effc959985e80ff90c238fa3b7b8000f2b5db4c8a0d9f6a495ba05ed8aaa590"
+  },
+  {
+    "query_id": 57,
+    "tool": "Tinder",
+    "data_item": "Personal weight history",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "270a3ca5a9105f14febf479d7c6a55748370397b844fef166b96c26f1a0f6c12"
+  },
+  {
+    "query_id": 57,
+    "tool": "Tinder",
+    "data_item": "Personal weight history",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "71609edd743ee40803ba79d855d561ddc069dc232aa6ae01a1490113c473c788"
+  },
+  {
+    "query_id": 57,
+    "tool": "Tinder",
+    "data_item": "Personal weight history",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "89eaa421353d53fb12f5dca14075c17f9930d6dc91764564340757e8e9a7181e"
+  },
+  {
+    "query_id": 24,
+    "tool": "Tax Management",
+    "data_item": "Phone number",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "56255a95abe71d6558705a39f278f5358656068145936165720f5d2586757552"
+  },
+  {
+    "query_id": 24,
+    "tool": "Tax Management",
+    "data_item": "Phone number",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "f16ef96626f4edccde48469ea758ef9e2a37cd8c9b48d80b8917f26b9f3eecf5"
+  },
+  {
+    "query_id": 24,
+    "tool": "Tax Management",
+    "data_item": "Phone number",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "74d6f088e02342111d4a4cb98055a5195eee8220e23e95f8938d146d2dbfdf6a"
+  },
+  {
+    "query_id": 16,
+    "tool": "mira",
+    "data_item": "Message content",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "0240b08055f1adf4602ef6de739561a6394eff46a350e17cb4094f2400d84d0e"
+  },
+  {
+    "query_id": 16,
+    "tool": "mira",
+    "data_item": "Message content",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "2cf712f603e76b34caabcca24c925aedca5a32eaf41249af0311115684d7a575"
+  },
+  {
+    "query_id": 16,
+    "tool": "mira",
+    "data_item": "Message content",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "0c195ab30f666b785e9ff220911f971ee1e927a9cc587b2d9f7fbb3f0ae87004"
+  },
+  {
+    "query_id": 7,
+    "tool": "PregnancyPal",
+    "data_item": "Sender's email addresses",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "77c8d3803c209d528038ced85fcfcd787d2868e08e99a60428b08354dd84642f"
+  },
+  {
+    "query_id": 7,
+    "tool": "PregnancyPal",
+    "data_item": "Sender's email addresses",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "f0e65ca7e122e8658487d1786e22ae05ea52cd6fc2fe1bf9935a650a3c68bb53"
+  },
+  {
+    "query_id": 7,
+    "tool": "PregnancyPal",
+    "data_item": "Sender's email addresses",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "3cc4f5ce11b16895345080fede3b2791fca0f608eb1976e86e1b03df4dc18970"
+  },
+  {
+    "query_id": 49,
+    "tool": "The Movie Database",
+    "data_item": "Film genre",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "8eb17defe93b34d1a8da3343f24391ef97d6deb0bf0cca814ba8aa5a918dc172"
+  },
+  {
+    "query_id": 49,
+    "tool": "The Movie Database",
+    "data_item": "Film genre",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "e17bc0a8e115857d37b4d968105e1acac1d39d76ccb16de0e6ea6636913b7a90"
+  },
+  {
+    "query_id": 49,
+    "tool": "The Movie Database",
+    "data_item": "Film genre",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "49938d7c65ad551b16667bcd57f5bda8ea02b6042149cb671d78e59389781daf"
+  },
+  {
+    "query_id": 36,
+    "tool": "Amazon (Groceries)",
+    "data_item": "Payment method details",
+    "profile_id": "persistent_granters",
+    "prompt_sha256": "071c073ced3d88859a80835c4ed425b27da6408df8f0db4e322992c074fa4b47"
+  },
+  {
+    "query_id": 36,
+    "tool": "Amazon (Groceries)",
+    "data_item": "Payment method details",
+    "profile_id": "reconsent_seekers",
+    "prompt_sha256": "80e0ec3c13170f4df3c070a7ca7730d2c29dd5e6fec024e9380d1490f6cc0947"
+  },
+  {
+    "query_id": 36,
+    "tool": "Amazon (Groceries)",
+    "data_item": "Payment method details",
+    "profile_id": "broad_restrictors",
+    "prompt_sha256": "81ec7e3ba4effacf35bd3f30ca953b1e539abd392fcfbc84163a91aa83a518ae"
+  }
+]

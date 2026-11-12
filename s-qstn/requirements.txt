@@ -1,0 +1,6 @@
+qstn==0.5.1
+pandas==3.0.3
+numpy==2.5.1
+scikit-learn==1.9.0
+scipy==1.18.0
+python-dotenv==1.2.2

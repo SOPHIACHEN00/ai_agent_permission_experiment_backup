@@ -1,8 +1,0 @@
-{
-  "job_id": "P073_fold0",
-  "model_name": "deepseek",
-  "error_type": "APIConnectionError",
-  "error": "Connection error.",
-  "raw_response": null,
-  "charged_or_reserved_cost_usd": 0.006574
-}

@@ -1,9 +1,0 @@
-{
-  "completed_jobs": 1,
-  "total_jobs": 1005,
-  "complete": false,
-  "api_calls_this_invocation": 1,
-  "tracked_spend_usd": 0.012508100000000003,
-  "max_cost_usd": 4.0,
-  "budget_stop": false
-}

@@ -1,0 +1,154 @@
+{
+  "candidate": {
+    "train_success": 171,
+    "train_timely": 99,
+    "optimizer_updates": 6226,
+    "environment_steps": 6229,
+    "checkpoints": [
+      {
+        "after_tasks": 0,
+        "success": 5,
+        "timely": 0,
+        "return_mean": 0.09733333333333337,
+        "control_steps": 490,
+        "ER": 0,
+        "ED": 3,
+        "M": 4,
+        "K": 54,
+        "PB": 56
+      },
+      {
+        "after_tasks": 20,
+        "success": 4,
+        "timely": 0,
+        "return_mean": -0.12844444444444442,
+        "control_steps": 500,
+        "ER": 0,
+        "ED": 0,
+        "M": 10,
+        "K": 56,
+        "PB": 58
+      },
+      {
+        "after_tasks": 40,
+        "success": 4,
+        "timely": 2,
+        "return_mean": -0.13611111111111113,
+        "control_steps": 424,
+        "ER": 0,
+        "ED": 6,
+        "M": 10,
+        "K": 65,
+        "PB": 65
+      },
+      {
+        "after_tasks": 60,
+        "success": 6,
+        "timely": 3,
+        "return_mean": 0.31533333333333335,
+        "control_steps": 375,
+        "ER": 0,
+        "ED": 3,
+        "M": 8,
+        "K": 52,
+        "PB": 63
+      }
+    ],
+    "seed_final": [
+      {
+        "seed": 3,
+        "success": 3,
+        "timely": 3,
+        "parameter_l2_change": 3.0278674749207672
+      },
+      {
+        "seed": 7,
+        "success": 1,
+        "timely": 0,
+        "parameter_l2_change": 3.7664100031605914
+      },
+      {
+        "seed": 11,
+        "success": 2,
+        "timely": 0,
+        "parameter_l2_change": 3.7805786017879064
+      }
+    ]
+  },
+  "family": {
+    "train_success": 169,
+    "train_timely": 126,
+    "optimizer_updates": 6330,
+    "environment_steps": 6333,
+    "checkpoints": [
+      {
+        "after_tasks": 0,
+        "success": 5,
+        "timely": 0,
+        "return_mean": 0.09733333333333337,
+        "control_steps": 490,
+        "ER": 0,
+        "ED": 3,
+        "M": 4,
+        "K": 54,
+        "PB": 56
+      },
+      {
+        "after_tasks": 20,
+        "success": 3,
+        "timely": 0,
+        "return_mean": -0.3511111111111111,
+        "control_steps": 538,
+        "ER": 0,
+        "ED": 1,
+        "M": 9,
+        "K": 60,
+        "PB": 62
+      },
+      {
+        "after_tasks": 40,
+        "success": 4,
+        "timely": 0,
+        "return_mean": -0.13299999999999995,
+        "control_steps": 559,
+        "ER": 0,
+        "ED": 2,
+        "M": 11,
+        "K": 67,
+        "PB": 64
+      },
+      {
+        "after_tasks": 60,
+        "success": 5,
+        "timely": 3,
+        "return_mean": 0.09288888888888891,
+        "control_steps": 387,
+        "ER": 0,
+        "ED": 1,
+        "M": 9,
+        "K": 64,
+        "PB": 65
+      }
+    ],
+    "seed_final": [
+      {
+        "seed": 3,
+        "success": 1,
+        "timely": 0,
+        "parameter_l2_change": 3.177682511834116
+      },
+      {
+        "seed": 7,
+        "success": 3,
+        "timely": 3,
+        "parameter_l2_change": 2.7671502271148194
+      },
+      {
+        "seed": 11,
+        "success": 1,
+        "timely": 0,
+        "parameter_l2_change": 2.9154788018402797
+      }
+    ]
+  }
+}

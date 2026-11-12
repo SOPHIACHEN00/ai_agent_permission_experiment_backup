@@ -1,2 +1,0 @@
-model,variant,test_loss,accuracy,macro_f1,quadratic_weighted_kappa,over_sharing_rate,over_sharing_count,over_sharing_denominator,persistent_over_allow_rate,persistent_over_allow_count,persistent_over_allow_denominator
-distilbert_flat_four_class,tuned,1.365426699812496,0.3882034306349684,0.3350929158937148,0.2529385792139792,0.5459905660377359,463,848,0.4385499557913351,992,2262
