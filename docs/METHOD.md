@@ -39,8 +39,11 @@ plus candidate features and their validity mask. Its output is one candidate ID,
 representing an action type together with its exact scope or ending reason.
 
 The current offline runners use `ScriptedPlanner` and explicit fixture answers.
-An LLM planner interface and an external S-QSTN responder adapter are implemented;
-the retained DDQN results do not establish a full live LLM/S-QSTN training run.
+The opt-in `run_online.py` entry connects `StructuredPlanner` and the S-QSTN
+responder to OpenRouter for API inference, using either the rule controller or
+a frozen user-local DDQN checkpoint. This entry performs no optimizer updates.
+The retained DDQN results use offline fixtures and do not establish a full live
+LLM/S-QSTN training run or online task performance.
 
 | Module under `rl_agent_structure/src/personal_assistant/` | Responsibility |
 | --- | --- |

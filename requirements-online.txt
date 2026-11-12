@@ -1,0 +1,3 @@
+-r requirements-agent.txt
+-r s-qstn/requirements.txt
+# Optional frozen DDQN inference also requires requirements-rl.txt.

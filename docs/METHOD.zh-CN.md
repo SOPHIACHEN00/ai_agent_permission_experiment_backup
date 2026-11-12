@@ -16,7 +16,7 @@ Agent 接到任务后，需要决定申请什么权限、用什么范围执行�
 - **Evaluator：** 根据实际效果、任务要求和交互记录算成功与成本，训练时产生 reward。它与执行前检查授权的 Monitor 职责不同。
 
 任务循环是“计划 → 选择 → 行动 → 观察”；学习循环是“实际经历 → reward → replay → 更新参数”。
-目前可复现的功能和 DDQN 诊断使用脚本 Planner 与明确标注的固定回答；代码保留 LLM Planner 接口和 S-QSTN 桥接接口。
+已有功能检查和 DDQN 诊断使用脚本 Planner 与明确标注的固定回答。新增的 `run_online.py` 可通过 OpenRouter 调用 LLM Planner 和 S-QSTN，控制器可选规则策略或已有用户的冻结 DDQN。这个入口只做推理，不更新 DDQN；已有研究结果不代表完整在线 LLM/S-QSTN 训练效果。
 
 ## C、G、P 与四种动作
 
