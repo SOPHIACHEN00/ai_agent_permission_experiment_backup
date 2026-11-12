@@ -50,24 +50,28 @@ local stateful mocks. S-QSTN represents a simulated user in this experiment;
 its replies are not consent from a real person for real external tools.
 
 Follow the [root setup](../README.md#online-api-setup) to install
-`requirements-online.txt`, copy [.env.example](.env.example) to a local `.env`,
+`requirements-online.txt` and `requirements-rl.txt`, copy [.env.example](.env.example) to a local `.env`,
 set `OPENROUTER_API_KEY`, and explicitly initialize a new campaign ledger if none
 exists. The process environment takes precedence; the default file is resolved
 relative to this Agent directory, independent of the current working directory.
 
 ```bash
-# Preview only: no key loading, provider metadata request or paid completion.
+# Preview DDQN configuration: no checkpoint/key loading or network requests.
 python rl_agent_structure/run_online.py --queries 40 41 --user-id online-demo --persist-rounds 3
 
-# Paid API inference with the rule permission controller.
-python rl_agent_structure/run_online.py --queries 40 41 --user-id online-demo --persist-rounds 3 --execute --output rl_agent_structure/outputs/online_demo
+# Paid API inference with the default DDQN permission controller.
+python rl_agent_structure/run_online.py --queries 40 41 --user-id YOUR_CHECKPOINT_USER --checkpoint PATH_TO_CHECKPOINT --persist-rounds 3 --execute --output rl_agent_structure/outputs/online_ddqn_demo
 ```
 
-To use an existing **user-local DDQN checkpoint**, install `requirements-rl.txt`
-and run:
+DDQN is the default. Execution requires an existing **user-local DDQN checkpoint**;
+no trained checkpoint is bundled, and no checkpoint means an error before any API
+request. The CLI does not silently replace DDQN with rules or a randomly initialized
+network. The no-network preview can run without a checkpoint.
+
+The rule controller remains available only as an explicitly selected baseline:
 
 ```bash
-python rl_agent_structure/run_online.py --queries 40 41 --user-id YOUR_CHECKPOINT_USER --persist-rounds 3 --policy ddqn --checkpoint PATH_TO_CHECKPOINT --execute --output rl_agent_structure/outputs/online_ddqn_demo
+python rl_agent_structure/run_online.py --queries 40 41 --user-id rule-demo --persist-rounds 3 --policy rule --execute --output rl_agent_structure/outputs/online_rule_demo
 ```
 
 - The checkpoint must match the current four-action/feature schema and user ID.

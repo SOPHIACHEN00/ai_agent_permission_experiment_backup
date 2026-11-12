@@ -23,7 +23,7 @@ Install only the components you need:
 | CPU DDQN and plots | `python -m pip install -r requirements-rl.txt` |
 | Logistic regression and MAB | `python -m pip install -r requirements.txt` |
 | S-QSTN prompt compilation and integration | `python -m pip install -r s-qstn/requirements.txt` |
-| Live Planner + S-QSTN API inference | `python -m pip install -r requirements-online.txt` |
+| Live Planner + S-QSTN with default DDQN inference | `python -m pip install -r requirements-online.txt -r requirements-rl.txt` |
 | ICL prompt preparation and tests | `python -m pip install -r in_context_learning/requirements.txt` |
 
 S-QSTN pins its numerical stack. For all-module verification, install the pinned
@@ -89,8 +89,10 @@ and the examples above do not require a key or a budget ledger.
 For the full Agent with real LLM planning and S-QSTN replies, use
 [`rl_agent_structure/run_online.py`](../rl_agent_structure/README.md#online-api-inference).
 It previews by default and requires `--execute` for paid calls. The default
-controller is the rule baseline; `--policy ddqn --checkpoint ...` selects frozen
-CPU DDQN inference. Both API roles share one key and one cumulative budget ledger.
+controller is DDQN; execution requires `--checkpoint ...` and the matching user
+ID for frozen CPU inference. Missing checkpoints fail before any API call.
+Use `--policy rule` only for the explicit rule baseline. Both API roles share
+one key and one cumulative budget ledger.
 This entry performs no online RL updates. The API wiring is covered by mocked
 provider tests, not a live paid validation run.
 

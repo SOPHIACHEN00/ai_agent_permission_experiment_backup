@@ -18,8 +18,10 @@ def main(argv=None):
     parser.add_argument('--profile', choices=('persistent_granters', 'reconsent_seekers', 'broad_restrictors'),
                         default='persistent_granters')
     parser.add_argument('--persist-rounds', type=int, required=True)
-    parser.add_argument('--policy', choices=('rule', 'ddqn'), default='rule')
-    parser.add_argument('--checkpoint', type=Path, help='Existing compatible user-local DDQN checkpoint')
+    parser.add_argument('--policy', choices=('ddqn', 'rule'), default='ddqn',
+                        help='DDQN by default; rule is an explicitly selected baseline')
+    parser.add_argument('--checkpoint', type=Path,
+                        help='Existing compatible user-local DDQN checkpoint; required for DDQN execution')
     parser.add_argument('--env-file', type=Path, default=ROOT / '.env')
     parser.add_argument('--max-model-calls', type=int, default=32, help='Combined Planner + S-QSTN request-attempt cap')
     parser.add_argument('--output', type=Path, help='New directory under rl_agent_structure/outputs')
@@ -27,14 +29,19 @@ def main(argv=None):
     args = parser.parse_args(argv)
     if args.persist_rounds < 1 or args.max_model_calls < 1 or not args.user_id.strip():
         parser.error('persist-rounds and max-model-calls must be positive; user-id must be nonempty')
-    if (args.policy == 'ddqn') != (args.checkpoint is not None):
-        parser.error('--policy ddqn requires --checkpoint; rule does not use a checkpoint')
+    if args.policy == 'rule' and args.checkpoint is not None:
+        parser.error('--policy rule does not use a checkpoint')
+    if args.execute and args.policy == 'ddqn' and args.checkpoint is None:
+        parser.error('DDQN is the default controller: --execute requires --checkpoint and its matching --user-id; '
+                     'use --policy rule only to explicitly run the rule baseline')
     if args.checkpoint is not None and not args.checkpoint.is_file():
         parser.error('Checkpoint file does not exist')
     sqstn_root = ROOT.parent / 's-qstn'
     preview = {'mode': 'api_inference' if args.execute else 'preview', 'queries': args.queries,
                'user_id': args.user_id, 'profile': args.profile, 'policy': args.policy,
                'persist_rounds': args.persist_rounds, 'max_model_calls': args.max_model_calls,
+               'checkpoint': None if args.checkpoint is None else str(args.checkpoint),
+               'checkpoint_required_for_execution': args.policy == 'ddqn',
                'env_file': str(args.env_file), 'budget_file': str(sqstn_root / 'state/budget.json'),
                'training': False, 'paid_requests_enabled': args.execute}
     if not args.execute:

@@ -1,5 +1,6 @@
 """Exercise real Agent/provider wiring with fake HTTP responses, never paid calls."""
 import importlib.util
+import io
 import json
 from pathlib import Path
 import tempfile
@@ -100,14 +101,42 @@ class APIInferenceTests(unittest.TestCase):
         self.assertIn({'role': 'sqstn', 'reason': 'request_cap_reached'}, self.transport.failures)
         self.assertEqual(report['tasks'][0]['metrics']['unauthorized_executed_field_instances'], 0)
 
-    def test_preview_never_loads_env_client_or_makes_network_request(self):
+    def load_cli(self):
         spec = importlib.util.spec_from_file_location('api_cli_under_test', ROOT / 'run_online.py')
         cli = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(cli)
+        return cli
+
+    def test_preview_defaults_to_ddqn_without_loading_checkpoint_key_or_network(self):
+        cli = self.load_cli()
         with patch.object(cli, 'load_client', side_effect=AssertionError('preview loaded client')), \
+                patch.object(cli, 'load_policy', side_effect=AssertionError('preview loaded policy')), \
                 patch('urllib.request.urlopen', side_effect=AssertionError('preview made network request')), \
-                patch('builtins.print'):
+                patch('builtins.print') as printed:
             self.assertEqual(cli.main(['--queries', '40', '--user-id', 'alice', '--persist-rounds', '3']), 0)
+        report = json.loads(printed.call_args.args[0])
+        self.assertEqual(report['policy'], 'ddqn')
+        self.assertIsNone(report['checkpoint'])
+        self.assertTrue(report['checkpoint_required_for_execution'])
+
+    def test_missing_checkpoint_fails_before_key_loading_or_any_api_call(self):
+        cli = self.load_cli()
+        with patch.object(cli, 'load_client', side_effect=AssertionError('loaded client')), \
+                patch.object(cli, 'load_policy', side_effect=AssertionError('selected fallback policy')), \
+                patch('urllib.request.urlopen', side_effect=AssertionError('made network request')), \
+                patch('sys.stderr', new_callable=io.StringIO) as errors, self.assertRaises(SystemExit) as stopped:
+            cli.main(['--queries', '40', '--user-id', 'alice', '--persist-rounds', '3', '--execute'])
+        self.assertEqual(stopped.exception.code, 2)
+        self.assertIn('--execute requires --checkpoint', errors.getvalue())
+
+    def test_rule_baseline_requires_explicit_cli_selection(self):
+        cli = self.load_cli()
+        with patch('builtins.print') as printed:
+            self.assertEqual(cli.main(['--queries', '40', '--user-id', 'alice', '--persist-rounds', '3',
+                                       '--policy', 'rule']), 0)
+        report = json.loads(printed.call_args.args[0])
+        self.assertEqual(report['policy'], 'rule')
+        self.assertFalse(report['checkpoint_required_for_execution'])
 
     @unittest.skipUnless(importlib.util.find_spec('torch'), 'requires requirements-rl.txt')
     def test_restored_ddqn_is_frozen_and_cannot_restore_consent(self):

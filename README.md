@@ -75,7 +75,7 @@ From the repository root, install the online dependencies and create the Agent's
 local configuration once. PowerShell:
 
 ```powershell
-python -m pip install -r requirements-online.txt
+python -m pip install -r requirements-online.txt -r requirements-rl.txt
 if (-not (Test-Path rl_agent_structure/.env)) { Copy-Item rl_agent_structure/.env.example rl_agent_structure/.env }
 ```
 
@@ -96,14 +96,16 @@ Preview the configuration without loading a key or making any network requests:
 python rl_agent_structure/run_online.py --queries 40 41 --user-id online-demo --profile persistent_granters --persist-rounds 3
 ```
 
-Add `--execute` and a new output directory to enable paid Planner/S-QSTN calls:
+The default permission controller is **DDQN**. For execution, supply an existing
+checkpoint and its matching user ID, then add `--execute` and a new output directory:
 
 ```bash
-python rl_agent_structure/run_online.py --queries 40 41 --user-id online-demo --profile persistent_granters --persist-rounds 3 --max-model-calls 32 --execute --output rl_agent_structure/outputs/online_demo
+python rl_agent_structure/run_online.py --queries 40 41 --user-id YOUR_CHECKPOINT_USER --checkpoint PATH_TO_CHECKPOINT --profile persistent_granters --persist-rounds 3 --max-model-calls 32 --execute --output rl_agent_structure/outputs/online_ddqn_demo
 ```
 
-- **Default controller:** The explicit rule baseline; the Planner and S-QSTN use live APIs.
-- **Frozen DDQN:** Install `requirements-rl.txt`, then add `--policy ddqn --checkpoint PATH_TO_CHECKPOINT`; `--user-id` must match the checkpoint. No trained checkpoint is bundled.
+- **Default controller:** DDQN chooses permission actions; the Planner and S-QSTN use live APIs.
+- **Frozen DDQN:** `--checkpoint` is required for execution and `--user-id` must match it. No trained checkpoint is bundled. Missing checkpoints fail before any API call; there is no automatic fallback to rules.
+- **Explicit rule baseline:** Select `--policy rule` without a checkpoint only when testing the baseline. This is separate from the DDQN method.
 - **Shared budget:** Both API roles use `s-qstn/state/budget.json`, the existing USD 5 cumulative ceiling, and one combined request-attempt cap. There are no automatic paid retries.
 - **Session memory:** Queries in one invocation share consent and interaction history. A new invocation starts fresh; a model checkpoint does not restore consent.
 - **Manual items:** Unsupported questionnaire extensions or clarification requests stop at `awaiting_human`; the CLI does not invent an answer or resume a saved human inbox.
