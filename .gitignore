@@ -44,3 +44,8 @@ week67_workspace/
 .vscode/
 .DS_Store
 Thumbs.db
+
+# Reproduced LR/MAB results stay local
+/classification/results/
+/bandit_experiment/stated_policy_results/
+/online_bandit_experiment/results/

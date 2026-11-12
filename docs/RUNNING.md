@@ -125,7 +125,7 @@ python -m online_bandit_experiment.run_wp_fts --data data/processed/four_label_d
 These are label-feedback simulations. They do not authorize tool calls. The
 online runner performs sequential replay per held-out participant and uses
 separate training and personal-exploration settings. See the
-[Chinese reproduction guide](../online_mab/04_REPRODUCE_AND_ARTIFACTS_zh.md).
+[Chinese reproduction guide](../online_bandit_experiment/docs/04_REPRODUCE_AND_ARTIFACTS_zh.md).
 
 ## 6. Offline tests
 

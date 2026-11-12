@@ -1,7 +1,7 @@
 # Data, evidence and limits
 
 This ledger separates source data, synthetic interactions, functional checks and
-learning results. Compact result files are retained as original evidence; they
+learning results. LR/MAB result files are available through fixed historical-commit links; Agent result summaries remain in the current tree. These
 are not results from a new training campaign during the repository refresh.
 
 ## What is one sample?
@@ -24,9 +24,9 @@ Paraphrasing a query does not necessarily add a new permission-decision situatio
 
 | Component | Protocol and retained evidence | Interpretation |
 | --- | --- | --- |
-| Logistic regression | [Participant-held-out nested tuning](../classification/results/nested_tuning/participant_heldout/test_metrics.csv); 160 train / 41 test participants, 3,323 test rows | Four-label prediction; no tool execution |
-| Offline MAB | [Canonical participant-held-out summaries](../bandit_experiment/stated_policy_results/participant_heldout/test_metrics_summary.csv) | Selected-feedback training, frozen held-out decisions |
-| Online MAB | [WP-FTS v2](../online_bandit_experiment/results/participant_heldout_wp_fts_v2/test_metrics_summary.csv); 41 test participants, 20 replay streams | Synthetic sequential replay of stated-policy answers |
+| Logistic regression | [Participant-held-out nested tuning](https://github.com/SOPHIACHEN00/ai_agent_permission_experiment_backup/blob/e16543154ad882bb67a3ca5008a86b025488371c/classification/results/nested_tuning/participant_heldout/test_metrics.csv); 160 train / 41 test participants, 3,323 test rows | Four-label prediction; no tool execution |
+| Offline MAB | [Canonical participant-held-out summaries](https://github.com/SOPHIACHEN00/ai_agent_permission_experiment_backup/blob/e16543154ad882bb67a3ca5008a86b025488371c/bandit_experiment/stated_policy_results/participant_heldout/test_metrics_summary.csv) | Selected-feedback training, frozen held-out decisions |
+| Online MAB | [WP-FTS v2](https://github.com/SOPHIACHEN00/ai_agent_permission_experiment_backup/blob/e16543154ad882bb67a3ca5008a86b025488371c/online_bandit_experiment/results/participant_heldout_wp_fts_v2/test_metrics_summary.csv); 41 test participants, 20 replay streams | Synthetic sequential replay of stated-policy answers |
 | S-QSTN | [Single-turn final comparison](../s-qstn/docs/evaluation.md); 72 contexts × 3 profiles = 216 model replies, 568 matched human rows | Group response distributions, not individual accuracy or multi-turn fidelity |
 | Agent functionality, October 29 | [65-task summary](../results/rl/functional_65/summary.json) | 65/65 declared flows, scripted planner, explicit fixture replies, rules, zero optimizer updates |
 | DDQN exploration, November 3 | [Exploration summary](../results/rl/exploration/analysis_summary.json), [mechanism diagnostics](../results/rl/exploration/mechanism_diagnostics.json), [audit](../results/rl/exploration/local_audit.json) | Six native DDQN runs on Q40/Q41/Q55, constant allow-reuse fixture |
@@ -47,7 +47,7 @@ accuracy alone. These rates describe label errors, not measured data exfiltratio
 WP-FTS all-round JEM is 51.083%, versus 43.911% for the canonical greedy reference
 and 42.212% for the matched frozen control. The canonical-reference gain is
 7.173 percentage points, with participant-cluster 95% CI [2.789, 12.162].
-False-allow remains 98.538%. The [Chinese result guide](../online_mab/README.md)
+False-allow remains 98.538%. The [Chinese result guide](../online_bandit_experiment/docs/README.md)
 explains the denominators and the distinction between the two controls.
 
 ### What the DDQN run establishes

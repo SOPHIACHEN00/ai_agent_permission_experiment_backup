@@ -40,7 +40,6 @@ the execution guard. During frozen inference, the task loop runs without DDQN up
 | [classification](classification/README.md) | Flat, independent cumulative-threshold, and factored logistic regression | `classification/run_four_label_benchmark.py` |
 | [bandit_experiment](bandit_experiment/README.md) | Canonical offline stated-policy contextual bandits | `bandit_experiment/run_stated_policy_bandit.py` |
 | [online_bandit_experiment](online_bandit_experiment/README.md) | Warm-started Personalized Factored Thompson Sampling (WP-FTS) | `python -m online_bandit_experiment.run_wp_fts` |
-| [online_mab](online_mab/README.md) | Detailed Chinese MAB methods and final result interpretation | Documentation |
 | [in_context_learning](in_context_learning/README.md) | Retained four-label ICL implementation and S-QSTN adapter | `in_context_learning/run_ic_four_label.py` |
 | [data/processed](data/processed/README.md) | Four-label survey table and build metadata | 16,361 answers, 201 participants |
 | [external/ai-agent-permissions](external/ai-agent-permissions/README.md) | Attributed upstream task and survey inputs | `queries.json`, `data/` |

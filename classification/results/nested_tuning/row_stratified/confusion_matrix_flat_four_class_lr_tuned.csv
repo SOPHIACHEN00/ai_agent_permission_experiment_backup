@@ -1,5 +1,0 @@
-,"pred_0_No, never share","pred_1_No, but ask me next time","pred_2_Yes, but ask me next time","pred_3_Yes, always share"
-"true_0_No, never share",241,102,50,79
-"true_1_No, but ask me next time",92,113,72,67
-"true_2_Yes, but ask me next time",204,265,589,354
-"true_3_Yes, always share",102,152,197,594
