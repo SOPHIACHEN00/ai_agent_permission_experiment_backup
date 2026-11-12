@@ -1,9 +1,34 @@
-# Repository refresh validation — 2026-11-11
+# Repository validation
 
 The checks below validate the packaged current code. They are separate from the
 historical research results in [DATA_AND_EVIDENCE.md](DATA_AND_EVIDENCE.md).
 
-## Offline suites
+## Online setup update — 2026-11-12
+
+Verified the new API inference wiring without using a real key or sending a paid
+request. Provider metadata and completion responses were mocked in API tests.
+
+| Check | Result |
+| --- | --- |
+| Agent core, including 7 new API integration tests | 182 collected: 174 passed, 8 optional historical-report skips |
+| S-QSTN, including 5 new setup/transport tests | 43 passed |
+| Affected suites combined | **217 passed, 8 skipped, 0 failures** |
+| Existing no-API runner | **65/65 tasks**, 5/5 consent lifecycle checks, 0 network attempts, 0 optimizer updates |
+
+The integration tests exercise actual structured planning, S-QSTN prompt
+compilation, consent reuse, dispatcher/monitor audits and stateful mock tools,
+with fake HTTP completions. They check refusal, invalid tool proposals, manual
+extension waiting, a shared request cap and budget, preview isolation, checkpoint
+user matching and frozen weights/replay. Setup tests cover env precedence,
+placeholder rejection, non-overwriting ledger initialization, duplicate JSON keys
+and credential redaction in provider-error records.
+
+Live provider availability, paid-model task quality and online training were not
+tested. These checks establish wiring and authorization behavior, not new RL
+performance evidence. The existing GitHub workflow also runs the full offline
+suite on pull requests.
+
+## Original refresh offline suites — 2026-11-11
 
 Executed on Windows with Python 3.12, the declared simulator dependencies and
 native PyTorch. No provider keys or paid API calls were used.

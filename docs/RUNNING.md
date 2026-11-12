@@ -1,8 +1,10 @@
 # Running the current implementation
 
 Run commands from the repository root unless a command changes directory. Use
-Python 3.12 and a virtual environment. All examples below are offline; none sends
-an LLM request. Use a fresh output directory to preserve existing evidence.
+Python 3.12 and a virtual environment. The functional and research-diagnostic
+examples below are offline. Only the explicitly marked `--execute`/`--send` modes
+in the [online API setup](../README.md#online-api-setup) send paid LLM requests.
+Use a fresh output directory to preserve existing evidence.
 
 ## Installation
 
@@ -21,6 +23,7 @@ Install only the components you need:
 | CPU DDQN and plots | `python -m pip install -r requirements-rl.txt` |
 | Logistic regression and MAB | `python -m pip install -r requirements.txt` |
 | S-QSTN prompt compilation and integration | `python -m pip install -r s-qstn/requirements.txt` |
+| Live Planner + S-QSTN API inference | `python -m pip install -r requirements-online.txt` |
 | ICL prompt preparation and tests | `python -m pip install -r in_context_learning/requirements.txt` |
 
 S-QSTN pins its numerical stack. For all-module verification, install the pinned
@@ -78,9 +81,18 @@ and `broad_restrictors`.
 
 `--send` is the explicit paid mode. It requires a locally configured provider key
 and an existing cumulative budget ledger in `s-qstn/state/budget.json`. The
-distribution omits credentials and runtime budget state. See
+distribution omits credentials and runtime budget state. `--init-budget` creates
+a new ledger explicitly and refuses to overwrite one. See
 [the S-QSTN README](../s-qstn/README.md) before using that mode. Repository tests
 and the examples above do not require a key or a budget ledger.
+
+For the full Agent with real LLM planning and S-QSTN replies, use
+[`rl_agent_structure/run_online.py`](../rl_agent_structure/README.md#online-api-inference).
+It previews by default and requires `--execute` for paid calls. The default
+controller is the rule baseline; `--policy ddqn --checkpoint ...` selects frozen
+CPU DDQN inference. Both API roles share one key and one cumulative budget ledger.
+This entry performs no online RL updates. The API wiring is covered by mocked
+provider tests, not a live paid validation run.
 
 ## 4. Logistic regression
 

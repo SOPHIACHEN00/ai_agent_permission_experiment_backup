@@ -19,7 +19,19 @@ def main() -> int:
     parser.add_argument('--sample-id', default='0', help='Stable synthetic-user/sampling identifier')
     parser.add_argument('--output', type=Path, help='Prompt JSON path; default outputs/prompt.json')
     parser.add_argument('--send', action='store_true', help='Make ONE PAID OpenRouter call, using the existing cumulative ledger')
+    parser.add_argument('--init-budget', action='store_true',
+                        help='Create a NEW USD 5 cumulative ledger; no API call and no overwrite')
     args = parser.parse_args()
+    if args.init_budget:
+        if args.send or args.list_items or args.query_id is not None or args.tool or args.data_item or args.profile or args.output:
+            parser.error('--init-budget is a separate setup operation')
+        from sqstn.client import initialize_budget
+        try:
+            path = initialize_budget(ROOT)
+        except FileExistsError:
+            parser.error('Budget state already exists; keep the existing ledger instead of resetting it')
+        print(json.dumps({'budget_file': str(path), 'limit_usd': '5.00', 'paid_call': False}))
+        return 0
     sim = RetrievalSimulator(ROOT)
     if args.list_items:
         if args.send:

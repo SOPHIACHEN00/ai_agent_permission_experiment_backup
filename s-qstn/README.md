@@ -46,21 +46,51 @@ questionnaire items.
 
 The adapter compiles prompts without loading `.env` or invoking the provider.
 Its private simulator audit, including persona information, is not a DDQN input.
+The Agent's opt-in [`run_online.py`](../rl_agent_structure/run_online.py) supplies
+the real provider transport and shares this package's cumulative budget ledger.
 
 ## Optional paid response mode
 
 `run.py --send` explicitly sends one OpenRouter request. It needs
-`OPENROUTER_API_KEY` from the environment or a local `.env` based on `.env.example`,
-and an existing cumulative `state/budget.json`. No ledger is created automatically
-by the CLI. Runtime state and credentials are excluded from Git.
+`OPENROUTER_API_KEY` from the environment or `s-qstn/.env` based on
+[.env.example](.env.example), and an existing cumulative `state/budget.json`.
+The environment takes precedence. Placeholder keys are rejected before network
+access. Runtime state and credentials are excluded from Git.
 
-For a separately authorized **new** campaign, the current client expects a ledger
-with `{"limit_usd":"5.00","jobs":{}}`. Only initialize an empty ledger for a genuinely
-new campaign; preserve and reconcile an existing ledger when resuming. The current
+From the repository root, first install the requirements shown above. PowerShell:
+
+```powershell
+if (-not (Test-Path s-qstn/.env)) { Copy-Item s-qstn/.env.example s-qstn/.env }
+```
+
+Replace the placeholder with your OpenRouter API key. For a **new** campaign only:
+
+```bash
+python s-qstn/run.py --init-budget
+python s-qstn/run.py --profile persistent_granters --sample-id demo --send
+```
+
+`--init-budget` creates the initial USD 5 ledger without a network request and
+refuses to overwrite an existing file. Preview and `--send` never create a ledger
+automatically. Preserve an existing ledger when resuming. The current
 provider enforces the configured snapshot, a USD 5 cumulative ceiling, an exclusive
 process lock, reservations and no automatic paid retries. The ceiling is an
 implementation constraint, not authorization to spend it. Provider availability
 and metadata are checked at execution time.
+
+The provider is configured in `sqstn/provider.py` for `openai/o4-mini`, verified
+against the `openai/o4-mini-2025-04-16` snapshot. This is the repository's existing
+configuration, not a claim that the provider is currently available. There are
+no model/base-URL environment overrides. Authentication uses a Bearer token;
+permissions use a strict four-answer JSON schema, and the Agent planner uses JSON
+object mode followed by local contract validation. See the official
+[OpenRouter authentication](https://openrouter.ai/docs/api_reference/authentication)
+and [structured-output documentation](https://openrouter.ai/docs/guides/features/structured-outputs).
+
+The combined Agent reads `rl_agent_structure/.env` by default and passes that key
+explicitly to both roles. Standalone S-QSTN reads `s-qstn/.env`; a shared process
+environment variable works for either entry. Neither key is needed for offline
+prompt previews, local mock tools or DDQN itself.
 
 ## Package map and tests
 
