@@ -8,7 +8,7 @@
 online_bandit_experiment/results/participant_heldout_wp_fts_v2/
 ```
 
-当前目录只发布 v2 的紧凑最终结果。早期 v1 协议及其运行日志已从当前树移除。
+这是历史运行的输出目录；当前 main 不分发 LR/MAB 结果文件。历史结果通过文档中的固定提交链接查看，重新运行会生成本地输出。
 
 ## 2. 推荐运行环境
 
@@ -85,7 +85,7 @@ personal_exploration = 0.5
 | `offline_greedy_reference_predictions.csv` | canonical reference 的逐行预测 |
 | `leakage_checks.json` | split、feature、bundle timing、state update 和三角色 alignment 检查 |
 
-逐行 `test_trajectory_events.csv`、`offline_greedy_reference_predictions.csv` 和 bootstrap replicate 明细由复现运行生成，本仓库只保留紧凑汇总及配置，不附带这些大体积日志。下方审计数字描述原完整运行，而不是当前目录的CSV行数总和。
+这些结果文件由复现运行生成，不随当前 main 分发。下方审计数字描述原完整运行；历史紧凑汇总可通过固定提交链接查看。
 
 ## 6. 结果审计数字
 
@@ -146,6 +146,6 @@ bandit_experiment/stated_policy_results/participant_heldout/
 
 中文解释和全部表格见：
 
-- [最终结果摘要](./01_RESULT_SUMMARY_zh.md)
-- [Online MAB 方法流程](./02_ONLINE_MAB_METHOD_zh.md)
-- [Offline vs Online 对比](./03_OFFLINE_VS_ONLINE_COMPARISON_zh.md)
+- [最终结果摘要](01_RESULT_SUMMARY_zh.md)
+- [Online MAB 方法流程](02_ONLINE_MAB_METHOD_zh.md)
+- [Offline vs Online 对比](03_OFFLINE_VS_ONLINE_COMPARISON_zh.md)

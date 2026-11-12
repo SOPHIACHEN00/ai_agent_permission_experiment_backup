@@ -15,11 +15,13 @@ python bandit_experiment/run_stated_policy_bandit.py --data data/processed/four_
 python -B -m unittest bandit_experiment.test_stated_policy_bandit -v
 ```
 
-Run from the repository root. The canonical final evidence is in
-[stated_policy_results/participant_heldout](stated_policy_results/participant_heldout/).
+Run from the repository root. The canonical historical evidence is archived at
+[stated_policy_results/participant_heldout](https://github.com/SOPHIACHEN00/ai_agent_permission_experiment_backup/tree/e16543154ad882bb67a3ca5008a86b025488371c/bandit_experiment/stated_policy_results/participant_heldout).
 Evaluation-only full-information reward vectors are a diagnostic output; they
 must not be fed back to the bandit during selected-feedback training.
 
 The old weighted/sensitivity implementations are excluded. Compare the retained
 baseline with [WP-FTS](../online_bandit_experiment/README.md), whose participant
 state updates during held-out sequential replay.
+
+Result CSV/JSON files are not distributed on `main`. Historical result links point to a fixed Git commit. Reproduction commands generate new local outputs.

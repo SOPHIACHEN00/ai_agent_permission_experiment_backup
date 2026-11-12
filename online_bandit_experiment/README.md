@@ -26,9 +26,11 @@ python -B -m unittest online_bandit_experiment.test_wp_fts -v
 Run from the repository root. `wp_fts.py` defines the learner and replay protocol;
 `run_wp_fts.py` implements tuning, evaluation and participant-cluster bootstrap.
 
-Final results are retained in
-[results/participant_heldout_wp_fts_v2](results/participant_heldout_wp_fts_v2/).
+Historical final results are archived at
+[results/participant_heldout_wp_fts_v2](https://github.com/SOPHIACHEN00/ai_agent_permission_experiment_backup/tree/e16543154ad882bb67a3ca5008a86b025488371c/online_bandit_experiment/results/participant_heldout_wp_fts_v2).
 All-round JEM improves by 7.173 percentage points over the canonical reference
 and 8.872 points over the matched frozen control. False-allow remains 98.538%,
 so improved label fidelity is not an authorization guarantee. See
-[the Chinese method and results](../online_mab/README.md).
+[the Chinese method and results](docs/README.md).
+
+Result CSV/JSON files are not distributed on `main`. Historical result links point to a fixed Git commit. Reproduction commands generate new local outputs.
