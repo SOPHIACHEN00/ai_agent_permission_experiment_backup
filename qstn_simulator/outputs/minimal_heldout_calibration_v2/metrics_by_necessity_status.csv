@@ -1,3 +1,0 @@
-scope,necessity_status,condition_id,n_rows,n_participants,accuracy,macro_f1,distribution_tv_distance,over_sharing_rate,under_sharing_rate,predicted_share_rate,human_share_rate
-necessity_status,incorrect_explicit,raw_participant_profile_plus_empirical_card,32,30,0.28125,0.2193156108597285,0.15625,0.2,0.5833333333333334,0.28125,0.375
-necessity_status,necessary,raw_participant_profile_plus_empirical_card,58,30,0.3448275862068966,0.22209234365867914,0.27586206896551724,0.5333333333333333,0.13953488372093023,0.7758620689655172,0.7413793103448276

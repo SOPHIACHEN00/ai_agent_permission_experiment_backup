@@ -104,15 +104,17 @@ class ScreeningTests(unittest.TestCase):
 
     def test_one_openrouter_key_is_sufficient(self) -> None:
         with TemporaryDirectory() as directory:
-            env_file = Path(directory) / ".env"
+            env_file = Path(directory) / "synthetic_credentials.fixture"
             env_file.write_text("OPENROUTER_API_KEY=sk-test\n", encoding="utf-8")
             with patch.dict("os.environ", {"OPENROUTER_API_KEY": "sk-test", "OPENAI_API_KEY": ""}):
                 clients = build_clients(list(MODEL_SPECS.values()), env_file)
         self.assertEqual(set(clients), {"openrouter"})
+        for client in clients.values():
+            client.close()
 
     def test_todo_key_in_env_is_rejected_before_network(self) -> None:
         with TemporaryDirectory() as directory:
-            env_file = Path(directory) / ".env"
+            env_file = Path(directory) / "synthetic_credentials.fixture"
             env_file.write_text(
                 "OPENROUTER_API_KEY=TODO_REPLACE_WITH_YOUR_OPENROUTER_API_KEY\n",
                 encoding="utf-8",

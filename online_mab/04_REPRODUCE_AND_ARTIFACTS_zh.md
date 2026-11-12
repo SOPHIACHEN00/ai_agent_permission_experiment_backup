@@ -8,24 +8,24 @@
 online_bandit_experiment/results/participant_heldout_wp_fts_v2/
 ```
 
-早期 v1 目录仍然保留，但它使用了尚未修正 global training / online exploration 混合问题的协议，不作为最终论文结果。
+当前目录只发布 v2 的紧凑最终结果。早期 v1 协议及其运行日志已从当前树移除。
 
 ## 2. 推荐运行环境
 
-从项目目录 `ai_agent_permission_experiment` 运行，使用项目虚拟环境：
+从仓库根目录运行，先创建并激活 Python 3.12 虚拟环境，再安装依赖：
 
 ```powershell
-.\.venv\Scripts\python.exe
+python -m pip install -r requirements.txt
 ```
 
-系统 Python 缺少本实验所需的 SciPy，不建议直接使用系统 `python`。
+下方命令中的 `.venv` 指你自己创建的环境；仓库不包含本地虚拟环境。
 
 ## 3. 运行最终 online MAB
 
 ```powershell
 .\.venv\Scripts\python.exe -m online_bandit_experiment.run_wp_fts `
   --data data\processed\four_label_dataset.csv `
-  --out online_bandit_experiment\results\participant_heldout_wp_fts_v2 `
+  --out outputs\online_mab_reproduction `
   --bootstrap-replicates 5000
 ```
 
@@ -64,7 +64,7 @@ personal_exploration = 0.5
   bandit_experiment.test_stated_policy_bandit -v
 ```
 
-最终验证结果：14/14 tests passed。
+原协议验证结果：14/14 tests passed。新环境应重新执行上述测试。
 
 ## 5. 结果文件说明
 
@@ -84,6 +84,8 @@ personal_exploration = 0.5
 | `offline_greedy_reference_summary.csv` | canonical global-greedy reference 的每 stream 汇总 |
 | `offline_greedy_reference_predictions.csv` | canonical reference 的逐行预测 |
 | `leakage_checks.json` | split、feature、bundle timing、state update 和三角色 alignment 检查 |
+
+逐行 `test_trajectory_events.csv`、`offline_greedy_reference_predictions.csv` 和 bootstrap replicate 明细由复现运行生成，本仓库只保留紧凑汇总及配置，不附带这些大体积日志。下方审计数字描述原完整运行，而不是当前目录的CSV行数总和。
 
 ## 6. 结果审计数字
 

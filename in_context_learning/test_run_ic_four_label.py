@@ -10,7 +10,7 @@ from types import SimpleNamespace
 
 import pandas as pd
 
-from run_ic_four_label import (
+from in_context_learning.run_ic_four_label import (
     build_prompt, make_bundles, make_jobs, max_call_cost_usd,
     parse_response, tracked_spend_usd, usage_and_cost,
 )

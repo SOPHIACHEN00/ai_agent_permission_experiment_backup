@@ -1,7 +1,0 @@
-method,seed,successes,episodes,success_rate,requests,fallbacks,questions_after_denial,protocol_disables
-ddqn_b,1301,3,4,0.75,7,1,0,1
-ddqn_b,1601,3,4,0.75,7,1,0,1
-wp_fts_public_transfer_v0,1301,3,4,0.75,7,1,0,1
-wp_fts_public_transfer_v0,1601,3,4,0.75,7,1,0,1
-fixed_rule,1301,3,4,0.75,7,1,0,1
-fixed_rule,1601,3,4,0.75,7,1,0,1

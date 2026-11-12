@@ -1,0 +1,559 @@
+{
+  "status": "passed",
+  "audit_kind": "independent_receipt_and_reward_reconciliation",
+  "training_tasks": 360,
+  "evaluation_tasks": 72,
+  "actual_unauthorized_fields": 0,
+  "same_initial_network_per_seed": true,
+  "same_initial_optimizer_and_rng_per_seed": true,
+  "same_zero_step_action_candidate_reward_trajectories_per_seed": true,
+  "rule_warmup_tasks": 0,
+  "auxiliary_supervision": false,
+  "runs": [
+    {
+      "seed": 3,
+      "arm": "candidate",
+      "train": {
+        "tasks": 60,
+        "successes": 59,
+        "timely_successes": 35,
+        "actual_field_instances": 423,
+        "committed_effects": 98,
+        "updates_recorded": 1973,
+        "totals": {
+          "ER": 0,
+          "ED": 28,
+          "M": 70,
+          "K": 388,
+          "PB": 389,
+          "control_steps": 1974
+        }
+      },
+      "evaluations": [
+        {
+          "after_tasks": 0,
+          "tasks": 3,
+          "successes": 2,
+          "timely_successes": 0,
+          "actual_field_instances": 19,
+          "committed_effects": 4,
+          "updates_recorded": 0,
+          "totals": {
+            "ER": 0,
+            "ED": 1,
+            "M": 1,
+            "K": 18,
+            "PB": 21,
+            "control_steps": 158
+          }
+        },
+        {
+          "after_tasks": 20,
+          "tasks": 3,
+          "successes": 1,
+          "timely_successes": 0,
+          "actual_field_instances": 11,
+          "committed_effects": 1,
+          "updates_recorded": 0,
+          "totals": {
+            "ER": 0,
+            "ED": 0,
+            "M": 3,
+            "K": 16,
+            "PB": 18,
+            "control_steps": 169
+          }
+        },
+        {
+          "after_tasks": 40,
+          "tasks": 3,
+          "successes": 2,
+          "timely_successes": 2,
+          "actual_field_instances": 12,
+          "committed_effects": 4,
+          "updates_recorded": 0,
+          "totals": {
+            "ER": 0,
+            "ED": 3,
+            "M": 3,
+            "K": 18,
+            "PB": 23,
+            "control_steps": 85
+          }
+        },
+        {
+          "after_tasks": 60,
+          "tasks": 3,
+          "successes": 3,
+          "timely_successes": 3,
+          "actual_field_instances": 23,
+          "committed_effects": 5,
+          "updates_recorded": 0,
+          "totals": {
+            "ER": 0,
+            "ED": 3,
+            "M": 4,
+            "K": 10,
+            "PB": 24,
+            "control_steps": 39
+          }
+        }
+      ]
+    },
+    {
+      "seed": 3,
+      "arm": "family",
+      "train": {
+        "tasks": 60,
+        "successes": 56,
+        "timely_successes": 46,
+        "actual_field_instances": 429,
+        "committed_effects": 97,
+        "updates_recorded": 1982,
+        "totals": {
+          "ER": 0,
+          "ED": 37,
+          "M": 68,
+          "K": 376,
+          "PB": 387,
+          "control_steps": 1983
+        }
+      },
+      "evaluations": [
+        {
+          "after_tasks": 0,
+          "tasks": 3,
+          "successes": 2,
+          "timely_successes": 0,
+          "actual_field_instances": 19,
+          "committed_effects": 4,
+          "updates_recorded": 0,
+          "totals": {
+            "ER": 0,
+            "ED": 1,
+            "M": 1,
+            "K": 18,
+            "PB": 21,
+            "control_steps": 158
+          }
+        },
+        {
+          "after_tasks": 20,
+          "tasks": 3,
+          "successes": 0,
+          "timely_successes": 0,
+          "actual_field_instances": 2,
+          "committed_effects": 1,
+          "updates_recorded": 0,
+          "totals": {
+            "ER": 0,
+            "ED": 0,
+            "M": 3,
+            "K": 16,
+            "PB": 21,
+            "control_steps": 196
+          }
+        },
+        {
+          "after_tasks": 40,
+          "tasks": 3,
+          "successes": 0,
+          "timely_successes": 0,
+          "actual_field_instances": 0,
+          "committed_effects": 0,
+          "updates_recorded": 0,
+          "totals": {
+            "ER": 0,
+            "ED": 0,
+            "M": 3,
+            "K": 15,
+            "PB": 18,
+            "control_steps": 196
+          }
+        },
+        {
+          "after_tasks": 60,
+          "tasks": 3,
+          "successes": 1,
+          "timely_successes": 0,
+          "actual_field_instances": 5,
+          "committed_effects": 2,
+          "updates_recorded": 0,
+          "totals": {
+            "ER": 0,
+            "ED": 0,
+            "M": 4,
+            "K": 22,
+            "PB": 22,
+            "control_steps": 185
+          }
+        }
+      ]
+    },
+    {
+      "seed": 7,
+      "arm": "candidate",
+      "train": {
+        "tasks": 60,
+        "successes": 55,
+        "timely_successes": 37,
+        "actual_field_instances": 413,
+        "committed_effects": 96,
+        "updates_recorded": 1909,
+        "totals": {
+          "ER": 0,
+          "ED": 24,
+          "M": 54,
+          "K": 307,
+          "PB": 370,
+          "control_steps": 1910
+        }
+      },
+      "evaluations": [
+        {
+          "after_tasks": 0,
+          "tasks": 3,
+          "successes": 1,
+          "timely_successes": 0,
+          "actual_field_instances": 11,
+          "committed_effects": 1,
+          "updates_recorded": 0,
+          "totals": {
+            "ER": 0,
+            "ED": 0,
+            "M": 0,
+            "K": 13,
+            "PB": 15,
+            "control_steps": 170
+          }
+        },
+        {
+          "after_tasks": 20,
+          "tasks": 3,
+          "successes": 1,
+          "timely_successes": 0,
+          "actual_field_instances": 11,
+          "committed_effects": 1,
+          "updates_recorded": 0,
+          "totals": {
+            "ER": 0,
+            "ED": 0,
+            "M": 3,
+            "K": 16,
+            "PB": 18,
+            "control_steps": 171
+          }
+        },
+        {
+          "after_tasks": 40,
+          "tasks": 3,
+          "successes": 1,
+          "timely_successes": 0,
+          "actual_field_instances": 23,
+          "committed_effects": 5,
+          "updates_recorded": 0,
+          "totals": {
+            "ER": 0,
+            "ED": 3,
+            "M": 4,
+            "K": 30,
+            "PB": 24,
+            "control_steps": 170
+          }
+        },
+        {
+          "after_tasks": 60,
+          "tasks": 3,
+          "successes": 1,
+          "timely_successes": 0,
+          "actual_field_instances": 11,
+          "committed_effects": 1,
+          "updates_recorded": 0,
+          "totals": {
+            "ER": 0,
+            "ED": 0,
+            "M": 1,
+            "K": 14,
+            "PB": 16,
+            "control_steps": 172
+          }
+        }
+      ]
+    },
+    {
+      "seed": 7,
+      "arm": "family",
+      "train": {
+        "tasks": 60,
+        "successes": 59,
+        "timely_successes": 42,
+        "actual_field_instances": 421,
+        "committed_effects": 99,
+        "updates_recorded": 2053,
+        "totals": {
+          "ER": 0,
+          "ED": 24,
+          "M": 66,
+          "K": 348,
+          "PB": 386,
+          "control_steps": 2054
+        }
+      },
+      "evaluations": [
+        {
+          "after_tasks": 0,
+          "tasks": 3,
+          "successes": 1,
+          "timely_successes": 0,
+          "actual_field_instances": 11,
+          "committed_effects": 1,
+          "updates_recorded": 0,
+          "totals": {
+            "ER": 0,
+            "ED": 0,
+            "M": 0,
+            "K": 13,
+            "PB": 15,
+            "control_steps": 170
+          }
+        },
+        {
+          "after_tasks": 20,
+          "tasks": 3,
+          "successes": 1,
+          "timely_successes": 0,
+          "actual_field_instances": 12,
+          "committed_effects": 1,
+          "updates_recorded": 0,
+          "totals": {
+            "ER": 0,
+            "ED": 1,
+            "M": 3,
+            "K": 16,
+            "PB": 18,
+            "control_steps": 170
+          }
+        },
+        {
+          "after_tasks": 40,
+          "tasks": 3,
+          "successes": 2,
+          "timely_successes": 0,
+          "actual_field_instances": 11,
+          "committed_effects": 4,
+          "updates_recorded": 0,
+          "totals": {
+            "ER": 0,
+            "ED": 2,
+            "M": 4,
+            "K": 29,
+            "PB": 24,
+            "control_steps": 170
+          }
+        },
+        {
+          "after_tasks": 60,
+          "tasks": 3,
+          "successes": 3,
+          "timely_successes": 3,
+          "actual_field_instances": 20,
+          "committed_effects": 5,
+          "updates_recorded": 0,
+          "totals": {
+            "ER": 0,
+            "ED": 0,
+            "M": 2,
+            "K": 21,
+            "PB": 22,
+            "control_steps": 20
+          }
+        }
+      ]
+    },
+    {
+      "seed": 11,
+      "arm": "candidate",
+      "train": {
+        "tasks": 60,
+        "successes": 57,
+        "timely_successes": 27,
+        "actual_field_instances": 415,
+        "committed_effects": 97,
+        "updates_recorded": 2344,
+        "totals": {
+          "ER": 0,
+          "ED": 23,
+          "M": 66,
+          "K": 417,
+          "PB": 386,
+          "control_steps": 2345
+        }
+      },
+      "evaluations": [
+        {
+          "after_tasks": 0,
+          "tasks": 3,
+          "successes": 2,
+          "timely_successes": 0,
+          "actual_field_instances": 17,
+          "committed_effects": 3,
+          "updates_recorded": 0,
+          "totals": {
+            "ER": 0,
+            "ED": 2,
+            "M": 3,
+            "K": 23,
+            "PB": 20,
+            "control_steps": 162
+          }
+        },
+        {
+          "after_tasks": 20,
+          "tasks": 3,
+          "successes": 2,
+          "timely_successes": 0,
+          "actual_field_instances": 18,
+          "committed_effects": 4,
+          "updates_recorded": 0,
+          "totals": {
+            "ER": 0,
+            "ED": 0,
+            "M": 4,
+            "K": 24,
+            "PB": 22,
+            "control_steps": 160
+          }
+        },
+        {
+          "after_tasks": 40,
+          "tasks": 3,
+          "successes": 1,
+          "timely_successes": 0,
+          "actual_field_instances": 11,
+          "committed_effects": 1,
+          "updates_recorded": 0,
+          "totals": {
+            "ER": 0,
+            "ED": 0,
+            "M": 3,
+            "K": 17,
+            "PB": 18,
+            "control_steps": 169
+          }
+        },
+        {
+          "after_tasks": 60,
+          "tasks": 3,
+          "successes": 2,
+          "timely_successes": 0,
+          "actual_field_instances": 9,
+          "committed_effects": 4,
+          "updates_recorded": 0,
+          "totals": {
+            "ER": 0,
+            "ED": 0,
+            "M": 3,
+            "K": 28,
+            "PB": 23,
+            "control_steps": 164
+          }
+        }
+      ]
+    },
+    {
+      "seed": 11,
+      "arm": "family",
+      "train": {
+        "tasks": 60,
+        "successes": 54,
+        "timely_successes": 38,
+        "actual_field_instances": 393,
+        "committed_effects": 94,
+        "updates_recorded": 2295,
+        "totals": {
+          "ER": 0,
+          "ED": 16,
+          "M": 70,
+          "K": 418,
+          "PB": 390,
+          "control_steps": 2296
+        }
+      },
+      "evaluations": [
+        {
+          "after_tasks": 0,
+          "tasks": 3,
+          "successes": 2,
+          "timely_successes": 0,
+          "actual_field_instances": 17,
+          "committed_effects": 3,
+          "updates_recorded": 0,
+          "totals": {
+            "ER": 0,
+            "ED": 2,
+            "M": 3,
+            "K": 23,
+            "PB": 20,
+            "control_steps": 162
+          }
+        },
+        {
+          "after_tasks": 20,
+          "tasks": 3,
+          "successes": 2,
+          "timely_successes": 0,
+          "actual_field_instances": 9,
+          "committed_effects": 4,
+          "updates_recorded": 0,
+          "totals": {
+            "ER": 0,
+            "ED": 0,
+            "M": 3,
+            "K": 28,
+            "PB": 23,
+            "control_steps": 172
+          }
+        },
+        {
+          "after_tasks": 40,
+          "tasks": 3,
+          "successes": 2,
+          "timely_successes": 0,
+          "actual_field_instances": 16,
+          "committed_effects": 3,
+          "updates_recorded": 0,
+          "totals": {
+            "ER": 0,
+            "ED": 0,
+            "M": 4,
+            "K": 23,
+            "PB": 22,
+            "control_steps": 193
+          }
+        },
+        {
+          "after_tasks": 60,
+          "tasks": 3,
+          "successes": 1,
+          "timely_successes": 0,
+          "actual_field_instances": 14,
+          "committed_effects": 2,
+          "updates_recorded": 0,
+          "totals": {
+            "ER": 0,
+            "ED": 1,
+            "M": 3,
+            "K": 21,
+            "PB": 21,
+            "control_steps": 182
+          }
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Uses stored runtime oracle outcome; raw tool values are not in audit logs.",
+    "Fixed Allow Reuse fixture is not personal-preference evidence.",
+    "Three seeds and repeated queries are diagnostic, not convergence proof."
+  ]
+}

@@ -1,0 +1,2 @@
+# Offline four-action Agent, monitor and mock-tool execution.
+jsonschema>=4.23,<5

@@ -37,8 +37,8 @@ from run_ic_four_label import (  # noqa: E402
     save_json,
 )
 
-sys.path.insert(0, str(PROJECT_DIR / "src"))
-from run_four_label_benchmark import compute_metrics  # noqa: E402
+sys.path.insert(0, str(PROJECT_DIR))
+from classification.run_four_label_benchmark import compute_metrics  # noqa: E402
 
 
 @dataclass(frozen=True)
@@ -209,17 +209,20 @@ def completion_for_job(clients: dict[str, Any], spec: ModelSpec, prompt: str, ma
     )
 
 
-def build_clients(models: list[ModelSpec], env_file: Path) -> dict[str, Any]:
+def build_clients(models: list[ModelSpec], env_file: Path | None) -> dict[str, Any]:
     from dotenv import dotenv_values
     from openai import OpenAI
 
-    if not env_file.is_file():
+    if env_file is not None and not env_file.is_file():
         raise FileNotFoundError(f"Environment file not found: {env_file}")
     if any(spec.route != "openrouter" for spec in models):
         raise ValueError("All screening models must use OpenRouter")
-    api_key = (dotenv_values(env_file).get("OPENROUTER_API_KEY") or "").strip()
-    if not api_key or api_key == "TODO_REPLACE_WITH_YOUR_OPENROUTER_API_KEY":
-        raise RuntimeError("Replace the OPENROUTER_API_KEY TODO in .env before --execute")
+    settings = dotenv_values(env_file) if env_file is not None else os.environ
+    api_key = (settings.get("OPENROUTER_API_KEY") or "").strip()
+    if not api_key:
+        raise RuntimeError("Provide OPENROUTER_API_KEY through the environment or explicit --env-file before --execute")
+    if api_key == "TODO_REPLACE_WITH_YOUR_OPENROUTER_API_KEY":
+        raise RuntimeError("Replace the OPENROUTER_API_KEY TODO before --execute")
     os.environ["OPENROUTER_API_KEY"] = api_key
     return {"openrouter": OpenAI(
         api_key=api_key, base_url=OPENROUTER_BASE_URL,
@@ -343,7 +346,8 @@ def main() -> None:
     parser.add_argument("--max-output-tokens", type=int, default=8000)
     parser.add_argument("--max-cost-usd", type=float, default=24.0)
     parser.add_argument("--prior-spend-usd", type=float, default=0.0)
-    parser.add_argument("--env-file", type=Path, default=PROJECT_DIR / "qstn_simulator/.env")
+    parser.add_argument("--env-file", type=Path, default=None,
+                        help="Optional explicit credential file; never loaded during preparation")
     parser.add_argument("--execute", action="store_true")
     parser.add_argument("--max-new-calls", type=int, default=None)
     parser.add_argument("--retry-errors", action="store_true")
@@ -419,7 +423,7 @@ def main() -> None:
     new_calls = 0
     budget_stop = False
     if args.execute:
-        clients = build_clients(models, args.env_file.resolve())
+        clients = build_clients(models, args.env_file.resolve() if args.env_file is not None else None)
         for job in jobs:
             prompt, test_rows = prompt_for_job(df, profiles, job)
             for spec in models:

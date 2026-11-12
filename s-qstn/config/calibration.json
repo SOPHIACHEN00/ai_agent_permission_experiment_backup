@@ -1,0 +1,15 @@
+{
+  "policy": "empirical_system",
+  "affinity_power": 0.0,
+  "weights": {
+    "persistent_granters": 0.49896602658788564,
+    "reconsent_seekers": 0.05,
+    "broad_restrictors": 0.4510339734121134
+  },
+  "choice_multipliers": [
+    1.0,
+    0.6,
+    1.0,
+    1.0
+  ]
+}

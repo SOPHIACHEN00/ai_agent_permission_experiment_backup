@@ -1,0 +1,49 @@
+name: Offline verification
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  offline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      PYTHONDONTWRITEBYTECODE: "1"
+      RL_TESTING_ALLOW_TORCH_UPDATES: "1"
+      OMP_NUM_THREADS: "1"
+      MKL_NUM_THREADS: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: |
+            requirements*.txt
+            s-qstn/requirements.txt
+            in_context_learning/requirements.txt
+      - name: Install CPU and simulator dependencies
+        run: |
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install -r requirements.txt -r requirements-agent.txt -r s-qstn/requirements.txt -r in_context_learning/requirements.txt
+      - name: Mock-tool, MAB and ICL tests
+        run: |
+          python -B -m unittest discover -s tests/mock_tools -v
+          python -B -m unittest bandit_experiment.test_stated_policy_bandit online_bandit_experiment.test_wp_fts -v
+          python -B -m unittest in_context_learning.test_run_ic_four_label in_context_learning.test_current_sqstn in_context_learning.multi_model_screening.test_screen_models -v
+      - name: Agent and DDQN diagnostic tests
+        working-directory: rl_agent_structure
+        run: |
+          python -B -m unittest discover -s tests -v
+          python -B -m unittest discover -s rl_testing/tests -v
+      - name: S-QSTN offline tests
+        working-directory: s-qstn
+        run: python -B -m unittest discover -s tests -v
+      - name: All 65 queries, no API
+        run: python -B rl_agent_structure/run_noapi.py --persist-rounds 3 --all-wu --output rl_agent_structure/outputs/ci_functional

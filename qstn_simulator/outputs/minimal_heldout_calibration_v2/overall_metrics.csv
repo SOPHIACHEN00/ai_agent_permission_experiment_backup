@@ -1,2 +1,0 @@
-scope,condition_id,n_rows,n_participants,accuracy,macro_f1,distribution_tv_distance,over_sharing_rate,under_sharing_rate,predicted_share_rate,human_share_rate
-overall,raw_participant_profile_plus_empirical_card,90,30,0.32222222222222224,0.28384207737148914,0.2111111111111111,0.34285714285714286,0.23636363636363636,0.6,0.6111111111111112

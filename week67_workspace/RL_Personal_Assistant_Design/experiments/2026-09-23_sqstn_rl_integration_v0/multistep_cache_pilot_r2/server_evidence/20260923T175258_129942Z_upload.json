@@ -1,9 +1,0 @@
-{
-  "time_utc": "20260923T175258_129942Z",
-  "operation": "upload",
-  "result": {
-    "status": "UPLOAD_PASS",
-    "source_sha256": "f4fad152c3be1e012016471d028eada9cfbc3c109c7630ddb2930dd39b1ed6cf",
-    "verified_files": 55
-  }
-}

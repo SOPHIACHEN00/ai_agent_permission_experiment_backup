@@ -1,0 +1,521 @@
+{
+  "groups": [
+    {
+      "arm": "candidate",
+      "context": "cold",
+      "tasks": 9,
+      "success": 6,
+      "timely": 3,
+      "ER": 0,
+      "ED": 3,
+      "M": 8,
+      "K": 52,
+      "PB": 63,
+      "control_steps": 375,
+      "max_valid_Q": 2.2249042987823486,
+      "above_one": 1657,
+      "valid_Q_count": 2245
+    },
+    {
+      "arm": "candidate",
+      "context": "fixed",
+      "tasks": 9,
+      "success": 6,
+      "timely": 3,
+      "ER": 0,
+      "ED": 3,
+      "M": 4,
+      "K": 57,
+      "PB": 24,
+      "control_steps": 381,
+      "max_valid_Q": 1.9201425313949585,
+      "above_one": 1775,
+      "valid_Q_count": 2352
+    },
+    {
+      "arm": "family",
+      "context": "cold",
+      "tasks": 9,
+      "success": 5,
+      "timely": 3,
+      "ER": 0,
+      "ED": 1,
+      "M": 9,
+      "K": 64,
+      "PB": 65,
+      "control_steps": 387,
+      "max_valid_Q": 1.8795088529586792,
+      "above_one": 1765,
+      "valid_Q_count": 2903
+    },
+    {
+      "arm": "family",
+      "context": "fixed",
+      "tasks": 9,
+      "success": 5,
+      "timely": 3,
+      "ER": 0,
+      "ED": 1,
+      "M": 6,
+      "K": 64,
+      "PB": 26,
+      "control_steps": 387,
+      "max_valid_Q": 1.8863154649734497,
+      "above_one": 1768,
+      "valid_Q_count": 2903
+    }
+  ],
+  "outcomes_changed": [],
+  "frozen_cases": [
+    {
+      "seed": 3,
+      "arm": "candidate",
+      "query_id": 40,
+      "success": 1,
+      "timely": true,
+      "first_context": {
+        "round_index": 61,
+        "decision_index": 1974,
+        "raw_observed_answers": 389,
+        "raw_active_allows": 14,
+        "raw_active_gates": 0
+      },
+      "first_branch": {
+        "tool": "Weather",
+        "step": "q40_01_write",
+        "execute_Q": 1.0450879335403442,
+        "release_Q": 1.0170968770980835,
+        "execute_minus_release": 0.027991056442260742,
+        "selected_action": "EXECUTE",
+        "remaining_release_steps": 32
+      },
+      "maxQ": 1.0713049173355103,
+      "status": "completed"
+    },
+    {
+      "seed": 3,
+      "arm": "candidate",
+      "query_id": 41,
+      "success": 1,
+      "timely": true,
+      "first_context": {
+        "round_index": 61,
+        "decision_index": 1974,
+        "raw_observed_answers": 389,
+        "raw_active_allows": 14,
+        "raw_active_gates": 0
+      },
+      "first_branch": {
+        "tool": "Weather",
+        "step": "q41_01_write",
+        "execute_Q": 1.017227053642273,
+        "release_Q": 0.9961321353912354,
+        "execute_minus_release": 0.021094918251037598,
+        "selected_action": "EXECUTE",
+        "remaining_release_steps": 32
+      },
+      "maxQ": 1.0839142799377441,
+      "status": "completed"
+    },
+    {
+      "seed": 3,
+      "arm": "candidate",
+      "query_id": 55,
+      "success": 1,
+      "timely": true,
+      "first_context": {
+        "round_index": 61,
+        "decision_index": 1974,
+        "raw_observed_answers": 389,
+        "raw_active_allows": 14,
+        "raw_active_gates": 0
+      },
+      "first_branch": {
+        "tool": "Tinder",
+        "step": "q55_01_write",
+        "execute_Q": 1.0570005178451538,
+        "release_Q": 1.0604802370071411,
+        "execute_minus_release": -0.0034797191619873047,
+        "selected_action": "RELEASE",
+        "remaining_release_steps": 32
+      },
+      "maxQ": 1.0913833379745483,
+      "status": "completed"
+    },
+    {
+      "seed": 3,
+      "arm": "family",
+      "query_id": 40,
+      "success": 0,
+      "timely": false,
+      "first_context": {
+        "round_index": 61,
+        "decision_index": 1974,
+        "raw_observed_answers": 389,
+        "raw_active_allows": 14,
+        "raw_active_gates": 0
+      },
+      "first_branch": {
+        "tool": "Weather",
+        "step": "q40_01_write",
+        "execute_Q": 1.432254672050476,
+        "release_Q": 1.451583743095398,
+        "execute_minus_release": -0.019329071044921875,
+        "selected_action": "RELEASE",
+        "remaining_release_steps": 32
+      },
+      "maxQ": 1.451583743095398,
+      "status": "controller_limit"
+    },
+    {
+      "seed": 3,
+      "arm": "family",
+      "query_id": 41,
+      "success": 1,
+      "timely": false,
+      "first_context": {
+        "round_index": 61,
+        "decision_index": 1974,
+        "raw_observed_answers": 389,
+        "raw_active_allows": 14,
+        "raw_active_gates": 0
+      },
+      "first_branch": {
+        "tool": "Weather",
+        "step": "q41_01_write",
+        "execute_Q": 1.3683933019638062,
+        "release_Q": 1.3912649154663086,
+        "execute_minus_release": -0.02287161350250244,
+        "selected_action": "RELEASE",
+        "remaining_release_steps": 32
+      },
+      "maxQ": 1.3912649154663086,
+      "status": "completed"
+    },
+    {
+      "seed": 3,
+      "arm": "family",
+      "query_id": 55,
+      "success": 0,
+      "timely": false,
+      "first_context": {
+        "round_index": 61,
+        "decision_index": 1974,
+        "raw_observed_answers": 389,
+        "raw_active_allows": 14,
+        "raw_active_gates": 0
+      },
+      "first_branch": {
+        "tool": "Tinder",
+        "step": "q55_01_write",
+        "execute_Q": 1.499776005744934,
+        "release_Q": 1.81497061252594,
+        "execute_minus_release": -0.31519460678100586,
+        "selected_action": "REQUEST",
+        "remaining_release_steps": 32
+      },
+      "maxQ": 1.8863154649734497,
+      "status": "controller_limit"
+    },
+    {
+      "seed": 7,
+      "arm": "candidate",
+      "query_id": 40,
+      "success": 0,
+      "timely": false,
+      "first_context": {
+        "round_index": 61,
+        "decision_index": 1974,
+        "raw_observed_answers": 389,
+        "raw_active_allows": 14,
+        "raw_active_gates": 0
+      },
+      "first_branch": {
+        "tool": "Weather",
+        "step": "q40_01_write",
+        "execute_Q": 1.211812973022461,
+        "release_Q": 1.3982661962509155,
+        "execute_minus_release": -0.1864532232284546,
+        "selected_action": "RELEASE",
+        "remaining_release_steps": 32
+      },
+      "maxQ": 1.4246635437011719,
+      "status": "controller_limit"
+    },
+    {
+      "seed": 7,
+      "arm": "candidate",
+      "query_id": 41,
+      "success": 0,
+      "timely": false,
+      "first_context": {
+        "round_index": 61,
+        "decision_index": 1974,
+        "raw_observed_answers": 389,
+        "raw_active_allows": 14,
+        "raw_active_gates": 0
+      },
+      "first_branch": {
+        "tool": "Weather",
+        "step": "q41_01_write",
+        "execute_Q": 1.1817800998687744,
+        "release_Q": 1.369225025177002,
+        "execute_minus_release": -0.18744492530822754,
+        "selected_action": "RELEASE",
+        "remaining_release_steps": 32
+      },
+      "maxQ": 1.3955860137939453,
+      "status": "controller_limit"
+    },
+    {
+      "seed": 7,
+      "arm": "candidate",
+      "query_id": 55,
+      "success": 1,
+      "timely": false,
+      "first_context": {
+        "round_index": 61,
+        "decision_index": 1974,
+        "raw_observed_answers": 389,
+        "raw_active_allows": 14,
+        "raw_active_gates": 0
+      },
+      "first_branch": {
+        "tool": "Tinder",
+        "step": "q55_01_write",
+        "execute_Q": 1.2716854810714722,
+        "release_Q": 1.8372642993927002,
+        "execute_minus_release": -0.565578818321228,
+        "selected_action": "RELEASE",
+        "remaining_release_steps": 32
+      },
+      "maxQ": 1.8372642993927002,
+      "status": "completed"
+    },
+    {
+      "seed": 7,
+      "arm": "family",
+      "query_id": 40,
+      "success": 1,
+      "timely": true,
+      "first_context": {
+        "round_index": 61,
+        "decision_index": 1974,
+        "raw_observed_answers": 389,
+        "raw_active_allows": 14,
+        "raw_active_gates": 0
+      },
+      "first_branch": {
+        "tool": "Weather",
+        "step": "q40_01_write",
+        "execute_Q": 1.0187658071517944,
+        "release_Q": 1.0163685083389282,
+        "execute_minus_release": 0.002397298812866211,
+        "selected_action": "EXECUTE",
+        "remaining_release_steps": 32
+      },
+      "maxQ": 1.0817245244979858,
+      "status": "completed"
+    },
+    {
+      "seed": 7,
+      "arm": "family",
+      "query_id": 41,
+      "success": 1,
+      "timely": true,
+      "first_context": {
+        "round_index": 61,
+        "decision_index": 1974,
+        "raw_observed_answers": 389,
+        "raw_active_allows": 14,
+        "raw_active_gates": 0
+      },
+      "first_branch": {
+        "tool": "Weather",
+        "step": "q41_01_write",
+        "execute_Q": 0.9971503019332886,
+        "release_Q": 0.992849588394165,
+        "execute_minus_release": 0.004300713539123535,
+        "selected_action": "EXECUTE",
+        "remaining_release_steps": 32
+      },
+      "maxQ": 1.0803762674331665,
+      "status": "completed"
+    },
+    {
+      "seed": 7,
+      "arm": "family",
+      "query_id": 55,
+      "success": 1,
+      "timely": true,
+      "first_context": {
+        "round_index": 61,
+        "decision_index": 1974,
+        "raw_observed_answers": 389,
+        "raw_active_allows": 14,
+        "raw_active_gates": 0
+      },
+      "first_branch": {
+        "tool": "Tinder",
+        "step": "q55_01_write",
+        "execute_Q": 1.042477011680603,
+        "release_Q": 1.0396437644958496,
+        "execute_minus_release": 0.002833247184753418,
+        "selected_action": "EXECUTE",
+        "remaining_release_steps": 32
+      },
+      "maxQ": 1.052064061164856,
+      "status": "completed"
+    },
+    {
+      "seed": 11,
+      "arm": "candidate",
+      "query_id": 40,
+      "success": 1,
+      "timely": false,
+      "first_context": {
+        "round_index": 61,
+        "decision_index": 1974,
+        "raw_observed_answers": 389,
+        "raw_active_allows": 14,
+        "raw_active_gates": 0
+      },
+      "first_branch": {
+        "tool": "Weather",
+        "step": "q40_01_write",
+        "execute_Q": 1.3970164060592651,
+        "release_Q": 1.4311193227767944,
+        "execute_minus_release": -0.0341029167175293,
+        "selected_action": "RELEASE",
+        "remaining_release_steps": 32
+      },
+      "maxQ": 1.4311193227767944,
+      "status": "completed"
+    },
+    {
+      "seed": 11,
+      "arm": "candidate",
+      "query_id": 41,
+      "success": 1,
+      "timely": false,
+      "first_context": {
+        "round_index": 61,
+        "decision_index": 1974,
+        "raw_observed_answers": 389,
+        "raw_active_allows": 14,
+        "raw_active_gates": 0
+      },
+      "first_branch": {
+        "tool": "Weather",
+        "step": "q41_01_write",
+        "execute_Q": 1.3576499223709106,
+        "release_Q": 1.3642325401306152,
+        "execute_minus_release": -0.00658261775970459,
+        "selected_action": "RELEASE",
+        "remaining_release_steps": 32
+      },
+      "maxQ": 1.3642325401306152,
+      "status": "completed"
+    },
+    {
+      "seed": 11,
+      "arm": "candidate",
+      "query_id": 55,
+      "success": 0,
+      "timely": false,
+      "first_context": {
+        "round_index": 61,
+        "decision_index": 1974,
+        "raw_observed_answers": 389,
+        "raw_active_allows": 14,
+        "raw_active_gates": 0
+      },
+      "first_branch": {
+        "tool": "Tinder",
+        "step": "q55_01_write",
+        "execute_Q": 1.3695127964019775,
+        "release_Q": 1.8151719570159912,
+        "execute_minus_release": -0.44565916061401367,
+        "selected_action": "RELEASE",
+        "remaining_release_steps": 32
+      },
+      "maxQ": 1.9201425313949585,
+      "status": "controller_limit"
+    },
+    {
+      "seed": 11,
+      "arm": "family",
+      "query_id": 40,
+      "success": 0,
+      "timely": false,
+      "first_context": {
+        "round_index": 61,
+        "decision_index": 1974,
+        "raw_observed_answers": 389,
+        "raw_active_allows": 14,
+        "raw_active_gates": 0
+      },
+      "first_branch": {
+        "tool": "Weather",
+        "step": "q40_01_write",
+        "execute_Q": 1.1114290952682495,
+        "release_Q": 1.1536811590194702,
+        "execute_minus_release": -0.0422520637512207,
+        "selected_action": "RELEASE",
+        "remaining_release_steps": 32
+      },
+      "maxQ": 1.1536811590194702,
+      "status": "controller_limit"
+    },
+    {
+      "seed": 11,
+      "arm": "family",
+      "query_id": 41,
+      "success": 0,
+      "timely": false,
+      "first_context": {
+        "round_index": 61,
+        "decision_index": 1974,
+        "raw_observed_answers": 389,
+        "raw_active_allows": 14,
+        "raw_active_gates": 0
+      },
+      "first_branch": {
+        "tool": "Weather",
+        "step": "q41_01_write",
+        "execute_Q": 1.0792036056518555,
+        "release_Q": 1.072151780128479,
+        "execute_minus_release": 0.007051825523376465,
+        "selected_action": "EXECUTE",
+        "remaining_release_steps": 32
+      },
+      "maxQ": 1.105587124824524,
+      "status": "controller_limit"
+    },
+    {
+      "seed": 11,
+      "arm": "family",
+      "query_id": 55,
+      "success": 1,
+      "timely": false,
+      "first_context": {
+        "round_index": 61,
+        "decision_index": 1974,
+        "raw_observed_answers": 389,
+        "raw_active_allows": 14,
+        "raw_active_gates": 0
+      },
+      "first_branch": {
+        "tool": "Tinder",
+        "step": "q55_01_write",
+        "execute_Q": 1.0607351064682007,
+        "release_Q": 1.3233760595321655,
+        "execute_minus_release": -0.26264095306396484,
+        "selected_action": "RELEASE",
+        "remaining_release_steps": 32
+      },
+      "maxQ": 1.3682891130447388,
+      "status": "completed"
+    }
+  ]
+}

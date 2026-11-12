@@ -1,7 +1,0 @@
-{
-  "profile": "rough_v0",
-  "min_success_rate": 0.90,
-  "min_improvement_over_random": 0.30,
-  "max_invalid_actions": 0,
-  "max_unauthorized_effects": 0
-}

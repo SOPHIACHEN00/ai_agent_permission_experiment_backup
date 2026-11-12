@@ -18,8 +18,8 @@ from sklearn.model_selection import KFold
 
 EXPERIMENT_DIR = Path(__file__).resolve().parent
 PROJECT_DIR = EXPERIMENT_DIR.parent
-sys.path.insert(0, str(PROJECT_DIR / "src"))
-from run_four_label_benchmark import ID_TO_LABEL, LABEL_ORDER, compute_metrics  # noqa: E402
+sys.path.insert(0, str(PROJECT_DIR))
+from classification.run_four_label_benchmark import ID_TO_LABEL, LABEL_ORDER, compute_metrics  # noqa: E402
 
 LABEL_TO_ID = {text: number for number, text in ID_TO_LABEL.items()}
 AGE_RANGES = {"1": "18-24", "2": "25-34", "3": "35-44", "4": "45-54", "5": "55 or older"}

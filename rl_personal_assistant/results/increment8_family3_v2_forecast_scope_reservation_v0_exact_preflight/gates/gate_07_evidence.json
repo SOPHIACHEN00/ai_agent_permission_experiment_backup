@@ -1,1 +1,0 @@
-{"markov_audit": {"analysis_count": 20, "encoded_group_count": 314, "mismatches": [], "occurrence_count": 314, "passed": true, "public_group_count": 314, "row_count": 2198, "transition_count": 1296, "valid_action_count": 1256}, "nonvacuous_counts": true}

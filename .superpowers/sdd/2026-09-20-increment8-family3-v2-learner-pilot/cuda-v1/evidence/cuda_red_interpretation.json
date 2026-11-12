@@ -1,8 +1,0 @@
-{
-  "status": "EXPECTED_FEATURE_GAPS",
-  "methods": 2,
-  "assertion_failures": 4,
-  "errors": 0,
-  "wrapper_expected_failures_was_incorrect": 2,
-  "original_receipt_preserved": true
-}

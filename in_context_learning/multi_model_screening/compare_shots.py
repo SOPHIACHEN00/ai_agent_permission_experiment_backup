@@ -13,8 +13,8 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "src"))
-from run_four_label_benchmark import compute_metrics  # noqa: E402
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+from classification.run_four_label_benchmark import compute_metrics  # noqa: E402
 
 
 MODEL_NAMES = ("luna", "deepseek", "gemini")
